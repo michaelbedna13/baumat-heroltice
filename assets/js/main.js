@@ -25,7 +25,7 @@
         burger.focus();
       }
     });
-    window.matchMedia("(min-width: 901px)").addEventListener("change", function (mq) {
+    window.matchMedia("(min-width: 961px)").addEventListener("change", function (mq) {
       if (mq.matches) nastavMenu(false);
     });
   }

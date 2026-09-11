@@ -10,7 +10,7 @@ ubytovani/ aktivity/ cenik/ kontakt/   podstránky (připravujeme)
 en/                     anglická verze (připravujeme)
 assets/css/style.css    paleta, typografie, layout
 assets/js/main.js       mobilní menu, stav hlavičky
-assets/fonts/           Fraunces a Figtree (woff2, latin + latin-ext, licence OFL)
+assets/fonts/           Bricolage Grotesque (woff2, latin + latin-ext, licence OFL)
 ```
 
 ## Lokální náhled
@@ -22,11 +22,11 @@ Stačí otevřít `index.html` v prohlížeči, nebo spustit `python3 -m http.se
 | Název   | Hex     | Použití            |
 |---------|---------|--------------------|
 | Les     | #2F4A2B | hlavní, tmavé bloky |
-| Mech    | #6B8A4E | ikony, dekor (ne malý text) |
+| Mech    | #6B8A4E | v záloze |
 | Krém    | #F5F0E3 | pozadí             |
-| Písek   | #E8DFC9 | karty, plochy      |
+| Písek   | #E8DFC9 | linky, podklad mapy |
 | Uhel    | #1F2A1D | text               |
-| Ohniště | #9A4F1E | ceny, štítky       |
+| Ohniště | #9A4F1E | v záloze |
 
 ## Zbývá
 

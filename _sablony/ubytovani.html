@@ -43,19 +43,6 @@
     </div>
   </section>
 
-  <!-- SEKCE: kotvy -->
-  <section class="sekce" aria-label="Přejít na typ ubytování">
-    <div class="wrap">
-      <ul class="kotvy">
-        <li><a href="#apartman">Apartmán</a></li>
-        <li><a href="#slusovice-bunky">Slušovice a buňky</a></li>
-        <li><a href="#chatky-klasicke">Chatky klasické</a></li>
-        <li><a href="#chatky-u-hlavni-brany">Chatky u hlavní brány</a></li>
-        <li><a href="#zazemi">Zázemí</a></li>
-      </ul>
-    </div>
-  </section>
-
   <!-- SEKCE: detaily ubytování -->
   <section class="sekce" aria-labelledby="typy-nadpis">
     <div class="wrap">
@@ -68,10 +55,15 @@
       </div>
 
       <article class="detail" id="apartman">
-        <div class="detail__galerie">
-          <figure><img src="{{IMG}}/2024/11/Apartman_hl-foto-1536x1024.jpg" alt="Apartmán v areálu Baumat" loading="lazy"></figure>
-          <figure><img src="{{IMG}}/2024/11/Apartman_4-1536x1024.jpg" alt="Pokoj v apartmánu se dvěma lůžky" loading="lazy"></figure>
-          <figure><img src="{{IMG}}/2024/11/Apartman_3-1536x1024.jpg" alt="Kuchyně v apartmánu" loading="lazy"></figure>
+        <div class="detail__galerie" data-galerie="Apartmán">
+          <figure class="detail__hlavni">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Apartmán v areálu Baumat"><img src="{{IMG}}/2024/11/Apartman_hl-foto-1536x1024.jpg" alt="Apartmán v areálu Baumat" loading="lazy"></button>
+            <span class="lupa">{{i:photo}}3 fotky</span>
+          </figure>
+          <ul class="detail__nahledy">
+            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Pokoj v apartmánu se dvěma lůžky"><img src="{{IMG}}/2024/11/Apartman_4-1536x1024.jpg" alt="Pokoj v apartmánu se dvěma lůžky" loading="lazy"></button></li>
+            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Kuchyně v apartmánu"><img src="{{IMG}}/2024/11/Apartman_3-1536x1024.jpg" alt="Kuchyně v apartmánu" loading="lazy"></button></li>
+          </ul>
         </div>
         <div class="detail__text">
           <h3>Apartmán</h3>
@@ -90,10 +82,15 @@
       </article>
 
       <article class="detail detail--obraceny" id="slusovice-bunky">
-        <div class="detail__galerie">
-          <figure><img src="{{IMG}}/2024/11/Bunky-slusovice_hl-foto-1-1536x1024.jpg" alt="Ubytovací buňky Slušovice s verandou" loading="lazy"></figure>
-          <figure><img src="{{IMG}}/2024/11/Bunky-slusovice_2-1536x1024.jpg" alt="Interiér buňky se třemi lůžky" loading="lazy"></figure>
-          <figure><img src="{{IMG}}/2024/11/Slusovice_socialn-1536x1024.jpg" alt="Sociální zařízení u buněk Slušovice" loading="lazy"></figure>
+        <div class="detail__galerie" data-galerie="Slušovice a buňky">
+          <figure class="detail__hlavni">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Ubytovací buňky Slušovice s verandou"><img src="{{IMG}}/2024/11/Bunky-slusovice_hl-foto-1-1536x1024.jpg" alt="Ubytovací buňky Slušovice s verandou" loading="lazy"></button>
+            <span class="lupa">{{i:photo}}3 fotky</span>
+          </figure>
+          <ul class="detail__nahledy">
+            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Interiér buňky se třemi lůžky"><img src="{{IMG}}/2024/11/Bunky-slusovice_2-1536x1024.jpg" alt="Interiér buňky se třemi lůžky" loading="lazy"></button></li>
+            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Sociální zařízení u buněk Slušovice"><img src="{{IMG}}/2024/11/Slusovice_socialn-1536x1024.jpg" alt="Sociální zařízení u buněk Slušovice" loading="lazy"></button></li>
+          </ul>
         </div>
         <div class="detail__text">
           <h3>Slušovice a buňky</h3>
@@ -112,10 +109,15 @@
       </article>
 
       <article class="detail" id="chatky-klasicke">
-        <div class="detail__galerie">
-          <figure><img src="{{IMG}}/2024/11/Chatky_hl-foto-1-1536x1024.jpg" alt="Řada dřevěných chatek na louce" loading="lazy"></figure>
-          <figure><img src="{{IMG}}/2024/11/Chatky_2-1536x1024.jpg" alt="Chatka zvenku" loading="lazy"></figure>
-          <figure><img src="{{IMG}}/2024/11/Chatky_3-1536x1024.jpg" alt="Interiér chatky s postelemi" loading="lazy"></figure>
+        <div class="detail__galerie" data-galerie="Chatky klasické">
+          <figure class="detail__hlavni">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Řada dřevěných chatek na louce"><img src="{{IMG}}/2024/11/Chatky_hl-foto-1-1536x1024.jpg" alt="Řada dřevěných chatek na louce" loading="lazy"></button>
+            <span class="lupa">{{i:photo}}3 fotky</span>
+          </figure>
+          <ul class="detail__nahledy">
+            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Chatka zvenku"><img src="{{IMG}}/2024/11/Chatky_2-1536x1024.jpg" alt="Chatka zvenku" loading="lazy"></button></li>
+            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Interiér chatky s postelemi"><img src="{{IMG}}/2024/11/Chatky_3-1536x1024.jpg" alt="Interiér chatky s postelemi" loading="lazy"></button></li>
+          </ul>
         </div>
         <div class="detail__text">
           <h3>Chatky klasické</h3>
@@ -134,10 +136,15 @@
       </article>
 
       <article class="detail detail--obraceny" id="chatky-u-hlavni-brany">
-        <div class="detail__galerie">
-          <figure><img src="{{IMG}}/2024/11/chatky-u-hl-brany-_hl-foto-1-1536x1024.jpg" alt="Chatky u hlavní brány areálu" loading="lazy"></figure>
-          <figure><img src="{{IMG}}/2024/11/chatky-u-hl-brany-_2-1-1536x1024.jpg" alt="Pokoj v chatce u hlavní brány" loading="lazy"></figure>
-          <figure><img src="{{IMG}}/2024/11/chatky-u-hl-brany-_3-1-1536x1024.jpg" alt="Vybavení pokoje se stolem a židlí" loading="lazy"></figure>
+        <div class="detail__galerie" data-galerie="Chatky u hlavní brány">
+          <figure class="detail__hlavni">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Chatky u hlavní brány areálu"><img src="{{IMG}}/2024/11/chatky-u-hl-brany-_hl-foto-1-1536x1024.jpg" alt="Chatky u hlavní brány areálu" loading="lazy"></button>
+            <span class="lupa">{{i:photo}}3 fotky</span>
+          </figure>
+          <ul class="detail__nahledy">
+            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Pokoj v chatce u hlavní brány"><img src="{{IMG}}/2024/11/chatky-u-hl-brany-_2-1-1536x1024.jpg" alt="Pokoj v chatce u hlavní brány" loading="lazy"></button></li>
+            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Vybavení pokoje se stolem a židlí"><img src="{{IMG}}/2024/11/chatky-u-hl-brany-_3-1-1536x1024.jpg" alt="Vybavení pokoje se stolem a židlí" loading="lazy"></button></li>
+          </ul>
         </div>
         <div class="detail__text">
           <h3>Chatky u hlavní brány</h3>
@@ -180,10 +187,15 @@
       <h2 class="sr-only" id="zazemi-detail-nadpis">Podrobnosti o zázemí</h2>
 
       <article class="detail" id="kuchyne-jidelna">
-        <div class="detail__galerie">
-          <figure><img src="{{IMG}}/2024/11/Kuchyne-a-jidelna_1-1536x1024.jpg" alt="Profesionální kuchyně v areálu Baumat" loading="lazy"></figure>
-          <figure><img src="{{IMG}}/2024/11/Kuchyne-a-jidelna_2-1536x1024.jpg" alt="Jídelna s dřevěnými stoly" loading="lazy"></figure>
-          <figure><img src="{{IMG}}/2024/11/Kuchyne-a-jidelna_3-1536x1024.jpg" alt="Vybavení kuchyně" loading="lazy"></figure>
+        <div class="detail__galerie" data-galerie="Kuchyně a jídelna">
+          <figure class="detail__hlavni">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Profesionální kuchyně v areálu Baumat"><img src="{{IMG}}/2024/11/Kuchyne-a-jidelna_1-1536x1024.jpg" alt="Profesionální kuchyně v areálu Baumat" loading="lazy"></button>
+            <span class="lupa">{{i:photo}}3 fotky</span>
+          </figure>
+          <ul class="detail__nahledy">
+            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Jídelna s dřevěnými stoly"><img src="{{IMG}}/2024/11/Kuchyne-a-jidelna_2-1536x1024.jpg" alt="Jídelna s dřevěnými stoly" loading="lazy"></button></li>
+            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Vybavení kuchyně"><img src="{{IMG}}/2024/11/Kuchyne-a-jidelna_3-1536x1024.jpg" alt="Vybavení kuchyně" loading="lazy"></button></li>
+          </ul>
         </div>
         <div class="detail__text">
           <h3>Kuchyně a jídelna</h3>
@@ -201,10 +213,15 @@
       </article>
 
       <article class="detail detail--obraceny" id="kuchynky">
-        <div class="detail__galerie">
-          <figure><img src="{{IMG}}/2024/11/kuchynka_hl.photo_-1536x1024.jpg" alt="Kuchyňka pro menší skupiny" loading="lazy"></figure>
-          <figure><img src="{{IMG}}/2024/11/kuchynka_2-1536x1024.jpg" alt="Posezení v kuchyňce" loading="lazy"></figure>
-          <figure><img src="{{IMG}}/2024/11/kuchynka_3-1536x1024.jpg" alt="Vybavení kuchyňky" loading="lazy"></figure>
+        <div class="detail__galerie" data-galerie="Kuchyňky">
+          <figure class="detail__hlavni">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Kuchyňka pro menší skupiny"><img src="{{IMG}}/2024/11/kuchynka_hl.photo_-1536x1024.jpg" alt="Kuchyňka pro menší skupiny" loading="lazy"></button>
+            <span class="lupa">{{i:photo}}3 fotky</span>
+          </figure>
+          <ul class="detail__nahledy">
+            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Posezení v kuchyňce"><img src="{{IMG}}/2024/11/kuchynka_2-1536x1024.jpg" alt="Posezení v kuchyňce" loading="lazy"></button></li>
+            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Vybavení kuchyňky"><img src="{{IMG}}/2024/11/kuchynka_3-1536x1024.jpg" alt="Vybavení kuchyňky" loading="lazy"></button></li>
+          </ul>
         </div>
         <div class="detail__text">
           <h3>Kuchyňky</h3>
@@ -221,10 +238,15 @@
       </article>
 
       <article class="detail" id="socialni-zarizeni">
-        <div class="detail__galerie">
-          <figure><img src="{{IMG}}/2024/11/Hl.socialky_1-1536x1024.jpg" alt="Hlavní sociální zařízení areálu" loading="lazy"></figure>
-          <figure><img src="{{IMG}}/2024/11/Hl.socialky_2-1-1536x1024.jpg" alt="Sprchy" loading="lazy"></figure>
-          <figure><img src="{{IMG}}/2024/11/Hl.socialky_3-1-1536x1024.jpg" alt="Umyvadla" loading="lazy"></figure>
+        <div class="detail__galerie" data-galerie="Hlavní sociální zařízení">
+          <figure class="detail__hlavni">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Hlavní sociální zařízení areálu"><img src="{{IMG}}/2024/11/Hl.socialky_1-1536x1024.jpg" alt="Hlavní sociální zařízení areálu" loading="lazy"></button>
+            <span class="lupa">{{i:photo}}3 fotky</span>
+          </figure>
+          <ul class="detail__nahledy">
+            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Sprchy"><img src="{{IMG}}/2024/11/Hl.socialky_2-1-1536x1024.jpg" alt="Sprchy" loading="lazy"></button></li>
+            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Umyvadla"><img src="{{IMG}}/2024/11/Hl.socialky_3-1-1536x1024.jpg" alt="Umyvadla" loading="lazy"></button></li>
+          </ul>
         </div>
         <div class="detail__text">
           <h3>Hlavní sociální zařízení</h3>

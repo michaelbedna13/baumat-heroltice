@@ -173,11 +173,17 @@
 
   <section class="sg-sekce">
     <div class="wrap">
-      <h2>Dlaždice</h2>
-      <p class="sg-pozn"><code>dlazdice</code> a <code>dlazdice--velka</code>. Fotka s popiskem dole.</p>
+      <h2>Karty vybavení a položky</h2>
+      <p class="sg-pozn"><code>vybaveni-mrizka</code> + <code>vybaveni-karta</code>: text vždy pod fotkou, ne přes ni. <code>polozky</code> + <code>polozka</code>: výčet bez odkazů.</p>
       <div class="sg-mrizka sg-2">
-        <a class="dlazdice dlazdice--velka" href="#" style="aspect-ratio:4/3"><img src="{{IMG}}/2024/11/Bazen_2-1536x1024.jpg" alt="" loading="lazy"><div class="dlazdice__popis"><h3>Bazén</h3><p>Plavání i odpočinek u čisté vody.</p></div></a>
-        <a class="dlazdice" href="#" style="aspect-ratio:4/3"><img src="{{IMG}}/2024/11/Detske-hriste-1536x1024.jpg" alt="" loading="lazy"><div class="dlazdice__popis"><h3>Dětské hřiště</h3><p>Houpačka a skluzavka.</p></div></a>
+        <ul class="vybaveni-mrizka" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+          <li class="vybaveni-karta"><div class="vybaveni-karta__foto"><img src="{{IMG}}/2024/11/Bazen_2-1536x1024.jpg" alt="" loading="lazy"></div><h3><a href="#">Bazén</a></h3><p>Plavání i odpočinek u čisté vody.</p></li>
+          <li class="vybaveni-karta"><div class="vybaveni-karta__foto"><img src="{{IMG}}/2024/11/Detske-hriste-1536x1024.jpg" alt="" loading="lazy"></div><h3><a href="#">Dětské hřiště</a></h3><p>Houpačka a skluzavka.</p></li>
+        </ul>
+        <ul class="polozky">
+          <li class="polozka">{{i:rings}}<div><h3>Svatby</h3><p>Klidné prostředí v přírodě a pomoc s přípravou celého dne.</p></div></li>
+          <li class="polozka">{{i:tent}}<div><h3>Dětské tábory</h3><p>Bezpečné zázemí pro děti všech věků a léto plné her.</p></div></li>
+        </ul>
       </div>
     </div>
   </section>

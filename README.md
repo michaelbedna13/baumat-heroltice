@@ -11,7 +11,8 @@ en/                     anglická verze (připravujeme)
 _sablony/               zdrojové šablony a sdílené části
 build.py                sestaví HTML ze šablon
 assets/css/style.css    paleta, typografie, layout
-assets/js/main.js       mobilní menu, stav hlavičky
+assets/js/main.js       mobilní menu, hlavička, prohlížeč fotek, kalendář
+assets/data/obsazenost.json   termíny pro kalendář (zatím UKÁZKOVÁ data)
 DESIGN.md               pravidla designu, komponenty, typy sekcí
 styleguide.html         živé ukázky komponent (noindex)
 assets/fonts/           Bricolage Grotesque (woff2, latin + latin-ext, licence OFL)
@@ -40,12 +41,11 @@ Hotové HTML se commituje, hosting nic nebuilduje. Náhled: `python3 -m http.ser
 
 ## Zbývá
 
-- Potvrdit u Baumatu adresu areálu (katalogy uvádějí Heroltice 166 i Heroltice 1) a doplnit ji do kontaktu a JSON-LD.
+- Potvrdit u Baumatu přesnou adresu areálu (katalogy uvádějí Heroltice 166 i Heroltice 1) a doplnit ji do kontaktu a JSON-LD.
 - Stáhnout fotky a dokumenty z WordPressu do `assets/img/` a `assets/docs/` a přepsat cesty (teď se odkazují na starý web).
 - Logo jako SVG místo textového loga.
 - Anglická verze všech stránek (pozor: v současné EN verzi jsou staré ceny).
-- Samostatné stránky pro svatby, oslavy, tábory a firemní akce (odkazy z homepage zatím nikam nevedou).
 - Recenze přes Google Places API (klíč omezený na doménu). Do té doby odstranit zástupné hvězdy u citací.
-- Kalendář na /kontakt/ je zatím veřejný vložený Google kalendář. S API klíčem od správce udělat vlastní, aby nebyly vidět názvy akcí.
+- **Kalendář na /kontakt/ běží na ukázkových datech.** Před spuštěním přepsat `assets/data/obsazenost.json` skutečnou obsazeností, nebo napojit export z Google kalendáře (stavy: `obsazeno`, `castecne`).
 
 Ikony: Tabler Icons (MIT).

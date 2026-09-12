@@ -43,21 +43,6 @@
     </div>
   </section>
 
-  <!-- SEKCE: kotvy -->
-  <section class="sekce" aria-label="Přejít na aktivitu">
-    <div class="wrap">
-      <ul class="kotvy">
-        <li><a href="#bazen">Bazén</a></li>
-        <li><a href="#beach-volejbal">Beach volejbal</a></li>
-        <li><a href="#tenis">Tenis</a></li>
-        <li><a href="#stolni-tenis">Stolní tenis</a></li>
-        <li><a href="#ohniste">Ohniště</a></li>
-        <li><a href="#detske-hriste">Dětské hřiště</a></li>
-        <li><a href="#klubovna">Klubovna</a></li>
-      </ul>
-    </div>
-  </section>
-
   <!-- SEKCE: detaily aktivit -->
   <section class="sekce" aria-labelledby="aktivity-nadpis">
     <div class="wrap">
@@ -70,10 +55,15 @@
       </div>
 
       <article class="detail" id="bazen">
-        <div class="detail__galerie">
-          <figure><img src="{{IMG}}/2024/11/Bazen_2-1536x1024.jpg" alt="Bazén v areálu Baumat" loading="lazy"></figure>
-          <figure><img src="{{IMG}}/2024/11/Bazen_3-1536x1024.jpg" alt="Posezení u bazénu" loading="lazy"></figure>
-          <figure><img src="{{IMG}}/2024/11/Bazen_mainpage.jpg" alt="Pohled na bazén s okolní přírodou" loading="lazy"></figure>
+        <div class="detail__galerie" data-galerie="Bazén">
+          <figure class="detail__hlavni">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Bazén v areálu Baumat"><img src="{{IMG}}/2024/11/Bazen_2-1536x1024.jpg" alt="Bazén v areálu Baumat" loading="lazy"></button>
+            <span class="lupa">{{i:photo}}3 fotky</span>
+          </figure>
+          <ul class="detail__nahledy">
+            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Posezení u bazénu"><img src="{{IMG}}/2024/11/Bazen_3-1536x1024.jpg" alt="Posezení u bazénu" loading="lazy"></button></li>
+            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Pohled na bazén s okolní přírodou"><img src="{{IMG}}/2024/11/Bazen_mainpage.jpg" alt="Pohled na bazén s okolní přírodou" loading="lazy"></button></li>
+          </ul>
         </div>
         <div class="detail__text">
           <h3>Bazén</h3>
@@ -83,9 +73,14 @@
       </article>
 
       <article class="detail detail--obraceny" id="beach-volejbal">
-        <div class="detail__galerie">
-          <figure><img src="{{IMG}}/2024/11/beach_hl.photo_-1536x1024.jpg" alt="Hřiště na beach volejbal" loading="lazy"></figure>
-          <figure><img src="{{IMG}}/2024/11/Beach-1536x1024.jpg" alt="Písečné hřiště v areálu" loading="lazy"></figure>
+        <div class="detail__galerie" data-galerie="Beach volejbal">
+          <figure class="detail__hlavni">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Hřiště na beach volejbal"><img src="{{IMG}}/2024/11/beach_hl.photo_-1536x1024.jpg" alt="Hřiště na beach volejbal" loading="lazy"></button>
+            <span class="lupa">{{i:photo}}2 fotky</span>
+          </figure>
+          <ul class="detail__nahledy">
+            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Písečné hřiště v areálu"><img src="{{IMG}}/2024/11/Beach-1536x1024.jpg" alt="Písečné hřiště v areálu" loading="lazy"></button></li>
+          </ul>
         </div>
         <div class="detail__text">
           <h3>Beach volejbal</h3>
@@ -94,9 +89,14 @@
       </article>
 
       <article class="detail" id="tenis">
-        <div class="detail__galerie">
-          <figure><img src="{{IMG}}/2024/11/tenis_hl.photo_-1536x1024.jpg" alt="Tenisový kurt v areálu Baumat" loading="lazy"></figure>
-          <figure><img src="{{IMG}}/2024/12/tenis-2-1536x1024.jpg" alt="Pohled na tenisový kurt" loading="lazy"></figure>
+        <div class="detail__galerie" data-galerie="Tenis">
+          <figure class="detail__hlavni">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Tenisový kurt v areálu Baumat"><img src="{{IMG}}/2024/11/tenis_hl.photo_-1536x1024.jpg" alt="Tenisový kurt v areálu Baumat" loading="lazy"></button>
+            <span class="lupa">{{i:photo}}2 fotky</span>
+          </figure>
+          <ul class="detail__nahledy">
+            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Pohled na tenisový kurt"><img src="{{IMG}}/2024/12/tenis-2-1536x1024.jpg" alt="Pohled na tenisový kurt" loading="lazy"></button></li>
+          </ul>
         </div>
         <div class="detail__text">
           <h3>Tenis</h3>
@@ -106,8 +106,11 @@
       </article>
 
       <article class="detail detail--obraceny" id="stolni-tenis">
-        <div class="detail__galerie">
-          <figure><img src="{{IMG}}/2024/11/ping-pong-1536x1024.jpg" alt="Pingpongový stůl" loading="lazy"></figure>
+        <div class="detail__galerie" data-galerie="Stolní tenis">
+          <figure class="detail__hlavni">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Pingpongový stůl"><img src="{{IMG}}/2024/11/ping-pong-1536x1024.jpg" alt="Pingpongový stůl" loading="lazy"></button>
+            <span class="lupa">{{i:photo}}Zvětšit</span>
+          </figure>
         </div>
         <div class="detail__text">
           <h3>Stolní tenis</h3>
@@ -116,10 +119,15 @@
       </article>
 
       <article class="detail" id="ohniste">
-        <div class="detail__galerie">
-          <figure><img src="{{IMG}}/2024/11/Ohniste_1-1536x1024.jpg" alt="Ohniště s posezením na louce" loading="lazy"></figure>
-          <figure><img src="{{IMG}}/2024/11/Ohniste_2-1-1536x1024.jpg" alt="Ohniště v areálu" loading="lazy"></figure>
-          <figure><img src="{{IMG}}/2024/11/Ohniste_3-1-1536x1024.jpg" alt="Večerní posezení u ohně" loading="lazy"></figure>
+        <div class="detail__galerie" data-galerie="Ohniště">
+          <figure class="detail__hlavni">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Ohniště s posezením na louce"><img src="{{IMG}}/2024/11/Ohniste_1-1536x1024.jpg" alt="Ohniště s posezením na louce" loading="lazy"></button>
+            <span class="lupa">{{i:photo}}3 fotky</span>
+          </figure>
+          <ul class="detail__nahledy">
+            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Ohniště v areálu"><img src="{{IMG}}/2024/11/Ohniste_2-1-1536x1024.jpg" alt="Ohniště v areálu" loading="lazy"></button></li>
+            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Večerní posezení u ohně"><img src="{{IMG}}/2024/11/Ohniste_3-1-1536x1024.jpg" alt="Večerní posezení u ohně" loading="lazy"></button></li>
+          </ul>
         </div>
         <div class="detail__text">
           <h3>Ohniště</h3>
@@ -128,9 +136,14 @@
       </article>
 
       <article class="detail detail--obraceny" id="detske-hriste">
-        <div class="detail__galerie">
-          <figure><img src="{{IMG}}/2024/11/Detske-hriste-1536x1024.jpg" alt="Dětské hřiště s houpačkou a skluzavkou" loading="lazy"></figure>
-          <figure><img src="{{IMG}}/2024/11/Detske-hriste_2-1536x1024.jpg" alt="Prolézačka na dětském hřišti" loading="lazy"></figure>
+        <div class="detail__galerie" data-galerie="Dětské hřiště">
+          <figure class="detail__hlavni">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Dětské hřiště s houpačkou a skluzavkou"><img src="{{IMG}}/2024/11/Detske-hriste-1536x1024.jpg" alt="Dětské hřiště s houpačkou a skluzavkou" loading="lazy"></button>
+            <span class="lupa">{{i:photo}}2 fotky</span>
+          </figure>
+          <ul class="detail__nahledy">
+            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Prolézačka na dětském hřišti"><img src="{{IMG}}/2024/11/Detske-hriste_2-1536x1024.jpg" alt="Prolézačka na dětském hřišti" loading="lazy"></button></li>
+          </ul>
         </div>
         <div class="detail__text">
           <h3>Dětské hřiště</h3>
@@ -139,9 +152,14 @@
       </article>
 
       <article class="detail" id="klubovna">
-        <div class="detail__galerie">
-          <figure><img src="{{IMG}}/2024/11/klubovna_hl.photo_-1536x1024.jpg" alt="Klubovna s kulečníkem a krbem" loading="lazy"></figure>
-          <figure><img src="{{IMG}}/2024/11/klubovna_2-1536x1024.jpg" alt="Posezení v klubovně" loading="lazy"></figure>
+        <div class="detail__galerie" data-galerie="Klubovna">
+          <figure class="detail__hlavni">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Klubovna s kulečníkem a krbem"><img src="{{IMG}}/2024/11/klubovna_hl.photo_-1536x1024.jpg" alt="Klubovna s kulečníkem a krbem" loading="lazy"></button>
+            <span class="lupa">{{i:photo}}2 fotky</span>
+          </figure>
+          <ul class="detail__nahledy">
+            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Posezení v klubovně"><img src="{{IMG}}/2024/11/klubovna_2-1536x1024.jpg" alt="Posezení v klubovně" loading="lazy"></button></li>
+          </ul>
         </div>
         <div class="detail__text">
           <h3>Klubovna</h3>

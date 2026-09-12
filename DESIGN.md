@@ -77,10 +77,12 @@ Pravidla:
 |---|---|---|---|
 | Tlačítko | `btn btn--les` / `btn--krem` / `btn--obrys` | hlavní akce (rezervace, termín) | les na světlém, krém na tmavém, obrys jen jako vedlejší na tmavém. Max jedno hlavní tlačítko v sekci |
 | Proklik | `proklik` / `proklik--svetly` | odkaz na podstránku v hlavičce sekce | vždy s šipkou, při najetí se vyplní |
-| Odkazový řádek | `odkazy` + `odkaz-radek` | rozcestník (pro koho, typy akcí) | ikona, H3, jedna věta, šipka v kolečku. Při najetí celý tmavý |
+| Odkazový řádek | `odkazy` + `odkaz-radek` | rozcestník na existující stránky | ikona, H3, jedna věta, šipka v kolečku. Při najetí celý tmavý |
+| Položka | `polozky` + `polozka` | výčet bez odkazů (pro koho je areál) | ikona, H3, jedna věta, řádky oddělené linkami |
+| Karta vybavení | `vybaveni-mrizka` + `vybaveni-karta` | aktivity a vybavení | fotka, pod ní název a věta. Text nikdy přes fotku, aby byl čitelný i na mobilu |
 | Kontaktní řádek | `kontakty` + `kontakt-radek` | telefony, e-maily | řádky oddělené linkami, šipka se objeví při najetí |
 | Karta | `karty` + `karta` | ubytování | fotka 4:5, H3, jedna krátká věta, cena. Celá karta je odkaz. Žádné štítky na fotkách, žádné ikony u textu. Na mobilu vodorovný posun |
-| Dlaždice | `dlazdice` / `dlazdice--velka` | aktivity, fotky s popiskem | text dole přes přechod, jedna věta |
+| Dlaždice | `dlazdice` / `dlazdice--velka` | fotka s popiskem přes spodní část | jen tam, kde je fotka dost tmavá. Na mobilu raději karta s textem pod fotkou |
 | Fakta | `fakta` | krátká čísla (cena, kapacita, vzdálenost, hodnocení) | max 4 položky, jen na tmavém |
 | Citace | `citace` | recenze | jen v panelu s fotkou, hvězdy jen se skutečným hodnocením |
 | Přepínač jazyka | `jazyky` | hlavička | aktivní jazyk `aria-current="true"` |
@@ -92,12 +94,16 @@ Pravidla:
 | Hero | `hero panel na-tmave` | úvod | fotka, H1, perex s dvěma tlačítky, fakta |
 | Text s fotkou a rozcestníkem | `pro-koho` | pro oslavy, svatby... | text asi 42 %, fotka asi 58 % |
 | Karty | `sekce__hlava` + `karty` | kde budete spát | hlavička s proklikem vpravo |
-| Tmavý panel s mozaikou | `panel panel--tmavy panel--sekce na-tmave` + `mozaika` | co v areálu najdete | 6 dlaždic, první velká |
-| Editorial | `sekce sekce--xl` + `areal` | celý areál | `h2-velky`, fotka a velké číslo vedle sebe, asymetrie |
+| Karty vybavení | `vybaveni-mrizka` | co v areálu najdete | 6 karet, fotka a text pod ní |
+| Rozdělený panel | `sekce sekce--xl` + `areal` | celý areál | tmavá polovina s `h2-velky` a velkou cenou, fotka na plnou výšku vedle |
 | Panel s fotkou a citacemi | `recenze panel panel--tmavy panel--sekce` | co píší hosté | fotka ztmavená přechodem |
 | Kontakt a poloha | `kontakt` + `poloha` | naplánujte si pobyt | kontaktní řádky, fakta o poloze, mapa |
 
-Rytmus stránky: střídat světlé sekce a tmavé panely, nikdy dva tmavé panely za sebou. Na stránce max jedna editorial sekce.
+Rytmus stránky: střídat světlé sekce a tmavé plochy. Dvě tmavé plochy smí jít po sobě, jen když se vizuálně liší (plná barva a fotka) a odděluje je velká mezera. Na stránce max jeden `h2-velky`.
+
+Na podstránkách se nepoužívá kotvová navigace pod hero. Kotvy v URL (`#apartman`) zůstávají, aby na ně šlo odkazovat z jiných stránek.
+
+Nedělat odkazy na stránky, které neexistují. Samostatné stránky pro svatby, oslavy, tábory a firemní akce nebudou, tyhle okruhy jsou jen výčtem na homepage.
 
 ## Texty
 
@@ -132,7 +138,8 @@ Rytmus stránky: střídat světlé sekce a tmavé panely, nikdy dva tmavé pane
 | Ceníkový řádek | `cenik-skupina` + `cenik` + `cenik-radek` | položka, popis a cena vpravo |
 | Poznámka | `poznamka` | vysvětlivka pod obsahem, na pískovém podkladu |
 | Osoba | `osoba` | správce areálu: fotka, role, jméno, kontakt |
-| Kalendář | `kalendar` | vložený Google kalendář obsazenosti |
+| Kalendář | `kalendar` | vlastní kalendář obsazenosti, data z `assets/data/obsazenost.json` |
+| Galerie s prohlížečem | `detail__galerie` + `data-galerie` | fotky v detailu | hlavní fotka, náhledy, klik otevře prohlížeč (šipky, Esc) |
 | Výzva | `vyzva` | závěrečná sekce na konci každé podstránky |
 
 Na tmavém panelu (`na-tmave`) mají kontakty, parametry, poznámka i kotvy automaticky světlou variantu.

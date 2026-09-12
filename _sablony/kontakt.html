@@ -59,7 +59,7 @@
       <div class="poloha">
         <!-- ADRESA AREÁLU: doplnit po potvrzení od Baumatu (katalogy uvádějí Heroltice 166 i Heroltice 1). -->
         <ul class="poloha__fakta">
-          <li>{{i:map-pin}}<div><strong>U řeky Svratky</strong><span>osada Šárka u Heroltic</span></div></li>
+          <li>{{i:map-pin}}<div><strong>Heroltice u Tišnova</strong><span>areál přímo u řeky Svratky</span></div></li>
           <li>{{i:car}}<div><strong>25&nbsp;km od Brna</strong><span>směrem na Tišnov</span></div></li>
         </ul>
         <div class="mapa">
@@ -98,8 +98,22 @@
         <a class="proklik" href="tel:+420601594780">Ověřit telefonicky{{i:arrow-right}}</a>
       </div>
       <p class="poznamka">U některých typů, třeba u chatek, je k dispozici více jednotek. I když je termín označený jako částečně obsazený, některé chatky mohou být pořád volné. Rádi vám dostupnost ověříme a pomůžeme s výběrem.</p>
-      <div class="kalendar">
-        <iframe title="Kalendář obsazenosti areálu Baumat Heroltice" src="https://calendar.google.com/calendar/embed?src=571f8ba514f3d1b499869920446275996a3b4b9ff9ac72b68675046544ac7237%40group.calendar.google.com&amp;ctz=Europe%2FPrague&amp;mode=MONTH&amp;showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0" loading="lazy"></iframe>
+      <div class="kalendar" data-kalendar="{{ROOT}}assets/data/obsazenost.json">
+        <div class="kalendar__ovladani">
+          <p class="kalendar__mesic" data-kalendar-mesic aria-live="polite">Kalendář</p>
+          <div class="kalendar__sipky">
+            <button class="kalendar__sipka" type="button" data-kalendar-zpet aria-label="Předchozí měsíc">
+              <svg class="i" aria-hidden="true" style="transform:rotate(180deg)"><use href="#i-arrow-right"/></svg>
+            </button>
+            <button class="kalendar__sipka" type="button" data-kalendar-vpred aria-label="Další měsíc">{{i:arrow-right}}</button>
+          </div>
+        </div>
+        <div class="kalendar__mrizka" data-kalendar-mrizka></div>
+        <ul class="kalendar__legenda">
+          <li><span class="kalendar__vzorek" style="background:rgba(47,74,43,.08)"></span>Volno</li>
+          <li><span class="kalendar__vzorek" style="background:var(--pisek-tmavy)"></span>Částečně obsazeno</li>
+          <li><span class="kalendar__vzorek" style="background:var(--les)"></span>Obsazeno</li>
+        </ul>
       </div>
     </div>
   </section>

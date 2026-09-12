@@ -6,16 +6,26 @@ Statický web Rekreačního areálu Baumat Heroltice. Čisté HTML, CSS a JS bez
 
 ```
 index.html              homepage (CZ)
-ubytovani/ aktivity/ cenik/ kontakt/   podstránky (připravujeme)
+ubytovani/ aktivity/ cenik/ kontakt/   podstránky (CZ)
 en/                     anglická verze (připravujeme)
+_sablony/               zdrojové šablony a sdílené části
+build.py                sestaví HTML ze šablon
 assets/css/style.css    paleta, typografie, layout
 assets/js/main.js       mobilní menu, stav hlavičky
+DESIGN.md               pravidla designu, komponenty, typy sekcí
+styleguide.html         živé ukázky komponent (noindex)
 assets/fonts/           Bricolage Grotesque (woff2, latin + latin-ext, licence OFL)
 ```
 
-## Lokální náhled
+## Úpravy a sestavení
 
-Stačí otevřít `index.html` v prohlížeči, nebo spustit `python3 -m http.server` a jít na http://localhost:8000.
+Obsah se edituje v `_sablony/`, pak stačí spustit:
+
+```
+python3 build.py
+```
+
+Hotové HTML se commituje, hosting nic nebuilduje. Náhled: `python3 -m http.server` a http://localhost:8000.
 
 ## Paleta
 
@@ -30,10 +40,12 @@ Stačí otevřít `index.html` v prohlížeči, nebo spustit `python3 -m http.se
 
 ## Zbývá
 
+- Potvrdit u Baumatu adresu areálu (katalogy uvádějí Heroltice 166 i Heroltice 1) a doplnit ji do kontaktu a JSON-LD.
 - Stáhnout fotky a dokumenty z WordPressu do `assets/img/` a `assets/docs/` a přepsat cesty (teď se odkazují na starý web).
 - Logo jako SVG místo textového loga.
-- Podstránky a EN verze.
-- Recenze přes Google Places API (klíč omezený na doménu).
-- Kalendář obsazenosti na /kontakt/.
+- Anglická verze všech stránek (pozor: v současné EN verzi jsou staré ceny).
+- Samostatné stránky pro svatby, oslavy, tábory a firemní akce (odkazy z homepage zatím nikam nevedou).
+- Recenze přes Google Places API (klíč omezený na doménu). Do té doby odstranit zástupné hvězdy u citací.
+- Kalendář na /kontakt/ je zatím veřejný vložený Google kalendář. S API klíčem od správce udělat vlastní, aby nebyly vidět názvy akcí.
 
 Ikony: Tabler Icons (MIT).

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+{{SPRITE}}
+</svg>
+
+<a class="skip" href="#obsah">Přeskočit na obsah</a>
+
+<header class="hlavicka">
+  <div class="hlavicka__pill">
+    <a class="logo" href="{{ROOT}}" aria-label="Baumat Heroltice, úvodní stránka">Baumat <span>Heroltice</span></a>
+    <nav aria-label="Hlavní menu">
+      <div class="menu" id="menu">
+        <ul class="menu__odkazy">
+          <li><a href="{{ROOT}}ubytovani/"{{A:ubytovani}}>Ubytování</a></li>
+          <li><a href="{{ROOT}}aktivity/"{{A:aktivity}}>Aktivity</a></li>
+          <li><a href="{{ROOT}}cenik/"{{A:cenik}}>Ceník</a></li>
+          <li><a href="{{ROOT}}kontakt/"{{A:kontakt}}>Kontakt</a></li>
+        </ul>
+        <a class="btn btn--krem btn--mobil" href="{{ROOT}}kontakt/#kalendar">Volné termíny</a>
+      </div>
+    </nav>
+    <div class="hlavicka__akce">
+      <div class="jazyky" role="group" aria-label="Jazyk webu">
+        <a href="{{ROOT}}" lang="cs" aria-current="true"><span aria-hidden="true">CZ</span><span class="sr-only">Čeština</span></a>
+        <a href="{{ROOT}}en/" lang="en" hreflang="en"><span aria-hidden="true">EN</span><span class="sr-only">English</span></a>
+      </div>
+      <a class="btn btn--les btn--rezervace" href="{{ROOT}}kontakt/">Rezervovat</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Otevřít menu" data-otevrit="Otevřít menu" data-zavrit="Zavřít menu">
+        {{i:menu-2}}
+      </button>
+    </div>
+  </div>
+</header>

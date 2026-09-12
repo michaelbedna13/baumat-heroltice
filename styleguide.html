@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Styleguide | Baumat Heroltice</title>
+  <link rel="preload" href="assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Jen pro styleguide, na web nepatří */
+    .sg-top { padding: 48px 0 0; }
+    .sg-top h1 { font-size: var(--fs-h2-velky); }
+    .sg-sekce { padding-top: 88px; }
+    .sg-sekce > .wrap > h2 { margin-bottom: 8px; }
+    .sg-pozn { color: var(--uhel-jemny); font-size: var(--fs-maly); max-width: 70ch; margin-bottom: 32px; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .86em; background: rgba(47, 74, 43, .08); padding: 2px 6px; border-radius: 6px; }
+    .na-tmave code { background: rgba(245, 240, 227, .14); }
+    .sg-mrizka { display: grid; gap: 20px; }
+    .sg-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .sg-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .sg-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    @media (max-width: 900px) { .sg-2, .sg-3 { grid-template-columns: 1fr; } .sg-6 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    .sg-barva { font-size: var(--fs-drobny); }
+    .sg-barva div { height: 88px; border-radius: 16px; margin-bottom: 10px; border: 1px solid var(--pisek-tmavy); }
+    .sg-barva strong { display: block; font-size: var(--fs-maly); }
+    .sg-typo { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 16px 32px; align-items: baseline; padding: 20px 0; border-top: 1px solid var(--pisek-tmavy); }
+    .sg-typo > span { font-size: var(--fs-drobny); color: var(--uhel-jemny); }
+    @media (max-width: 700px) { .sg-typo { grid-template-columns: 1fr; gap: 8px; } }
+    .sg-mezera { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 32px; align-items: center; padding: 14px 0; border-top: 1px solid var(--pisek-tmavy); font-size: var(--fs-drobny); }
+    .sg-mezera div { height: 20px; background: var(--les); border-radius: 4px; }
+    .sg-plocha { padding: 32px; border-radius: var(--r-karta); border: 1px dashed var(--pisek-tmavy); display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+    .sg-tmava { background: var(--les); color: var(--krem); border: 0; }
+    .sg-panel { padding: 40px 0; }
+    .sg-foto-panel { min-height: 320px; }
+    .sg-hlavicka { position: relative; z-index: 5; }
+    .sg-hlavicka .hlavicka__pill { width: 100%; max-width: none; }
+  </style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<symbol id="i-swimming" viewBox="0 0 24 24"><path d="M15 9a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M6 11l4 -2l3.5 3l-1.5 2" /><path d="M3 16.75a2.4 2.4 0 0 0 1 .25a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 1 -.25" /></symbol>
+<symbol id="i-ball-volleyball" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 12a8 8 0 0 0 8 4" /><path d="M7.5 13.5a12 12 0 0 0 8.5 6.5" /><path d="M12 12a8 8 0 0 0 -7.464 4.928" /><path d="M12.951 7.353a12 12 0 0 0 -9.88 4.111" /><path d="M12 12a8 8 0 0 0 -.536 -8.928" /><path d="M15.549 15.147a12 12 0 0 0 1.38 -10.611" /></symbol>
+<symbol id="i-ball-tennis" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M6 5.3a9 9 0 0 1 0 13.4" /><path d="M18 5.3a9 9 0 0 0 0 13.4" /></symbol>
+<symbol id="i-ping-pong" viewBox="0 0 24 24"><path d="M12.718 20.713a7.64 7.64 0 0 1 -7.48 -12.755l.72 -.72a7.643 7.643 0 0 1 9.105 -1.283l2.387 -2.345a2.08 2.08 0 0 1 3.057 2.815l-.116 .126l-2.346 2.387a7.644 7.644 0 0 1 -1.052 8.864" /><path d="M11 18a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M9.3 5.3l9.4 9.4" /></symbol>
+<symbol id="i-campfire" viewBox="0 0 24 24"><path d="M4 21l16 -4" /><path d="M20 21l-16 -4" /><path d="M12 15a4 4 0 0 0 4 -4c0 -3 -2 -3 -2 -8c-4 2 -6 5 -6 8a4 4 0 0 0 4 4" /></symbol>
+<symbol id="i-horse-toy" viewBox="0 0 24 24"><path d="M3.5 17.5c5.667 4.667 11.333 4.667 17 0" /><path d="M19 18.5l-2 -8.5l1 -2l2 1l1.5 -1.5l-2.5 -4.5c-5.052 .218 -5.99 3.133 -7 6h-6a3 3 0 0 0 -3 3" /><path d="M5 18.5l2 -9.5" /><path d="M8 20l2 -5h4l2 5" /></symbol>
+<symbol id="i-sofa" viewBox="0 0 24 24"><path d="M4 11a2 2 0 0 1 2 2v1h12v-1a2 2 0 1 1 4 0v5a1 1 0 0 1 -1 1h-18a1 1 0 0 1 -1 -1v-5a2 2 0 0 1 2 -2" /><path d="M4 11v-3a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v3" /><path d="M12 5v9" /></symbol>
+<symbol id="i-tools-kitchen-2" viewBox="0 0 24 24"><path d="M19 3v12h-5c-.023 -3.681 .184 -7.406 5 -12m0 12v6h-1v-3m-10 -14v17m-3 -17v3a3 3 0 1 0 6 0v-3" /></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" /></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" /><path d="M3 7l9 6l9 -6" /></symbol>
+<symbol id="i-calendar-event" viewBox="0 0 24 24"><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2l0 -12" /><path d="M16 3l0 4" /><path d="M8 3l0 4" /><path d="M4 11l16 0" /><path d="M8 15h2v2h-2l0 -2" /></symbol>
+<symbol id="i-brand-instagram" viewBox="0 0 24 24"><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4l0 -8" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></symbol>
+<symbol id="i-menu-2" viewBox="0 0 24 24"><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873l-6.158 -3.245" /></symbol>
+<symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></symbol>
+<symbol id="i-cake" viewBox="0 0 24 24"><path d="M3 20h18v-8a3 3 0 0 0 -3 -3h-12a3 3 0 0 0 -3 3v8" /><path d="M3 14.803c.312 .135 .654 .204 1 .197a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1c.35 .007 .692 -.062 1 -.197" /><path d="M12 4l1.465 1.638a2 2 0 1 1 -3.015 .099l1.55 -1.737" /></symbol>
+<symbol id="i-rings" viewBox="0 0 24 24"><path d="M4 17a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M14 17a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M7 15v-11" /><path d="M17 15v-11" /><path d="M3 4h18" /></symbol>
+<symbol id="i-tent" viewBox="0 0 24 24"><path d="M11 14l4 6h6l-9 -16l-9 16h6l4 -6" /></symbol>
+<symbol id="i-users-group" viewBox="0 0 24 24"><path d="M10 13a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1" /><path d="M15 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M17 10h2a2 2 0 0 1 2 2v1" /><path d="M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M3 13v-1a2 2 0 0 1 2 -2h2" /></symbol>
+<symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0" /></symbol>
+<symbol id="i-car" viewBox="0 0 24 24"><path d="M5 17a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M15 17a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M5 17h-2v-6l2 -5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5" /></symbol>
+<symbol id="i-bed" viewBox="0 0 24 24"><path d="M5 9a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M22 17v-3h-20" /><path d="M2 8v9" /><path d="M12 14h10v-2a3 3 0 0 0 -3 -3h-7v5" /></symbol>
+<symbol id="i-bath" viewBox="0 0 24 24"><path d="M4 12h16a1 1 0 0 1 1 1v3a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-3a1 1 0 0 1 1 -1" /><path d="M6 12v-7a2 2 0 0 1 2 -2h3v2.25" /><path d="M4 21l1 -1.5" /><path d="M20 21l-1 -1.5" /></symbol>
+<symbol id="i-plug" viewBox="0 0 24 24"><path d="M9.785 6l8.215 8.215l-2.054 2.054a5.81 5.81 0 1 1 -8.215 -8.215l2.054 -2.054" /><path d="M4 20l3.5 -3.5" /><path d="M15 4l-3.5 3.5" /><path d="M20 9l-3.5 3.5" /></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M5 7a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><path d="M21 21v-2a4 4 0 0 0 -3 -3.85" /></symbol>
+<symbol id="i-armchair" viewBox="0 0 24 24"><path d="M5 11a2 2 0 0 1 2 2v2h10v-2a2 2 0 1 1 4 0v4a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2" /><path d="M5 11v-5a3 3 0 0 1 3 -3h8a3 3 0 0 1 3 3v5" /><path d="M6 19v2" /><path d="M18 19v2" /></symbol>
+<symbol id="i-door" viewBox="0 0 24 24"><path d="M14 12v.01" /><path d="M3 21h18" /><path d="M6 21v-16a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v16" /></symbol>
+<symbol id="i-lamp" viewBox="0 0 24 24"><path d="M9 20h6" /><path d="M12 20v-8" /><path d="M5 12h14l-4 -8h-6l-4 8" /></symbol>
+<symbol id="i-toilet-paper" viewBox="0 0 24 24"><path d="M3 10a3 7 0 1 0 6 0a3 7 0 1 0 -6 0" /><path d="M21 10c0 -3.866 -1.343 -7 -3 -7" /><path d="M6 3h12" /><path d="M21 10v10l-3 -1l-3 2l-3 -3l-3 2v-10" /><path d="M6 10h.01" /></symbol>
+<symbol id="i-key" viewBox="0 0 24 24"><path d="M16.555 3.843l3.602 3.602a2.877 2.877 0 0 1 0 4.069l-2.643 2.643a2.877 2.877 0 0 1 -4.069 0l-.301 -.301l-6.558 6.558a2 2 0 0 1 -1.239 .578l-.175 .008h-1.172a1 1 0 0 1 -.993 -.883l-.007 -.117v-1.172a2 2 0 0 1 .467 -1.284l.119 -.13l.414 -.414h2v-2h2v-2l2.144 -2.144l-.301 -.301a2.877 2.877 0 0 1 0 -4.069l2.643 -2.643a2.877 2.877 0 0 1 4.069 0" /><path d="M15 9h.01" /></symbol>
+<symbol id="i-info-circle" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 9h.01" /><path d="M11 12h1v4h1" /></symbol>
+<symbol id="i-file-text" viewBox="0 0 24 24"><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2" /><path d="M9 9l1 0" /><path d="M9 13l6 0" /><path d="M9 17l6 0" /></symbol>
+<symbol id="i-tools" viewBox="0 0 24 24"><path d="M3 21h4l13 -13a1.5 1.5 0 0 0 -4 -4l-13 13v4" /><path d="M14.5 5.5l4 4" /><path d="M12 8l-5 -5l-4 4l5 5" /><path d="M7 8l-1.5 1.5" /><path d="M16 12l5 5l-4 4l-5 -5" /><path d="M16 17l-1.5 1.5" /></symbol>
+<symbol id="i-building-store" viewBox="0 0 24 24"><path d="M3 21l18 0" /><path d="M3 7v1a3 3 0 0 0 6 0v-1m0 1a3 3 0 0 0 6 0v-1m0 1a3 3 0 0 0 6 0v-1h-18l2 -4h14l2 4" /><path d="M5 21l0 -10.15" /><path d="M19 21l0 -10.15" /><path d="M9 21v-4a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v4" /></symbol>
+</svg>
+
+<header class="sg-top">
+  <div class="wrap">
+    <p class="perex">Interní stránka, na webu se neodkazuje.</p>
+    <h1>Styleguide</h1>
+    <p class="perex" style="margin-top:18px">Všechny komponenty webu Baumat Heroltice na jednom místě. Pravidla použití jsou v <code>DESIGN.md</code>.</p>
+  </div>
+</header>
+
+<main>
+
+  <section class="sg-sekce">
+    <div class="wrap">
+      <h2>Barvy</h2>
+      <p class="sg-pozn">Na stránce jsou vidět jen les, krém a uhel. Písek jen pro linky a podklady. Mech a Ohniště v záloze.</p>
+      <div class="sg-mrizka sg-6">
+        <div class="sg-barva"><div style="background:#2F4A2B"></div><strong>Les</strong><code>--les</code> #2F4A2B</div>
+        <div class="sg-barva"><div style="background:#F5F0E3"></div><strong>Krém</strong><code>--krem</code> #F5F0E3</div>
+        <div class="sg-barva"><div style="background:#1F2A1D"></div><strong>Uhel</strong><code>--uhel</code> #1F2A1D</div>
+        <div class="sg-barva"><div style="background:#46523F"></div><strong>Uhel jemný</strong><code>--uhel-jemny</code> #46523F</div>
+        <div class="sg-barva"><div style="background:#E8DFC9"></div><strong>Písek</strong><code>--pisek</code> #E8DFC9</div>
+        <div class="sg-barva"><div style="background:#D9CDB0"></div><strong>Písek tmavý</strong><code>--pisek-tmavy</code> #D9CDB0</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sg-sekce">
+    <div class="wrap">
+      <h2>Typografie</h2>
+      <p class="sg-pozn">Bricolage Grotesque, normální šířka. Nadpisy větou, žádné verzálky.</p>
+      <div class="sg-typo"><span>H1 · <code>--fs-hero</code></span><p style="font-size:var(--fs-hero);font-weight:650;line-height:.96;letter-spacing:-0.03em">Rekreační areál</p></div>
+      <div class="sg-typo"><span>H2 velký · <code>h2-velky</code></span><h2 class="h2-velky">Celý areál jen pro vás</h2></div>
+      <div class="sg-typo"><span>H2 · <code>--fs-h2</code></span><h2>Kde budete spát</h2></div>
+      <div class="sg-typo"><span>H3 · <code>--fs-h3</code></span><h3>Chatky u hlavní brány</h3></div>
+      <div class="sg-typo"><span>Cena · <code>cena</code></span><p class="cena"><strong>290&nbsp;Kč</strong><span>za lůžko na noc</span></p></div>
+      <div class="sg-typo"><span>Perex · <code>perex</code></span><p class="perex">Od apartmánu s vlastní koupelnou po jednoduché chatky blíž přírodě. Ceny platí při pobytu od dvou nocí.</p></div>
+      <div class="sg-typo"><span>Text · 17 px</span><p>Žádní další hosté. Ubytování, hřiště, klubovna i velká kuchyně jsou jen vaše.</p></div>
+      <div class="sg-typo"><span>Malý · 15 px</span><p style="font-size:var(--fs-maly)">Ubytování, prostor pro oslavu a aktivity pro malé i velké.</p></div>
+      <div class="sg-typo"><span>Drobný · 14 px</span><p style="font-size:var(--fs-drobny);color:var(--uhel-jemny)">Google, červen 2023</p></div>
+    </div>
+  </section>
+
+  <section class="sg-sekce">
+    <div class="wrap">
+      <h2>Mezery</h2>
+      <p class="sg-pozn">S související prvky, M nadpis a obsah, L mezi sekcemi, XL jen před hlavním argumentem.</p>
+      <div class="sg-mezera"><span><code>--mezera-s</code> 16 až 24 px</span><div style="width:var(--mezera-s)"></div></div>
+      <div class="sg-mezera"><span><code>--mezera-m</code> 32 až 52 px</span><div style="width:var(--mezera-m)"></div></div>
+      <div class="sg-mezera"><span><code>--mezera-l</code> 88 až 144 px</span><div style="width:var(--mezera-l)"></div></div>
+      <div class="sg-mezera"><span><code>--mezera-xl</code> 120 až 224 px</span><div style="width:var(--mezera-xl)"></div></div>
+    </div>
+  </section>
+
+  <section class="sg-sekce">
+    <div class="wrap">
+      <h2>Tlačítka a prokliky</h2>
+      <p class="sg-pozn">Najeď myší. Max jedno hlavní tlačítko a jeden proklik v sekci.</p>
+      <div class="sg-mrizka sg-2">
+        <div class="sg-plocha">
+          <a class="btn btn--les" href="#"><svg class="i" aria-hidden="true"><use href="#i-calendar-event"/></svg>Volné termíny</a>
+          <a class="proklik" href="#">Všechno ubytování<svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          <p style="width:100%;font-size:var(--fs-drobny);color:var(--uhel-jemny)"><code>btn btn--les</code> · <code>proklik</code></p>
+        </div>
+        <div class="sg-plocha sg-tmava na-tmave">
+          <a class="btn btn--krem" href="#"><svg class="i" aria-hidden="true"><use href="#i-calendar-event"/></svg>Volné termíny</a>
+          <a class="btn btn--obrys" href="#"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>601&nbsp;594&nbsp;780</a>
+          <a class="proklik proklik--svetly" href="#">Všechny aktivity<svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          <p style="width:100%;font-size:var(--fs-drobny);color:var(--krem-jemny)"><code>btn--krem</code> · <code>btn--obrys</code> · <code>proklik--svetly</code></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sg-sekce">
+    <div class="wrap">
+      <h2>Hlavička a přepínač jazyka</h2>
+      <p class="sg-pozn">Na webu je hlavička pevně nahoře ve skle. <code>hlavicka</code> · <code>jazyky</code></p>
+      <div class="sg-hlavicka">
+        <div class="hlavicka__pill">
+          <a class="logo" href="#">Baumat <span>Heroltice</span></a>
+          <nav aria-label="Ukázka menu">
+            <div class="menu" id="menu">
+              <ul class="menu__odkazy"><li><a href="#">Ubytování</a></li><li><a href="#">Aktivity</a></li><li><a href="#">Ceník</a></li><li><a href="#">Kontakt</a></li></ul>
+              <a class="btn btn--krem btn--mobil" href="#">Volné termíny</a>
+            </div>
+          </nav>
+          <div class="hlavicka__akce">
+            <div class="jazyky" role="group" aria-label="Jazyk webu"><a href="#" aria-current="true">CZ</a><a href="#">EN</a></div>
+            <a class="btn btn--les btn--rezervace" href="#">Rezervovat</a>
+            <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Otevřít menu" data-otevrit="Otevřít menu" data-zavrit="Zavřít menu"><svg class="i" aria-hidden="true"><use href="#i-menu-2"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sg-sekce">
+    <div class="wrap">
+      <h2>Odkazové a kontaktní řádky</h2>
+      <p class="sg-pozn"><code>odkazy</code> + <code>odkaz-radek</code> pro rozcestník, <code>kontakty</code> + <code>kontakt-radek</code> pro telefony a e-maily.</p>
+      <div class="sg-mrizka sg-2">
+        <ul class="odkazy">
+          <li><a class="odkaz-radek" href="#"><svg class="i" aria-hidden="true"><use href="#i-rings"/></svg><div><h3>Svatby</h3><p>Klidné prostředí v přírodě a pomoc s přípravou celého dne.</p></div><span class="odkaz-radek__sipka"><svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></li>
+          <li><a class="odkaz-radek" href="#"><svg class="i" aria-hidden="true"><use href="#i-tent"/></svg><div><h3>Dětské tábory</h3><p>Bezpečné zázemí pro děti všech věků a léto plné her.</p></div><span class="odkaz-radek__sipka"><svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></li>
+        </ul>
+        <ul class="kontakty">
+          <li><a class="kontakt-radek" href="#"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><span class="kontakt-radek__hodnota">+420 601 594 780</span><svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+          <li><a class="kontakt-radek" href="#"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg><span class="kontakt-radek__hodnota">drahosova@baumat-brno.cz</span><svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sg-sekce">
+    <div class="wrap">
+      <h2>Karty</h2>
+      <p class="sg-pozn"><code>karty</code> + <code>karta</code>. Fotka, H3, jedna krátká věta, cena. Žádné štítky ani ikony.</p>
+      <ul class="karty">
+        <li class="karta">
+          <div class="karta__foto"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/apartman_na-vysku.jpg" alt="Apartmán" loading="lazy"></div>
+          <div class="karta__telo"><h3><a class="karta__odkaz" href="#">Apartmán</a></h3><p class="karta__popis">6 lůžek, vlastní koupelna a kuchyňka</p><p class="cena"><strong>290&nbsp;Kč</strong><span>za lůžko na noc</span></p></div>
+        </li>
+        <li class="karta">
+          <div class="karta__foto"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/chatky_na-vysku.jpg" alt="Chatky" loading="lazy"></div>
+          <div class="karta__telo"><h3><a class="karta__odkaz" href="#">Chatky klasické</a></h3><p class="karta__popis">3 až 4 lůžka, jednoduché vybavení</p><p class="cena"><strong>180&nbsp;Kč</strong><span>za lůžko na noc</span></p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sg-sekce">
+    <div class="wrap">
+      <h2>Dlaždice</h2>
+      <p class="sg-pozn"><code>dlazdice</code> a <code>dlazdice--velka</code>. Fotka s popiskem dole.</p>
+      <div class="sg-mrizka sg-2">
+        <a class="dlazdice dlazdice--velka" href="#" style="aspect-ratio:4/3"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Bazen_2-1536x1024.jpg" alt="" loading="lazy"><div class="dlazdice__popis"><h3>Bazén</h3><p>Plavání i odpočinek u čisté vody.</p></div></a>
+        <a class="dlazdice" href="#" style="aspect-ratio:4/3"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Detske-hriste-1536x1024.jpg" alt="" loading="lazy"><div class="dlazdice__popis"><h3>Dětské hřiště</h3><p>Houpačka a skluzavka.</p></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sg-sekce">
+    <div class="wrap">
+      <h2>Fakta a citace</h2>
+      <p class="sg-pozn"><code>fakta</code> jen na tmavém, max 4 položky. <code>citace</code> jen v panelu s fotkou, jediné sklo mimo hlavičku.</p>
+    </div>
+    <div class="panel panel--tmavy na-tmave sg-panel">
+      <div class="wrap">
+        <ul class="fakta">
+          <li><strong>od 180&nbsp;Kč</strong><span>za lůžko na noc</span></li>
+          <li><strong>až 100 hostů</strong><span>v jídelně pro vaši akci</span></li>
+          <li><strong>25&nbsp;km od Brna</strong><span>v údolí řeky Svratky</span></li>
+          <li><strong>4,5 <svg class="i" aria-hidden="true"><use href="#i-star"/></svg></strong><span>77 recenzí na Google</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="recenze panel panel--tmavy na-tmave sg-panel sg-foto-panel" style="margin-top:20px">
+      <img class="recenze__foto" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/areal-2.jpg" alt="" loading="lazy">
+      <div class="wrap">
+        <div class="recenze__mrizka">
+          <figure class="citace"><div class="citace__hvezdy" role="img" aria-label="Hodnocení 5 z 5"><svg class="i" aria-hidden="true"><use href="#i-star"/></svg><svg class="i" aria-hidden="true"><use href="#i-star"/></svg><svg class="i" aria-hidden="true"><use href="#i-star"/></svg><svg class="i" aria-hidden="true"><use href="#i-star"/></svg><svg class="i" aria-hidden="true"><use href="#i-star"/></svg></div><blockquote><p>Vynikající místo na sport.</p></blockquote><figcaption><strong>Jméno hosta</strong>Google, měsíc a rok</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sg-sekce">
+    <div class="wrap">
+      <h2>Typy sekcí</h2>
+      <p class="sg-pozn">Hero, text s fotkou a rozcestníkem, karty, tmavý panel s mozaikou, editorial, panel s fotkou a citacemi, kontakt a poloha. Živě je všechny ukazuje <a href="index.html">homepage</a>, pravidla rytmu jsou v <code>DESIGN.md</code>.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="paticka"><div class="wrap"><div class="paticka__spodni"><span>Styleguide Baumat Heroltice</span><a href="index.html">Zpět na web</a></div></div></footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

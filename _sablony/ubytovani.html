@@ -29,7 +29,7 @@
 
   <!-- SEKCE: hero podstránky -->
   <section class="hero hero--podstranka panel na-tmave" aria-labelledby="hero-nadpis">
-    <div class="hero__foto">
+    <div class="hero__foto foto">
       <img src="{{IMG}}/2024/11/Chatky_hl-foto-1-1536x1024.jpg" alt="Dřevěné chatky v rekreačním areálu Baumat" fetchpriority="high">
     </div>
     <div class="hero__obsah">
@@ -43,222 +43,212 @@
     </div>
   </section>
 
-  <!-- SEKCE: detaily ubytování -->
-  <section class="sekce" aria-labelledby="typy-nadpis">
+  <!-- SEKCE: přehled typů -->
+  <section class="sekce" aria-labelledby="prehled-nadpis">
     <div class="wrap">
       <div class="sekce__hlava">
         <div class="sekce__uvod">
-          <h2 id="typy-nadpis">Čtyři typy ubytování</h2>
+          <h2 id="prehled-nadpis">Čtyři typy ubytování</h2>
           <p class="perex">Ceny platí za lůžko na noc při pobytu od dvou nocí. Za jednu noc je cena vyšší, celý přehled je v ceníku.</p>
         </div>
         <a class="proklik" href="{{ROOT}}cenik/">Ceník 2026{{i:arrow-right}}</a>
       </div>
+      <ul class="prehled">
+        <li>
+          <a class="prehled__odkaz" href="#apartman">
+            <span class="prehled__foto foto"><img src="{{IMG}}/2024/11/Apartman_hl-foto-1536x1024.jpg" alt="" loading="lazy"></span>
+            <span><span class="prehled__nazev">Apartmán</span><span class="prehled__meta">6 lůžek · od 290&nbsp;Kč</span></span>
+          </a>
+        </li>
+        <li>
+          <a class="prehled__odkaz" href="#slusovice-bunky">
+            <span class="prehled__foto foto"><img src="{{IMG}}/2024/11/Bunky-slusovice_hl-foto-1-1536x1024.jpg" alt="" loading="lazy"></span>
+            <span><span class="prehled__nazev">Slušovice a buňky</span><span class="prehled__meta">12 lůžek · od 220&nbsp;Kč</span></span>
+          </a>
+        </li>
+        <li>
+          <a class="prehled__odkaz" href="#chatky-klasicke">
+            <span class="prehled__foto foto"><img src="{{IMG}}/2024/11/Chatky_hl-foto-1-1536x1024.jpg" alt="" loading="lazy"></span>
+            <span><span class="prehled__nazev">Chatky klasické</span><span class="prehled__meta">24 chatek · od 180&nbsp;Kč</span></span>
+          </a>
+        </li>
+        <li>
+          <a class="prehled__odkaz" href="#chatky-u-hlavni-brany">
+            <span class="prehled__foto foto"><img src="{{IMG}}/2024/11/chatky-u-hl-brany-_hl-foto-1-1536x1024.jpg" alt="" loading="lazy"></span>
+            <span><span class="prehled__nazev">Chatky u hlavní brány</span><span class="prehled__meta">2 lůžka v pokoji · od 180&nbsp;Kč</span></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
 
-      <article class="detail" id="apartman">
-        <div class="detail__galerie" data-galerie="Apartmán">
-          <figure class="detail__hlavni">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Apartmán v areálu Baumat"><img src="{{IMG}}/2024/11/Apartman_hl-foto-1536x1024.jpg" alt="Apartmán v areálu Baumat" loading="lazy"></button>
-            <span class="lupa">{{i:photo}}3 fotky</span>
-          </figure>
-          <ul class="detail__nahledy">
-            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Pokoj v apartmánu se dvěma lůžky"><img src="{{IMG}}/2024/11/Apartman_4-1536x1024.jpg" alt="Pokoj v apartmánu se dvěma lůžky" loading="lazy"></button></li>
-            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Kuchyně v apartmánu"><img src="{{IMG}}/2024/11/Apartman_3-1536x1024.jpg" alt="Kuchyně v apartmánu" loading="lazy"></button></li>
-          </ul>
-        </div>
-        <div class="detail__text">
+  <!-- SEKCE: jednotlivé typy -->
+  <section class="sekce" aria-labelledby="typy-nadpis">
+    <div class="wrap">
+      <h2 class="sr-only" id="typy-nadpis">Podrobnosti o ubytování</h2>
+
+      <article class="typ" id="apartman">
+        <div class="typ__hlava">
+          <p class="typ__cislo">01</p>
           <h3>Apartmán</h3>
-          <p class="perex">Nejpohodlnější ubytování v areálu. Vlastní koupelna i kuchyně, takže nikam nemusíte.</p>
-          <ul class="parametry">
+          <p class="typ__cena"><strong>290&nbsp;Kč</strong><span>za lůžko na noc</span></p>
+        </div>
+        <div class="typ__galerie" data-galerie="Apartmán">
+          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: apartmán zvenku"><img src="{{IMG}}/2024/11/Apartman_hl-foto-1536x1024.jpg" alt="Apartmán v areálu Baumat" loading="lazy"></button><span class="lupa">{{i:photo}}3 fotky</span></figure>
+          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: pokoj v apartmánu"><img src="{{IMG}}/2024/11/Apartman_4-1536x1024.jpg" alt="Pokoj v apartmánu se dvěma lůžky" loading="lazy"></button></figure>
+          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: kuchyně v apartmánu"><img src="{{IMG}}/2024/11/Apartman_3-1536x1024.jpg" alt="Kuchyně v apartmánu" loading="lazy"></button></figure>
+        </div>
+        <div class="typ__telo">
+          <div>
+            <p class="perex">Nejpohodlnější ubytování v areálu. Vlastní koupelna i kuchyně, takže nikam nemusíte.</p>
+            <p class="typ__poznamka">Při pobytu na jednu noc 380&nbsp;Kč.</p>
+            <a class="btn btn--les" href="{{ROOT}}kontakt/">Zeptat se na termín</a>
+          </div>
+          <ul class="typ__parametry">
             <li>{{i:bed}}3 samostatné pokoje, každý se dvěma oddělenými lůžky</li>
             <li>{{i:bath}}Vlastní sociální zařízení se sprchou a toaletou</li>
             <li>{{i:tools-kitchen-2}}Samostatná kuchyně s ledničkou, mikrovlnnou troubou a konvicí</li>
             <li>{{i:plug}}Zásuvky a lampičky pro večerní čtení v každém pokoji</li>
             <li>{{i:door}}Šatní skříň v každém pokoji</li>
           </ul>
-          <p class="cena"><strong>290&nbsp;Kč</strong><span>za lůžko na noc</span></p>
-          <p class="detail__poznamka">Při pobytu na jednu noc 380&nbsp;Kč.</p>
-          <a class="btn btn--les" href="{{ROOT}}kontakt/">Zeptat se na termín</a>
         </div>
       </article>
 
-      <article class="detail detail--obraceny" id="slusovice-bunky">
-        <div class="detail__galerie" data-galerie="Slušovice a buňky">
-          <figure class="detail__hlavni">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Ubytovací buňky Slušovice s verandou"><img src="{{IMG}}/2024/11/Bunky-slusovice_hl-foto-1-1536x1024.jpg" alt="Ubytovací buňky Slušovice s verandou" loading="lazy"></button>
-            <span class="lupa">{{i:photo}}3 fotky</span>
-          </figure>
-          <ul class="detail__nahledy">
-            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Interiér buňky se třemi lůžky"><img src="{{IMG}}/2024/11/Bunky-slusovice_2-1536x1024.jpg" alt="Interiér buňky se třemi lůžky" loading="lazy"></button></li>
-            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Sociální zařízení u buněk Slušovice"><img src="{{IMG}}/2024/11/Slusovice_socialn-1536x1024.jpg" alt="Sociální zařízení u buněk Slušovice" loading="lazy"></button></li>
-          </ul>
-        </div>
-        <div class="detail__text">
+      <article class="typ typ--obraceny" id="slusovice-bunky">
+        <div class="typ__hlava">
+          <p class="typ__cislo">02</p>
           <h3>Slušovice a buňky</h3>
-          <p class="perex">Samostatné jednotky s verandou pro menší skupiny. Sociální zařízení je hned vedle.</p>
-          <ul class="parametry">
-            <li>{{i:bed}}4 samostatné buňky, každá se třemi oddělenými lůžky (nejsou manželská)</li>
-            <li>{{i:bath}}Sociální zařízení se sprchou a toaletou hned vedle pokojů</li>
+          <p class="typ__cena"><strong>220&nbsp;Kč</strong><span>za lůžko na noc</span></p>
+        </div>
+        <div class="typ__galerie" data-galerie="Slušovice a buňky">
+          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: buňky s verandou"><img src="{{IMG}}/2024/11/Bunky-slusovice_hl-foto-1-1536x1024.jpg" alt="Ubytovací buňky Slušovice s verandou" loading="lazy"></button><span class="lupa">{{i:photo}}3 fotky</span></figure>
+          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: interiér buňky"><img src="{{IMG}}/2024/11/Bunky-slusovice_2-1536x1024.jpg" alt="Interiér buňky se třemi lůžky" loading="lazy"></button></figure>
+          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: sociální zařízení"><img src="{{IMG}}/2024/11/Slusovice_socialn-1536x1024.jpg" alt="Sociální zařízení u buněk Slušovice" loading="lazy"></button></figure>
+        </div>
+        <div class="typ__telo">
+          <div>
+            <p class="perex">Samostatné jednotky s verandou pro menší skupiny. Sociální zařízení je hned vedle.</p>
+            <p class="typ__poznamka">Při pobytu na jednu noc 280&nbsp;Kč.</p>
+            <a class="btn btn--les" href="{{ROOT}}kontakt/">Zeptat se na termín</a>
+          </div>
+          <ul class="typ__parametry">
+            <li>{{i:bed}}4 samostatné buňky, každá se třemi oddělenými lůžky</li>
+            <li>{{i:bath}}Sprcha a toaleta hned vedle pokojů</li>
             <li>{{i:armchair}}Venkovní posezení na verandách</li>
             <li>{{i:plug}}Zásuvky, lampičky, stůl se židlí a skříň na oblečení</li>
             <li>{{i:info-circle}}Malá lednička za příplatek</li>
           </ul>
-          <p class="cena"><strong>220&nbsp;Kč</strong><span>za lůžko na noc</span></p>
-          <p class="detail__poznamka">Při pobytu na jednu noc 280&nbsp;Kč.</p>
-          <a class="btn btn--les" href="{{ROOT}}kontakt/">Zeptat se na termín</a>
         </div>
       </article>
 
-      <article class="detail" id="chatky-klasicke">
-        <div class="detail__galerie" data-galerie="Chatky klasické">
-          <figure class="detail__hlavni">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Řada dřevěných chatek na louce"><img src="{{IMG}}/2024/11/Chatky_hl-foto-1-1536x1024.jpg" alt="Řada dřevěných chatek na louce" loading="lazy"></button>
-            <span class="lupa">{{i:photo}}3 fotky</span>
-          </figure>
-          <ul class="detail__nahledy">
-            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Chatka zvenku"><img src="{{IMG}}/2024/11/Chatky_2-1536x1024.jpg" alt="Chatka zvenku" loading="lazy"></button></li>
-            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Interiér chatky s postelemi"><img src="{{IMG}}/2024/11/Chatky_3-1536x1024.jpg" alt="Interiér chatky s postelemi" loading="lazy"></button></li>
-          </ul>
-        </div>
-        <div class="detail__text">
+      <article class="typ" id="chatky-klasicke">
+        <div class="typ__hlava">
+          <p class="typ__cislo">03</p>
           <h3>Chatky klasické</h3>
-          <p class="perex">Jednoduché ubytování blíž přírodě. Nejčastější volba pro tábory a velké skupiny.</p>
-          <ul class="parametry">
+          <p class="typ__cena"><strong>180&nbsp;Kč</strong><span>za lůžko na noc</span></p>
+        </div>
+        <div class="typ__galerie" data-galerie="Chatky klasické">
+          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: řada chatek"><img src="{{IMG}}/2024/11/Chatky_hl-foto-1-1536x1024.jpg" alt="Řada dřevěných chatek na louce" loading="lazy"></button><span class="lupa">{{i:photo}}3 fotky</span></figure>
+          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: chatka zvenku"><img src="{{IMG}}/2024/11/Chatky_2-1536x1024.jpg" alt="Chatka zvenku" loading="lazy"></button></figure>
+          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: interiér chatky"><img src="{{IMG}}/2024/11/Chatky_3-1536x1024.jpg" alt="Interiér chatky s postelemi" loading="lazy"></button></figure>
+        </div>
+        <div class="typ__telo">
+          <div>
+            <p class="perex">Jednoduché ubytování blíž přírodě. Nejčastější volba pro tábory a velké skupiny.</p>
+            <p class="typ__poznamka">Při pobytu na jednu noc 220&nbsp;Kč.</p>
+            <a class="btn btn--les" href="{{ROOT}}kontakt/">Zeptat se na termín</a>
+          </div>
+          <ul class="typ__parametry">
             <li>{{i:bed}}Chatky 1 až 4 mají tři samostatná lůžka</li>
             <li>{{i:bed}}Chatky 5 až 24 mají dvě patrové postele, tedy 4 lůžka</li>
             <li>{{i:door}}Dvě skříňky na oblečení, stůl a židle</li>
             <li>{{i:info-circle}}Chatky nejsou vybaveny zásuvkami</li>
             <li>{{i:bath}}Sociální zázemí je společné, v hlavní budově</li>
           </ul>
-          <p class="cena"><strong>180&nbsp;Kč</strong><span>za lůžko na noc</span></p>
-          <p class="detail__poznamka">Při pobytu na jednu noc 220&nbsp;Kč.</p>
-          <a class="btn btn--les" href="{{ROOT}}kontakt/">Zeptat se na termín</a>
         </div>
       </article>
 
-      <article class="detail detail--obraceny" id="chatky-u-hlavni-brany">
-        <div class="detail__galerie" data-galerie="Chatky u hlavní brány">
-          <figure class="detail__hlavni">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Chatky u hlavní brány areálu"><img src="{{IMG}}/2024/11/chatky-u-hl-brany-_hl-foto-1-1536x1024.jpg" alt="Chatky u hlavní brány areálu" loading="lazy"></button>
-            <span class="lupa">{{i:photo}}3 fotky</span>
-          </figure>
-          <ul class="detail__nahledy">
-            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Pokoj v chatce u hlavní brány"><img src="{{IMG}}/2024/11/chatky-u-hl-brany-_2-1-1536x1024.jpg" alt="Pokoj v chatce u hlavní brány" loading="lazy"></button></li>
-            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Vybavení pokoje se stolem a židlí"><img src="{{IMG}}/2024/11/chatky-u-hl-brany-_3-1-1536x1024.jpg" alt="Vybavení pokoje se stolem a židlí" loading="lazy"></button></li>
-          </ul>
-        </div>
-        <div class="detail__text">
+      <article class="typ typ--obraceny" id="chatky-u-hlavni-brany">
+        <div class="typ__hlava">
+          <p class="typ__cislo">04</p>
           <h3>Chatky u hlavní brány</h3>
-          <p class="perex">Klidné dvoulůžkové pokoje se stolem a zásuvkami, kde se dá i pracovat.</p>
-          <ul class="parametry">
+          <p class="typ__cena"><strong>180&nbsp;Kč</strong><span>za lůžko na noc</span></p>
+        </div>
+        <div class="typ__galerie" data-galerie="Chatky u hlavní brány">
+          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: chatky u hlavní brány"><img src="{{IMG}}/2024/11/chatky-u-hl-brany-_hl-foto-1-1536x1024.jpg" alt="Chatky u hlavní brány areálu" loading="lazy"></button><span class="lupa">{{i:photo}}3 fotky</span></figure>
+          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: pokoj v chatce"><img src="{{IMG}}/2024/11/chatky-u-hl-brany-_2-1-1536x1024.jpg" alt="Pokoj v chatce u hlavní brány" loading="lazy"></button></figure>
+          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: vybavení pokoje"><img src="{{IMG}}/2024/11/chatky-u-hl-brany-_3-1-1536x1024.jpg" alt="Vybavení pokoje se stolem a židlí" loading="lazy"></button></figure>
+        </div>
+        <div class="typ__telo">
+          <div>
+            <p class="perex">Klidné dvoulůžkové pokoje se stolem a zásuvkami, kde se dá i pracovat.</p>
+            <p class="typ__poznamka">Při pobytu na jednu noc 220&nbsp;Kč.</p>
+            <a class="btn btn--les" href="{{ROOT}}kontakt/">Zeptat se na termín</a>
+          </div>
+          <ul class="typ__parametry">
             <li>{{i:bed}}Pokoj se dvěma samostatnými lůžky</li>
             <li>{{i:door}}Šatní skříň, stůl a židle</li>
             <li>{{i:plug}}Lampička a dostatek zásuvek</li>
             <li>{{i:bath}}Sociální zázemí je společné, v hlavní budově</li>
           </ul>
-          <p class="cena"><strong>180&nbsp;Kč</strong><span>za lůžko na noc</span></p>
-          <p class="detail__poznamka">Při pobytu na jednu noc 220&nbsp;Kč.</p>
-          <a class="btn btn--les" href="{{ROOT}}kontakt/">Zeptat se na termín</a>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- SEKCE: tmavý panel se zázemím -->
-  <section class="panel panel--tmavy panel--sekce na-tmave" id="zazemi" aria-labelledby="zazemi-nadpis">
+  <!-- SEKCE: zázemí -->
+  <section class="sekce sekce--xl" id="zazemi" aria-labelledby="zazemi-nadpis">
     <div class="wrap">
       <div class="sekce__hlava">
         <div class="sekce__uvod">
           <h2 id="zazemi-nadpis">Zázemí pro celou skupinu</h2>
           <p class="perex">Nevaříme, ale kuchyni i jídelnu si můžete pronajmout a uvařit si sami.</p>
         </div>
-        <a class="proklik proklik--svetly" href="{{ROOT}}cenik/#prostory">Ceny pronájmu{{i:arrow-right}}</a>
+        <a class="proklik" href="{{ROOT}}cenik/#prostory">Ceny pronájmu{{i:arrow-right}}</a>
       </div>
-      <ul class="mozaika">
-        <li><a class="dlazdice dlazdice--velka" href="#kuchyne-jidelna"><img src="{{IMG}}/2024/11/Kuchyne-a-jidelna_1-1536x1024.jpg" alt="" loading="lazy"><div class="dlazdice__popis"><h3>Kuchyně a jídelna</h3><p>Profesionální vybavení a jídelna až pro 100 hostů.</p></div></a></li>
-        <li><a class="dlazdice" href="#kuchynky"><img src="{{IMG}}/2024/11/kuchynka_hl.photo_-1536x1024.jpg" alt="" loading="lazy"><div class="dlazdice__popis"><h3>Kuchyňky</h3><p>Menší kuchyně se stolem až pro 15 lidí.</p></div></a></li>
-        <li><a class="dlazdice" href="#socialni-zarizeni"><img src="{{IMG}}/2024/11/Hl.socialky_1-1536x1024.jpg" alt="" loading="lazy"><div class="dlazdice__popis"><h3>Hlavní sociální zařízení</h3><p>Sprchy, umyvadla a toalety pro velké skupiny.</p></div></a></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- SEKCE: detaily zázemí -->
-  <section class="sekce" aria-labelledby="zazemi-detail-nadpis">
-    <div class="wrap">
-      <h2 class="sr-only" id="zazemi-detail-nadpis">Podrobnosti o zázemí</h2>
-
-      <article class="detail" id="kuchyne-jidelna">
-        <div class="detail__galerie" data-galerie="Kuchyně a jídelna">
-          <figure class="detail__hlavni">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Profesionální kuchyně v areálu Baumat"><img src="{{IMG}}/2024/11/Kuchyne-a-jidelna_1-1536x1024.jpg" alt="Profesionální kuchyně v areálu Baumat" loading="lazy"></button>
+      <ul class="aktivity">
+        <li class="aktivita aktivita--velka" id="kuchyne-jidelna">
+          <div class="aktivita__foto foto" data-galerie="Kuchyně a jídelna">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotky kuchyně a jídelny"><img src="{{IMG}}/2024/11/Kuchyne-a-jidelna_1-1536x1024.jpg" alt="Profesionální kuchyně v areálu Baumat" loading="lazy"></button>
+            <img class="skryta-fotka" src="{{IMG}}/2024/11/Kuchyne-a-jidelna_2-1536x1024.jpg" alt="Jídelna s dřevěnými stoly" loading="lazy">
+            <img class="skryta-fotka" src="{{IMG}}/2024/11/Kuchyne-a-jidelna_3-1536x1024.jpg" alt="Vybavení kuchyně" loading="lazy">
             <span class="lupa">{{i:photo}}3 fotky</span>
-          </figure>
-          <ul class="detail__nahledy">
-            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Jídelna s dřevěnými stoly"><img src="{{IMG}}/2024/11/Kuchyne-a-jidelna_2-1536x1024.jpg" alt="Jídelna s dřevěnými stoly" loading="lazy"></button></li>
-            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Vybavení kuchyně"><img src="{{IMG}}/2024/11/Kuchyne-a-jidelna_3-1536x1024.jpg" alt="Vybavení kuchyně" loading="lazy"></button></li>
-          </ul>
-        </div>
-        <div class="detail__text">
+          </div>
           <h3>Kuchyně a jídelna</h3>
-          <p class="perex">Profesionální kuchyně pro tábory, svatby i firemní akce. Jídelna pojme až 100 hostů.</p>
-          <ul class="parametry">
-            <li>{{i:tools}}Konvektomat, profi myčka, dvě plynové stojky, velká elektrická pánev s ručním zdvihem</li>
-            <li>{{i:tools-kitchen-2}}Kuchyňský robot, plynový sporák, dva nerezové stoly</li>
-            <li>{{i:info-circle}}Dvě velké lednice a dva samostatné mrazáky</li>
-            <li>{{i:tools-kitchen-2}}Kompletní nádobí: hrnce, plechy, tácy, sklenice a příbory</li>
-            <li>{{i:info-circle}}Pračka přímo v kuchyni</li>
+          <p>Profesionální kuchyně pro tábory, svatby i firemní akce. Jídelna pojme až 100 hostů. Jídlo si připravíte sami nebo s vlastním kuchařem.</p>
+          <ul class="aktivita__seznam">
+            <li>{{i:tools}}Konvektomat, profi myčka, dvě plynové stojky, velká elektrická pánev</li>
+            <li>{{i:tools-kitchen-2}}Kuchyňský robot, plynový sporák a kompletní nádobí</li>
+            <li>{{i:info-circle}}Dvě velké lednice, dva mrazáky a pračka</li>
           </ul>
-          <p class="detail__poznamka"><strong>Nevaříme.</strong> Kuchyni i jídelnu pronajímáme, jídlo si připravíte sami nebo s vlastním kuchařem.</p>
-          <a class="proklik" href="{{ROOT}}cenik/#prostory">Ceny pronájmu{{i:arrow-right}}</a>
-        </div>
-      </article>
-
-      <article class="detail detail--obraceny" id="kuchynky">
-        <div class="detail__galerie" data-galerie="Kuchyňky">
-          <figure class="detail__hlavni">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Kuchyňka pro menší skupiny"><img src="{{IMG}}/2024/11/kuchynka_hl.photo_-1536x1024.jpg" alt="Kuchyňka pro menší skupiny" loading="lazy"></button>
+          <p class="aktivita__meta">{{i:building-store}}900&nbsp;Kč za den + energie</p>
+        </li>
+        <li class="aktivita aktivita--velka" id="kuchynky">
+          <div class="aktivita__foto foto" data-galerie="Kuchyňky">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotky kuchyňky"><img src="{{IMG}}/2024/11/kuchynka_hl.photo_-1536x1024.jpg" alt="Kuchyňka pro menší skupiny" loading="lazy"></button>
+            <img class="skryta-fotka" src="{{IMG}}/2024/11/kuchynka_2-1536x1024.jpg" alt="Posezení v kuchyňce" loading="lazy">
+            <img class="skryta-fotka" src="{{IMG}}/2024/11/kuchynka_3-1536x1024.jpg" alt="Vybavení kuchyňky" loading="lazy">
             <span class="lupa">{{i:photo}}3 fotky</span>
-          </figure>
-          <ul class="detail__nahledy">
-            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Posezení v kuchyňce"><img src="{{IMG}}/2024/11/kuchynka_2-1536x1024.jpg" alt="Posezení v kuchyňce" loading="lazy"></button></li>
-            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Vybavení kuchyňky"><img src="{{IMG}}/2024/11/kuchynka_3-1536x1024.jpg" alt="Vybavení kuchyňky" loading="lazy"></button></li>
-          </ul>
-        </div>
-        <div class="detail__text">
+          </div>
           <h3>Kuchyňky</h3>
-          <p class="perex">Pro menší skupiny, které nepotřebují profesionální kuchyni. Velký stůl až pro 15 lidí.</p>
-          <ul class="parametry">
-            <li>{{i:tools-kitchen-2}}Elektrický sporák, rychlovarná konvice a mikrovlnná trouba</li>
-            <li>{{i:info-circle}}Jedna velká lednice a jedna menší s mrazákem</li>
-            <li>{{i:tools-kitchen-2}}Kompletní výbava na vaření: hrnce, nádobí, příbory a nože</li>
-            <li>{{i:armchair}}Velký stůl až pro 15 osob</li>
-            <li>{{i:plug}}Zásuvky a venkovní osvětlení</li>
+          <p>Pro menší skupiny, které nepotřebují profesionální kuchyni. Velký stůl až pro 15 lidí.</p>
+          <ul class="aktivita__seznam">
+            <li>{{i:tools-kitchen-2}}Elektrický sporák, konvice, mikrovlnná trouba a nádobí</li>
+            <li>{{i:info-circle}}Velká lednice a menší lednice s mrazákem</li>
           </ul>
-          <a class="proklik" href="{{ROOT}}cenik/#prostory">Ceny pronájmu{{i:arrow-right}}</a>
-        </div>
-      </article>
-
-      <article class="detail" id="socialni-zarizeni">
-        <div class="detail__galerie" data-galerie="Hlavní sociální zařízení">
-          <figure class="detail__hlavni">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Hlavní sociální zařízení areálu"><img src="{{IMG}}/2024/11/Hl.socialky_1-1536x1024.jpg" alt="Hlavní sociální zařízení areálu" loading="lazy"></button>
+          <p class="aktivita__meta">{{i:building-store}}100 až 300&nbsp;Kč za den</p>
+        </li>
+        <li class="aktivita" id="socialni-zarizeni">
+          <div class="aktivita__foto foto" data-galerie="Hlavní sociální zařízení">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotky sociálního zařízení"><img src="{{IMG}}/2024/11/Hl.socialky_1-1536x1024.jpg" alt="Hlavní sociální zařízení areálu" loading="lazy"></button>
+            <img class="skryta-fotka" src="{{IMG}}/2024/11/Hl.socialky_2-1-1536x1024.jpg" alt="Sprchy v hlavní budově" loading="lazy">
+            <img class="skryta-fotka" src="{{IMG}}/2024/11/Hl.socialky_3-1-1536x1024.jpg" alt="Umyvadla v hlavní budově" loading="lazy">
             <span class="lupa">{{i:photo}}3 fotky</span>
-          </figure>
-          <ul class="detail__nahledy">
-            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Sprchy"><img src="{{IMG}}/2024/11/Hl.socialky_2-1-1536x1024.jpg" alt="Sprchy" loading="lazy"></button></li>
-            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Umyvadla"><img src="{{IMG}}/2024/11/Hl.socialky_3-1-1536x1024.jpg" alt="Umyvadla" loading="lazy"></button></li>
-          </ul>
-        </div>
-        <div class="detail__text">
+          </div>
           <h3>Hlavní sociální zařízení</h3>
-          <p class="perex">Zázemí pro větší skupiny, obvykle od 30 osob. Používají ho hosté z chatek.</p>
-          <ul class="parametry">
-            <li>{{i:bath}}Sprchy</li>
-            <li>{{i:bath}}Umyvadla venku i uvnitř</li>
-            <li>{{i:toilet-paper}}Záchody a pisoáry</li>
-          </ul>
-          <p class="detail__poznamka">Vlastní sociální zařízení má apartmán, buňky Slušovice mají sprchu a toaletu hned vedle pokojů.</p>
-        </div>
-      </article>
+          <p>Sprchy, umyvadla a záchody pro hosty z chatek. Apartmán a buňky Slušovice mají vlastní.</p>
+        </li>
+      </ul>
     </div>
   </section>
 

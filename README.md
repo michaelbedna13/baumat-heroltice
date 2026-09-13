@@ -43,7 +43,8 @@ Hotové HTML se commituje, hosting nic nebuilduje. Náhled: `python3 -m http.ser
 
 - Potvrdit u Baumatu přesnou adresu areálu (katalogy uvádějí Heroltice 166 i Heroltice 1) a doplnit ji do kontaktu a JSON-LD.
 - Stáhnout fotky a dokumenty z WordPressu do `assets/img/` a `assets/docs/` a přepsat cesty (teď se odkazují na starý web).
-- Logo jako SVG místo textového loga.
+- Logo: značka je zatím můj návrh (kruh, štít chatky, vlna řeky). Pokud má Baumat vlastní logo, nahradit symbol `i-znacka` ve `_sablony/ikony.svg`.
+- Fotky mají jednotnou barevnou korekci přes CSS (`.foto`). Po novém focení ji lze zeslabit.
 - Anglická verze všech stránek (pozor: v současné EN verzi jsou staré ceny).
 - Recenze přes Google Places API (klíč omezený na doménu). Do té doby odstranit zástupné hvězdy u citací.
 - **Kalendář na /kontakt/ běží na ukázkových datech.** Před spuštěním přepsat `assets/data/obsazenost.json` skutečnou obsazeností, nebo napojit export z Google kalendáře (stavy: `obsazeno`, `castecne`).

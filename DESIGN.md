@@ -9,6 +9,23 @@ Tenhle soubor je závazný pro všechny stránky. Živé ukázky všech komponen
 3. **Jeden hlavní akcent na sekci.** Maximálně jedno tlačítko a jeden proklik v hlavičce sekce.
 4. **Jen ověřená fakta.** Žádné domyšlené kapacity, vzdálenosti ani ceny. Co není potvrzené od Baumatu, na web nejde.
 
+## Značka
+
+Značka je kruh se štítem chatky nad vlnou řeky (`#i-znacka` ve spritu). Odkazuje na chatky u Svratky.
+
+- V hlavičce a patičce vždy se jménem: značka, „Baumat“ tučně, „Heroltice“ lehce.
+- Značka se nikdy nedeformuje ani nebarví jinak, dědí barvu textu.
+- V patičce je navíc jako velký jemný motiv (7 % krytí), jinde se opakovat nemá.
+- Minimální velikost 24 px, pod ni je vlnka nečitelná.
+
+## Fotky: barevné sjednocení
+
+Fotky areálu vznikaly v různých ročních obdobích a na různé přístroje, takže vedle sebe skáčou z podzimní žluté do letní modré. Všechny obrázkové obaly proto mají třídu `foto`, která drží jednotnou korekci: mírná desaturace, vyšší kontrast a zelený soft-light nádech.
+
+Prakticky: každý obal fotky (`hero__foto`, `karta__foto`, `detail__hlavni`, `areal__foto` a další) musí mít i třídu `foto`. Bez ní fotka vypadne z palety a je to hned vidět.
+
+Až vznikne nové focení z jednoho dne, korekci je možné zeslabit nebo vypnout úpravou pravidla `.foto` v CSS.
+
 ## Barvy
 
 | Token | Hex | Kde |
@@ -64,6 +81,16 @@ Pravidla:
 | `--mezera-l` | 88 až 144 px | mezi sekcemi (třída `sekce`) |
 | `--mezera-xl` | 120 až 224 px | jen před hlavním prodejním argumentem (třída `sekce sekce--xl`), max jednou na stránce |
 
+## Rádiusy
+
+Velikost rádiusu nese hierarchii, proto se nesmí sjednotit:
+
+| Token | Velikost | Kde |
+|---|---|---|
+| `--r-panel` | 24 až 36 px | hero, tmavé panely, velké fotky |
+| `--r-karta` | 14 px | karty, fotky v kartách |
+| `--r-radek` | 16 px | řádky, poznámky |
+
 ## Mřížka
 
 - Stránka max 1440 px, na širších monitorech se centruje.
@@ -101,6 +128,8 @@ Pravidla:
 
 Rytmus stránky: střídat světlé sekce a tmavé plochy. Dvě tmavé plochy smí jít po sobě, jen když se vizuálně liší (plná barva a fotka) a odděluje je velká mezera. Na stránce max jeden `h2-velky`.
 
+Podstránky nemají všechny stejnou stavbu. Ubytování je rozhodovací stránka, proto má přehled a číslované bloky s cenou. Aktivity jsou k prohlížení, proto je to mřížka karet, kde velké karty dostanou hlavní lákadla. Stejný blok se nikdy neopakuje víc než čtyřikrát za sebou.
+
 Na podstránkách se nepoužívá kotvová navigace pod hero. Kotvy v URL (`#apartman`) zůstávají, aby na ně šlo odkazovat z jiných stránek.
 
 Nedělat odkazy na stránky, které neexistují. Samostatné stránky pro svatby, oslavy, tábory a firemní akce nebudou, tyhle okruhy jsou jen výčtem na homepage.
@@ -133,8 +162,11 @@ Nedělat odkazy na stránky, které neexistují. Samostatné stránky pro svatby
 |---|---|---|
 | Hero podstránky | `hero hero--podstranka` | nižší hero bez faktů, jedno tlačítko |
 | Kotvy | `kotvy` | odkazy na sekce v rámci stránky, hned pod hero |
-| Detail | `detail` / `detail--obraceny` | galerie 3 fotek a text se seznamem parametrů, sudé bloky obráceně |
+
 | Parametry | `parametry` | seznam vlastností s ikonami, jen v detailu |
+| Přehled | `prehled` | rychlé srovnání typů pod hero: náhled, název, kapacita a cena |
+| Blok typu | `typ` / `typ--obraceny` | ubytování: číslo, název, cena, široká galerie, text s parametry |
+| Karta aktivity | `aktivity` + `aktivita` / `aktivita--velka` | aktivity a zázemí: fotka, název, text, volitelná meta s cenou |
 | Ceníkový řádek | `cenik-skupina` + `cenik` + `cenik-radek` | položka, popis a cena vpravo |
 | Poznámka | `poznamka` | vysvětlivka pod obsahem, na pískovém podkladu |
 | Osoba | `osoba` | správce areálu: fotka, role, jméno, kontakt |

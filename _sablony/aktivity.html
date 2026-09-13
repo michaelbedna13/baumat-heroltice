@@ -29,7 +29,7 @@
 
   <!-- SEKCE: hero podstránky -->
   <section class="hero hero--podstranka panel na-tmave" aria-labelledby="hero-nadpis">
-    <div class="hero__foto">
+    <div class="hero__foto foto">
       <img src="{{IMG}}/2024/11/Bazen_2-1536x1024.jpg" alt="Bazén v rekreačním areálu Baumat" fetchpriority="high">
     </div>
     <div class="hero__obsah">
@@ -43,7 +43,7 @@
     </div>
   </section>
 
-  <!-- SEKCE: detaily aktivit -->
+  <!-- SEKCE: mřížka aktivit -->
   <section class="sekce" aria-labelledby="aktivity-nadpis">
     <div class="wrap">
       <div class="sekce__hlava">
@@ -54,126 +54,85 @@
         <a class="proklik" href="{{ROOT}}cenik/#poplatky">Půjčovné a poplatky{{i:arrow-right}}</a>
       </div>
 
-      <article class="detail" id="bazen">
-        <div class="detail__galerie" data-galerie="Bazén">
-          <figure class="detail__hlavni">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Bazén v areálu Baumat"><img src="{{IMG}}/2024/11/Bazen_2-1536x1024.jpg" alt="Bazén v areálu Baumat" loading="lazy"></button>
+      <ul class="aktivity">
+        <li class="aktivita aktivita--velka" id="bazen">
+          <div class="aktivita__foto foto" data-galerie="Bazén">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotky bazénu"><img src="{{IMG}}/2024/11/Bazen_2-1536x1024.jpg" alt="Bazén v areálu Baumat" loading="lazy"></button>
+            <img class="skryta-fotka" src="{{IMG}}/2024/11/Bazen_3-1536x1024.jpg" alt="Posezení u bazénu" loading="lazy">
+            <img class="skryta-fotka" src="{{IMG}}/2024/11/Bazen_mainpage.jpg" alt="Pohled na bazén s okolní přírodou" loading="lazy">
             <span class="lupa">{{i:photo}}3 fotky</span>
-          </figure>
-          <ul class="detail__nahledy">
-            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Posezení u bazénu"><img src="{{IMG}}/2024/11/Bazen_3-1536x1024.jpg" alt="Posezení u bazénu" loading="lazy"></button></li>
-            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Pohled na bazén s okolní přírodou"><img src="{{IMG}}/2024/11/Bazen_mainpage.jpg" alt="Pohled na bazén s okolní přírodou" loading="lazy"></button></li>
-          </ul>
-        </div>
-        <div class="detail__text">
+          </div>
           <h3>Bazén</h3>
-          <p class="perex">Osvěžení a relaxace v čisté vodě. Ideální místo pro plavání i pohodový odpočinek.</p>
-          <p class="detail__poznamka">Pro bazén platí samostatný provozní řád, najdete ho v patičce webu.</p>
-        </div>
-      </article>
+          <p>Osvěžení a relaxace v čisté vodě. Ideální místo pro plavání i pohodový odpočinek u vody.</p>
+          <p class="aktivita__meta">{{i:info-circle}}Platí provozní řád bazénu</p>
+        </li>
 
-      <article class="detail detail--obraceny" id="beach-volejbal">
-        <div class="detail__galerie" data-galerie="Beach volejbal">
-          <figure class="detail__hlavni">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Hřiště na beach volejbal"><img src="{{IMG}}/2024/11/beach_hl.photo_-1536x1024.jpg" alt="Hřiště na beach volejbal" loading="lazy"></button>
+        <li class="aktivita aktivita--velka" id="klubovna">
+          <div class="aktivita__foto foto" data-galerie="Klubovna">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotky klubovny"><img src="{{IMG}}/2024/11/klubovna_hl.photo_-1536x1024.jpg" alt="Klubovna s kulečníkem a krbem" loading="lazy"></button>
+            <img class="skryta-fotka" src="{{IMG}}/2024/11/klubovna_2-1536x1024.jpg" alt="Posezení v klubovně" loading="lazy">
             <span class="lupa">{{i:photo}}2 fotky</span>
-          </figure>
-          <ul class="detail__nahledy">
-            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Písečné hřiště v areálu"><img src="{{IMG}}/2024/11/Beach-1536x1024.jpg" alt="Písečné hřiště v areálu" loading="lazy"></button></li>
-          </ul>
-        </div>
-        <div class="detail__text">
-          <h3>Beach volejbal</h3>
-          <p class="perex">Perfektní volba pro sportovní odpoledne s přáteli. Míč vám rádi půjčíme.</p>
-        </div>
-      </article>
-
-      <article class="detail" id="tenis">
-        <div class="detail__galerie" data-galerie="Tenis">
-          <figure class="detail__hlavni">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Tenisový kurt v areálu Baumat"><img src="{{IMG}}/2024/11/tenis_hl.photo_-1536x1024.jpg" alt="Tenisový kurt v areálu Baumat" loading="lazy"></button>
-            <span class="lupa">{{i:photo}}2 fotky</span>
-          </figure>
-          <ul class="detail__nahledy">
-            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Pohled na tenisový kurt"><img src="{{IMG}}/2024/12/tenis-2-1536x1024.jpg" alt="Pohled na tenisový kurt" loading="lazy"></button></li>
-          </ul>
-        </div>
-        <div class="detail__text">
-          <h3>Tenis</h3>
-          <p class="perex">Kurty vhodné pro rekreační i soutěžní hráče. Půjčíme vám i profesionální rakety.</p>
-          <p class="detail__poznamka">Neubytovaní hosté platí za kurt 250&nbsp;Kč za hodinu.</p>
-        </div>
-      </article>
-
-      <article class="detail detail--obraceny" id="stolni-tenis">
-        <div class="detail__galerie" data-galerie="Stolní tenis">
-          <figure class="detail__hlavni">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Pingpongový stůl"><img src="{{IMG}}/2024/11/ping-pong-1536x1024.jpg" alt="Pingpongový stůl" loading="lazy"></button>
-            <span class="lupa">{{i:photo}}Zvětšit</span>
-          </figure>
-        </div>
-        <div class="detail__text">
-          <h3>Stolní tenis</h3>
-          <p class="perex">Zábava pro každého. Zahrajte si přátelské zápasy s rodinou nebo kamarády.</p>
-        </div>
-      </article>
-
-      <article class="detail" id="ohniste">
-        <div class="detail__galerie" data-galerie="Ohniště">
-          <figure class="detail__hlavni">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Ohniště s posezením na louce"><img src="{{IMG}}/2024/11/Ohniste_1-1536x1024.jpg" alt="Ohniště s posezením na louce" loading="lazy"></button>
-            <span class="lupa">{{i:photo}}3 fotky</span>
-          </figure>
-          <ul class="detail__nahledy">
-            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Ohniště v areálu"><img src="{{IMG}}/2024/11/Ohniste_2-1-1536x1024.jpg" alt="Ohniště v areálu" loading="lazy"></button></li>
-            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Večerní posezení u ohně"><img src="{{IMG}}/2024/11/Ohniste_3-1-1536x1024.jpg" alt="Večerní posezení u ohně" loading="lazy"></button></li>
-          </ul>
-        </div>
-        <div class="detail__text">
-          <h3>Ohniště</h3>
-          <p class="perex">Útulné místo pro večerní posezení u ohně. Ideální na opékání špekáčků a povídání pod noční oblohou.</p>
-        </div>
-      </article>
-
-      <article class="detail detail--obraceny" id="detske-hriste">
-        <div class="detail__galerie" data-galerie="Dětské hřiště">
-          <figure class="detail__hlavni">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Dětské hřiště s houpačkou a skluzavkou"><img src="{{IMG}}/2024/11/Detske-hriste-1536x1024.jpg" alt="Dětské hřiště s houpačkou a skluzavkou" loading="lazy"></button>
-            <span class="lupa">{{i:photo}}2 fotky</span>
-          </figure>
-          <ul class="detail__nahledy">
-            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Prolézačka na dětském hřišti"><img src="{{IMG}}/2024/11/Detske-hriste_2-1536x1024.jpg" alt="Prolézačka na dětském hřišti" loading="lazy"></button></li>
-          </ul>
-        </div>
-        <div class="detail__text">
-          <h3>Dětské hřiště</h3>
-          <p class="perex">Bezpečný herní prostor plný zábavy. Houpačka a skluzavka zabaví děti na celé odpoledne.</p>
-        </div>
-      </article>
-
-      <article class="detail" id="klubovna">
-        <div class="detail__galerie" data-galerie="Klubovna">
-          <figure class="detail__hlavni">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotku: Klubovna s kulečníkem a krbem"><img src="{{IMG}}/2024/11/klubovna_hl.photo_-1536x1024.jpg" alt="Klubovna s kulečníkem a krbem" loading="lazy"></button>
-            <span class="lupa">{{i:photo}}2 fotky</span>
-          </figure>
-          <ul class="detail__nahledy">
-            <li><button class="foto-btn" type="button" aria-label="Otevřít fotku: Posezení v klubovně"><img src="{{IMG}}/2024/11/klubovna_2-1536x1024.jpg" alt="Posezení v klubovně" loading="lazy"></button></li>
-          </ul>
-        </div>
-        <div class="detail__text">
+          </div>
           <h3>Klubovna</h3>
-          <p class="perex">Místo pro večerní odpočinek a zábavu, hlavně když venku prší.</p>
-          <ul class="parametry">
-            <li>{{i:armchair}}Pohodlné gauče a židle s polstrováním</li>
-            <li>{{i:campfire}}Vlastní krb</li>
-            <li>{{i:armchair}}Prostorné dřevěné stoly u posezení</li>
+          <p>Místo pro večerní odpočinek a zábavu, hlavně když venku prší. Krb, gauče a prostorné dřevěné stoly.</p>
+          <ul class="aktivita__seznam">
             <li>{{i:ping-pong}}Kulečníkový a pingpongový stůl, stolní hry</li>
+            <li>{{i:campfire}}Vlastní krb a pohodlné posezení</li>
           </ul>
-          <p class="detail__poznamka">Klubovnu je možné pronajmout za 800&nbsp;Kč na den.</p>
-          <a class="proklik" href="{{ROOT}}cenik/#prostory">Ceny pronájmu{{i:arrow-right}}</a>
-        </div>
-      </article>
+          <p class="aktivita__meta">{{i:building-store}}Pronájem 800&nbsp;Kč za den</p>
+        </li>
+
+        <li class="aktivita" id="tenis">
+          <div class="aktivita__foto foto" data-galerie="Tenis">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotky tenisu"><img src="{{IMG}}/2024/11/tenis_hl.photo_-1536x1024.jpg" alt="Tenisový kurt v areálu Baumat" loading="lazy"></button>
+            <img class="skryta-fotka" src="{{IMG}}/2024/12/tenis-2-1536x1024.jpg" alt="Pohled na tenisový kurt" loading="lazy">
+            <span class="lupa">{{i:photo}}2 fotky</span>
+          </div>
+          <h3>Tenis</h3>
+          <p>Kurty pro rekreační i soutěžní hráče. Půjčíme vám i profesionální rakety.</p>
+          <p class="aktivita__meta">{{i:info-circle}}250&nbsp;Kč za hodinu pro neubytované</p>
+        </li>
+
+        <li class="aktivita" id="beach-volejbal">
+          <div class="aktivita__foto foto" data-galerie="Beach volejbal">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotky beach volejbalu"><img src="{{IMG}}/2024/11/beach_hl.photo_-1536x1024.jpg" alt="Hřiště na beach volejbal" loading="lazy"></button>
+            <img class="skryta-fotka" src="{{IMG}}/2024/11/Beach-1536x1024.jpg" alt="Písečné hřiště v areálu" loading="lazy">
+            <span class="lupa">{{i:photo}}2 fotky</span>
+          </div>
+          <h3>Beach volejbal</h3>
+          <p>Perfektní volba pro sportovní odpoledne s přáteli. Míč vám rádi půjčíme.</p>
+        </li>
+
+        <li class="aktivita" id="stolni-tenis">
+          <div class="aktivita__foto foto" data-galerie="Stolní tenis">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotku stolního tenisu"><img src="{{IMG}}/2024/11/ping-pong-1536x1024.jpg" alt="Pingpongový stůl v areálu" loading="lazy"></button>
+            <span class="lupa">{{i:photo}}Zvětšit</span>
+          </div>
+          <h3>Stolní tenis</h3>
+          <p>Zábava pro každého. Zahrajte si přátelské zápasy s rodinou nebo kamarády.</p>
+        </li>
+
+        <li class="aktivita aktivita--velka" id="ohniste">
+          <div class="aktivita__foto foto" data-galerie="Ohniště">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotky ohniště"><img src="{{IMG}}/2024/11/Ohniste_1-1536x1024.jpg" alt="Ohniště s posezením na louce" loading="lazy"></button>
+            <img class="skryta-fotka" src="{{IMG}}/2024/11/Ohniste_2-1-1536x1024.jpg" alt="Ohniště v areálu" loading="lazy">
+            <img class="skryta-fotka" src="{{IMG}}/2024/11/Ohniste_3-1-1536x1024.jpg" alt="Večerní posezení u ohně" loading="lazy">
+            <span class="lupa">{{i:photo}}3 fotky</span>
+          </div>
+          <h3>Ohniště</h3>
+          <p>Útulné místo pro večerní posezení u ohně. Ideální na opékání špekáčků a povídání pod noční oblohou.</p>
+        </li>
+
+        <li class="aktivita aktivita--velka" id="detske-hriste">
+          <div class="aktivita__foto foto" data-galerie="Dětské hřiště">
+            <button class="foto-btn" type="button" aria-label="Otevřít fotky dětského hřiště"><img src="{{IMG}}/2024/11/Detske-hriste-1536x1024.jpg" alt="Dětské hřiště s houpačkou a skluzavkou" loading="lazy"></button>
+            <img class="skryta-fotka" src="{{IMG}}/2024/11/Detske-hriste_2-1536x1024.jpg" alt="Prolézačka na dětském hřišti" loading="lazy">
+            <span class="lupa">{{i:photo}}2 fotky</span>
+          </div>
+          <h3>Dětské hřiště</h3>
+          <p>Bezpečný herní prostor plný zábavy. Houpačka a skluzavka zabaví děti na celé odpoledne.</p>
+        </li>
+      </ul>
     </div>
   </section>
 

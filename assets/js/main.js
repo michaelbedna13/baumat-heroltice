@@ -31,13 +31,25 @@
     });
   }
 
-  /* Stav hlavičky ----------------------------------------------- */
+  /* Hlavička se po odscrollování přilepí nahoru ------------------ */
   if (hlavicka) {
+    var mistoProHlavicku = document.createElement("div");
+    hlavicka.parentNode.insertBefore(mistoProHlavicku, hlavicka);
+    var vyska = 0;
+
     var naScroll = function () {
-      hlavicka.classList.toggle("je-odscrollovano", window.scrollY > 40);
+      var lepi = hlavicka.classList.contains("hlavicka--lepi");
+      if (!lepi) vyska = hlavicka.offsetHeight;
+      var hranice = mistoProHlavicku.offsetTop + vyska;
+      var maLepit = window.scrollY > hranice + 120;
+      if (maLepit === lepi) return;
+      hlavicka.classList.toggle("hlavicka--lepi", maLepit);
+      mistoProHlavicku.style.height = maLepit ? vyska + "px" : "";
     };
+
     naScroll();
     window.addEventListener("scroll", naScroll, { passive: true });
+    window.addEventListener("resize", naScroll);
   }
 
   var rok = document.querySelector("[data-rok]");

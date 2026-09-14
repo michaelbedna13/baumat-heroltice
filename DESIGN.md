@@ -32,8 +32,8 @@ Až vznikne nové focení z jednoho dne, korekci je možné zeslabit nebo vypnou
 |---|---|---|
 | `--les` | #2C4219 | tmavé panely, tlačítka, ikony, odkazy |
 | `--krem` | #F5F0E3 | pozadí stránky, text na tmavém |
-| `--uhel` | #433A30 | hlavní text, ceny |
-| `--uhel-jemny` | #6B6154 | perex, popisy, drobný text |
+| `--uhel` | #16181A | hlavní text, nadpisy, ceny |
+| `--uhel-jemny` | #5C6058 | perex, popisy, drobný text |
 | `--pisek` | #E8E0C8 | podklad pod fotkou nebo mapou, než se načte |
 | `--pisek-tmavy` | #D6CCAE | linky a rámečky na světlém |
 | `--zlata` | #DEB938 | akcent: jen na tmavém pozadí (velká cena, tlačítko v tmavém panelu, hvězdy) |
@@ -137,7 +137,9 @@ Podstránky nemají všechny stejnou stavbu. Ubytování je rozhodovací stránk
 
 Sekce nemají štítky ani nálepky nad nadpisem, nadpis stojí sám.
 
-Hlavička je běžný pruh nad hero, ne plovoucí pilulka přes obsah. Neskrývá se a nepřekrývá text.
+Hlavička je běžný pruh nad hero, ne plovoucí pilulka přes obsah. Jakmile ji scroll odsune z obrazovky, přilepí se zpátky nahoru ve skleněné variantě (`hlavicka--lepi`). Aby stránka při přilepení neposkočila, JS pod ni vloží prvek stejné výšky.
+
+Hero má pevný poměr stran (16:9 na homepage, 21:9 na podstránkách) a dvojitý gradient: svislý zespodu a vodorovný zleva. Bez toho se světlý nadpis ztrácí ve světlé fotce.
 
 Na podstránkách se nepoužívá kotvová navigace pod hero. Kotvy v URL (`#apartman`) zůstávají, aby na ně šlo odkazovat z jiných stránek.
 

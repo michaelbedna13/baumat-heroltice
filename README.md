@@ -36,7 +36,7 @@ Hotové HTML se commituje, hosting nic nebuilduje. Náhled: `python3 -m http.ser
 | Mech    | #6B8A4E | v záloze |
 | Krém    | #F5F0E3 | pozadí             |
 | Písek   | #E8DFC9 | linky, podklad mapy |
-| Uhel    | #1F2A1D | text               |
+| Uhel    | #16181A | text |
 | Ohniště | #9A4F1E | v záloze |
 
 ## Zbývá

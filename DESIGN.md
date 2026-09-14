@@ -30,26 +30,28 @@ Až vznikne nové focení z jednoho dne, korekci je možné zeslabit nebo vypnou
 
 | Token | Hex | Kde |
 |---|---|---|
-| `--les` | #2F4A2B | tmavé panely, tlačítka, ikony, odkazy |
+| `--les` | #2C4219 | tmavé panely, tlačítka, ikony, odkazy |
 | `--krem` | #F5F0E3 | pozadí stránky, text na tmavém |
-| `--uhel` | #1F2A1D | hlavní text, ceny |
-| `--uhel-jemny` | #46523F | perex, popisy, drobný text |
-| `--pisek` | #E8DFC9 | podklad pod fotkou nebo mapou, než se načte |
-| `--pisek-tmavy` | #D9CDB0 | linky a rámečky na světlém |
-| `--okr` | #DCA84B | akcent: jen na tmavém pozadí (velká cena, tlačítko v tmavém panelu, hvězdy) |
-| `--okr-tlumeny` | #F0E2C4 | štítky sekcí, čísla u typů ubytování, kalendář |
-| `--ohniste` | #9A4F1E | v záloze, zatím se nepoužívá |
+| `--uhel` | #433A30 | hlavní text, ceny |
+| `--uhel-jemny` | #6B6154 | perex, popisy, drobný text |
+| `--pisek` | #E8E0C8 | podklad pod fotkou nebo mapou, než se načte |
+| `--pisek-tmavy` | #D6CCAE | linky a rámečky na světlém |
+| `--zlata` | #DEB938 | akcent: jen na tmavém pozadí (velká cena, tlačítko v tmavém panelu, hvězdy) |
+| `--len`, `--len-tlumeny` | #F8EC99, #F3EBC4 | jemná zvýraznění: čísla u typů ubytování, částečně obsazené dny |
+| `--oliva` | #A8B774 | doplňková zeleň, zatím v záloze |
+| `--cihla` | #A9503C | obsazené termíny v kalendáři, nikdy jako dekorace |
 
 Pravidla:
 - Základ nese les, krém a uhel. Písek je na linky a podklady.
-- Okr je jediný akcent a musí zůstat vzácný: na plné sytosti jen na tmavém pozadí (na lese má kontrast 4,6 : 1, na krému jen 1,9 : 1, takže na světlém nikdy nenese text), v tlumené variantě ve štítcích a číslech.
-- Na jedné obrazovce má být okr nejvýš na dvou místech. Když je všude, přestane fungovat.
+- Zlatá je jediný akcent a musí zůstat vzácná: jen na tmavém pozadí (na lese 5,8 : 1), na krému nikdy nenese text.
+- Na jedné obrazovce má být zlatá nejvýš na dvou místech. Když je všude, přestane fungovat.
+- Cihlová je vyhrazená pro obsazené termíny. Barva nese informaci, takže se nesmí použít jinde.
 - Kontrast: malý text vždy uhel nebo uhel-jemny na krému, krém na lese.
 
 ## Sklo (glass)
 
 Jen na dvou místech:
-- **hlavička** (menu),
+- **fakta v hero** (boxy na fotce),
 - **citace v panelu s fotkou** (recenze).
 
 Nikde jinde. Sklo potřebuje fotku za sebou, na čisté ploše nemá smysl. Jemné rozostření pod fakty v hero není sklo, ale přechod bez hran a rámečku.
@@ -105,16 +107,15 @@ Velikost rádiusu nese hierarchii, proto se nesmí sjednotit:
 
 | Komponenta | Třídy | Použití | Pravidla |
 |---|---|---|---|
-| Štítek sekce | `stitek` | jedno až dvě slova nad nadpisem | pojmenovává sekci, nikdy nenahrazuje nadpis |
-| Tlačítko | `btn btn--les` / `btn--krem` / `btn--obrys` / `btn--okr` | hlavní akce (rezervace, termín) | les na světlém, krém na tmavém, obrys jako vedlejší na tmavém, okr jen pro hlavní prodejní argument. Max jedno hlavní tlačítko v sekci |
+| Tlačítko | `btn btn--les` / `btn--krem` / `btn--obrys` / `btn--zlata` | hlavní akce (rezervace, termín) | les na světlém, krém na tmavém, obrys jako vedlejší na tmavém, zlatá jen pro hlavní prodejní argument. Max jedno hlavní tlačítko v sekci |
 | Proklik | `proklik` / `proklik--svetly` | odkaz na podstránku v hlavičce sekce | vždy s šipkou, při najetí se vyplní |
-| Odkazový řádek | `odkazy` + `odkaz-radek` | rozcestník na existující stránky | ikona, H3, jedna věta, šipka v kolečku. Při najetí celý tmavý |
+| Odkazový řádek | `odkazy` + `odkaz-radek` | rozcestník na existující stránky | řádky oddělené linkami. Při najetí se řádek jemně odsadí a vybarví se jen kolečko se šipkou, nikdy celý blok |
 | Položka | `polozky` + `polozka` | výčet bez odkazů (pro koho je areál) | ikona, H3, jedna věta, řádky oddělené linkami |
 | Karta vybavení | `vybaveni-mrizka` + `vybaveni-karta` | aktivity a vybavení | fotka, pod ní název a věta. Text nikdy přes fotku, aby byl čitelný i na mobilu |
 | Kontaktní řádek | `kontakty` + `kontakt-radek` | telefony, e-maily | řádky oddělené linkami, šipka se objeví při najetí |
 | Karta | `karty` + `karta` | ubytování | fotka 4:5, H3, jedna krátká věta, cena. Celá karta je odkaz. Žádné štítky na fotkách, žádné ikony u textu. Na mobilu vodorovný posun |
 | Dlaždice | `dlazdice` / `dlazdice--velka` | fotka s popiskem přes spodní část | jen tam, kde je fotka dost tmavá. Na mobilu raději karta s textem pod fotkou |
-| Fakta | `fakta` | krátká čísla (cena, kapacita, vzdálenost, hodnocení) | max 4 položky, jen na tmavém, každá ve vlastním skleněném boxu. Poslední smí být akcentovaná |
+| Fakta | `fakta` | krátká čísla (cena, kapacita, vzdálenost, hodnocení) | max 4 položky, jen na tmavém, každá ve vlastním skleněném boxu. Všechny stejné, žádný se nezvýrazňuje |
 | Citace | `citace` | recenze | jen v panelu s fotkou, hvězdy jen se skutečným hodnocením |
 | Přepínač jazyka | `jazyky` | hlavička | aktivní jazyk `aria-current="true"` |
 
@@ -133,6 +134,10 @@ Velikost rádiusu nese hierarchii, proto se nesmí sjednotit:
 Rytmus stránky: střídat světlé sekce a tmavé plochy. Dvě tmavé plochy smí jít po sobě, jen když se vizuálně liší (plná barva a fotka) a odděluje je velká mezera. Na stránce max jeden `h2-velky`.
 
 Podstránky nemají všechny stejnou stavbu. Ubytování je rozhodovací stránka, proto má přehled a číslované bloky s cenou. Aktivity jsou k prohlížení, proto je to mřížka karet, kde velké karty dostanou hlavní lákadla. Stejný blok se nikdy neopakuje víc než čtyřikrát za sebou.
+
+Sekce nemají štítky ani nálepky nad nadpisem, nadpis stojí sám.
+
+Hlavička je běžný pruh nad hero, ne plovoucí pilulka přes obsah. Neskrývá se a nepřekrývá text.
 
 Na podstránkách se nepoužívá kotvová navigace pod hero. Kotvy v URL (`#apartman`) zůstávají, aby na ně šlo odkazovat z jiných stránek.
 
@@ -174,7 +179,7 @@ Nedělat odkazy na stránky, které neexistují. Samostatné stránky pro svatby
 | Ceníkový řádek | `cenik-skupina` + `cenik` + `cenik-radek` | položka, popis a cena vpravo |
 | Poznámka | `poznamka` | vysvětlivka pod obsahem, na pískovém podkladu |
 | Osoba | `osoba` | správce areálu: fotka, role, jméno, kontakt |
-| Kalendář | `kalendar` | vlastní kalendář obsazenosti, data z `assets/data/obsazenost.json` |
+| Kalendář | `kalendar-blok` + `kalendar` | vlastní kalendář obsazenosti, data z `assets/data/obsazenost.json`. Mřížka vlevo, legenda a poznámka vpravo |
 | Galerie s prohlížečem | `detail__galerie` + `data-galerie` | fotky v detailu | hlavní fotka, náhledy, klik otevře prohlížeč (šipky, Esc) |
 | Výzva | `vyzva` | závěrečná sekce na konci každé podstránky |
 

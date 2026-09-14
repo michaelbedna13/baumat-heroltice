@@ -115,7 +115,6 @@
   <section class="sekce" aria-labelledby="kontakt-nadpis">
     <div class="wrap kontakt">
       <div class="kontakt__text">
-        <p class="stitek">Kontakt</p>
           <h2 id="kontakt-nadpis">Kontakt na areál</h2>
         <p class="perex">Rezervace a dotazy k pobytu vyřizuje kancelář. Ozvěte se kdykoli, rádi ověříme volný termín.</p>
         <ul class="kontakty">
@@ -146,7 +145,6 @@
         <div class="osoba__foto foto"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Josef-Kavalec_spravce.jpg" alt="Josef Kavalec, správce areálu" loading="lazy"></div>
         <div>
           <p class="osoba__role">Správce areálu</p>
-          <p class="stitek">Na místě</p>
           <h2 id="spravce-nadpis">Josef Kavalec</h2>
           <p class="perex">Dotazy k areálu, změna času příjezdu nebo tipy na výlety v okolí. Ozvěte se přímo na místo.</p>
           <ul class="kontakty">
@@ -162,29 +160,32 @@
     <div class="wrap">
       <div class="sekce__hlava">
         <div class="sekce__uvod">
-          <p class="stitek">Obsazenost</p>
           <h2 id="kalendar-nadpis">Je váš termín volný?</h2>
           <p class="perex">Kalendář ukazuje obsazenost jednotlivých ubytovacích kapacit a slouží hlavně jako orientační pomůcka.</p>
         </div>
-        <a class="proklik" href="tel:+420601594780">Ověřit telefonicky<svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
       </div>
-      <p class="poznamka">U některých typů, třeba u chatek, je k dispozici více jednotek. I když je termín označený jako částečně obsazený, některé chatky mohou být pořád volné. Rádi vám dostupnost ověříme a pomůžeme s výběrem.</p>
-      <div class="kalendar" data-kalendar="../assets/data/obsazenost.json">
-        <div class="kalendar__ovladani">
-          <p class="kalendar__mesic" data-kalendar-mesic aria-live="polite">Kalendář</p>
-          <div class="kalendar__sipky">
-            <button class="kalendar__sipka" type="button" data-kalendar-zpet aria-label="Předchozí měsíc">
-              <svg class="i" aria-hidden="true" style="transform:rotate(180deg)"><use href="#i-arrow-right"/></svg>
-            </button>
-            <button class="kalendar__sipka" type="button" data-kalendar-vpred aria-label="Další měsíc"><svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+      <div class="kalendar-blok">
+        <div class="kalendar" data-kalendar="../assets/data/obsazenost.json">
+          <div class="kalendar__ovladani">
+            <p class="kalendar__mesic" data-kalendar-mesic aria-live="polite">Kalendář</p>
+            <div class="kalendar__sipky">
+              <button class="kalendar__sipka" type="button" data-kalendar-zpet aria-label="Předchozí měsíc">
+                <svg class="i" aria-hidden="true" style="transform:rotate(180deg)"><use href="#i-arrow-right"/></svg>
+              </button>
+              <button class="kalendar__sipka" type="button" data-kalendar-vpred aria-label="Další měsíc"><svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+            </div>
           </div>
+          <div class="kalendar__mrizka" data-kalendar-mrizka></div>
         </div>
-        <div class="kalendar__mrizka" data-kalendar-mrizka></div>
-        <ul class="kalendar__legenda">
-          <li><span class="kalendar__vzorek" style="background:rgba(47,74,43,.08)"></span>Volno</li>
-          <li><span class="kalendar__vzorek" style="background:var(--pisek-tmavy)"></span>Částečně obsazeno</li>
-          <li><span class="kalendar__vzorek" style="background:var(--les)"></span>Obsazeno</li>
-        </ul>
+        <div class="kalendar__bok">
+          <ul class="kalendar__legenda">
+            <li><span class="kalendar__vzorek" style="background:rgba(44,66,25,.06)"></span><span>Volno</span></li>
+            <li><span class="kalendar__vzorek" style="background:var(--len-tlumeny)"></span><span>Částečně obsazeno</span></li>
+            <li><span class="kalendar__vzorek" style="background:var(--cihla)"></span><span>Obsazeno</span></li>
+          </ul>
+          <p class="poznamka">U některých typů, třeba u chatek, je k dispozici více jednotek. I když je termín označený jako částečně obsazený, některé chatky mohou být pořád volné. Rádi vám dostupnost ověříme a pomůžeme s výběrem.</p>
+          <a class="btn btn--les" href="tel:+420601594780"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>Ověřit telefonicky</a>
+        </div>
       </div>
     </div>
   </section>
@@ -194,7 +195,6 @@
     <div class="wrap">
       <div class="sekce__hlava">
         <div class="sekce__uvod">
-          <p class="stitek">Pobyt</p>
           <h2 id="dal-nadpis">Než se ozvete</h2>
           <p class="perex">Mrkněte na ubytování a ceny, ať víme, o čem se bavíme.</p>
         </div>

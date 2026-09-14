@@ -36,15 +36,13 @@ Až vznikne nové focení z jednoho dne, korekci je možné zeslabit nebo vypnou
 | `--uhel-jemny` | #5C6058 | perex, popisy, drobný text |
 | `--pisek` | #E8E0C8 | podklad pod fotkou nebo mapou, než se načte |
 | `--pisek-tmavy` | #D6CCAE | linky a rámečky na světlém |
-| `--zlata` | #DEB938 | akcent: jen na tmavém pozadí (velká cena, tlačítko v tmavém panelu, hvězdy) |
-| `--len`, `--len-tlumeny` | #F8EC99, #F3EBC4 | jemná zvýraznění: čísla u typů ubytování, částečně obsazené dny |
-| `--oliva` | #A8B774 | doplňková zeleň, zatím v záloze |
+| `--len-tlumeny` | #F1ECD6 | jemná zvýraznění: čísla u typů ubytování, částečně obsazené dny |
+| `--oliva` | #A8B774 | drobné akcenty na tmavém: hvězdy u recenzí, ikona v hero |
 | `--cihla` | #A9503C | obsazené termíny v kalendáři, nikdy jako dekorace |
 
 Pravidla:
 - Základ nese les, krém a uhel. Písek je na linky a podklady.
-- Zlatá je jediný akcent a musí zůstat vzácná: jen na tmavém pozadí (na lese 5,8 : 1), na krému nikdy nenese text.
-- Na jedné obrazovce má být zlatá nejvýš na dvou místech. Když je všude, přestane fungovat.
+- Web nemá barevný akcent. Důraz nese velikost, váha písma a tmavá plocha, ne barva. Velká cena je krémová, ne barevná.
 - Cihlová je vyhrazená pro obsazené termíny. Barva nese informaci, takže se nesmí použít jinde.
 - Kontrast: malý text vždy uhel nebo uhel-jemny na krému, krém na lese.
 
@@ -107,7 +105,7 @@ Velikost rádiusu nese hierarchii, proto se nesmí sjednotit:
 
 | Komponenta | Třídy | Použití | Pravidla |
 |---|---|---|---|
-| Tlačítko | `btn btn--les` / `btn--krem` / `btn--obrys` / `btn--zlata` | hlavní akce (rezervace, termín) | les na světlém, krém na tmavém, obrys jako vedlejší na tmavém, zlatá jen pro hlavní prodejní argument. Max jedno hlavní tlačítko v sekci |
+| Tlačítko | `btn btn--les` / `btn--krem` / `btn--obrys` | hlavní akce (rezervace, termín) | les na světlém, krém na tmavém, obrys jako vedlejší na tmavém. Max jedno hlavní tlačítko v sekci |
 | Proklik | `proklik` / `proklik--svetly` | odkaz na podstránku v hlavičce sekce | vždy s šipkou, při najetí se vyplní |
 | Odkazový řádek | `odkazy` + `odkaz-radek` | rozcestník na existující stránky | řádky oddělené linkami. Při najetí se řádek jemně odsadí a vybarví se jen kolečko se šipkou, nikdy celý blok |
 | Položka | `polozky` + `polozka` | výčet bez odkazů (pro koho je areál) | ikona, H3, jedna věta, řádky oddělené linkami |
@@ -139,7 +137,7 @@ Sekce nemají štítky ani nálepky nad nadpisem, nadpis stojí sám.
 
 Hlavička je běžný pruh nad hero, ne plovoucí pilulka přes obsah. Jakmile ji scroll odsune z obrazovky, přilepí se zpátky nahoru ve skleněné variantě (`hlavicka--lepi`). Aby stránka při přilepení neposkočila, JS pod ni vloží prvek stejné výšky.
 
-Hero má pevný poměr stran (16:9 na homepage, 21:9 na podstránkách) a dvojitý gradient: svislý zespodu a vodorovný zleva. Bez toho se světlý nadpis ztrácí ve světlé fotce.
+Hero na homepage zabírá celou první obrazovku (výška okna minus hlavička), takže po otevření je vidět nadpis, obě tlačítka i pruh s fakty. Na podstránkách má poměr 21:9. Obě mají dvojitý gradient: svislý zespodu a vodorovný zleva. Bez toho se světlý nadpis ztrácí ve světlé fotce.
 
 Na podstránkách se nepoužívá kotvová navigace pod hero. Kotvy v URL (`#apartman`) zůstávají, aby na ně šlo odkazovat z jiných stránek.
 

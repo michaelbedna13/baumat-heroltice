@@ -30,10 +30,7 @@
   --krem-jemny: rgba(245, 240, 227, .82);
   --linka-svetla: var(--pisek-tmavy);
   --linka-tmava: rgba(245, 240, 227, .24);
-  --zlata: #DEB938;            /* Gold, akcent jen na tmavém */
-  --zlata-svetla: #E8C956;
-  --len: #F8EC99;              /* Flax, jemné zvýraznění */
-  --len-tlumeny: #F3EBC4;      /* podklad čísel a drobností */
+  --len-tlumeny: #F1ECD6;      /* podklad čísel a drobností */
   --cihla: #A9503C;            /* obsazené termíny */
   --cihla-svetla: #E7D2CB;
 
@@ -66,9 +63,11 @@
   --r-karta: 14px;                        /* karty a fotky */
   --r-radek: 16px;                        /* řádky a menší prvky */
 
+  --hlavicka-v: 92px;
   --pohyb: cubic-bezier(.2, .7, .2, 1);
 }
 @media (min-width: 700px) { :root { --inset: 12px; } }
+@media (max-width: 960px) { :root { --hlavicka-v: 76px; } }
 
 
 /* 3 ZÁKLAD --------------------------------------------------- */
@@ -171,8 +170,7 @@ h3 { font-size: var(--fs-h3); line-height: 1.12; letter-spacing: -0.012em; font-
 .btn--les:hover { background: var(--les-hover); }
 .btn--krem { background: var(--krem); color: var(--les); }
 .btn--krem:hover { background: #fff; }
-.btn--zlata { background: var(--zlata); color: var(--uhel); }
-.btn--zlata:hover { background: var(--zlata-svetla); }
+
 .btn--obrys { border-color: rgba(245, 240, 227, .6); color: var(--krem); }
 .btn--obrys:hover { background: var(--krem); border-color: var(--krem); color: var(--les); }
 
@@ -307,7 +305,7 @@ a.dlazdice:hover h3 { text-decoration: underline; text-underline-offset: 6px; te
   .citace { background: rgba(35, 30, 24, .6); }
 }
 .citace__hvezdy { display: flex; gap: 3px; }
-.citace__hvezdy { color: var(--zlata); }
+.citace__hvezdy { color: var(--oliva); }
 .citace__hvezdy .i { width: 16px; height: 16px; fill: currentColor; stroke: none; }
 .citace blockquote { margin: 0; font-size: clamp(19px, 1.6vw, 22px); font-weight: 500; line-height: 1.4; }
 .citace figcaption { margin-top: auto; font-size: var(--fs-drobny); color: var(--krem-jemny); }
@@ -333,7 +331,7 @@ a.dlazdice:hover h3 { text-decoration: underline; text-underline-offset: 6px; te
 .fakta span { font-size: var(--fs-drobny); color: var(--krem-jemny); }
 .fakta a { text-decoration: none; }
 .fakta a:hover span { text-decoration: underline; text-underline-offset: 4px; }
-.fakta .i { width: 18px; height: 18px; fill: currentColor; stroke: none; color: var(--zlata); }
+.fakta .i { width: 18px; height: 18px; fill: currentColor; stroke: none; color: var(--oliva); }
 @media (max-width: 760px) { .fakta { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 16px; } }
 
 /* Přepínač jazyka */
@@ -457,8 +455,8 @@ body.menu-otevrene .logo__text span { color: var(--krem-jemny); }
 /* Hero: fotka, H1, perex s akcemi, fakta na jemně rozostřeném pásu */
 .hero {
   position: relative; margin-top: var(--inset); overflow: hidden;
-  min-height: max(560px, min(78svh, 760px));
-  aspect-ratio: 16 / 9;
+  isolation: isolate;
+  min-height: calc(100svh - var(--hlavicka-v) - var(--inset) * 2);
   display: flex; align-items: flex-end;
   background: var(--les); color: var(--krem);
 }
@@ -468,7 +466,7 @@ body.menu-otevrene .logo__text span { color: var(--krem-jemny); }
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(31,42,29,.35) 0%, rgba(31,42,29,.05) 28%, rgba(31,42,29,.2) 52%, rgba(31,42,29,.8) 100%);
 }
-.hero__obsah { position: relative; width: 100%; padding: clamp(120px, 16vw, 200px) var(--pad) 0; }
+.hero__obsah { position: relative; width: 100%; padding: clamp(80px, 10vw, 140px) var(--pad) 0; }
 .hero h1 span { display: block; }
 .hero__radek {
   display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;
@@ -545,7 +543,7 @@ body.menu-otevrene .logo__text span { color: var(--krem-jemny); }
 .areal__text { padding: clamp(36px, 5vw, 80px) clamp(28px, 4vw, 72px); display: flex; flex-direction: column; justify-content: center; }
 .areal__text .perex { margin-top: 20px; max-width: 42ch; }
 .areal__cena { margin-top: clamp(28px, 3vw, 44px); }
-.areal__cena strong { display: block; font-size: clamp(48px, 5.4vw, 82px); font-weight: 650; line-height: .95; letter-spacing: -0.035em; color: var(--zlata); }
+.areal__cena strong { display: block; font-size: clamp(52px, 6vw, 92px); font-weight: 650; line-height: .94; letter-spacing: -0.04em; color: var(--krem); }
 .areal__cena span { display: block; margin-top: 12px; font-size: var(--fs-perex); color: var(--krem-jemny); }
 .areal__poznamka { margin-top: 16px; font-size: var(--fs-maly); color: var(--krem-jemny); max-width: 42ch; }
 .areal__text .btn { margin-top: clamp(28px, 3vw, 40px); align-self: flex-start; }

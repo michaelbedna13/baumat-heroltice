@@ -36,11 +36,14 @@ Až vznikne nové focení z jednoho dne, korekci je možné zeslabit nebo vypnou
 | `--uhel-jemny` | #46523F | perex, popisy, drobný text |
 | `--pisek` | #E8DFC9 | podklad pod fotkou nebo mapou, než se načte |
 | `--pisek-tmavy` | #D9CDB0 | linky a rámečky na světlém |
-| `--mech`, `--ohniste` | | v záloze, zatím se nepoužívají |
+| `--okr` | #DCA84B | akcent: jen na tmavém pozadí (velká cena, tlačítko v tmavém panelu, hvězdy) |
+| `--okr-tlumeny` | #F0E2C4 | štítky sekcí, čísla u typů ubytování, kalendář |
+| `--ohniste` | #9A4F1E | v záloze, zatím se nepoužívá |
 
 Pravidla:
-- Na stránce jsou vidět jen les, krém a uhel. Písek je jen pro linky a podklady.
-- Žádné další barvy, žádné barevné štítky, žádné oranžové ceny.
+- Základ nese les, krém a uhel. Písek je na linky a podklady.
+- Okr je jediný akcent a musí zůstat vzácný: na plné sytosti jen na tmavém pozadí (na lese má kontrast 4,6 : 1, na krému jen 1,9 : 1, takže na světlém nikdy nenese text), v tlumené variantě ve štítcích a číslech.
+- Na jedné obrazovce má být okr nejvýš na dvou místech. Když je všude, přestane fungovat.
 - Kontrast: malý text vždy uhel nebo uhel-jemny na krému, krém na lese.
 
 ## Sklo (glass)
@@ -102,7 +105,8 @@ Velikost rádiusu nese hierarchii, proto se nesmí sjednotit:
 
 | Komponenta | Třídy | Použití | Pravidla |
 |---|---|---|---|
-| Tlačítko | `btn btn--les` / `btn--krem` / `btn--obrys` | hlavní akce (rezervace, termín) | les na světlém, krém na tmavém, obrys jen jako vedlejší na tmavém. Max jedno hlavní tlačítko v sekci |
+| Štítek sekce | `stitek` | jedno až dvě slova nad nadpisem | pojmenovává sekci, nikdy nenahrazuje nadpis |
+| Tlačítko | `btn btn--les` / `btn--krem` / `btn--obrys` / `btn--okr` | hlavní akce (rezervace, termín) | les na světlém, krém na tmavém, obrys jako vedlejší na tmavém, okr jen pro hlavní prodejní argument. Max jedno hlavní tlačítko v sekci |
 | Proklik | `proklik` / `proklik--svetly` | odkaz na podstránku v hlavičce sekce | vždy s šipkou, při najetí se vyplní |
 | Odkazový řádek | `odkazy` + `odkaz-radek` | rozcestník na existující stránky | ikona, H3, jedna věta, šipka v kolečku. Při najetí celý tmavý |
 | Položka | `polozky` + `polozka` | výčet bez odkazů (pro koho je areál) | ikona, H3, jedna věta, řádky oddělené linkami |
@@ -110,7 +114,7 @@ Velikost rádiusu nese hierarchii, proto se nesmí sjednotit:
 | Kontaktní řádek | `kontakty` + `kontakt-radek` | telefony, e-maily | řádky oddělené linkami, šipka se objeví při najetí |
 | Karta | `karty` + `karta` | ubytování | fotka 4:5, H3, jedna krátká věta, cena. Celá karta je odkaz. Žádné štítky na fotkách, žádné ikony u textu. Na mobilu vodorovný posun |
 | Dlaždice | `dlazdice` / `dlazdice--velka` | fotka s popiskem přes spodní část | jen tam, kde je fotka dost tmavá. Na mobilu raději karta s textem pod fotkou |
-| Fakta | `fakta` | krátká čísla (cena, kapacita, vzdálenost, hodnocení) | max 4 položky, jen na tmavém |
+| Fakta | `fakta` | krátká čísla (cena, kapacita, vzdálenost, hodnocení) | max 4 položky, jen na tmavém, každá ve vlastním skleněném boxu. Poslední smí být akcentovaná |
 | Citace | `citace` | recenze | jen v panelu s fotkou, hvězdy jen se skutečným hodnocením |
 | Přepínač jazyka | `jazyky` | hlavička | aktivní jazyk `aria-current="true"` |
 

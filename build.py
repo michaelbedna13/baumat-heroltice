@@ -51,7 +51,7 @@ def doplnit(text, root, aktivni):
 def sestavit(nazev):
     vystup, root, aktivni = STRANKY[nazev]
     zdroj = (SABLONY / f"{nazev}.html").read_text(encoding="utf-8")
-    for cast in ("hlavicka", "paticka", "vyzva"):
+    for cast in ("hlavicka", "paticka", "vyzva", "zaver"):
         zdroj = zdroj.replace(
             "{{" + cast + "}}", (SABLONY / f"{cast}.html").read_text(encoding="utf-8")
         )

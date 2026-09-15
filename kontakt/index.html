@@ -97,9 +97,10 @@
 
   <!-- SEKCE: hero podstránky -->
   <section class="hero hero--podstranka na-tmave" aria-labelledby="hero-nadpis">
-    <div class="hero__foto foto">
+    <div class="hero__foto">
       <img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/areal-1.jpg" alt="Rekreační areál Baumat Heroltice v údolí řeky Svratky" fetchpriority="high">
     </div>
+    <div class="hero__prekryv" aria-hidden="true"></div>
     <div class="hero__obsah">
       <h1 id="hero-nadpis">Pište, volejte, rezervujte</h1>
       <div class="hero__radek">
@@ -208,8 +209,22 @@
 
 </main>
 
+<!-- ZÁVĚR: tmavý blok, ve kterém končí stránka -->
+<div class="zaver">
+
+  <section class="vyzva-sekce" aria-labelledby="vyzva-nadpis">
+    <div class="wrap vyzva">
+      <h2 id="vyzva-nadpis">Naplánujte si pobyt</h2>
+      <p class="perex">Poradíme s cenou, volným termínem i výběrem ubytování. Ozvěte se telefonicky nebo e-mailem.</p>
+      <div class="vyzva__akce">
+        <a class="btn btn--krem" href="../kontakt/#kalendar"><svg class="i" aria-hidden="true"><use href="#i-calendar-event"/></svg>Volné termíny</a>
+        <a class="btn btn--obrys" href="tel:+420601594780"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>601&nbsp;594&nbsp;780</a>
+      </div>
+    </div>
+  </section>
+
 <footer class="paticka">
-  <svg class="paticka__motiv" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-znacka"/></svg>
+    <svg class="paticka__motiv" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-znacka"/></svg>
   <div class="wrap">
     <div class="paticka__horni">
       <div class="paticka__znacka">
@@ -249,6 +264,7 @@
     </div>
   </div>
 </footer>
+</div>
 
 <script src="../assets/js/main.js"></script>
 

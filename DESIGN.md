@@ -46,6 +46,12 @@ Pravidla:
 - Cihlová je vyhrazená pro obsazené termíny. Barva nese informaci, takže se nesmí použít jinde.
 - Kontrast: malý text vždy uhel nebo uhel-jemny na krému, krém na lese.
 
+## Závěr stránky
+
+Každá stránka končí blokem `.zaver`: jeden tmavý pruh se zeleným světlem a zrnem, ve kterém je výzva k akci a hned pod ní patička. Mezi nimi není mezera ani linka, takže stránka doplyne do tmy místo aby se lámala na dva bloky.
+
+Homepage výzvu nemá, protože ji nahrazuje plnohodnotná kontaktní sekce s mapou. Blok `.zaver` tam obsahuje jen patičku.
+
 ## Světlo, stín a zrno
 
 Web má jednu vlastní texturu: tmavě zelenou plochu prosvícenou olivovým světlem shora a ztmavenou zespodu, s jemným zrnem.
@@ -54,7 +60,8 @@ Web má jednu vlastní texturu: tmavě zelenou plochu prosvícenou olivovým sv�
 - Používá se na uzavírací sekci (výzva) a nikde jinde. Tmavé panely uvnitř stránky zůstávají plnou barvou, jinak by web zošedivěl.
 - Výzva jde přes celou šířku a navazuje přímo na tmavou patičku, takže stránka končí jedním tmavým blokem, ne dvěma.
 - Nejsvětlejší místo gradientu má s krémovým textem kontrast 5 : 1, takže text zůstává čitelný. Při zesvětlení gradientu je nutné kontrast přepočítat.
-- Hero má vlastní variantu: zrno přes fotku (12 %) a boční ztmavení, aby nadpis držel i na světlé fotce.
+- Hero má překryv jako samostatnou vrstvu `.hero__prekryv` se svislým ztmavením, boční vinětou, zeleným světlem pod nadpisem a zrnem. Nikdy se nedělá pseudo-prvkem na `.hero__foto`, ten už patří barevné korekci fotek a obě pravidla by se přebíjela.
+- Tmavé panely uvnitř stránky (celý areál) mají jemnější variantu stejného gradientu, aby nebyly ploché.
 
 ## Sklo (glass)
 
@@ -119,8 +126,8 @@ Velikost rádiusu nese hierarchii, proto se nesmí sjednotit:
 
 | Komponenta | Třídy | Použití | Pravidla |
 |---|---|---|---|
-| Tlačítko | `btn btn--les` / `btn--krem` / `btn--obrys` | hlavní akce (rezervace, termín) | les na světlém, krém na tmavém, obrys jako vedlejší na tmavém. Max jedno hlavní tlačítko v sekci |
-| Proklik | `proklik` / `proklik--svetly` | odkaz na podstránku v hlavičce sekce | vždy s šipkou, při najetí se vyplní |
+| Tlačítko | `btn btn--les` / `btn--obrys-tmavy` / `btn--krem` / `btn--obrys` | hlavní akce (rezervace, termín) | na světlém pozadí plné `btn--les` a vedlejší `btn--obrys-tmavy`, na tmavém plné `btn--krem` a vedlejší `btn--obrys`. V jedné sekci nejvýš jedno plné a jedno obrysové |
+| Proklik | `proklik` / `proklik--svetly` | odkaz na podstránku v hlavičce sekce | textový odkaz s podtržením a šipkou, nikdy nevypadá jako tlačítko |
 | Odkazový řádek | `odkazy` + `odkaz-radek` | rozcestník na existující stránky | řádky oddělené linkami. Při najetí se řádek jemně odsadí a vybarví se jen kolečko se šipkou, nikdy celý blok |
 | Položka | `polozky` + `polozka` | výčet bez odkazů (pro koho je areál) | ikona, H3, jedna věta, řádky oddělené linkami |
 | Karta vybavení | `vybaveni-mrizka` + `vybaveni-karta` | aktivity a vybavení | fotka, pod ní název a věta. Text nikdy přes fotku, aby byl čitelný i na mobilu |

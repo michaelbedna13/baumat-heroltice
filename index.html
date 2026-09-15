@@ -118,9 +118,10 @@
 
   <!-- SEKCE: hero -->
   <section class="hero na-tmave" aria-labelledby="hero-nadpis">
-    <div class="hero__foto foto">
+    <div class="hero__foto">
       <img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/areal-1.jpg" alt="Rekreační areál Baumat Heroltice v údolí řeky Svratky" fetchpriority="high">
     </div>
+    <div class="hero__prekryv" aria-hidden="true"></div>
     <div class="hero__obsah">
       <h1 id="hero-nadpis"><span>Rekreační areál</span> <span>Baumat Heroltice</span></h1>
       <div class="hero__radek">
@@ -327,8 +328,11 @@
 
 </main>
 
+<!-- ZÁVĚR: tmavý blok, ve kterém končí stránka -->
+<div class="zaver">
+
 <footer class="paticka">
-  <svg class="paticka__motiv" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-znacka"/></svg>
+    <svg class="paticka__motiv" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-znacka"/></svg>
   <div class="wrap">
     <div class="paticka__horni">
       <div class="paticka__znacka">
@@ -368,6 +372,7 @@
     </div>
   </div>
 </footer>
+</div>
 
 <script src="assets/js/main.js"></script>
 

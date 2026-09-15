@@ -27,6 +27,7 @@
   --pisek-tmavy: #D6CCAE;
   --uhel: #16181A;             /* off-black, hlavní text a nadpisy */
   --uhel-jemny: #5C6058;       /* popisky a perex */
+  --uhel-zeleny: #17200F;      /* tmavé zakončení stránky */
   --krem-jemny: rgba(245, 240, 227, .82);
   --linka-svetla: var(--pisek-tmavy);
   --linka-tmava: rgba(245, 240, 227, .24);
@@ -74,15 +75,15 @@
 .zrno::before {
   content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity: .16; mix-blend-mode: overlay;
+  opacity: .22; mix-blend-mode: overlay;
 }
 .svetlo {
   position: relative; isolation: isolate; overflow: hidden;
   background:
-    radial-gradient(90% 120% at 12% 6%, rgba(168, 183, 116, .36) 0%, rgba(168, 183, 116, 0) 58%),
-    radial-gradient(65% 85% at 90% 14%, rgba(241, 236, 214, .22) 0%, rgba(241, 236, 214, 0) 60%),
-    radial-gradient(120% 130% at 50% 112%, rgba(14, 22, 9, .62) 0%, rgba(14, 22, 9, 0) 66%),
-    var(--les);
+    radial-gradient(42% 58% at 26% 40%, rgba(214, 232, 176, .58) 0%, rgba(168, 183, 116, .3) 42%, rgba(44, 66, 25, 0) 74%),
+    radial-gradient(60% 80% at 78% 88%, rgba(101, 133, 62, .42) 0%, rgba(44, 66, 25, 0) 68%),
+    radial-gradient(130% 120% at 50% 0%, rgba(20, 30, 14, .7) 0%, rgba(20, 30, 14, 0) 60%),
+    var(--uhel-zeleny);
 }
 .svetlo > * { position: relative; z-index: 1; }
 
@@ -365,9 +366,9 @@ a.dlazdice:hover h3 { text-decoration: underline; text-underline-offset: 6px; te
 .hlavicka { position: relative; z-index: 50; }
 .hlavicka--lepi {
   position: fixed; top: 0; left: 0; right: 0;
-  background: rgba(245, 240, 227, .86);
-  border-bottom: 1px solid var(--linka-svetla);
-  -webkit-backdrop-filter: blur(20px) saturate(1.5); backdrop-filter: blur(20px) saturate(1.5);
+  background: rgba(245, 240, 227, .82);
+  box-shadow: 0 1px 0 rgba(22, 24, 26, .05), 0 12px 32px -18px rgba(22, 24, 26, .45);
+  -webkit-backdrop-filter: blur(22px) saturate(1.6); backdrop-filter: blur(22px) saturate(1.6);
   animation: hlavicka-dolu .35s var(--pohyb) both;
 }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
@@ -401,7 +402,8 @@ a.dlazdice:hover h3 { text-decoration: underline; text-underline-offset: 6px; te
 }
 .btn--mobil { display: none; }
 @media (max-width: 960px) {
-  .hlavicka__pill { grid-template-columns: 1fr auto; gap: 12px; padding-block: 16px; }
+  .hlavicka__pill { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 14px; }
+  .hlavicka__pill > nav { display: contents; }
   .burger { display: inline-flex; }
   .hlavicka__pill .btn--rezervace { display: none; }
   .menu {
@@ -438,27 +440,30 @@ body.menu-otevrene .logo { position: relative; z-index: 61; color: var(--krem); 
 body.menu-otevrene .logo__text span { color: var(--krem-jemny); }
 
 /* Patička */
-.paticka { position: relative; overflow: hidden; margin-top: var(--mezera-l); padding-bottom: 32px; font-size: var(--fs-maly); }
+.paticka {
+  position: relative; overflow: clip; margin-top: 0; padding: 0 0 36px;
+  font-size: var(--fs-maly); background: var(--uhel-zeleny); color: var(--krem);
+}
 .paticka__motiv {
-  position: absolute; right: calc(var(--gutter) - 40px); bottom: -60px; z-index: 0;
-  width: clamp(200px, 24vw, 340px); height: auto; color: var(--les); opacity: .07; pointer-events: none;
+  position: absolute; right: calc(var(--gutter) - 40px); bottom: -70px; z-index: 0;
+  width: clamp(200px, 24vw, 340px); height: auto; color: var(--oliva); opacity: .1; pointer-events: none;
 }
 .paticka .wrap { position: relative; z-index: 1; }
-@media (max-width: 860px) { .paticka__motiv { right: -60px; bottom: -80px; width: 240px; } }
+@media (max-width: 860px) { .paticka__motiv { right: -40px; bottom: -70px; width: 200px; } }
 .paticka__horni {
   display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: 32px;
-  padding: 52px 0; border-top: 1px solid var(--linka-svetla);
+  padding: clamp(56px, 6vw, 84px) 0 52px;
 }
-.paticka .logo { font-size: 28px; color: var(--les); }
-.paticka .logo__text span { font-size: 18px; }
-.paticka__znacka p { margin-top: 14px; color: var(--uhel-jemny); max-width: 32ch; }
+.paticka .logo { font-size: 28px; color: var(--krem); }
+.paticka .logo__text span { font-size: 18px; color: var(--krem-jemny); }
+.paticka__znacka p { margin-top: 14px; color: var(--krem-jemny); max-width: 32ch; }
 .paticka h2 { font-size: var(--fs-maly); font-weight: 600; letter-spacing: 0; line-height: 1.4; margin-bottom: 12px; }
-.paticka ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; color: var(--uhel-jemny); }
+.paticka ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; color: var(--krem-jemny); }
 .paticka ul a { text-decoration: none; }
-.paticka ul a:hover { color: var(--uhel); text-decoration: underline; text-underline-offset: 4px; }
+.paticka ul a:hover { color: var(--krem); text-decoration: underline; text-underline-offset: 4px; }
 .paticka__spodni {
   display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
-  padding-top: 24px; border-top: 1px solid var(--linka-svetla); color: var(--uhel-jemny); font-size: var(--fs-drobny);
+  padding-top: 26px; border-top: 1px solid rgba(245, 240, 227, .16); color: var(--krem-jemny); font-size: var(--fs-drobny);
 }
 .paticka__spodni a { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
 .paticka__spodni a:hover { text-decoration: underline; text-underline-offset: 4px; }
@@ -472,7 +477,7 @@ body.menu-otevrene .logo__text span { color: var(--krem-jemny); }
 .hero {
   position: relative; margin-top: 0; overflow: hidden;
   isolation: isolate; width: 100%; max-width: none; border-radius: 0;
-  min-height: calc(100svh - var(--hlavicka-v) - 12px);
+  min-height: clamp(560px, calc(100svh - var(--hlavicka-v) - 12px), 840px);
   display: flex; align-items: flex-end;
   background: var(--les); color: var(--krem);
 }
@@ -601,7 +606,7 @@ body.menu-otevrene .logo__text span { color: var(--krem-jemny); }
 /* 7 KOMPONENTY PODSTRÁNEK ------------------------------------ */
 
 /* Hero podstránky: nižší než na homepage, bez faktů */
-.hero--podstranka { min-height: max(340px, min(52svh, 520px)); aspect-ratio: auto; }
+.hero--podstranka { min-height: clamp(420px, calc(58svh - var(--hlavicka-v) / 2), 600px); aspect-ratio: auto; }
 .hero--podstranka .hero__foto::after {
   background:
     linear-gradient(180deg, rgba(12, 16, 12, .1) 0%, rgba(12, 16, 12, .48) 45%, rgba(12, 16, 12, .88) 100%),
@@ -683,8 +688,8 @@ body.menu-otevrene .logo__text span { color: var(--krem-jemny); }
 
 /* Závěrečná výzva: tmavý panel se světlem a zrnem */
 .vyzva-panel {
-  margin-top: var(--mezera-xl); border-radius: var(--r-panel);
-  padding-block: clamp(72px, 9vw, 132px); color: var(--krem);
+  margin-top: var(--mezera-xl); border-radius: 0; width: 100%; max-width: none;
+  padding-block: clamp(96px, 12vw, 172px); color: var(--krem);
 }
 .vyzva { text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--mezera-s); }
 .vyzva h2 { max-width: 16ch; }
@@ -818,18 +823,29 @@ body.menu-otevrene .burger { background: transparent; color: var(--krem); border
 @media (max-width: 520px) { .typ__parametry { grid-template-columns: 1fr; } }
 
 
-/* Karusel: vodorovný posun karet se šipkami */
+/* Karusel: aktivní karta vystoupí, ostatní ustoupí */
 .karusel { position: relative; }
 .karusel__stopa {
-  display: grid; grid-auto-flow: column; grid-auto-columns: clamp(280px, 34vw, 480px);
-  gap: clamp(16px, 1.8vw, 28px); list-style: none; margin: 0; padding: 0 var(--gutter) 6px;
-  margin-inline: calc(var(--gutter) * -1);
+  display: grid; grid-auto-flow: column; grid-auto-columns: clamp(270px, 32vw, 440px);
+  gap: clamp(16px, 1.8vw, 28px); list-style: none; margin: 0;
+  padding: 10px var(--gutter) 18px; margin-inline: calc(var(--gutter) * -1);
   overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter);
-  scrollbar-width: none;
+  scrollbar-width: none; cursor: grab;
 }
 .karusel__stopa::-webkit-scrollbar { display: none; }
+.karusel__stopa.je-tazeno { cursor: grabbing; scroll-snap-type: none; }
+.karusel__stopa.je-tazeno * { pointer-events: none; }
 .karusel__stopa > li { scroll-snap-align: start; }
-.karusel__stopa .aktivita { height: 100%; }
+.karusel__stopa .aktivita {
+  height: 100%; opacity: .58;
+  transition: opacity .45s var(--pohyb), transform .45s var(--pohyb);
+}
+.karusel__stopa .aktivita .aktivita__foto { box-shadow: 0 2px 10px -6px rgba(22, 24, 26, .3); transition: box-shadow .45s var(--pohyb); }
+.karusel__stopa > li.je-aktivni .aktivita { opacity: 1; transform: translateY(-8px); }
+.karusel__stopa > li.je-aktivni .aktivita__foto { box-shadow: 0 26px 46px -26px rgba(22, 24, 26, .55); }
+@media (prefers-reduced-motion: reduce) {
+  .karusel__stopa .aktivita { opacity: 1; transform: none; }
+}
 .karusel__sipky { display: flex; gap: 8px; }
 .karusel__sipka {
   width: 46px; height: 46px; border-radius: 50%; cursor: pointer;
@@ -838,8 +854,11 @@ body.menu-otevrene .burger { background: transparent; color: var(--krem); border
   transition: background-color .2s ease, color .2s ease, opacity .2s ease;
 }
 .karusel__sipka:hover:not(:disabled) { background: var(--les); color: var(--krem); }
-.karusel__sipka:disabled { opacity: .3; cursor: default; }
-@media (max-width: 620px) { .karusel__stopa { grid-auto-columns: minmax(0, 78%); } }
+.karusel__sipka:disabled { opacity: .28; cursor: default; }
+.karusel__ukazatel { display: flex; gap: 6px; margin-top: 4px; }
+.karusel__tecka { width: 28px; height: 3px; border-radius: 99px; background: rgba(44, 66, 25, .18); transition: background-color .3s ease; }
+.karusel__tecka.je-aktivni { background: var(--les); }
+@media (max-width: 620px) { .karusel__stopa { grid-auto-columns: minmax(0, 80%); } }
 
 /* 9 STRÁNKA AKTIVITY ----------------------------------------- */
 

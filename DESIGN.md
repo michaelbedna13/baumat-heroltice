@@ -52,6 +52,7 @@ Web má jednu vlastní texturu: tmavě zelenou plochu prosvícenou olivovým sv�
 
 - Třída `svetlo` dává zelený světelný gradient, třída `zrno` přidá šum (16 % krytí, režim overlay).
 - Používá se na uzavírací sekci (výzva) a nikde jinde. Tmavé panely uvnitř stránky zůstávají plnou barvou, jinak by web zošedivěl.
+- Výzva jde přes celou šířku a navazuje přímo na tmavou patičku, takže stránka končí jedním tmavým blokem, ne dvěma.
 - Nejsvětlejší místo gradientu má s krémovým textem kontrast 5 : 1, takže text zůstává čitelný. Při zesvětlení gradientu je nutné kontrast přepočítat.
 - Hero má vlastní variantu: zrno přes fotku (12 %) a boční ztmavení, aby nadpis držel i na světlé fotce.
 
@@ -92,6 +93,10 @@ Pravidla:
 | `--mezera-m` | 32 až 52 px | nadpis sekce a její obsah |
 | `--mezera-l` | 88 až 144 px | mezi sekcemi (třída `sekce`) |
 | `--mezera-xl` | 120 až 224 px | jen před hlavním prodejním argumentem (třída `sekce sekce--xl`), max jednou na stránce |
+
+## Patička
+
+Patička je tmavá (`--uhel-zeleny` #17200F) a navazuje na uzavírací výzvu bez mezery. Stránka tak končí jedním tmavým blokem místo série světlých a tmavých pruhů.
 
 ## Rádiusy
 
@@ -144,9 +149,9 @@ Podstránky nemají všechny stejnou stavbu. Ubytování je rozhodovací stránk
 
 Sekce nemají štítky ani nálepky nad nadpisem, nadpis stojí sám.
 
-Hlavička je běžný pruh nad hero, ne plovoucí pilulka přes obsah. Jakmile ji scroll odsune z obrazovky, přilepí se zpátky nahoru ve skleněné variantě (`hlavicka--lepi`). Aby stránka při přilepení neposkočila, JS pod ni vloží prvek stejné výšky.
+Hlavička je běžný pruh nad hero, ne plovoucí pilulka přes obsah. Jakmile ji scroll odsune z obrazovky, přilepí se zpátky nahoru ve skleněné variantě (`hlavicka--lepi`) a od obsahu ji odděluje měkký stín, ne linka. Aby stránka při přilepení neposkočila, JS pod ni vloží prvek stejné výšky.
 
-Hero jde přes celou šířku okna, bez rádiusu a bez okrajů. Obsah uvnitř zůstává v mřížce stránky, takže lícuje se zbytkem webu. Na homepage zabírá celou první obrazovku (výška okna minus hlavička), takže po otevření je vidět nadpis, obě tlačítka i pruh s fakty. Na podstránkách je nižší. Obě mají dvojitý gradient: svislý zespodu a vodorovný zleva. Bez toho se světlý nadpis ztrácí ve světlé fotce.
+Hero jde přes celou šířku okna, bez rádiusu a bez okrajů. Obsah uvnitř zůstává v mřížce stránky, takže lícuje se zbytkem webu. Na homepage zabírá celou první obrazovku, ale výška je omezená rozsahem 560 až 840 px, aby nebylo obří na velkém monitoru ani useknuté na nízkém. Na podstránkách je rozsah 420 až 600 px. Obě mají dvojitý gradient: svislý zespodu a vodorovný zleva. Bez toho se světlý nadpis ztrácí ve světlé fotce.
 
 Na podstránkách se nepoužívá kotvová navigace pod hero. Kotvy v URL (`#apartman`) zůstávají, aby na ně šlo odkazovat z jiných stránek.
 
@@ -188,7 +193,7 @@ Nedělat odkazy na stránky, které neexistují. Samostatné stránky pro svatby
 | Ceníkový řádek | `cenik-skupina` + `cenik` + `cenik-radek` | položka, popis a cena vpravo |
 | Poznámka | `poznamka` | vysvětlivka pod obsahem, na pískovém podkladu |
 | Osoba | `osoba` | správce areálu: fotka, role, jméno, kontakt |
-| Karusel | `karusel` + `karusel__stopa` | sady karet, které se nevejdou vedle sebe | šipky patří do `sekce__akce` v hlavičce sekce a samy se skryjí, když není co posouvat |
+| Karusel | `karusel` + `karusel__stopa` | sady karet, které se nevejdou vedle sebe | aktivní karta je plná a povystoupí, ostatní ustoupí do 58 % krytí. Ovládá se šipkami, tažením myší, prstem i kolečkem. Šipky a ukazatel se skryjí, když není co posouvat |
 | Kalendář | `kalendar-blok` + `kalendar` | vlastní kalendář obsazenosti, data z `assets/data/obsazenost.json`. Mřížka vlevo, legenda a poznámka vpravo |
 | Galerie s prohlížečem | `detail__galerie` + `data-galerie` | fotky v detailu | hlavní fotka, náhledy, klik otevře prohlížeč (šipky, Esc) |
 | Výzva | `vyzva` | závěrečná sekce na konci každé podstránky |

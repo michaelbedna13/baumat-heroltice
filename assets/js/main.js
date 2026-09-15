@@ -130,10 +130,22 @@
   /* Karusel ------------------------------------------------------ */
   document.querySelectorAll("[data-karusel]").forEach(function (karusel) {
     var stopa = karusel.querySelector(".karusel__stopa");
+    if (!stopa) return;
+    var polozky = [].slice.call(stopa.children);
     var okoli = karusel.closest("section") || document;
     var zpet = okoli.querySelector("[data-karusel-zpet]");
     var vpred = okoli.querySelector("[data-karusel-vpred]");
-    if (!stopa || !zpet || !vpred) return;
+    var ukazatel = karusel.querySelector("[data-karusel-ukazatel]");
+    var tecky = [];
+
+    if (ukazatel) {
+      polozky.forEach(function () {
+        var t = document.createElement("span");
+        t.className = "karusel__tecka";
+        ukazatel.appendChild(t);
+        tecky.push(t);
+      });
+    }
 
     function krok() {
       var karta = stopa.firstElementChild;
@@ -142,18 +154,55 @@
       return karta.getBoundingClientRect().width + mezera;
     }
 
-    function stav() {
-      var lzePosouvat = stopa.scrollWidth - stopa.clientWidth > 4;
-      zpet.parentNode.hidden = !lzePosouvat;
-      var max = stopa.scrollWidth - stopa.clientWidth - 2;
-      zpet.disabled = stopa.scrollLeft <= 2;
-      vpred.disabled = stopa.scrollLeft >= max;
+    /* Aktivní je karta, která je nejblíž levému okraji stopy */
+    function oznacAktivni() {
+      var levy = stopa.getBoundingClientRect().left;
+      var nejblizsi = 0;
+      var nejmensi = Infinity;
+      polozky.forEach(function (li, i) {
+        var vzdalenost = Math.abs(li.getBoundingClientRect().left - levy);
+        if (vzdalenost < nejmensi) { nejmensi = vzdalenost; nejblizsi = i; }
+      });
+      polozky.forEach(function (li, i) { li.classList.toggle("je-aktivni", i === nejblizsi); });
+      tecky.forEach(function (t, i) { t.classList.toggle("je-aktivni", i === nejblizsi); });
     }
 
-    zpet.addEventListener("click", function () { stopa.scrollBy({ left: -krok(), behavior: "smooth" }); });
-    vpred.addEventListener("click", function () { stopa.scrollBy({ left: krok(), behavior: "smooth" }); });
+    function stav() {
+      var lzePosouvat = stopa.scrollWidth - stopa.clientWidth > 4;
+      if (zpet) zpet.parentNode.hidden = !lzePosouvat;
+      if (ukazatel) ukazatel.hidden = !lzePosouvat;
+      var max = stopa.scrollWidth - stopa.clientWidth - 2;
+      if (zpet) zpet.disabled = stopa.scrollLeft <= 2;
+      if (vpred) vpred.disabled = stopa.scrollLeft >= max;
+      oznacAktivni();
+    }
+
+    if (zpet) zpet.addEventListener("click", function () { stopa.scrollBy({ left: -krok(), behavior: "smooth" }); });
+    if (vpred) vpred.addEventListener("click", function () { stopa.scrollBy({ left: krok(), behavior: "smooth" }); });
     stopa.addEventListener("scroll", stav, { passive: true });
     window.addEventListener("resize", stav);
+
+    /* Tažení myší */
+    var tahne = false, startX = 0, startScroll = 0, posunuto = 0;
+    stopa.addEventListener("pointerdown", function (e) {
+      if (e.pointerType === "touch") return;
+      tahne = true; posunuto = 0;
+      startX = e.clientX; startScroll = stopa.scrollLeft;
+    });
+    window.addEventListener("pointermove", function (e) {
+      if (!tahne) return;
+      posunuto = e.clientX - startX;
+      if (Math.abs(posunuto) > 4) stopa.classList.add("je-tazeno");
+      stopa.scrollLeft = startScroll - posunuto;
+    });
+    window.addEventListener("pointerup", function () {
+      if (!tahne) return;
+      tahne = false;
+      stopa.classList.remove("je-tazeno");
+      var k = krok();
+      stopa.scrollTo({ left: Math.round(stopa.scrollLeft / k) * k, behavior: "smooth" });
+    });
+
     stav();
   });
 

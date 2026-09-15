@@ -46,6 +46,15 @@ Pravidla:
 - Cihlová je vyhrazená pro obsazené termíny. Barva nese informaci, takže se nesmí použít jinde.
 - Kontrast: malý text vždy uhel nebo uhel-jemny na krému, krém na lese.
 
+## Světlo, stín a zrno
+
+Web má jednu vlastní texturu: tmavě zelenou plochu prosvícenou olivovým světlem shora a ztmavenou zespodu, s jemným zrnem.
+
+- Třída `svetlo` dává zelený světelný gradient, třída `zrno` přidá šum (16 % krytí, režim overlay).
+- Používá se na uzavírací sekci (výzva) a nikde jinde. Tmavé panely uvnitř stránky zůstávají plnou barvou, jinak by web zošedivěl.
+- Nejsvětlejší místo gradientu má s krémovým textem kontrast 5 : 1, takže text zůstává čitelný. Při zesvětlení gradientu je nutné kontrast přepočítat.
+- Hero má vlastní variantu: zrno přes fotku (12 %) a boční ztmavení, aby nadpis držel i na světlé fotce.
+
 ## Sklo (glass)
 
 Jen na dvou místech:
@@ -137,7 +146,7 @@ Sekce nemají štítky ani nálepky nad nadpisem, nadpis stojí sám.
 
 Hlavička je běžný pruh nad hero, ne plovoucí pilulka přes obsah. Jakmile ji scroll odsune z obrazovky, přilepí se zpátky nahoru ve skleněné variantě (`hlavicka--lepi`). Aby stránka při přilepení neposkočila, JS pod ni vloží prvek stejné výšky.
 
-Hero na homepage zabírá celou první obrazovku (výška okna minus hlavička), takže po otevření je vidět nadpis, obě tlačítka i pruh s fakty. Na podstránkách má poměr 21:9. Obě mají dvojitý gradient: svislý zespodu a vodorovný zleva. Bez toho se světlý nadpis ztrácí ve světlé fotce.
+Hero jde přes celou šířku okna, bez rádiusu a bez okrajů. Obsah uvnitř zůstává v mřížce stránky, takže lícuje se zbytkem webu. Na homepage zabírá celou první obrazovku (výška okna minus hlavička), takže po otevření je vidět nadpis, obě tlačítka i pruh s fakty. Na podstránkách je nižší. Obě mají dvojitý gradient: svislý zespodu a vodorovný zleva. Bez toho se světlý nadpis ztrácí ve světlé fotce.
 
 Na podstránkách se nepoužívá kotvová navigace pod hero. Kotvy v URL (`#apartman`) zůstávají, aby na ně šlo odkazovat z jiných stránek.
 
@@ -179,6 +188,7 @@ Nedělat odkazy na stránky, které neexistují. Samostatné stránky pro svatby
 | Ceníkový řádek | `cenik-skupina` + `cenik` + `cenik-radek` | položka, popis a cena vpravo |
 | Poznámka | `poznamka` | vysvětlivka pod obsahem, na pískovém podkladu |
 | Osoba | `osoba` | správce areálu: fotka, role, jméno, kontakt |
+| Karusel | `karusel` + `karusel__stopa` | sady karet, které se nevejdou vedle sebe | šipky patří do `sekce__akce` v hlavičce sekce a samy se skryjí, když není co posouvat |
 | Kalendář | `kalendar-blok` + `kalendar` | vlastní kalendář obsazenosti, data z `assets/data/obsazenost.json`. Mřížka vlevo, legenda a poznámka vpravo |
 | Galerie s prohlížečem | `detail__galerie` + `data-galerie` | fotky v detailu | hlavní fotka, náhledy, klik otevře prohlížeč (šipky, Esc) |
 | Výzva | `vyzva` | závěrečná sekce na konci každé podstránky |

@@ -96,7 +96,7 @@
 <main id="obsah">
 
   <!-- SEKCE: hero podstránky -->
-  <section class="hero hero--podstranka panel na-tmave" aria-labelledby="hero-nadpis">
+  <section class="hero hero--podstranka na-tmave" aria-labelledby="hero-nadpis">
     <div class="hero__foto foto">
       <img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Chatky_hl-foto-1-1536x1024.jpg" alt="Dřevěné chatky v rekreačním areálu Baumat" fetchpriority="high">
     </div>
@@ -272,10 +272,19 @@
           <h2 id="zazemi-nadpis">Zázemí pro celou skupinu</h2>
           <p class="perex">Nevaříme, ale kuchyni i jídelnu si můžete pronajmout a uvařit si sami.</p>
         </div>
-        <a class="proklik" href="../cenik/#prostory">Ceny pronájmu<svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <div class="sekce__akce">
+          <div class="karusel__sipky">
+            <button class="karusel__sipka" type="button" data-karusel-zpet aria-label="Předchozí">
+              <svg class="i" aria-hidden="true" style="transform:rotate(180deg)"><use href="#i-arrow-right"/></svg>
+            </button>
+            <button class="karusel__sipka" type="button" data-karusel-vpred aria-label="Další"><svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+          </div>
+          <a class="proklik" href="../cenik/#prostory">Ceny pronájmu<svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        </div>
       </div>
-      <ul class="aktivity">
-        <li class="aktivita aktivita--velka" id="kuchyne-jidelna">
+      <div class="karusel" data-karusel>
+      <ul class="karusel__stopa">
+        <li class="aktivita" id="kuchyne-jidelna">
           <div class="aktivita__foto foto" data-galerie="Kuchyně a jídelna">
             <button class="foto-btn" type="button" aria-label="Otevřít fotky kuchyně a jídelny"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Kuchyne-a-jidelna_1-1536x1024.jpg" alt="Profesionální kuchyně v areálu Baumat" loading="lazy"></button>
             <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Kuchyne-a-jidelna_2-1536x1024.jpg" alt="Jídelna s dřevěnými stoly" loading="lazy">
@@ -291,7 +300,7 @@
           </ul>
           <p class="aktivita__meta"><svg class="i" aria-hidden="true"><use href="#i-building-store"/></svg>900&nbsp;Kč za den + energie</p>
         </li>
-        <li class="aktivita aktivita--velka" id="kuchynky">
+        <li class="aktivita" id="kuchynky">
           <div class="aktivita__foto foto" data-galerie="Kuchyňky">
             <button class="foto-btn" type="button" aria-label="Otevřít fotky kuchyňky"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/kuchynka_hl.photo_-1536x1024.jpg" alt="Kuchyňka pro menší skupiny" loading="lazy"></button>
             <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/kuchynka_2-1536x1024.jpg" alt="Posezení v kuchyňce" loading="lazy">
@@ -317,16 +326,17 @@
           <p>Sprchy, umyvadla a záchody pro hosty z chatek. Apartmán a buňky Slušovice mají vlastní.</p>
         </li>
       </ul>
+      </div>
     </div>
   </section>
 
   <!-- SEKCE: závěrečná výzva -->
-  <section class="sekce" aria-labelledby="vyzva-nadpis">
+  <section class="vyzva-panel panel svetlo zrno na-tmave" aria-labelledby="vyzva-nadpis">
     <div class="wrap vyzva">
-          <h2 id="vyzva-nadpis">Naplánujte si pobyt</h2>
+      <h2 id="vyzva-nadpis">Naplánujte si pobyt</h2>
       <p class="perex">Poradíme s cenou, volným termínem i výběrem ubytování. Ozvěte se telefonicky nebo e-mailem.</p>
       <div class="vyzva__akce">
-        <a class="btn btn--les" href="../kontakt/#kalendar"><svg class="i" aria-hidden="true"><use href="#i-calendar-event"/></svg>Volné termíny</a>
+        <a class="btn btn--krem" href="../kontakt/#kalendar"><svg class="i" aria-hidden="true"><use href="#i-calendar-event"/></svg>Volné termíny</a>
         <a class="proklik" href="tel:+420601594780">601&nbsp;594&nbsp;780<svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
       </div>
     </div>

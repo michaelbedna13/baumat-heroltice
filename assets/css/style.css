@@ -70,6 +70,22 @@
 @media (max-width: 960px) { :root { --hlavicka-v: 76px; } }
 
 
+/* Zrnitá textura a zelené světlo: světlo, stín, šum */
+.zrno::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: .16; mix-blend-mode: overlay;
+}
+.svetlo {
+  position: relative; isolation: isolate; overflow: hidden;
+  background:
+    radial-gradient(90% 120% at 12% 6%, rgba(168, 183, 116, .36) 0%, rgba(168, 183, 116, 0) 58%),
+    radial-gradient(65% 85% at 90% 14%, rgba(241, 236, 214, .22) 0%, rgba(241, 236, 214, 0) 60%),
+    radial-gradient(120% 130% at 50% 112%, rgba(14, 22, 9, .62) 0%, rgba(14, 22, 9, 0) 66%),
+    var(--les);
+}
+.svetlo > * { position: relative; z-index: 1; }
+
 /* 3 ZÁKLAD --------------------------------------------------- */
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -454,9 +470,9 @@ body.menu-otevrene .logo__text span { color: var(--krem-jemny); }
 
 /* Hero: fotka, H1, perex s akcemi, fakta na jemně rozostřeném pásu */
 .hero {
-  position: relative; margin-top: var(--inset); overflow: hidden;
-  isolation: isolate;
-  min-height: calc(100svh - var(--hlavicka-v) - var(--inset) * 2);
+  position: relative; margin-top: 0; overflow: hidden;
+  isolation: isolate; width: 100%; max-width: none; border-radius: 0;
+  min-height: calc(100svh - var(--hlavicka-v) - 12px);
   display: flex; align-items: flex-end;
   background: var(--les); color: var(--krem);
 }
@@ -466,7 +482,7 @@ body.menu-otevrene .logo__text span { color: var(--krem-jemny); }
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(31,42,29,.35) 0%, rgba(31,42,29,.05) 28%, rgba(31,42,29,.2) 52%, rgba(31,42,29,.8) 100%);
 }
-.hero__obsah { position: relative; width: 100%; padding: clamp(80px, 10vw, 140px) var(--pad) 0; }
+.hero__obsah { position: relative; z-index: 2; width: 100%; max-width: var(--page); margin-inline: auto; padding: clamp(80px, 10vw, 140px) var(--gutter) 0; }
 .hero h1 span { display: block; }
 .hero__radek {
   display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;
@@ -475,8 +491,8 @@ body.menu-otevrene .logo__text span { color: var(--krem-jemny); }
 .hero__radek .perex { color: var(--krem); max-width: 42ch; }
 .hero__akce { display: flex; flex-wrap: wrap; gap: 12px; }
 .hero__pas {
-  position: relative; margin: clamp(24px, 3.4vw, 44px) calc(var(--pad) * -1) 0;
-  padding: clamp(20px, 2.4vw, 32px) var(--pad) clamp(20px, 2.4vw, 30px);
+  position: relative; margin: clamp(24px, 3.4vw, 44px) calc(var(--gutter) * -1) 0;
+  padding: clamp(20px, 2.4vw, 32px) var(--gutter) clamp(20px, 2.4vw, 30px);
 }
 .hero__pas::before {
   content: ""; position: absolute; inset: 0; pointer-events: none;
@@ -585,13 +601,13 @@ body.menu-otevrene .logo__text span { color: var(--krem-jemny); }
 /* 7 KOMPONENTY PODSTRÁNEK ------------------------------------ */
 
 /* Hero podstránky: nižší než na homepage, bez faktů */
-.hero--podstranka { min-height: max(360px, min(48svh, 480px)); aspect-ratio: 21 / 9; }
+.hero--podstranka { min-height: max(340px, min(52svh, 520px)); aspect-ratio: auto; }
 .hero--podstranka .hero__foto::after {
   background:
     linear-gradient(180deg, rgba(12, 16, 12, .1) 0%, rgba(12, 16, 12, .48) 45%, rgba(12, 16, 12, .88) 100%),
     linear-gradient(95deg, rgba(12, 16, 12, .6) 0%, rgba(12, 16, 12, .18) 55%, rgba(12, 16, 12, 0) 78%);
 }
-.hero--podstranka .hero__obsah { padding-top: clamp(72px, 9vw, 120px); padding-bottom: clamp(32px, 4vw, 60px); }
+.hero--podstranka .hero__obsah { padding-top: clamp(64px, 8vw, 110px); padding-bottom: clamp(36px, 4.5vw, 64px); }
 .hero--podstranka h1 { max-width: 18ch; font-size: clamp(38px, 6.4vw, 96px); }
 
 /* Sdílené prvky galerií */
@@ -665,10 +681,17 @@ body.menu-otevrene .logo__text span { color: var(--krem-jemny); }
 .osoba .kontakty { margin-top: 24px; max-width: 480px; }
 @media (max-width: 620px) { .osoba { grid-template-columns: 1fr; gap: var(--mezera-s); } .osoba__foto { max-width: 180px; } }
 
-/* Závěrečná výzva */
+/* Závěrečná výzva: tmavý panel se světlem a zrnem */
+.vyzva-panel {
+  margin-top: var(--mezera-xl); border-radius: var(--r-panel);
+  padding-block: clamp(72px, 9vw, 132px); color: var(--krem);
+}
 .vyzva { text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--mezera-s); }
-.vyzva .perex { max-width: 52ch; }
-.vyzva__akce { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 8px; }
+.vyzva h2 { max-width: 16ch; }
+.vyzva .perex { max-width: 50ch; color: var(--krem-jemny); }
+.vyzva__akce { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 12px; }
+.vyzva__akce .proklik { border-color: rgba(245, 240, 227, .55); color: var(--krem); }
+.vyzva__akce .proklik:hover { background: var(--krem); border-color: var(--krem); color: var(--les); }
 
 /* Varianty komponent na tmavém panelu */
 .na-tmave .kontakty { border-top-color: var(--linka-tmava); }
@@ -795,6 +818,29 @@ body.menu-otevrene .burger { background: transparent; color: var(--krem); border
 @media (max-width: 520px) { .typ__parametry { grid-template-columns: 1fr; } }
 
 
+/* Karusel: vodorovný posun karet se šipkami */
+.karusel { position: relative; }
+.karusel__stopa {
+  display: grid; grid-auto-flow: column; grid-auto-columns: clamp(280px, 34vw, 480px);
+  gap: clamp(16px, 1.8vw, 28px); list-style: none; margin: 0; padding: 0 var(--gutter) 6px;
+  margin-inline: calc(var(--gutter) * -1);
+  overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter);
+  scrollbar-width: none;
+}
+.karusel__stopa::-webkit-scrollbar { display: none; }
+.karusel__stopa > li { scroll-snap-align: start; }
+.karusel__stopa .aktivita { height: 100%; }
+.karusel__sipky { display: flex; gap: 8px; }
+.karusel__sipka {
+  width: 46px; height: 46px; border-radius: 50%; cursor: pointer;
+  display: grid; place-items: center;
+  background: none; border: 1.5px solid var(--les); color: var(--les);
+  transition: background-color .2s ease, color .2s ease, opacity .2s ease;
+}
+.karusel__sipka:hover:not(:disabled) { background: var(--les); color: var(--krem); }
+.karusel__sipka:disabled { opacity: .3; cursor: default; }
+@media (max-width: 620px) { .karusel__stopa { grid-auto-columns: minmax(0, 78%); } }
+
 /* 9 STRÁNKA AKTIVITY ----------------------------------------- */
 
 .aktivity { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: clamp(20px, 2.2vw, 36px); list-style: none; margin: 0; padding: 0; }
@@ -809,11 +855,13 @@ body.menu-otevrene .burger { background: transparent; color: var(--krem); border
 .aktivita p { margin-top: 8px; font-size: var(--fs-maly); color: var(--uhel-jemny); max-width: 46ch; }
 .aktivita--velka p { font-size: var(--fs-text); }
 .aktivita__meta {
-  display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; margin-top: 16px;
-  padding: 7px 14px; border-radius: 999px; border: 1px solid var(--linka-svetla);
+  display: flex; align-items: center; gap: 10px; margin-top: auto;
+  padding-top: 14px; border-top: 1px solid var(--linka-svetla);
   font-size: var(--fs-drobny); font-weight: 600; color: var(--uhel);
 }
 .aktivita__meta .i { width: 16px; height: 16px; color: var(--les); }
+.aktivita p, .aktivita__seznam { margin-bottom: 16px; }
+.aktivita__seznam + .aktivita__meta { margin-top: auto; }
 .aktivita__seznam { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 8px; }
 .aktivita__seznam + .aktivita__meta { margin-top: 18px; }
 .aktivita__seznam li { display: flex; gap: 10px; align-items: flex-start; font-size: var(--fs-maly); color: var(--uhel-jemny); }
@@ -831,3 +879,6 @@ body.menu-otevrene .burger { background: transparent; color: var(--krem); border
   .aktivita--velka h3 { font-size: 26px; }
   .aktivita p, .aktivita--velka p { font-size: var(--fs-drobny); }
 }
+
+.sekce__akce { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+@media (max-width: 620px) { .sekce__akce .karusel__sipky { display: none; } }

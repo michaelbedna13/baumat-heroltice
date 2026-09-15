@@ -127,6 +127,36 @@
     });
   }
 
+  /* Karusel ------------------------------------------------------ */
+  document.querySelectorAll("[data-karusel]").forEach(function (karusel) {
+    var stopa = karusel.querySelector(".karusel__stopa");
+    var okoli = karusel.closest("section") || document;
+    var zpet = okoli.querySelector("[data-karusel-zpet]");
+    var vpred = okoli.querySelector("[data-karusel-vpred]");
+    if (!stopa || !zpet || !vpred) return;
+
+    function krok() {
+      var karta = stopa.firstElementChild;
+      if (!karta) return stopa.clientWidth;
+      var mezera = parseFloat(getComputedStyle(stopa).columnGap) || 0;
+      return karta.getBoundingClientRect().width + mezera;
+    }
+
+    function stav() {
+      var lzePosouvat = stopa.scrollWidth - stopa.clientWidth > 4;
+      zpet.parentNode.hidden = !lzePosouvat;
+      var max = stopa.scrollWidth - stopa.clientWidth - 2;
+      zpet.disabled = stopa.scrollLeft <= 2;
+      vpred.disabled = stopa.scrollLeft >= max;
+    }
+
+    zpet.addEventListener("click", function () { stopa.scrollBy({ left: -krok(), behavior: "smooth" }); });
+    vpred.addEventListener("click", function () { stopa.scrollBy({ left: krok(), behavior: "smooth" }); });
+    stopa.addEventListener("scroll", stav, { passive: true });
+    window.addEventListener("resize", stav);
+    stav();
+  });
+
   /* Kalendář obsazenosti ---------------------------------------- */
   var kalendar = document.querySelector("[data-kalendar]");
   if (kalendar) {

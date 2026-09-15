@@ -11,34 +11,34 @@ Tenhle soubor je závazný pro všechny stránky. Živé ukázky všech komponen
 
 ## Značka
 
-Značka je kruh se štítem chatky nad vlnou řeky (`#i-znacka` ve spritu). Odkazuje na chatky u Svratky.
+Značka je kruh se štítem chatky nad vlnou řeky (`#i-znacka` ve spritu).
 
-- V hlavičce a patičce vždy se jménem: značka, „Baumat“ tučně, „Heroltice“ lehce.
-- Značka se nikdy nedeformuje ani nebarví jinak, dědí barvu textu.
-- V patičce je navíc jako velký jemný motiv (7 % krytí), jinde se opakovat nemá.
+- V hlavičce a patičce vždy se jménem: značka, „Baumat“ v Playfair Display, „Heroltice“ v Poppins.
 - Minimální velikost 24 px, pod ni je vlnka nečitelná.
 
-## Fotky: barevné sjednocení
+## Písmo
 
-Fotky areálu vznikaly v různých ročních obdobích a na různé přístroje, takže vedle sebe skáčou z podzimní žluté do letní modré. Všechny obrázkové obaly proto mají třídu `foto`, která drží jednotnou korekci: mírná desaturace, vyšší kontrast a zelený soft-light nádech.
+Dva fonty, oba self-hostované v repu:
 
-Prakticky: každý obal fotky (`hero__foto`, `karta__foto`, `detail__hlavni`, `areal__foto` a další) musí mít i třídu `foto`. Bez ní fotka vypadne z palety a je to hned vidět.
+| Font | Kde | Řezy |
+|---|---|---|
+| **Playfair Display** | nadpisy H1 až H3, velká čísla (cena, fakta), logo | 400 až 700, kurzíva pro první řádek hero |
+| **Poppins** | text, perex, tlačítka, navigace, popisky, patička | 400, 500, 600 |
 
-Až vznikne nové focení z jednoho dne, korekci je možné zeslabit nebo vypnout úpravou pravidla `.foto` v CSS.
+Playfair nese eleganci, Poppins čitelnost. Nikdy naopak: nadpis v Poppins ani odstavec v Playfairu.
 
 ## Barvy
 
 | Token | Hex | Kde |
 |---|---|---|
-| `--les` | #2C4219 | tmavé panely, tlačítka, ikony, odkazy |
-| `--krem` | #F5F0E3 | pozadí stránky, text na tmavém |
-| `--uhel` | #16181A | hlavní text, nadpisy, ceny |
-| `--uhel-jemny` | #5C6058 | perex, popisy, drobný text |
-| `--pisek` | #E8E0C8 | podklad pod fotkou nebo mapou, než se načte |
-| `--pisek-tmavy` | #D6CCAE | linky a rámečky na světlém |
-| `--len-tlumeny` | #F1ECD6 | jemná zvýraznění: čísla u typů ubytování, částečně obsazené dny |
-| `--oliva` | #A8B774 | drobné akcenty na tmavém: hvězdy u recenzí, ikona v hero |
-| `--cihla` | #A9503C | obsazené termíny v kalendáři, nikdy jako dekorace |
+| `--tma` | #022E21 | Teal Green: hero, tmavé panely, závěr, plná tlačítka |
+| `--les` | #0C4433 | doplňková zeleň, hover |
+| `--krem` | #F3EFE6 | pozadí stránky, text na tmavém |
+| `--papir` | #EBE5D8 | podklad střídaných sekcí (`pruh`) |
+| `--uhel` | #12211B | hlavní text |
+| `--uhel-jemny` | #5A6660 | perex a popisky |
+| `--mata` | #9FCBB4 | akcent jen na tmavém (hvězdy, ikony) |
+| `--cihla` | #A9503C | obsazené termíny v kalendáři |
 
 Pravidla:
 - Základ nese les, krém a uhel. Písek je na linky a podklady.
@@ -65,9 +65,15 @@ Web má jednu vlastní texturu: tmavě zelenou plochu prosvícenou olivovým sv�
 
 ## Sklo (glass)
 
-Jen na dvou místech:
-- **fakta v hero** (boxy na fotce),
-- **citace v panelu s fotkou** (recenze).
+Skleněná karta má vždy čtyři vrstvy: jemný přechod bílé 6 až 18 %, světlý obrys 1 px, vnitřní světlo nahoře a rozostření pozadí 18 až 24 px. Bez rozostření to není sklo, bez obrysu se karta rozplyne.
+
+Používá se na:
+- **kartu v sekci „Celý areál“** (přes fotku),
+- **náhledovou kartu v hero**,
+- **citace v panelu s fotkou** (recenze),
+- **hlavičku po odscrollování**.
+
+Nikdy na čistém krémovém pozadí, kde není co rozostřovat.
 
 Nikde jinde. Sklo potřebuje fotku za sebou, na čisté ploše nemá smysl. Jemné rozostření pod fakty v hero není sklo, ale přechod bez hran a rámečku.
 
@@ -92,7 +98,15 @@ Pravidla:
 - H1 na dva řádky přes `<span>` bloky, nerozdělovat na malý štítek a velký název.
 - Tlačítka a odkazy váha 600.
 
+## Rytmus sekcí
+
+Sekce se nestřídají jen mezerou. Vybrané sekce leží na třídě `pruh`: podklad o odstín hlubší (`--papir` #EFE8D6) s měkkým náběhem nahoře i dole, takže mezi plochami není vidět hrana. Používá se na jednu až dvě sekce na stránce, nikdy na dvě po sobě.
+
+Pořadí ploch na stránce: hero (tmavé) → krémová → pruh → krémová → tmavý panel → krémová → závěr (tmavý). Stránka tak dýchá a nemá dva stejné bloky za sebou.
+
 ## Mezery
+
+Všechny rozestupy jsou násobky osmi (`--s-1` až `--s-8`), takže se prvky na stránce trefují do jedné mřížky.
 
 | Token | Velikost | Kdy |
 |---|---|---|
@@ -111,9 +125,12 @@ Velikost rádiusu nese hierarchii, proto se nesmí sjednotit:
 
 | Token | Velikost | Kde |
 |---|---|---|
-| `--r-panel` | 24 až 36 px | hero, tmavé panely, velké fotky |
-| `--r-karta` | 14 px | karty, fotky v kartách |
-| `--r-radek` | 16 px | řádky, poznámky |
+| `--r-panel` | 32 px | velké panely |
+| `--r-karta` | 16 px | karty a fotky |
+| `--r-radek` | 12 px | řádky a vnitřní prvky karet |
+| `--r-drobny` | 8 px | nejmenší prvky |
+
+Vnitřní prvek má vždy menší rádius než jeho obal, jinak vypadá roh nevyvážený. Karta 16 px obsahuje fotku 12 px, panel 32 px obsahuje kartu 24 px.
 
 ## Mřížka
 
@@ -199,7 +216,7 @@ Nedělat odkazy na stránky, které neexistují. Samostatné stránky pro svatby
 | Karta aktivity | `aktivity` + `aktivita` / `aktivita--velka` | aktivity a zázemí: fotka, název, text, volitelná meta s cenou |
 | Ceníkový řádek | `cenik-skupina` + `cenik` + `cenik-radek` | položka, popis a cena vpravo |
 | Poznámka | `poznamka` | vysvětlivka pod obsahem, na pískovém podkladu |
-| Osoba | `osoba` | správce areálu: fotka, role, jméno, kontakt |
+| Osoba | `osoba-panel` + `osoba` | správce areálu na tmavém panelu s gradientem: fotka, role, jméno, kontakt |
 | Karusel | `karusel` + `karusel__stopa` | sady karet, které se nevejdou vedle sebe | aktivní karta je plná a povystoupí, ostatní ustoupí do 58 % krytí. Ovládá se šipkami, tažením myší, prstem i kolečkem. Šipky a ukazatel se skryjí, když není co posouvat |
 | Kalendář | `kalendar-blok` + `kalendar` | vlastní kalendář obsazenosti, data z `assets/data/obsazenost.json`. Mřížka vlevo, legenda a poznámka vpravo |
 | Galerie s prohlížečem | `detail__galerie` + `data-galerie` | fotky v detailu | hlavní fotka, náhledy, klik otevře prohlížeč (šipky, Esc) |

@@ -132,9 +132,10 @@
     var stopa = karusel.querySelector(".karusel__stopa");
     if (!stopa) return;
     var polozky = [].slice.call(stopa.children);
-    var okoli = karusel.closest("section") || document;
-    var zpet = okoli.querySelector("[data-karusel-zpet]");
-    var vpred = okoli.querySelector("[data-karusel-vpred]");
+    var id = karusel.getAttribute("data-karusel");
+    var okoli = (id && document.getElementById(id)) || karusel.closest("section") || document;
+    var zpet = okoli.querySelector("[data-karusel-zpet]") || document.querySelector("[data-karusel-zpet]");
+    var vpred = okoli.querySelector("[data-karusel-vpred]") || document.querySelector("[data-karusel-vpred]");
     var ukazatel = karusel.querySelector("[data-karusel-ukazatel]");
     var tecky = [];
 
@@ -201,6 +202,12 @@
       stopa.classList.remove("je-tazeno");
       var k = krok();
       stopa.scrollTo({ left: Math.round(stopa.scrollLeft / k) * k, behavior: "smooth" });
+    });
+
+    stopa.setAttribute("tabindex", "0");
+    stopa.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { e.preventDefault(); stopa.scrollBy({ left: krok(), behavior: "smooth" }); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); stopa.scrollBy({ left: -krok(), behavior: "smooth" }); }
     });
 
     stav();

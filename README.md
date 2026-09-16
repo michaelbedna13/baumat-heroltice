@@ -13,6 +13,8 @@ build.py                sestaví HTML ze šablon
 assets/css/style.css    paleta, typografie, layout
 assets/js/main.js       mobilní menu, hlavička, prohlížeč fotek, kalendář
 assets/data/obsazenost.json   termíny pro kalendář (zatím UKÁZKOVÁ data)
+assets/img/             fotky a logo (viz FOTKY.md)
+FOTKY.md                názvy a formáty fotek, návod na logo
 DESIGN.md               pravidla designu, komponenty, typy sekcí
 styleguide.html         živé ukázky komponent (noindex)
 assets/fonts/           Bricolage Grotesque (woff2, latin + latin-ext, licence OFL)
@@ -36,7 +38,7 @@ Hotové HTML se commituje, hosting nic nebuilduje. Náhled: `python3 -m http.ser
 | Mech    | #6B8A4E | v záloze |
 | Krém    | #F5F0E3 | pozadí             |
 | Písek   | #E8DFC9 | linky, podklad mapy |
-| Uhel    | #16181A | text |
+| Uhel    | #12211B | text |
 | Ohniště | #9A4F1E | v záloze |
 
 ## Zbývá

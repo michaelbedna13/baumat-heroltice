@@ -168,11 +168,11 @@
       <p class="sg-pozn"><code>karty</code> + <code>karta</code>. Fotka, H3, jedna krátká věta, cena. Žádné štítky ani ikony.</p>
       <ul class="karty" style="grid-template-columns:repeat(2,minmax(0,1fr))">
         <li class="karta">
-          <div class="karta__foto foto"><img src="{{IMG}}/2024/11/apartman_na-vysku.jpg" alt="Apartmán" loading="lazy"></div>
+          <div class="karta__foto foto"><img src="{{foto:apartman-karta}}" alt="Apartmán" loading="lazy"></div>
           <div class="karta__telo"><h3><a class="karta__odkaz" href="#">Apartmán</a></h3><p class="karta__popis">6 lůžek, vlastní koupelna a kuchyňka</p><p class="cena"><strong>290&nbsp;Kč</strong><span>za lůžko na noc</span></p></div>
         </li>
         <li class="karta">
-          <div class="karta__foto foto"><img src="{{IMG}}/2024/11/chatky_na-vysku.jpg" alt="Chatky" loading="lazy"></div>
+          <div class="karta__foto foto"><img src="{{foto:chatky-karta}}" alt="Chatky" loading="lazy"></div>
           <div class="karta__telo"><h3><a class="karta__odkaz" href="#">Chatky klasické</a></h3><p class="karta__popis">3 až 4 lůžka, jednoduché vybavení</p><p class="cena"><strong>180&nbsp;Kč</strong><span>za lůžko na noc</span></p></div>
         </li>
       </ul>
@@ -185,8 +185,8 @@
       <p class="sg-pozn"><code>vybaveni-mrizka</code> + <code>vybaveni-karta</code>: text vždy pod fotkou, ne přes ni. <code>polozky</code> + <code>polozka</code>: výčet bez odkazů.</p>
       <div class="sg-mrizka sg-2">
         <ul class="vybaveni-mrizka" style="grid-template-columns:repeat(2,minmax(0,1fr))">
-          <li class="vybaveni-karta"><div class="vybaveni-karta__foto foto"><img src="{{IMG}}/2024/11/Bazen_2-1536x1024.jpg" alt="" loading="lazy"></div><h3><a href="#">Bazén</a></h3><p>Plavání i odpočinek u čisté vody.</p></li>
-          <li class="vybaveni-karta"><div class="vybaveni-karta__foto foto"><img src="{{IMG}}/2024/11/Detske-hriste-1536x1024.jpg" alt="" loading="lazy"></div><h3><a href="#">Dětské hřiště</a></h3><p>Houpačka a skluzavka.</p></li>
+          <li class="vybaveni-karta"><div class="vybaveni-karta__foto foto"><img src="{{foto:hero-aktivity}}" alt="" loading="lazy"></div><h3><a href="#">Bazén</a></h3><p>Plavání i odpočinek u čisté vody.</p></li>
+          <li class="vybaveni-karta"><div class="vybaveni-karta__foto foto"><img src="{{foto:hriste-1}}" alt="" loading="lazy"></div><h3><a href="#">Dětské hřiště</a></h3><p>Houpačka a skluzavka.</p></li>
         </ul>
         <ul class="polozky">
           <li class="polozka">{{i:rings}}<div><h3>Svatby</h3><p>Klidné prostředí v přírodě a pomoc s přípravou celého dne.</p></div></li>
@@ -201,8 +201,8 @@
       <h2>Přehled a blok typu</h2>
       <p class="sg-pozn"><code>prehled</code>: rychlé srovnání pod hero. <code>typ</code>: číslovaná hlavička, široká galerie (<code>typ__galerie</code>) a text s parametry ve dvou sloupcích. Sudé bloky mají <code>typ--obraceny</code>.</p>
       <ul class="prehled" style="grid-template-columns:repeat(2,minmax(0,1fr));max-width:640px;margin-bottom:32px">
-        <li><a class="prehled__odkaz" href="#"><span class="prehled__foto foto"><img src="{{IMG}}/2024/11/Apartman_hl-foto-1536x1024.jpg" alt="" loading="lazy"></span><span><span class="prehled__nazev">Apartmán</span><span class="prehled__meta">6 lůžek · od 290&nbsp;Kč</span></span></a></li>
-        <li><a class="prehled__odkaz" href="#"><span class="prehled__foto foto"><img src="{{IMG}}/2024/11/Chatky_hl-foto-1-1536x1024.jpg" alt="" loading="lazy"></span><span><span class="prehled__nazev">Chatky klasické</span><span class="prehled__meta">24 chatek · od 180&nbsp;Kč</span></span></a></li>
+        <li><a class="prehled__odkaz" href="#"><span class="prehled__foto foto"><img src="{{foto:apartman-1}}" alt="" loading="lazy"></span><span><span class="prehled__nazev">Apartmán</span><span class="prehled__meta">6 lůžek · od 290&nbsp;Kč</span></span></a></li>
+        <li><a class="prehled__odkaz" href="#"><span class="prehled__foto foto"><img src="{{foto:hero-ubytovani}}" alt="" loading="lazy"></span><span><span class="prehled__nazev">Chatky klasické</span><span class="prehled__meta">24 chatek · od 180&nbsp;Kč</span></span></a></li>
       </ul>
       <div class="typ__hlava">
         <p class="typ__cislo">01</p>
@@ -218,12 +218,12 @@
       <p class="sg-pozn"><code>aktivity</code> + <code>aktivita</code>, varianta <code>aktivita--velka</code> zabírá dvojnásobek šířky. Fotka otevírá prohlížeč, <code>aktivita__meta</code> nese cenu nebo upozornění.</p>
       <ul class="aktivity">
         <li class="aktivita aktivita--velka">
-          <div class="aktivita__foto foto"><img src="{{IMG}}/2024/11/Bazen_2-1536x1024.jpg" alt="Bazén" loading="lazy"><span class="lupa">{{i:photo}}3 fotky</span></div>
+          <div class="aktivita__foto foto"><img src="{{foto:hero-aktivity}}" alt="Bazén" loading="lazy"><span class="lupa">{{i:photo}}3 fotky</span></div>
           <h3>Bazén</h3><p>Osvěžení a relaxace v čisté vodě.</p>
           <p class="aktivita__meta">{{i:info-circle}}Platí provozní řád bazénu</p>
         </li>
         <li class="aktivita">
-          <div class="aktivita__foto foto"><img src="{{IMG}}/2024/11/Detske-hriste-1536x1024.jpg" alt="Dětské hřiště" loading="lazy"></div>
+          <div class="aktivita__foto foto"><img src="{{foto:hriste-1}}" alt="Dětské hřiště" loading="lazy"></div>
           <h3>Dětské hřiště</h3><p>Houpačka a skluzavka.</p>
         </li>
       </ul>
@@ -246,7 +246,7 @@
       </div>
     </div>
     <div class="recenze panel panel--tmavy na-tmave sg-panel sg-foto-panel" style="margin-top:20px">
-      <img class="recenze__foto foto-obraz" src="{{IMG}}/2024/11/areal-2.jpg" alt="" loading="lazy">
+      <img class="recenze__foto foto-obraz" src="{{foto:hero-cenik}}" alt="" loading="lazy">
       <div class="wrap">
         <div class="recenze__mrizka">
           <figure class="citace"><div class="citace__hvezdy" role="img" aria-label="Hodnocení 5 z 5">{{i:star}}{{i:star}}{{i:star}}{{i:star}}{{i:star}}</div><blockquote><p>Vynikající místo na sport.</p></blockquote><figcaption><strong>Jméno hosta</strong>Google, měsíc a rok</figcaption></figure>

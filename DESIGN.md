@@ -1,148 +1,75 @@
-# Design systém webu Baumat Heroltice
+# Design webu Baumat Heroltice
 
-Závazné pro všechny stránky. Živé ukázky komponent jsou na `styleguide.html`.
-
-Stylopis `assets/css/style.css` je psaný **mobile-first**: základní pravidla platí pro telefon, `@media (min-width: …)` přidává větší obrazovky. Nikdy se nepíše opačně, jinak se pravidla začnou přebíjet.
-
-## Principy
-
-1. **Fotky prodávají místo.** Typografie a barvy jim dělají rámec.
-2. **Jedna škála rozestupů.** Všechno jsou násobky osmi, nic se netrefuje „od oka".
-3. **Jeden důraz na sekci.** Max jedno plné tlačítko a jeden proklik.
-4. **Jen ověřená fakta.** Co není potvrzené od Baumatu, na web nejde.
-
-## Písmo
-
-| Font | Kde | Řezy |
-|---|---|---|
-| **Playfair Display** | H1 až H3, ceny, čísla ve faktech, logo | 400 až 700, kurzíva pro první řádek hero |
-| **Poppins** | text, perex, tlačítka, navigace, popisky | 400, 500, 600 |
-
-Nikdy naopak. Oba jsou v repu (`assets/fonts/`), nic se netahá z Googlu.
-
-### Velikosti
-
-| Token | Rozsah | Kde |
-|---|---|---|
-| `--fs-hero` | 38 až 104 px | H1 v hero |
-| `--fs-h2-velky` | 32 až 68 px | závěrečná výzva, hlavní argument |
-| `--fs-h2` | 27 až 44 px | nadpisy sekcí |
-| `--fs-h3` | 19 až 25 px | karty, řádky, dlaždice |
-| `--fs-cena` | 23 až 29 px | ceny v kartách |
-| `--fs-perex` | 16 až 18 px | úvodní odstavec |
-| `--fs-text` | 16 px | běžný text |
-| `--fs-maly` | 14 px | popisky v kartách |
-| `--fs-drobny` | 13 px | metadata, jednotky |
+Koncept v2 „olivové panely". Obsah leží v zaoblených panelech na kamenném podkladu, mezi panely je vždy stejná mezera. Fotky jsou vidět, ale vždy v rámu vedle textu, nikdy přes celou šířku okna.
 
 ## Barvy
 
-| Token | Hex | Kde |
+| Token | Hex | Použití |
 |---|---|---|
-| `--tma` | #022E21 | hero, tmavé panely, plná tlačítka |
-| `--tma-hluboka` | #011C15 | konec závěru, pozadí za stránkou |
-| `--les` | #0C4433 | hover plných tlačítek |
-| `--krem` | #F3EFE6 | pozadí stránky, text na tmavém |
-| `--papir` | #EBE5D8 | podklad střídaných sekcí (`pruh`), kalendář |
-| `--pisek` | #E2DCCB | podklad pod fotkou, než se načte |
-| `--uhel` | #12211B | hlavní text |
-| `--uhel-jemny` | #5A6660 | perex a popisky |
-| `--mata` | #9FCBB4 | akcent jen na tmavém (hvězdy, ikony) |
-| `--cihla` | #A9503C | obsazené termíny v kalendáři, nikde jinde |
+| `--oliva` | #55613F | úvodní panel s navigací, pás aktivit, plná dlaždice, hlavní tlačítko na světlé ploše |
+| `--oliva-tmava` | #434D31 | hover olivových prvků |
+| `--mech` | #2B3222 | text, patička |
+| `--hlina` | #3F3225 | jediný hnědý panel na stránce (celý areál, správce), obsazené dny v kalendáři |
+| `--krem` | #F6F2E7 | světlé panely, tlačítka na tmavé |
+| `--kamen` | #E3E2D7 | podklad stránky, mezery mezi panely |
+| `--sedy` | #676C5B | vedlejší text na světlé ploše |
+| `--foto` | #C8CBB8 | plocha pod fotkou, než se načte |
 
-Web nemá barevný akcent na světlém pozadí. Důraz nese velikost, váha a tmavá plocha.
+Pravidla:
+- Na jedné stránce nejvýš jeden hnědý panel.
+- Žádná další akcentová barva. Důraz nese velikost písma a tmavá plocha.
+- Stíny se nepoužívají, jedinou výjimkou je přilepená lišta při scrollování.
 
-## Rozestupy
+## Písmo
 
-Jediná škála, násobky osmi: `--s-1` (8) až `--s-8` (64).
+Hanken Grotesk, jedna rodina, variabilní řez uložený lokálně v `assets/fonts/` (latin a latin-ext, licence OFL).
 
-Rytmus stránky řídí čtyři tokeny:
+- Nadpisy H1 a H2: řez 300, těsný proklad (-0.035em), velké velikosti. Tohle je hlavní výrazový prvek webu.
+- H3: řez 400.
+- Text 16 px, řez 400, řádkování 1,6. Důraz 500, tučně 600.
+- Žádné verzálky, žádné štítky nad nadpisy sekcí.
 
-| Token | Rozsah | Kdy |
-|---|---|---|
-| `--sekce-y` | 64 až 120 px | mezi sekcemi, třída `sekce` |
-| `--sekce-y-velka` | 96 až 176 px | před hlavním argumentem a před závěrem, třída `sekce--xl` |
-| `--hlava-mezera` | 32 až 56 px | mezi nadpisem sekce a jejím obsahem |
-| `--mrizka-mezera` | 16 až 28 px | mezi kartami v mřížce |
+## Tvar a rozestupy
 
-Nic jiného se pro odsazení sekcí nepoužívá. Když někde chybí vzduch, upraví se token, ne jednotlivé místo.
+- Panely: rádius 26 px. Fotky: 16 px. Pole formuláře: 14 px. Tlačítka, štítky a kotvy: pilulka.
+- Vnitřní odsazení panelu `--vnitrek` (20 až 64 px), mezera mezi panely `--okraj` (8 až 14 px).
+- Maximální šířka stránky 1360 px.
 
-## Rádiusy
+## Rytmus stránky
 
-| Token | Velikost | Kde |
-|---|---|---|
-| `--r-panel` | 24 až 32 px | velké panely |
-| `--r-karta` | 16 px | karty a fotky |
-| `--r-radek` | 12 px | vnitřní prvky karet, poznámky |
-| `--r-drobny` | 8 px | nejmenší prvky, dny v kalendáři |
-
-Vnitřní prvek má vždy menší rádius než obal, jinak roh vypadá nevyvážený.
-
-## Mřížka a body zlomu
-
-- Obsah max 1360 px, odsazení od kraje `--pad` (20 px na mobilu, 32 na tabletu, 48 na desktopu).
-- Body zlomu: **620** (dva sloupce karet), **700** (větší odsazení), **900** (dvousloupcové sekce), **1080** (desktopová navigace, čtyři sloupce).
+1. Úvodní olivový panel: lišta, pravítko (vlevo místo nebo drobečková navigace, vpravo vzdálenost), nadpis, fotka, případně poptávkový formulář.
+2. Pod ním se střídají krémové panely, holé sekce na kamenném podkladu (mozaika dlaždic), jeden olivový a jeden hnědý panel.
+3. Stránka vždy končí tmavou patičkou s výzvou „Je váš termín volný?".
 
 ## Komponenty
 
-| Komponenta | Třídy | Pravidla |
-|---|---|---|
-| Tlačítko | `btn` + `btn--les` / `btn--obrys-tmavy` / `btn--krem` / `btn--obrys` | na světlém plné tmavé a obrysové tmavé, na tmavém plné krémové a obrysové světlé |
-| Tlačítko se šipkou | `btn--sipka` + `btn__kolecko` | jen pro hlavní akci v hero a ve skleněné kartě |
-| Proklik | `proklik` / `proklik--svetly` | textový odkaz se šipkou, nikdy nevypadá jako tlačítko |
-| Výčet | `polozky` + `polozka` | ikona, název, věta. Bez odkazu |
-| Odkazový řádek | `odkazy` + `odkaz-radek` | při najetí se řádek odsadí a vybarví jen kolečko se šipkou |
-| Kontaktní řádek | `kontakty` + `kontakt-radek` | šipka se objeví při najetí, na dotykových zařízeních je vidět vždy |
-| Karta ubytování | `karty` + `karta` | fotka, název, věta, cena. Celá je odkaz |
-| Karta vybavení | `vybaveni-mrizka` + `vybaveni-karta` | text vždy pod fotkou, ne přes ni |
-| Karta aktivity | `aktivity` + `aktivita` / `aktivita--velka` | meta s cenou sedí na spodní hraně karty |
-| Karusel | `karusel` + `karusel__stopa` | aktivní karta plná, ostatní na 55 % (jen od 1080 px). Ovládá se šipkami, tažením, prstem i klávesnicí |
-| Citace | `citace` | skleněná karta, jen na panelu s fotkou |
-| Fakta | `fakta` | max 4 položky, jen v hero |
-| Kalendář | `kalendar-blok` | pískový panel, mřížka vlevo, legenda a poznámka vpravo |
+| Třída | Co to je |
+|---|---|
+| `.panel` + `--krem`, `--oliva`, `--mech`, `--hlina`, `--holy` | základní blok obsahu |
+| `.svetly` | přidat na tmavý panel, přepne linky a vedlejší text na světlé varianty |
+| `.hlava` | hlavička sekce: nadpis vlevo, krátký text a odkaz vpravo |
+| `.split`, `.split--pul`, `.split--obracene` | dva bloky vedle sebe |
+| `.lista`, `.menu`, `.pravitko`, `.drobky` | navigace v úvodním panelu |
+| `.hero`, `.hero--pod`, `.hodnoceni`, `.uvod-karta` | obsah úvodního panelu |
+| `.poptavka` | formulář, který sestaví e-mail s poptávkou (bez serveru) |
+| `.vodici`, `.ctvrtiny`, `.fakta` | panel se svislými vodicími linkami a čísly |
+| `.mozaika`, `.dlazdice`, `--plna`, `--foto` | mřížka dlaždic |
+| `.karty`, `.karta` | karty ubytování s fotkou, na mobilu posuvné |
+| `.celek`, `.celek__cena` | blok s cenou celého areálu |
+| `.ikony` | seznam s linkovými ikonami na olivové |
+| `.prehled` | tabulka typů ubytování s odkazy na kotvy |
+| `.typ`, `.galerie`, `.parametry` | detail typu ubytování |
+| `.polozky`, `.polozka`, `.aktivity`, `.aktivita--velka` | karty zázemí a aktivit |
+| `.cenik-skupina`, `.cenik`, `.kotvy` | ceník |
+| `.kontakty`, `.poloha`, `.mapa`, `.osoba` | kontakty |
+| `.odkazy` | odkazové řádky (dokumenty, rozcestník) |
+| `.kalendar-blok`, `.legenda` | kalendář obsazenosti |
+| `.lightbox` | prohlížeč fotek (vytváří ho main.js) |
 
-## Typy sekcí
-
-| Typ | Třídy | Kde |
-|---|---|---|
-| Hero | `hero` (+ `hero--podstranka`) | přes celou šířku okna, překryv je samostatná vrstva `hero__prekryv` |
-| Běžná sekce | `sekce` + `wrap` | většina obsahu |
-| Pruh | `pruh` | sekce na pískovém podkladu s měkkým náběhem, max jedna na stránku |
-| Tmavý panel | `panel panel--tmavy panel--sekce` | recenze |
-| Skleněná karta přes fotku | `areal` + `areal__karta` | hlavní prodejní argument |
-| Závěr | `zaver` | výzva a patička v jednom tmavém bloku |
-
-Rytmus: hero (tmavé) → krémová → pruh → krémová → tmavý panel → krémová → závěr.
-
-## Sklo
-
-Čtyři vrstvy: přechod bílé 6 až 18 %, obrys 1 px, vnitřní světlo nahoře, rozostření 18 až 22 px. Používá se na skleněnou kartu v sekci „Celý areál", citace recenzí a hlavičku po odscrollování. Nikdy na čistém krémovém pozadí.
-
-## Světlo a zrno
-
-Závěr stránky a panel správce mají zelený světelný gradient a zrno (`svetlo`, `zrno`, 20 % krytí). Jinde ne, jinak by web zošedivěl.
+Živé ukázky jsou ve `styleguide.html`.
 
 ## Texty
 
-- Nikdy dlouhou pomlčku.
-- Nezlomitelná mezera mezi číslem a jednotkou: `290&nbsp;Kč`, `25&nbsp;km`.
-- České uvozovky „takto".
-- Ceny jsou na více stránkách. Při změně projít všechny výskyty: `grep -rn "Kč" _sablony/`.
-
-## Fotky
-
-Pojmenování, formáty a seznam jsou ve `FOTKY.md`. Každý obrázkový obal má třídu `foto`, která drží jednotnou barevnou korekci.
-
-## Přístupnost
-
-- Každá sekce má `aria-labelledby` na svůj nadpis.
-- Viditelný focus, na tmavém krémový.
-- Ikony `aria-hidden="true"`, smysl nese text.
-- Pohyb respektuje `prefers-reduced-motion`.
-
-## Nová stránka
-
-1. Vytvořit `_sablony/<nazev>.html`, začít `{{hlavicka}}`, skončit `{{vyzva}}` a `{{paticka}}`.
-2. Přidat do `STRANKY` v `build.py`.
-3. Skládat jen z typů sekcí výše.
-4. Zkontrolovat: jeden H1, max jeden `h2-velky`, max jedna `sekce--xl`, max jeden `pruh`.
-5. Spustit `python3 build.py` a otestovat na 390, 768, 1440 a 2560 px.
+- Žádné dlouhé pomlčky. `build.py` stránku s dlouhou pomlčkou nesestaví.
+- Mezi číslem a jednotkou nezlomitelná mezera: `290&nbsp;Kč`, `25&nbsp;km`.
+- Na web patří jen údaje, které Baumat potvrdil. Nic nedomýšlet (počty objektů, časy dojezdu, lhůty odpovědí).

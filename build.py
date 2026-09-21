@@ -83,9 +83,6 @@ STRANKY = {
     "styleguide": ("styleguide.html", "", ""),
 }
 
-HVEZDY = '<svg class="i" aria-hidden="true"><use href="#i-star"/></svg>' * 5
-
-
 def ikona(nazev):
     return f'<svg class="i" aria-hidden="true"><use href="#i-{nazev}"/></svg>'
 
@@ -103,7 +100,6 @@ def doplnit(text, root, aktivni):
     text = text.replace("{{SPRITE}}", IKONY.read_text(encoding="utf-8").strip())
     text = text.replace("{{ROOT}}", root)
     text = text.replace("{{IMG}}", IMG)
-    text = text.replace("{{stars}}", HVEZDY)
     # aktivní položka v menu
     text = re.sub(
         r"\{\{A:([a-z]+)\}\}",
@@ -118,7 +114,7 @@ def doplnit(text, root, aktivni):
 def sestavit(nazev):
     vystup, root, aktivni = STRANKY[nazev]
     zdroj = (SABLONY / f"{nazev}.html").read_text(encoding="utf-8")
-    for cast in ("hlavicka", "paticka", "vyzva", "zaver"):
+    for cast in ("hlava-meta", "hlavicka", "poptavka", "paticka"):
         zdroj = zdroj.replace(
             "{{" + cast + "}}", (SABLONY / f"{cast}.html").read_text(encoding="utf-8")
         )

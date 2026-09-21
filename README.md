@@ -8,16 +8,16 @@ Statický web Rekreačního areálu Baumat Heroltice. Čisté HTML, CSS a JS bez
 index.html              homepage (CZ)
 ubytovani/ aktivity/ cenik/ kontakt/   podstránky (CZ)
 en/                     anglická verze (připravujeme)
-_sablony/               zdrojové šablony a sdílené části
+_sablony/               zdrojové šablony a sdílené části (hlava-meta, hlavicka, poptavka, paticka)
 build.py                sestaví HTML ze šablon
 assets/css/style.css    celý stylopis (mobile-first, tokeny a komponenty)
 DESIGN.md               pravidla designu a seznam komponent
-assets/js/main.js       mobilní menu, hlavička, prohlížeč fotek, kalendář
+assets/js/main.js       mobilní menu, přilepená lišta, poptávkový formulář, prohlížeč fotek, kalendář
 assets/data/obsazenost.json   termíny pro kalendář (zatím UKÁZKOVÁ data)
 assets/img/             fotky a logo (viz FOTKY.md)
 FOTKY.md                názvy a formáty fotek, návod na logo
 styleguide.html         živé ukázky komponent (noindex)
-assets/fonts/           Bricolage Grotesque (woff2, latin + latin-ext, licence OFL)
+assets/fonts/           Hanken Grotesk, variabilní (woff2, latin + latin-ext, licence OFL)
 ```
 
 ## Úpravy a sestavení
@@ -30,14 +30,17 @@ python3 build.py
 
 Hotové HTML se commituje, hosting nic nebuilduje. Náhled: `python3 -m http.server` a http://localhost:8000.
 
+## Poptávkový formulář
+
+Formulář na homepage a v kontaktu nic neodesílá na server. Po odeslání otevře e-mailového klienta s vyplněnou zprávou na drahosova@baumat-brno.cz. Adresa je v `assets/js/main.js` (proměnná `CIL`).
+
 ## Zbývá
 
 - Potvrdit u Baumatu přesnou adresu areálu (katalogy uvádějí Heroltice 166 i Heroltice 1) a doplnit ji do kontaktu a JSON-LD.
 - Stáhnout fotky a dokumenty z WordPressu do `assets/img/` a `assets/docs/` a přepsat cesty (teď se odkazují na starý web).
 - Logo: značka je zatím můj návrh (kruh, štít chatky, vlna řeky). Pokud má Baumat vlastní logo, nahradit symbol `i-znacka` ve `_sablony/ikony.svg`.
-- Fotky mají jednotnou barevnou korekci přes CSS (`.foto`). Po novém focení ji lze zeslabit.
 - Anglická verze všech stránek (pozor: v současné EN verzi jsou staré ceny).
-- Recenze přes Google Places API (klíč omezený na doménu). Do té doby odstranit zástupné hvězdy u citací.
+- Recenze přes Google Places API (klíč omezený na doménu). Zatím jsou na homepage tři statické citace bez hvězd.
 - **Kalendář na /kontakt/ běží na ukázkových datech.** Před spuštěním přepsat `assets/data/obsazenost.json` skutečnou obsazeností, nebo napojit export z Google kalendáře (stavy: `obsazeno`, `castecne`).
 
 Ikony: Tabler Icons (MIT).

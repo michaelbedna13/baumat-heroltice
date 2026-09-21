@@ -2,14 +2,19 @@
 <html lang="cs">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#55613F">
+  <link rel="icon" href="https://baumatheroltice.cz/wp-content/uploads/2024/11/Favicon-Baumat-300x300.png">
+  <link rel="preload" href="../assets/fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/hanken-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+
   <title>Ubytování | Rekreační areál Baumat Heroltice</title>
   <meta name="description" content="Ubytování v areálu Baumat Heroltice: apartmán, buňky Slušovice, chatky klasické a chatky u hlavní brány. Od 180 Kč za lůžko na noc, k tomu kuchyně, kuchyňky a sociální zázemí.">
   <link rel="canonical" href="https://baumatheroltice.cz/ubytovani/">
   <link rel="alternate" hreflang="cs" href="https://baumatheroltice.cz/ubytovani/">
   <link rel="alternate" hreflang="en" href="https://baumatheroltice.cz/en/accommodation/">
   <link rel="alternate" hreflang="x-default" href="https://baumatheroltice.cz/ubytovani/">
-  <meta name="theme-color" content="#2F4A2B">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="cs_CZ">
@@ -18,10 +23,8 @@
   <meta property="og:url" content="https://baumatheroltice.cz/ubytovani/">
   <meta property="og:image" content="https://baumatheroltice.cz/wp-content/uploads/2024/11/Apartman_hl-foto-1536x1024.jpg">
 
-  <link rel="icon" href="https://baumatheroltice.cz/wp-content/uploads/2024/11/Favicon-Baumat-300x300.png">
-  <link rel="preload" href="../assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
 <symbol id="i-swimming" viewBox="0 0 24 24"><path d="M15 9a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M6 11l4 -2l3.5 3l-1.5 2" /><path d="M3 16.75a2.4 2.4 0 0 0 1 .25a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 1 -.25" /></symbol>
@@ -65,328 +68,265 @@
 
 <a class="skip" href="#obsah">Přeskočit na obsah</a>
 
-<header class="hlavicka">
-  <div class="hlavicka__pill">
-    <a class="logo" href="../" aria-label="Baumat Heroltice, úvodní stránka"><svg class="znacka" aria-hidden="true"><use href="#i-znacka"/></svg><span class="logo__text">Baumat <span>Heroltice</span></span></a>
-    <nav aria-label="Hlavní menu">
-      <div class="menu" id="menu">
-        <ul class="menu__odkazy">
-          <li><a href="../ubytovani/" aria-current="page">Ubytování</a></li>
-          <li><a href="../aktivity/">Aktivity</a></li>
-          <li><a href="../cenik/">Ceník</a></li>
-          <li><a href="../kontakt/">Kontakt</a></li>
-        </ul>
-        <a class="btn btn--krem btn--mobil" href="../kontakt/#kalendar">Volné termíny</a>
+<div class="stranka">
+<header class="panel panel--oliva uvod svetly">
+  <div class="lista-obal" data-lista>
+    <div class="lista">
+      <a class="logo" href="../" aria-label="Baumat Heroltice, úvodní stránka"><svg class="znacka" aria-hidden="true"><use href="#i-znacka"/></svg>Baumat <span>Heroltice</span></a>
+      <nav class="nav" aria-label="Hlavní menu">
+        <a href="../ubytovani/" aria-current="page">Ubytování</a>
+        <a href="../aktivity/">Aktivity</a>
+        <a href="../cenik/">Ceník</a>
+        <a href="../kontakt/">Kontakt</a>
+      </nav>
+      <div class="lista__vpravo">
+        <a class="jazyk" href="../en/" hreflang="en" lang="en"><span aria-hidden="true">EN</span><span class="sr-only">English</span></a>
+        <a class="btn btn--krem" href="../kontakt/#kalendar">Volné termíny</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-otevrit="Menu" data-zavrit="Zavřít"><svg class="i" aria-hidden="true"><use href="#i-menu-2"/></svg><span>Menu</span></button>
       </div>
-    </nav>
-    <div class="hlavicka__akce">
-      <div class="jazyky" role="group" aria-label="Jazyk webu">
-        <a href="../" lang="cs" aria-current="true"><span aria-hidden="true">CZ</span><span class="sr-only">Čeština</span></a>
-        <a href="../en/" lang="en" hreflang="en"><span aria-hidden="true">EN</span><span class="sr-only">English</span></a>
-      </div>
-      <a class="btn btn--les btn--rezervace" href="../kontakt/">Rezervovat</a>
-      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Otevřít menu" data-otevrit="Otevřít menu" data-zavrit="Zavřít menu">
-        <svg class="i" aria-hidden="true"><use href="#i-menu-2"/></svg>
-      </button>
     </div>
+    <nav class="menu" id="menu" aria-label="Menu pro mobil">
+      <a href="../ubytovani/" aria-current="page">Ubytování</a>
+      <a href="../aktivity/">Aktivity</a>
+      <a href="../cenik/">Ceník</a>
+      <a href="../kontakt/">Kontakt</a>
+      <a href="../en/" hreflang="en" lang="en">English</a>
+      <a class="btn btn--krem" href="../kontakt/#kalendar">Volné termíny</a>
+    </nav>
+  </div>
+
+  <div class="pravitko"><ol class="drobky"><li><a href="../">Úvod</a></li><li>Ubytování</li></ol><span>25&nbsp;km od Brna</span></div>
+
+  <div class="hero hero--pod">
+    <div class="hero__text">
+      <h1>Ubytování v&nbsp;areálu</h1>
+      <div>
+        <p class="perex">Od apartmánu s vlastní koupelnou po jednoduché chatky blíž přírodě. Vyberte si, co sedí vaší skupině.</p>
+        <div class="akce">
+          <a class="btn btn--krem" href="../kontakt/#kalendar">Volné termíny</a>
+          <a class="btn btn--obrys-sv" href="../cenik/">Ceník 2026</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero__foto"><div class="ram"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Chatky_hl-foto-1-1536x1024.jpg" alt="Dřevěné chatky v rekreačním areálu Baumat" fetchpriority="high"></div></div>
   </div>
 </header>
 
+<main class="obsah" id="obsah">
 
-<main id="obsah">
-
-  <!-- SEKCE: hero podstránky -->
-  <section class="hero hero--podstranka na-tmave" aria-labelledby="hero-nadpis">
-    <div class="hero__foto">
-      <img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Chatky_hl-foto-1-1536x1024.jpg" alt="Dřevěné chatky v rekreačním areálu Baumat" fetchpriority="high">
-    </div>
-    <div class="hero__prekryv" aria-hidden="true"></div>
-    <div class="hero__obsah">
-      <h1 id="hero-nadpis">Ubytování v areálu</h1>
-      <div class="hero__radek">
-        <p class="perex">Od apartmánu s vlastní koupelnou po jednoduché chatky blíž přírodě. Vyberte si, co sedí vaší skupině.</p>
-        <div class="hero__akce">
-          <a class="btn btn--krem btn--sipka" href="../kontakt/#kalendar">Volné termíny<span class="btn__kolecko"><svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
-        </div>
+  <section class="panel panel--krem" aria-labelledby="prehled-nadpis">
+    <div class="hlava">
+      <h2 id="prehled-nadpis">Čtyři typy ubytování</h2>
+      <div class="hlava__vpravo">
+        <p>Ceny platí za lůžko na noc při pobytu od dvou nocí. Za jednu noc je cena vyšší, celý přehled je v ceníku.</p>
+        <a class="odkaz" href="../cenik/">Ceník 2026</a>
       </div>
     </div>
+    <ul class="prehled">
+      <li><a href="#apartman"><span class="ram"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Apartman_hl-foto-1536x1024.jpg" alt="" loading="lazy"></span><span class="prehled__nazev">Apartmán</span><span class="prehled__meta">6 lůžek, vlastní koupelna a kuchyně</span><span class="prehled__cena">290&nbsp;Kč<small>lůžko na noc</small></span></a></li>
+      <li><a href="#slusovice-bunky"><span class="ram"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Bunky-slusovice_hl-foto-1-1536x1024.jpg" alt="" loading="lazy"></span><span class="prehled__nazev">Slušovice a buňky</span><span class="prehled__meta">12 lůžek ve 4 buňkách, veranda</span><span class="prehled__cena">220&nbsp;Kč<small>lůžko na noc</small></span></a></li>
+      <li><a href="#chatky-klasicke"><span class="ram"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Chatky_hl-foto-1-1536x1024.jpg" alt="" loading="lazy"></span><span class="prehled__nazev">Chatky klasické</span><span class="prehled__meta">24 chatek po 3 až 4 lůžkách</span><span class="prehled__cena">180&nbsp;Kč<small>lůžko na noc</small></span></a></li>
+      <li><a href="#chatky-u-hlavni-brany"><span class="ram"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/chatky-u-hl-brany-_hl-foto-1-1536x1024.jpg" alt="" loading="lazy"></span><span class="prehled__nazev">Chatky u hlavní brány</span><span class="prehled__meta">pokoje se 2 lůžky, zásuvky</span><span class="prehled__cena">180&nbsp;Kč<small>lůžko na noc</small></span></a></li>
+    </ul>
   </section>
 
-  <!-- SEKCE: přehled typů -->
-  <section class="sekce" aria-labelledby="prehled-nadpis">
-    <div class="wrap">
-      <div class="sekce__hlava">
-        <div class="sekce__uvod">
-          <h2 id="prehled-nadpis">Čtyři typy ubytování</h2>
-          <p class="perex">Ceny platí za lůžko na noc při pobytu od dvou nocí. Za jednu noc je cena vyšší, celý přehled je v ceníku.</p>
-        </div>
-        <a class="proklik" href="../cenik/">Ceník 2026<svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+  <article class="panel panel--krem" id="apartman" aria-labelledby="apartman-nadpis">
+    <div class="typ">
+      <div class="typ__text">
+        <h2 id="apartman-nadpis">Apartmán</h2>
+        <p class="typ__cena">290&nbsp;Kč<small>za lůžko na noc, při pobytu na jednu noc 380&nbsp;Kč</small></p>
+        <p class="perex">Nejpohodlnější ubytování v areálu. Vlastní koupelna i kuchyně, takže nikam nemusíte.</p>
+        <ul class="parametry">
+          <li><svg class="i" aria-hidden="true"><use href="#i-bed"/></svg>3 samostatné pokoje, každý se dvěma oddělenými lůžky</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-bath"/></svg>Vlastní sociální zařízení se sprchou a toaletou</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-tools-kitchen-2"/></svg>Samostatná kuchyně s ledničkou, mikrovlnnou troubou a konvicí</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-plug"/></svg>Zásuvky a lampičky pro večerní čtení v každém pokoji</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-door"/></svg>Šatní skříň v každém pokoji</li>
+        </ul>
+        <div class="akce"><a class="btn btn--oliva" href="../kontakt/">Zeptat se na termín</a></div>
       </div>
-      <ul class="prehled">
-        <li>
-          <a class="prehled__odkaz" href="#apartman">
-            <span class="prehled__foto foto"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Apartman_hl-foto-1536x1024.jpg" alt="" loading="lazy"></span>
-            <span><span class="prehled__nazev">Apartmán</span><span class="prehled__meta">6 lůžek · od 290&nbsp;Kč</span></span>
-          </a>
-        </li>
-        <li>
-          <a class="prehled__odkaz" href="#slusovice-bunky">
-            <span class="prehled__foto foto"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Bunky-slusovice_hl-foto-1-1536x1024.jpg" alt="" loading="lazy"></span>
-            <span><span class="prehled__nazev">Slušovice a buňky</span><span class="prehled__meta">12 lůžek · od 220&nbsp;Kč</span></span>
-          </a>
-        </li>
-        <li>
-          <a class="prehled__odkaz" href="#chatky-klasicke">
-            <span class="prehled__foto foto"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Chatky_hl-foto-1-1536x1024.jpg" alt="" loading="lazy"></span>
-            <span><span class="prehled__nazev">Chatky klasické</span><span class="prehled__meta">24 chatek · od 180&nbsp;Kč</span></span>
-          </a>
-        </li>
-        <li>
-          <a class="prehled__odkaz" href="#chatky-u-hlavni-brany">
-            <span class="prehled__foto foto"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/chatky-u-hl-brany-_hl-foto-1-1536x1024.jpg" alt="" loading="lazy"></span>
-            <span><span class="prehled__nazev">Chatky u hlavní brány</span><span class="prehled__meta">2 lůžka v pokoji · od 180&nbsp;Kč</span></span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- SEKCE: jednotlivé typy -->
-  <section class="sekce" aria-labelledby="typy-nadpis">
-    <div class="wrap">
-      <h2 class="sr-only" id="typy-nadpis">Podrobnosti o ubytování</h2>
-
-      <article class="typ" id="apartman">
-        <div class="typ__hlava">
-          <p class="typ__cislo">01</p>
-          <h3>Apartmán</h3>
-          <p class="typ__cena"><strong>290&nbsp;Kč</strong><span>za lůžko na noc</span></p>
-        </div>
-        <div class="typ__galerie" data-galerie="Apartmán">
-          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: apartmán zvenku"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Apartman_hl-foto-1536x1024.jpg" alt="Apartmán v areálu Baumat" loading="lazy"></button><span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>3 fotky</span></figure>
-          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: pokoj v apartmánu"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Apartman_4-1536x1024.jpg" alt="Pokoj v apartmánu se dvěma lůžky" loading="lazy"></button></figure>
-          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: kuchyně v apartmánu"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Apartman_3-1536x1024.jpg" alt="Kuchyně v apartmánu" loading="lazy"></button></figure>
-        </div>
-        <div class="typ__telo">
-          <div>
-            <p class="perex">Nejpohodlnější ubytování v areálu. Vlastní koupelna i kuchyně, takže nikam nemusíte.</p>
-            <p class="typ__poznamka">Při pobytu na jednu noc 380&nbsp;Kč.</p>
-            <a class="btn btn--les" href="../kontakt/">Zeptat se na termín</a>
-          </div>
-          <ul class="typ__parametry">
-            <li><svg class="i" aria-hidden="true"><use href="#i-bed"/></svg>3 samostatné pokoje, každý se dvěma oddělenými lůžky</li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-bath"/></svg>Vlastní sociální zařízení se sprchou a toaletou</li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-tools-kitchen-2"/></svg>Samostatná kuchyně s ledničkou, mikrovlnnou troubou a konvicí</li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-plug"/></svg>Zásuvky a lampičky pro večerní čtení v každém pokoji</li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-door"/></svg>Šatní skříň v každém pokoji</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="typ typ--obraceny" id="slusovice-bunky">
-        <div class="typ__hlava">
-          <p class="typ__cislo">02</p>
-          <h3>Slušovice a buňky</h3>
-          <p class="typ__cena"><strong>220&nbsp;Kč</strong><span>za lůžko na noc</span></p>
-        </div>
-        <div class="typ__galerie" data-galerie="Slušovice a buňky">
-          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: buňky s verandou"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Bunky-slusovice_hl-foto-1-1536x1024.jpg" alt="Ubytovací buňky Slušovice s verandou" loading="lazy"></button><span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>3 fotky</span></figure>
-          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: interiér buňky"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Bunky-slusovice_2-1536x1024.jpg" alt="Interiér buňky se třemi lůžky" loading="lazy"></button></figure>
-          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: sociální zařízení"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Slusovice_socialn-1536x1024.jpg" alt="Sociální zařízení u buněk Slušovice" loading="lazy"></button></figure>
-        </div>
-        <div class="typ__telo">
-          <div>
-            <p class="perex">Samostatné jednotky s verandou pro menší skupiny. Sociální zařízení je hned vedle.</p>
-            <p class="typ__poznamka">Při pobytu na jednu noc 280&nbsp;Kč.</p>
-            <a class="btn btn--les" href="../kontakt/">Zeptat se na termín</a>
-          </div>
-          <ul class="typ__parametry">
-            <li><svg class="i" aria-hidden="true"><use href="#i-bed"/></svg>4 samostatné buňky, každá se třemi oddělenými lůžky</li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-bath"/></svg>Sprcha a toaleta hned vedle pokojů</li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-armchair"/></svg>Venkovní posezení na verandách</li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-plug"/></svg>Zásuvky, lampičky, stůl se židlí a skříň na oblečení</li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-info-circle"/></svg>Malá lednička za příplatek</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="typ" id="chatky-klasicke">
-        <div class="typ__hlava">
-          <p class="typ__cislo">03</p>
-          <h3>Chatky klasické</h3>
-          <p class="typ__cena"><strong>180&nbsp;Kč</strong><span>za lůžko na noc</span></p>
-        </div>
-        <div class="typ__galerie" data-galerie="Chatky klasické">
-          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: řada chatek"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Chatky_hl-foto-1-1536x1024.jpg" alt="Řada dřevěných chatek na louce" loading="lazy"></button><span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>3 fotky</span></figure>
-          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: chatka zvenku"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Chatky_2-1536x1024.jpg" alt="Chatka zvenku" loading="lazy"></button></figure>
-          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: interiér chatky"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Chatky_3-1536x1024.jpg" alt="Interiér chatky s postelemi" loading="lazy"></button></figure>
-        </div>
-        <div class="typ__telo">
-          <div>
-            <p class="perex">Jednoduché ubytování blíž přírodě. Nejčastější volba pro tábory a velké skupiny.</p>
-            <p class="typ__poznamka">Při pobytu na jednu noc 220&nbsp;Kč.</p>
-            <a class="btn btn--les" href="../kontakt/">Zeptat se na termín</a>
-          </div>
-          <ul class="typ__parametry">
-            <li><svg class="i" aria-hidden="true"><use href="#i-bed"/></svg>Chatky 1 až 4 mají tři samostatná lůžka</li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-bed"/></svg>Chatky 5 až 24 mají dvě patrové postele, tedy 4 lůžka</li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-door"/></svg>Dvě skříňky na oblečení, stůl a židle</li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-info-circle"/></svg>Chatky nejsou vybaveny zásuvkami</li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-bath"/></svg>Sociální zázemí je společné, v hlavní budově</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="typ typ--obraceny" id="chatky-u-hlavni-brany">
-        <div class="typ__hlava">
-          <p class="typ__cislo">04</p>
-          <h3>Chatky u hlavní brány</h3>
-          <p class="typ__cena"><strong>180&nbsp;Kč</strong><span>za lůžko na noc</span></p>
-        </div>
-        <div class="typ__galerie" data-galerie="Chatky u hlavní brány">
-          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: chatky u hlavní brány"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/chatky-u-hl-brany-_hl-foto-1-1536x1024.jpg" alt="Chatky u hlavní brány areálu" loading="lazy"></button><span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>3 fotky</span></figure>
-          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: pokoj v chatce"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/chatky-u-hl-brany-_2-1-1536x1024.jpg" alt="Pokoj v chatce u hlavní brány" loading="lazy"></button></figure>
-          <figure class="foto"><button class="foto-btn" type="button" aria-label="Otevřít fotku: vybavení pokoje"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/chatky-u-hl-brany-_3-1-1536x1024.jpg" alt="Vybavení pokoje se stolem a židlí" loading="lazy"></button></figure>
-        </div>
-        <div class="typ__telo">
-          <div>
-            <p class="perex">Klidné dvoulůžkové pokoje se stolem a zásuvkami, kde se dá i pracovat.</p>
-            <p class="typ__poznamka">Při pobytu na jednu noc 220&nbsp;Kč.</p>
-            <a class="btn btn--les" href="../kontakt/">Zeptat se na termín</a>
-          </div>
-          <ul class="typ__parametry">
-            <li><svg class="i" aria-hidden="true"><use href="#i-bed"/></svg>Pokoj se dvěma samostatnými lůžky</li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-door"/></svg>Šatní skříň, stůl a židle</li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-plug"/></svg>Lampička a dostatek zásuvek</li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-bath"/></svg>Sociální zázemí je společné, v hlavní budově</li>
-          </ul>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- SEKCE: zázemí -->
-  <section class="pruh" id="zazemi" aria-labelledby="zazemi-nadpis">
-    <div class="wrap">
-      <div class="sekce__hlava">
-        <div class="sekce__uvod">
-          <h2 id="zazemi-nadpis">Zázemí pro celou skupinu</h2>
-          <p class="perex">Nevaříme, ale kuchyni i jídelnu si můžete pronajmout a uvařit si sami.</p>
-        </div>
-        <div class="sekce__akce">
-          <div class="karusel__sipky">
-            <button class="karusel__sipka" type="button" data-karusel-zpet aria-label="Předchozí">
-              <svg class="i" aria-hidden="true" style="transform:rotate(180deg)"><use href="#i-arrow-right"/></svg>
-            </button>
-            <button class="karusel__sipka" type="button" data-karusel-vpred aria-label="Další"><svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
-          </div>
-          <a class="proklik" href="../cenik/#prostory">Ceny pronájmu<svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-        </div>
+      <div class="galerie" data-galerie="Apartmán">
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Otevřít fotku: apartmán zvenku"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Apartman_hl-foto-1536x1024.jpg" alt="Apartmán v areálu Baumat" loading="lazy"></button><span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>3 fotky</span></figure>
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Otevřít fotku: pokoj v apartmánu"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Apartman_4-1536x1024.jpg" alt="Pokoj v apartmánu se dvěma lůžky" loading="lazy"></button></figure>
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Otevřít fotku: kuchyně v apartmánu"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Apartman_3-1536x1024.jpg" alt="Kuchyně v apartmánu" loading="lazy"></button></figure>
       </div>
-      <div class="karusel" data-karusel>
-        <ul class="karusel__stopa">
-        <li class="aktivita" id="kuchyne-jidelna">
-          <div class="aktivita__foto foto" data-galerie="Kuchyně a jídelna">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotky kuchyně a jídelny"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Kuchyne-a-jidelna_1-1536x1024.jpg" alt="Profesionální kuchyně v areálu Baumat" loading="lazy"></button>
-            <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Kuchyne-a-jidelna_2-1536x1024.jpg" alt="Jídelna s dřevěnými stoly" loading="lazy">
-            <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Kuchyne-a-jidelna_3-1536x1024.jpg" alt="Vybavení kuchyně" loading="lazy">
-            <span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>3 fotky</span>
-          </div>
+    </div>
+  </article>
+
+  <article class="panel panel--krem" id="slusovice-bunky" aria-labelledby="slusovice-bunky-nadpis">
+    <div class="typ typ--obracene">
+      <div class="typ__text">
+        <h2 id="slusovice-bunky-nadpis">Slušovice a buňky</h2>
+        <p class="typ__cena">220&nbsp;Kč<small>za lůžko na noc, při pobytu na jednu noc 280&nbsp;Kč</small></p>
+        <p class="perex">Samostatné jednotky s verandou pro menší skupiny. Sociální zařízení je hned vedle.</p>
+        <ul class="parametry">
+          <li><svg class="i" aria-hidden="true"><use href="#i-bed"/></svg>4 samostatné buňky, každá se třemi oddělenými lůžky</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-bath"/></svg>Sprcha a toaleta hned vedle pokojů</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-armchair"/></svg>Venkovní posezení na verandách</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-plug"/></svg>Zásuvky, lampičky, stůl se židlí a skříň na oblečení</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-info-circle"/></svg>Malá lednička za příplatek</li>
+        </ul>
+        <div class="akce"><a class="btn btn--oliva" href="../kontakt/">Zeptat se na termín</a></div>
+      </div>
+      <div class="galerie" data-galerie="Slušovice a buňky">
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Otevřít fotku: buňky s verandou"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Bunky-slusovice_hl-foto-1-1536x1024.jpg" alt="Ubytovací buňky Slušovice s verandou" loading="lazy"></button><span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>3 fotky</span></figure>
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Otevřít fotku: interiér buňky"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Bunky-slusovice_2-1536x1024.jpg" alt="Interiér buňky se třemi lůžky" loading="lazy"></button></figure>
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Otevřít fotku: sociální zařízení"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Slusovice_socialn-1536x1024.jpg" alt="Sociální zařízení u buněk Slušovice" loading="lazy"></button></figure>
+      </div>
+    </div>
+  </article>
+
+  <article class="panel panel--krem" id="chatky-klasicke" aria-labelledby="chatky-klasicke-nadpis">
+    <div class="typ">
+      <div class="typ__text">
+        <h2 id="chatky-klasicke-nadpis">Chatky klasické</h2>
+        <p class="typ__cena">180&nbsp;Kč<small>za lůžko na noc, při pobytu na jednu noc 220&nbsp;Kč</small></p>
+        <p class="perex">Jednoduché ubytování blíž přírodě. Nejčastější volba pro tábory a velké skupiny.</p>
+        <ul class="parametry">
+          <li><svg class="i" aria-hidden="true"><use href="#i-bed"/></svg>Chatky 1 až 4 mají tři samostatná lůžka</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-bed"/></svg>Chatky 5 až 24 mají dvě patrové postele, tedy 4 lůžka</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-door"/></svg>Dvě skříňky na oblečení, stůl a židle</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-info-circle"/></svg>Chatky nejsou vybaveny zásuvkami</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-bath"/></svg>Sociální zázemí je společné, v hlavní budově</li>
+        </ul>
+        <div class="akce"><a class="btn btn--oliva" href="../kontakt/">Zeptat se na termín</a></div>
+      </div>
+      <div class="galerie" data-galerie="Chatky klasické">
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Otevřít fotku: řada chatek"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Chatky_hl-foto-1-1536x1024.jpg" alt="Řada dřevěných chatek na louce" loading="lazy"></button><span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>3 fotky</span></figure>
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Otevřít fotku: chatka zvenku"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Chatky_2-1536x1024.jpg" alt="Chatka zvenku" loading="lazy"></button></figure>
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Otevřít fotku: interiér chatky"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Chatky_3-1536x1024.jpg" alt="Interiér chatky s postelemi" loading="lazy"></button></figure>
+      </div>
+    </div>
+  </article>
+
+  <article class="panel panel--krem" id="chatky-u-hlavni-brany" aria-labelledby="chatky-u-hlavni-brany-nadpis">
+    <div class="typ typ--obracene">
+      <div class="typ__text">
+        <h2 id="chatky-u-hlavni-brany-nadpis">Chatky u hlavní brány</h2>
+        <p class="typ__cena">180&nbsp;Kč<small>za lůžko na noc, při pobytu na jednu noc 220&nbsp;Kč</small></p>
+        <p class="perex">Klidné dvoulůžkové pokoje se stolem a zásuvkami, kde se dá i pracovat.</p>
+        <ul class="parametry">
+          <li><svg class="i" aria-hidden="true"><use href="#i-bed"/></svg>Pokoj se dvěma samostatnými lůžky</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-door"/></svg>Šatní skříň, stůl a židle</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-plug"/></svg>Lampička a dostatek zásuvek</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-bath"/></svg>Sociální zázemí je společné, v hlavní budově</li>
+        </ul>
+        <div class="akce"><a class="btn btn--oliva" href="../kontakt/">Zeptat se na termín</a></div>
+      </div>
+      <div class="galerie" data-galerie="Chatky u hlavní brány">
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Otevřít fotku: chatky u hlavní brány"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/chatky-u-hl-brany-_hl-foto-1-1536x1024.jpg" alt="Chatky u hlavní brány areálu" loading="lazy"></button><span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>3 fotky</span></figure>
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Otevřít fotku: pokoj v chatce"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/chatky-u-hl-brany-_2-1-1536x1024.jpg" alt="Pokoj v chatce u hlavní brány" loading="lazy"></button></figure>
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Otevřít fotku: vybavení pokoje"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/chatky-u-hl-brany-_3-1-1536x1024.jpg" alt="Vybavení pokoje se stolem a židlí" loading="lazy"></button></figure>
+      </div>
+    </div>
+  </article>
+
+  <section class="panel panel--oliva svetly" id="zazemi" aria-labelledby="zazemi-nadpis">
+    <div class="hlava">
+      <h2 id="zazemi-nadpis">Zázemí pro celou skupinu</h2>
+      <div class="hlava__vpravo">
+        <p>Nevaříme, ale kuchyni i jídelnu si můžete pronajmout a uvařit si sami.</p>
+        <a class="odkaz" href="../cenik/#prostory">Ceny pronájmu</a>
+      </div>
+    </div>
+    <ul class="polozky polozky--3">
+      <li class="polozka" id="kuchyne-jidelna">
+        <div class="ram" data-galerie="Kuchyně a jídelna">
+          <button class="foto-btn" type="button" aria-label="Otevřít fotky kuchyně a jídelny"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Kuchyne-a-jidelna_1-1536x1024.jpg" alt="Profesionální kuchyně v areálu Baumat" loading="lazy"></button>
+          <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Kuchyne-a-jidelna_2-1536x1024.jpg" alt="Jídelna s dřevěnými stoly" loading="lazy">
+          <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Kuchyne-a-jidelna_3-1536x1024.jpg" alt="Vybavení kuchyně" loading="lazy">
+          <span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>3 fotky</span>
+        </div>
+        <div class="polozka__telo">
           <h3>Kuchyně a jídelna</h3>
           <p>Profesionální kuchyně pro tábory, svatby i firemní akce. Jídelna pojme až 100 hostů. Jídlo si připravíte sami nebo s vlastním kuchařem.</p>
-          <ul class="aktivita__seznam">
+          <ul class="parametry">
             <li><svg class="i" aria-hidden="true"><use href="#i-tools"/></svg>Konvektomat, profi myčka, dvě plynové stojky, velká elektrická pánev</li>
             <li><svg class="i" aria-hidden="true"><use href="#i-tools-kitchen-2"/></svg>Kuchyňský robot, plynový sporák a kompletní nádobí</li>
             <li><svg class="i" aria-hidden="true"><use href="#i-info-circle"/></svg>Dvě velké lednice, dva mrazáky a pračka</li>
           </ul>
-          <p class="aktivita__meta"><svg class="i" aria-hidden="true"><use href="#i-building-store"/></svg>900&nbsp;Kč za den + energie</p>
-        </li>
-        <li class="aktivita" id="kuchynky">
-          <div class="aktivita__foto foto" data-galerie="Kuchyňky">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotky kuchyňky"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/kuchynka_hl.photo_-1536x1024.jpg" alt="Kuchyňka pro menší skupiny" loading="lazy"></button>
-            <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/kuchynka_2-1536x1024.jpg" alt="Posezení v kuchyňce" loading="lazy">
-            <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/kuchynka_3-1536x1024.jpg" alt="Vybavení kuchyňky" loading="lazy">
-            <span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>3 fotky</span>
-          </div>
+          <p class="polozka__meta"><svg class="i" aria-hidden="true"><use href="#i-building-store"/></svg>900&nbsp;Kč za den + energie</p>
+        </div>
+      </li>
+      <li class="polozka" id="kuchynky">
+        <div class="ram" data-galerie="Kuchyňky">
+          <button class="foto-btn" type="button" aria-label="Otevřít fotky kuchyňky"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/kuchynka_hl.photo_-1536x1024.jpg" alt="Kuchyňka pro menší skupiny" loading="lazy"></button>
+          <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/kuchynka_2-1536x1024.jpg" alt="Posezení v kuchyňce" loading="lazy">
+          <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/kuchynka_3-1536x1024.jpg" alt="Vybavení kuchyňky" loading="lazy">
+          <span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>3 fotky</span>
+        </div>
+        <div class="polozka__telo">
           <h3>Kuchyňky</h3>
           <p>Pro menší skupiny, které nepotřebují profesionální kuchyni. Velký stůl až pro 15 lidí.</p>
-          <ul class="aktivita__seznam">
+          <ul class="parametry">
             <li><svg class="i" aria-hidden="true"><use href="#i-tools-kitchen-2"/></svg>Elektrický sporák, konvice, mikrovlnná trouba a nádobí</li>
             <li><svg class="i" aria-hidden="true"><use href="#i-info-circle"/></svg>Velká lednice a menší lednice s mrazákem</li>
           </ul>
-          <p class="aktivita__meta"><svg class="i" aria-hidden="true"><use href="#i-building-store"/></svg>100 až 300&nbsp;Kč za den</p>
-        </li>
-        <li class="aktivita" id="socialni-zarizeni">
-          <div class="aktivita__foto foto" data-galerie="Hlavní sociální zařízení">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotky sociálního zařízení"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Hl.socialky_1-1536x1024.jpg" alt="Hlavní sociální zařízení areálu" loading="lazy"></button>
-            <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Hl.socialky_2-1-1536x1024.jpg" alt="Sprchy v hlavní budově" loading="lazy">
-            <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Hl.socialky_3-1-1536x1024.jpg" alt="Umyvadla v hlavní budově" loading="lazy">
-            <span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>3 fotky</span>
-          </div>
+          <p class="polozka__meta"><svg class="i" aria-hidden="true"><use href="#i-building-store"/></svg>100 až 300&nbsp;Kč za den</p>
+        </div>
+      </li>
+      <li class="polozka" id="socialni-zarizeni">
+        <div class="ram" data-galerie="Hlavní sociální zařízení">
+          <button class="foto-btn" type="button" aria-label="Otevřít fotky sociálního zařízení"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Hl.socialky_1-1536x1024.jpg" alt="Hlavní sociální zařízení areálu" loading="lazy"></button>
+          <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Hl.socialky_2-1-1536x1024.jpg" alt="Sprchy v hlavní budově" loading="lazy">
+          <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Hl.socialky_3-1-1536x1024.jpg" alt="Umyvadla v hlavní budově" loading="lazy">
+          <span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>3 fotky</span>
+        </div>
+        <div class="polozka__telo">
           <h3>Hlavní sociální zařízení</h3>
           <p>Sprchy, umyvadla a záchody pro hosty z chatek. Apartmán a buňky Slušovice mají vlastní.</p>
-        </li>
-        </ul>
-        <div class="karusel__ukazatel" data-karusel-ukazatel aria-hidden="true"></div>
-      </div>
-    </div>
+        </div>
+      </li>
+    </ul>
   </section>
 
 </main>
-
-<!-- ZÁVĚR: tmavý blok, ve kterém končí stránka -->
-<div class="zaver">
-
-  <section class="vyzva-sekce" aria-labelledby="vyzva-nadpis">
-    <div class="wrap vyzva">
-      <h2 id="vyzva-nadpis">Naplánujte si pobyt</h2>
-      <p class="perex">Poradíme s cenou, volným termínem i výběrem ubytování. Ozvěte se telefonicky nebo e-mailem.</p>
-      <div class="vyzva__akce">
-        <a class="btn btn--krem btn--sipka" href="../kontakt/#kalendar">Volné termíny<span class="btn__kolecko"><svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
-        <a class="btn btn--obrys" href="tel:+420601594780"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>601&nbsp;594&nbsp;780</a>
+<footer class="panel panel--mech paticka svetly">
+  <div class="paticka__horni">
+    <h2>Je váš termín volný?</h2>
+    <div>
+      <p>Poradíme s cenou, volným termínem i výběrem ubytování. Ozvěte se telefonicky nebo e-mailem.</p>
+      <div class="akce" style="margin-top: 22px">
+        <a class="btn btn--krem" href="../kontakt/#kalendar"><svg class="i" aria-hidden="true"><use href="#i-calendar-event"/></svg>Volné termíny</a>
+        <a class="btn btn--obrys-sv" href="tel:+420601594780"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>601&nbsp;594&nbsp;780</a>
       </div>
     </div>
-  </section>
-
-<footer class="paticka">
-    <svg class="paticka__motiv" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-znacka"/></svg>
-  <div class="wrap">
-    <div class="paticka__horni">
-      <div class="paticka__znacka">
-        <a class="logo" href="../"><svg class="znacka" aria-hidden="true"><use href="#i-znacka"/></svg><span class="logo__text">Baumat <span>Heroltice</span></span></a>
-        <p>Rekreační areál v údolí řeky Svratky pro pobyty, oslavy, svatby, tábory a firemní akce.</p>
-      </div>
-      <div>
-        <h2>Web</h2>
-        <ul>
-          <li><a href="../ubytovani/">Ubytování</a></li>
-          <li><a href="../aktivity/">Aktivity</a></li>
-          <li><a href="../cenik/">Ceník</a></li>
-          <li><a href="../kontakt/">Kontakt</a></li>
-          <li><a href="../en/" hreflang="en" lang="en">English</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Dokumenty</h2>
-        <ul>
-          <li><a href="https://baumatheroltice.cz/wp-content/uploads/2026/01/Cenik-2026.pdf">Ceník 2026 (PDF)</a></li>
-          <li><a href="https://baumatheroltice.cz/wp-content/uploads/2026/01/Ubytovaci-rad-2026.docx">Ubytovací řád</a></li>
-          <li><a href="https://baumatheroltice.cz/wp-content/uploads/2025/04/Provozni-rad-bazenu-FINAL-2023.docx">Provozní řád bazénu</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Provozovatel</h2>
-        <ul>
-          <li>BAUMAT, s.r.o.</li>
-          <li>IČO 48529753</li>
-          <li>Kabátníkova 105/2<br>602 00 Brno</li>
-        </ul>
-      </div>
+  </div>
+  <div class="paticka__sloupce">
+    <div class="paticka__znacka">
+      <a class="logo" href="../"><svg class="znacka" aria-hidden="true"><use href="#i-znacka"/></svg>Baumat <span>Heroltice</span></a>
+      <p>Rekreační areál v údolí řeky Svratky pro pobyty, oslavy, svatby, tábory a firemní akce.</p>
     </div>
-    <div class="paticka__spodni">
-      <span>© <span data-rok>2026</span> BAUMAT, s.r.o.</span>
-      <a href="https://www.instagram.com/baumat_heroltice/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-brand-instagram"/></svg>Instagram</a>
+    <div>
+      <h2>Web</h2>
+      <ul>
+        <li><a href="../ubytovani/">Ubytování</a></li>
+        <li><a href="../aktivity/">Aktivity</a></li>
+        <li><a href="../cenik/">Ceník</a></li>
+        <li><a href="../kontakt/">Kontakt</a></li>
+        <li><a href="../en/" hreflang="en" lang="en">English</a></li>
+      </ul>
     </div>
+    <div>
+      <h2>Dokumenty</h2>
+      <ul>
+        <li><a href="https://baumatheroltice.cz/wp-content/uploads/2026/01/Cenik-2026.pdf">Ceník 2026 (PDF)</a></li>
+        <li><a href="https://baumatheroltice.cz/wp-content/uploads/2026/01/Ubytovaci-rad-2026.docx">Ubytovací řád</a></li>
+        <li><a href="https://baumatheroltice.cz/wp-content/uploads/2025/04/Provozni-rad-bazenu-FINAL-2023.docx">Provozní řád bazénu</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Provozovatel</h2>
+      <ul>
+        <li>BAUMAT, s.r.o.</li>
+        <li>IČO 48529753</li>
+        <li>Kabátníkova 105/2<br>602 00 Brno</li>
+      </ul>
+    </div>
+  </div>
+  <div class="paticka__spodni">
+    <span>© <span data-rok>2026</span> BAUMAT, s.r.o.</span>
+    <a href="https://www.instagram.com/baumat_heroltice/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-brand-instagram"/></svg>Instagram</a>
   </div>
 </footer>
 </div>

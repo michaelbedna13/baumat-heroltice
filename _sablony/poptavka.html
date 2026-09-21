@@ -1,0 +1,17 @@
+  <form class="poptavka" data-poptavka aria-label="Poptávka termínu">
+    <div class="pole"><label for="pop-prijezd">Příjezd</label><input id="pop-prijezd" name="prijezd" type="date" required></div>
+    <div class="pole"><label for="pop-odjezd">Odjezd</label><input id="pop-odjezd" name="odjezd" type="date" required></div>
+    <div class="pole"><label for="pop-osob">Počet osob</label><input id="pop-osob" name="osob" type="number" min="1" max="150" inputmode="numeric" placeholder="např. 24" required></div>
+    <div class="pole"><label for="pop-typ">Typ akce</label>
+      <select id="pop-typ" name="typ">
+        <option>Pobyt</option>
+        <option>Rodinná oslava</option>
+        <option>Svatba</option>
+        <option>Dětský tábor</option>
+        <option>Firemní akce</option>
+        <option>Celý areál</option>
+      </select>
+    </div>
+    <button class="btn btn--oliva" type="submit">Poslat poptávku</button>
+  </form>
+  <p class="poptavka__pozn">Otevře se vám e-mail s vyplněnými údaji, stačí ho odeslat.</p>

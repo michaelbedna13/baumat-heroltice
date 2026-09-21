@@ -1,15 +1,13 @@
 <!doctype html>
 <html lang="cs">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+{{hlava-meta}}
   <title>Kontakt a volné termíny | Rekreační areál Baumat Heroltice</title>
   <meta name="description" content="Kontakt na rekreační areál Baumat Heroltice: telefon, e-mail, kalendář obsazenosti a cesta do areálu v údolí řeky Svratky, 25 km od Brna.">
   <link rel="canonical" href="https://baumatheroltice.cz/kontakt/">
   <link rel="alternate" hreflang="cs" href="https://baumatheroltice.cz/kontakt/">
   <link rel="alternate" hreflang="en" href="https://baumatheroltice.cz/en/contact/">
   <link rel="alternate" hreflang="x-default" href="https://baumatheroltice.cz/kontakt/">
-  <meta name="theme-color" content="#2F4A2B">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="cs_CZ">
@@ -18,128 +16,105 @@
   <meta property="og:url" content="https://baumatheroltice.cz/kontakt/">
   <meta property="og:image" content="{{foto:hero-areal}}">
 
-  <link rel="icon" href="{{IMG}}/2024/11/Favicon-Baumat-300x300.png">
-  <link rel="preload" href="{{ROOT}}assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="{{ROOT}}assets/css/style.css">
 </head>
 <body>
 {{hlavicka}}
+  <div class="pravitko"><ol class="drobky"><li><a href="{{ROOT}}">Úvod</a></li><li>Kontakt</li></ol><span>25&nbsp;km od Brna</span></div>
 
-<main id="obsah">
-
-  <!-- SEKCE: hero podstránky -->
-  <section class="hero hero--podstranka na-tmave" aria-labelledby="hero-nadpis">
-    <div class="hero__foto">
-      <img src="{{foto:hero-areal}}" alt="Rekreační areál Baumat Heroltice v údolí řeky Svratky" fetchpriority="high">
-    </div>
-    <div class="hero__prekryv" aria-hidden="true"></div>
-    <div class="hero__obsah">
-      <h1 id="hero-nadpis">Ozvěte se nám</h1>
-      <div class="hero__radek">
+  <div class="hero hero--pod">
+    <div class="hero__text">
+      <h1>Ozvěte se nám</h1>
+      <div>
         <p class="perex">Poradíme s cenou, volným termínem i výběrem ubytování. Ozvěte se telefonicky nebo e-mailem.</p>
-        <div class="hero__akce">
+        <div class="akce">
           <a class="btn btn--krem" href="#kalendar">{{i:calendar-event}}Volné termíny</a>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- SEKCE: kontakt a poloha -->
-  <section class="sekce" aria-labelledby="kontakt-nadpis">
-    <div class="wrap kontakt">
-      <div class="kontakt__text">
-          <h2 id="kontakt-nadpis">Kontakt na areál</h2>
-        <p class="perex">Rezervace a dotazy k pobytu vyřizuje kancelář. Ozvěte se kdykoli, rádi ověříme volný termín.</p>
-        <ul class="kontakty">
-          <li><a class="kontakt-radek" href="tel:+420601594780">{{i:phone}}<span class="kontakt-radek__hodnota">+420 601 594 780</span>{{i:arrow-right}}</a></li>
-          <li><a class="kontakt-radek" href="tel:+420549123611">{{i:phone}}<span class="kontakt-radek__hodnota">+420 549 123 611</span>{{i:arrow-right}}</a></li>
-          <li><a class="kontakt-radek" href="mailto:drahosova@baumat-brno.cz">{{i:mail}}<span class="kontakt-radek__hodnota">drahosova@baumat-brno.cz</span>{{i:arrow-right}}</a></li>
-        </ul>
-        <p class="poznamka">Areál spravuje <strong>BAUMAT, s.r.o.</strong><br>IČO 48529753, DIČ CZ48529753<br>Kabátníkova 105/2, Ponava, 602 00 Brno</p>
-      </div>
-      <div class="poloha">
-        <!-- ADRESA AREÁLU: doplnit po potvrzení od Baumatu (katalogy uvádějí Heroltice 166 i Heroltice 1). -->
-        <ul class="poloha__fakta">
-          <li>{{i:map-pin}}<div><strong>Heroltice</strong><span>areál přímo u řeky Svratky</span></div></li>
-          <li>{{i:car}}<div><strong>25&nbsp;km od Brna</strong><span>směrem na Tišnov</span></div></li>
-        </ul>
-        <div class="mapa">
-          <iframe title="Mapa: Rekreační areál Baumat Heroltice" src="https://maps.google.com/maps?q=Rekrea%C4%8Dn%C3%AD%20are%C3%A1l%20BAUMAT&amp;t=m&amp;z=12&amp;output=embed&amp;iwloc=near" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SEKCE: tmavý panel se správcem -->
-  <section class="osoba-panel na-tmave" aria-labelledby="spravce-nadpis">
-    <div class="wrap">
-      <div class="osoba">
-        <div class="osoba__foto foto"><img src="{{foto:spravce}}" alt="Josef Kavalec, správce areálu" loading="lazy"></div>
-        <div>
-          <p class="osoba__role">Správce areálu</p>
-          <h2 id="spravce-nadpis">Josef Kavalec</h2>
-          <p class="perex">Dotazy k areálu, změna času příjezdu nebo tipy na výlety v okolí. Ozvěte se přímo na místo.</p>
-          <ul class="kontakty">
-            <li><a class="kontakt-radek" href="tel:+420702187583">{{i:phone}}<span class="kontakt-radek__hodnota">+420 702 187 583</span>{{i:arrow-right}}</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SEKCE: kalendář obsazenosti -->
-  <section class="sekce" id="kalendar" aria-labelledby="kalendar-nadpis">
-    <div class="wrap">
-      <div class="sekce__hlava">
-        <div class="sekce__uvod">
-          <h2 id="kalendar-nadpis">Je váš termín volný?</h2>
-          <p class="perex">Kalendář ukazuje obsazenost jednotlivých ubytovacích kapacit a slouží hlavně jako orientační pomůcka.</p>
-        </div>
-      </div>
-      <div class="kalendar-blok">
-        <div class="kalendar" data-kalendar="{{ROOT}}assets/data/obsazenost.json">
-          <div class="kalendar__ovladani">
-            <p class="kalendar__mesic" data-kalendar-mesic aria-live="polite">Kalendář</p>
-            <div class="kalendar__sipky">
-              <button class="kalendar__sipka" type="button" data-kalendar-zpet aria-label="Předchozí měsíc">
-                <svg class="i" aria-hidden="true" style="transform:rotate(180deg)"><use href="#i-arrow-right"/></svg>
-              </button>
-              <button class="kalendar__sipka" type="button" data-kalendar-vpred aria-label="Další měsíc">{{i:arrow-right}}</button>
-            </div>
-          </div>
-          <div class="kalendar__mrizka" data-kalendar-mrizka></div>
-        </div>
-        <div class="kalendar__bok">
-          <ul class="kalendar__legenda">
-            <li><span class="kalendar__vzorek" style="background:rgba(44,66,25,.06)"></span><span>Volno</span></li>
-            <li><span class="kalendar__vzorek" style="background:var(--len-tlumeny)"></span><span>Částečně obsazeno</span></li>
-            <li><span class="kalendar__vzorek" style="background:var(--cihla)"></span><span>Obsazeno</span></li>
-          </ul>
-          <p class="poznamka">U některých typů ubytování, třeba u chatek, je k dispozici více jednotek. I když je termín označený jako částečně obsazený, některé chatky mohou být pořád volné. Rádi vám dostupnost ověříme a pomůžeme s výběrem.</p>
-          <a class="btn btn--les" href="tel:+420601594780">{{i:phone}}Ověřit telefonicky</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SEKCE: rozcestník -->
-  <section class="sekce" aria-labelledby="dal-nadpis">
-    <div class="wrap">
-      <div class="sekce__hlava">
-        <div class="sekce__uvod">
-          <h2 id="dal-nadpis">Než se ozvete</h2>
-          <p class="perex">Mrkněte na ubytování a ceny, ať víme, o čem se bavíme.</p>
-        </div>
-      </div>
-      <ul class="odkazy">
-        <li><a class="odkaz-radek" href="{{ROOT}}ubytovani/">{{i:bed}}<div><h3>Ubytování</h3><p>Apartmán, buňky a chatky včetně vybavení a zázemí.</p></div><span class="odkaz-radek__sipka">{{i:arrow-right}}</span></a></li>
-        <li><a class="odkaz-radek" href="{{ROOT}}cenik/">{{i:file-text}}<div><h3>Ceník 2026</h3><p>Ceny ubytování, pronájmu areálu, prostor a poplatky.</p></div><span class="odkaz-radek__sipka">{{i:arrow-right}}</span></a></li>
-        <li><a class="odkaz-radek" href="{{ROOT}}aktivity/">{{i:swimming}}<div><h3>Aktivity a vybavení</h3><p>Bazén, tenis, ohniště, dětské hřiště a klubovna.</p></div><span class="odkaz-radek__sipka">{{i:arrow-right}}</span></a></li>
+    <div class="uvod-karta">
+      <ul class="kontakty">
+        <li><a href="tel:+420601594780"><b>+420 601 594 780</b>{{i:phone}}</a></li>
+        <li><a href="tel:+420549123611"><b>+420 549 123 611</b>{{i:phone}}</a></li>
+        <li><a href="mailto:drahosova@baumat-brno.cz"><b>drahosova@baumat-brno.cz</b>{{i:mail}}</a></li>
       </ul>
     </div>
+  </div>
+{{poptavka}}
+</header>
+
+<main class="obsah" id="obsah">
+
+  <section class="split split--pul" aria-labelledby="poloha-nadpis">
+    <div class="panel panel--krem">
+      <h2 id="poloha-nadpis">Kde nás najdete</h2>
+      <p class="perex" style="margin-top: 16px">Rezervace a dotazy k pobytu vyřizuje kancelář. Ozvěte se kdykoli, rádi ověříme volný termín.</p>
+      <!-- ADRESA AREÁLU: doplnit po potvrzení od Baumatu (katalogy uvádějí Heroltice 166 i Heroltice 1). -->
+      <ul class="poloha" style="margin-top: 28px">
+        <li>{{i:map-pin}}<div><strong>Heroltice</strong><span>areál přímo u řeky Svratky</span></div></li>
+        <li>{{i:car}}<div><strong>25&nbsp;km od Brna</strong><span>směrem na Tišnov</span></div></li>
+      </ul>
+      <p class="firma" style="margin-top: 28px">Areál spravuje <strong>BAUMAT, s.r.o.</strong><br>IČO 48529753, DIČ CZ48529753<br>Kabátníkova 105/2, Ponava, 602 00 Brno</p>
+    </div>
+    <div class="mapa">
+      <iframe title="Mapa: Rekreační areál Baumat Heroltice" src="https://maps.google.com/maps?q=Rekrea%C4%8Dn%C3%AD%20are%C3%A1l%20BAUMAT&amp;t=m&amp;z=12&amp;output=embed&amp;iwloc=near" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
   </section>
 
-{{vyzva}}
+  <section class="panel panel--hlina svetly" aria-labelledby="spravce-nadpis">
+    <div class="osoba">
+      <div class="ram"><img src="{{foto:spravce}}" alt="Josef Kavalec, správce areálu" loading="lazy"></div>
+      <div>
+        <p class="osoba__role">Správce areálu</p>
+        <h2 id="spravce-nadpis">Josef Kavalec</h2>
+        <p class="perex" style="margin-top: 16px">Dotazy k areálu, změna času příjezdu nebo tipy na výlety v okolí. Ozvěte se přímo na místo.</p>
+        <ul class="kontakty" style="margin-top: 24px; max-width: 480px">
+          <li><a href="tel:+420702187583"><b>+420 702 187 583</b>{{i:phone}}</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel panel--krem" id="kalendar" aria-labelledby="kalendar-nadpis">
+    <div class="hlava">
+      <h2 id="kalendar-nadpis">Obsazenost areálu</h2>
+      <p>Kalendář ukazuje obsazenost jednotlivých ubytovacích kapacit a slouží hlavně jako orientační pomůcka.</p>
+    </div>
+    <div class="kalendar-blok">
+      <div class="kalendar" data-kalendar="{{ROOT}}assets/data/obsazenost.json">
+        <div class="kalendar__ovladani">
+          <p class="kalendar__mesic" data-kalendar-mesic aria-live="polite">Kalendář</p>
+          <div class="kalendar__sipky">
+            <button class="kalendar__sipka" type="button" data-kalendar-zpet aria-label="Předchozí měsíc"><svg class="i" aria-hidden="true" style="transform:rotate(180deg)"><use href="#i-arrow-right"/></svg></button>
+            <button class="kalendar__sipka" type="button" data-kalendar-vpred aria-label="Další měsíc">{{i:arrow-right}}</button>
+          </div>
+        </div>
+        <div class="kalendar__mrizka" data-kalendar-mrizka></div>
+      </div>
+      <div class="kalendar__bok">
+        <ul class="legenda">
+          <li><i style="background: var(--tint)"></i>Volno</li>
+          <li><i style="background: #B9C0A3"></i>Částečně obsazeno</li>
+          <li><i style="background: var(--hlina)"></i>Obsazeno</li>
+        </ul>
+        <p class="poznamka">U některých typů ubytování, třeba u chatek, je k dispozici více jednotek. I když je termín označený jako částečně obsazený, některé chatky mohou být pořád volné. Rádi vám dostupnost ověříme a pomůžeme s výběrem.</p>
+        <div class="akce"><a class="btn btn--oliva" href="tel:+420601594780">{{i:phone}}Ověřit telefonicky</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel panel--holy" aria-labelledby="dal-nadpis">
+    <div class="hlava">
+      <h2 id="dal-nadpis">Než se ozvete</h2>
+      <p>Mrkněte na ubytování a ceny, ať víme, o čem se bavíme.</p>
+    </div>
+    <div class="mozaika">
+      <a class="dlazdice" href="{{ROOT}}ubytovani/">{{i:bed}}<div><h3>Ubytování</h3><p>Apartmán, buňky a chatky včetně vybavení a zázemí.</p></div></a>
+      <a class="dlazdice dlazdice--plna" href="{{ROOT}}cenik/">{{i:file-text}}<div><h3>Ceník 2026</h3><p>Ceny ubytování, pronájmu areálu, prostor a poplatky.</p></div></a>
+      <a class="dlazdice" href="{{ROOT}}aktivity/">{{i:swimming}}<div><h3>Aktivity a vybavení</h3><p>Bazén, tenis, ohniště, dětské hřiště a klubovna.</p></div></a>
+    </div>
+  </section>
+
+</main>
 {{paticka}}
 </body>
 </html>

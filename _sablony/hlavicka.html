@@ -4,29 +4,29 @@
 
 <a class="skip" href="#obsah">Přeskočit na obsah</a>
 
-<header class="hlavicka">
-  <div class="hlavicka__pill">
-    <a class="logo" href="{{ROOT}}" aria-label="Baumat Heroltice, úvodní stránka"><svg class="znacka" aria-hidden="true"><use href="#i-znacka"/></svg><span class="logo__text">Baumat <span>Heroltice</span></span></a>
-    <nav aria-label="Hlavní menu">
-      <div class="menu" id="menu">
-        <ul class="menu__odkazy">
-          <li><a href="{{ROOT}}ubytovani/"{{A:ubytovani}}>Ubytování</a></li>
-          <li><a href="{{ROOT}}aktivity/"{{A:aktivity}}>Aktivity</a></li>
-          <li><a href="{{ROOT}}cenik/"{{A:cenik}}>Ceník</a></li>
-          <li><a href="{{ROOT}}kontakt/"{{A:kontakt}}>Kontakt</a></li>
-        </ul>
-        <a class="btn btn--krem btn--mobil" href="{{ROOT}}kontakt/#kalendar">Volné termíny</a>
+<div class="stranka">
+<header class="panel panel--oliva uvod svetly">
+  <div class="lista-obal" data-lista>
+    <div class="lista">
+      <a class="logo" href="{{ROOT}}" aria-label="Baumat Heroltice, úvodní stránka"><svg class="znacka" aria-hidden="true"><use href="#i-znacka"/></svg>Baumat <span>Heroltice</span></a>
+      <nav class="nav" aria-label="Hlavní menu">
+        <a href="{{ROOT}}ubytovani/"{{A:ubytovani}}>Ubytování</a>
+        <a href="{{ROOT}}aktivity/"{{A:aktivity}}>Aktivity</a>
+        <a href="{{ROOT}}cenik/"{{A:cenik}}>Ceník</a>
+        <a href="{{ROOT}}kontakt/"{{A:kontakt}}>Kontakt</a>
+      </nav>
+      <div class="lista__vpravo">
+        <a class="jazyk" href="{{ROOT}}en/" hreflang="en" lang="en"><span aria-hidden="true">EN</span><span class="sr-only">English</span></a>
+        <a class="btn btn--krem" href="{{ROOT}}kontakt/#kalendar">Volné termíny</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-otevrit="Menu" data-zavrit="Zavřít">{{i:menu-2}}<span>Menu</span></button>
       </div>
-    </nav>
-    <div class="hlavicka__akce">
-      <div class="jazyky" role="group" aria-label="Jazyk webu">
-        <a href="{{ROOT}}" lang="cs" aria-current="true"><span aria-hidden="true">CZ</span><span class="sr-only">Čeština</span></a>
-        <a href="{{ROOT}}en/" lang="en" hreflang="en"><span aria-hidden="true">EN</span><span class="sr-only">English</span></a>
-      </div>
-      <a class="btn btn--les btn--rezervace" href="{{ROOT}}kontakt/">Rezervovat</a>
-      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Otevřít menu" data-otevrit="Otevřít menu" data-zavrit="Zavřít menu">
-        {{i:menu-2}}
-      </button>
     </div>
+    <nav class="menu" id="menu" aria-label="Menu pro mobil">
+      <a href="{{ROOT}}ubytovani/"{{A:ubytovani}}>Ubytování</a>
+      <a href="{{ROOT}}aktivity/"{{A:aktivity}}>Aktivity</a>
+      <a href="{{ROOT}}cenik/"{{A:cenik}}>Ceník</a>
+      <a href="{{ROOT}}kontakt/"{{A:kontakt}}>Kontakt</a>
+      <a href="{{ROOT}}en/" hreflang="en" lang="en">English</a>
+      <a class="btn btn--krem" href="{{ROOT}}kontakt/#kalendar">Volné termíny</a>
+    </nav>
   </div>
-</header>

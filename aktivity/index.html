@@ -2,14 +2,19 @@
 <html lang="cs">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#55613F">
+  <link rel="icon" href="https://baumatheroltice.cz/wp-content/uploads/2024/11/Favicon-Baumat-300x300.png">
+  <link rel="preload" href="../assets/fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/hanken-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+
   <title>Aktivity a vybavení | Rekreační areál Baumat Heroltice</title>
   <meta name="description" content="Bazén, tenis, beach volejbal, stolní tenis, ohniště, dětské hřiště a klubovna s krbem. Co si v rekreačním areálu Baumat Heroltice můžete zahrát a kde se sejít.">
   <link rel="canonical" href="https://baumatheroltice.cz/aktivity/">
   <link rel="alternate" hreflang="cs" href="https://baumatheroltice.cz/aktivity/">
   <link rel="alternate" hreflang="en" href="https://baumatheroltice.cz/en/activities/">
   <link rel="alternate" hreflang="x-default" href="https://baumatheroltice.cz/aktivity/">
-  <meta name="theme-color" content="#2F4A2B">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="cs_CZ">
@@ -18,10 +23,8 @@
   <meta property="og:url" content="https://baumatheroltice.cz/aktivity/">
   <meta property="og:image" content="https://baumatheroltice.cz/wp-content/uploads/2024/11/Bazen_2-1536x1024.jpg">
 
-  <link rel="icon" href="https://baumatheroltice.cz/wp-content/uploads/2024/11/Favicon-Baumat-300x300.png">
-  <link rel="preload" href="../assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
 <symbol id="i-swimming" viewBox="0 0 24 24"><path d="M15 9a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M6 11l4 -2l3.5 3l-1.5 2" /><path d="M3 16.75a2.4 2.4 0 0 0 1 .25a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 1 -.25" /></symbol>
@@ -65,201 +68,196 @@
 
 <a class="skip" href="#obsah">Přeskočit na obsah</a>
 
-<header class="hlavicka">
-  <div class="hlavicka__pill">
-    <a class="logo" href="../" aria-label="Baumat Heroltice, úvodní stránka"><svg class="znacka" aria-hidden="true"><use href="#i-znacka"/></svg><span class="logo__text">Baumat <span>Heroltice</span></span></a>
-    <nav aria-label="Hlavní menu">
-      <div class="menu" id="menu">
-        <ul class="menu__odkazy">
-          <li><a href="../ubytovani/">Ubytování</a></li>
-          <li><a href="../aktivity/" aria-current="page">Aktivity</a></li>
-          <li><a href="../cenik/">Ceník</a></li>
-          <li><a href="../kontakt/">Kontakt</a></li>
-        </ul>
-        <a class="btn btn--krem btn--mobil" href="../kontakt/#kalendar">Volné termíny</a>
+<div class="stranka">
+<header class="panel panel--oliva uvod svetly">
+  <div class="lista-obal" data-lista>
+    <div class="lista">
+      <a class="logo" href="../" aria-label="Baumat Heroltice, úvodní stránka"><svg class="znacka" aria-hidden="true"><use href="#i-znacka"/></svg>Baumat <span>Heroltice</span></a>
+      <nav class="nav" aria-label="Hlavní menu">
+        <a href="../ubytovani/">Ubytování</a>
+        <a href="../aktivity/" aria-current="page">Aktivity</a>
+        <a href="../cenik/">Ceník</a>
+        <a href="../kontakt/">Kontakt</a>
+      </nav>
+      <div class="lista__vpravo">
+        <a class="jazyk" href="../en/" hreflang="en" lang="en"><span aria-hidden="true">EN</span><span class="sr-only">English</span></a>
+        <a class="btn btn--krem" href="../kontakt/#kalendar">Volné termíny</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-otevrit="Menu" data-zavrit="Zavřít"><svg class="i" aria-hidden="true"><use href="#i-menu-2"/></svg><span>Menu</span></button>
       </div>
-    </nav>
-    <div class="hlavicka__akce">
-      <div class="jazyky" role="group" aria-label="Jazyk webu">
-        <a href="../" lang="cs" aria-current="true"><span aria-hidden="true">CZ</span><span class="sr-only">Čeština</span></a>
-        <a href="../en/" lang="en" hreflang="en"><span aria-hidden="true">EN</span><span class="sr-only">English</span></a>
-      </div>
-      <a class="btn btn--les btn--rezervace" href="../kontakt/">Rezervovat</a>
-      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Otevřít menu" data-otevrit="Otevřít menu" data-zavrit="Zavřít menu">
-        <svg class="i" aria-hidden="true"><use href="#i-menu-2"/></svg>
-      </button>
     </div>
+    <nav class="menu" id="menu" aria-label="Menu pro mobil">
+      <a href="../ubytovani/">Ubytování</a>
+      <a href="../aktivity/" aria-current="page">Aktivity</a>
+      <a href="../cenik/">Ceník</a>
+      <a href="../kontakt/">Kontakt</a>
+      <a href="../en/" hreflang="en" lang="en">English</a>
+      <a class="btn btn--krem" href="../kontakt/#kalendar">Volné termíny</a>
+    </nav>
+  </div>
+
+  <div class="pravitko"><ol class="drobky"><li><a href="../">Úvod</a></li><li>Aktivity</li></ol><span>25&nbsp;km od Brna</span></div>
+
+  <div class="hero hero--pod">
+    <div class="hero__text">
+      <h1>Aktivity a vybavení</h1>
+      <div>
+        <p class="perex">Přes den voda a sport, večer oheň nebo klubovna s krbem. Všechno je přímo v areálu.</p>
+        <div class="akce">
+          <a class="btn btn--krem" href="../kontakt/#kalendar">Volné termíny</a>
+          <a class="btn btn--obrys-sv" href="../cenik/#poplatky">Půjčovné a poplatky</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero__foto"><div class="ram"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Bazen_2-1536x1024.jpg" alt="Bazén v rekreačním areálu Baumat" fetchpriority="high"></div></div>
   </div>
 </header>
 
+<main class="obsah" id="obsah">
 
-<main id="obsah">
-
-  <!-- SEKCE: hero podstránky -->
-  <section class="hero hero--podstranka na-tmave" aria-labelledby="hero-nadpis">
-    <div class="hero__foto">
-      <img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Bazen_2-1536x1024.jpg" alt="Bazén v rekreačním areálu Baumat" fetchpriority="high">
-    </div>
-    <div class="hero__prekryv" aria-hidden="true"></div>
-    <div class="hero__obsah">
-      <h1 id="hero-nadpis">Aktivity a vybavení</h1>
-      <div class="hero__radek">
-        <p class="perex">Přes den voda a sport, večer oheň nebo klubovna s krbem. Všechno je přímo v areálu.</p>
-        <div class="hero__akce">
-          <a class="btn btn--krem btn--sipka" href="../kontakt/#kalendar">Volné termíny<span class="btn__kolecko"><svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
-        </div>
+  <section class="panel panel--holy" aria-labelledby="aktivity-nadpis">
+    <div class="hlava">
+      <h2 id="aktivity-nadpis">Co si u nás zahrajete</h2>
+      <div class="hlava__vpravo">
+        <p>Ubytovaní hosté mají většinu aktivit v ceně pobytu. Za tenisový kurt, kulečník a další vybavení se platí zvlášť.</p>
+        <a class="odkaz" href="../cenik/#poplatky">Půjčovné a poplatky</a>
       </div>
     </div>
-  </section>
-
-  <!-- SEKCE: mřížka aktivit -->
-  <section class="sekce" aria-labelledby="aktivity-nadpis">
-    <div class="wrap">
-      <div class="sekce__hlava">
-        <div class="sekce__uvod">
-          <h2 id="aktivity-nadpis">Co si u nás zahrajete</h2>
-          <p class="perex">Ubytovaní hosté mají většinu aktivit v ceně pobytu. Za tenisový kurt, kulečník a další vybavení se platí zvlášť.</p>
+    <ul class="aktivity">
+      <li class="aktivita panel panel--krem aktivita--velka" id="bazen">
+        <div class="ram" data-galerie="Bazén">
+          <button class="foto-btn" type="button" aria-label="Otevřít fotky: bazén"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Bazen_2-1536x1024.jpg" alt="Bazén v areálu Baumat" loading="lazy"></button>
+          <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Bazen_3-1536x1024.jpg" alt="Posezení u bazénu" loading="lazy">
+          <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Bazen_mainpage.jpg" alt="Pohled na bazén s okolní přírodou" loading="lazy">
+          <span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>3 fotky</span>
         </div>
-        <a class="proklik" href="../cenik/#poplatky">Půjčovné a poplatky<svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-      </div>
-
-      <ul class="aktivity">
-        <li class="aktivita aktivita--velka" id="bazen">
-          <div class="aktivita__foto foto" data-galerie="Bazén">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotky bazénu"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Bazen_2-1536x1024.jpg" alt="Bazén v areálu Baumat" loading="lazy"></button>
-            <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Bazen_3-1536x1024.jpg" alt="Posezení u bazénu" loading="lazy">
-            <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Bazen_mainpage.jpg" alt="Pohled na bazén s okolní přírodou" loading="lazy">
-            <span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>3 fotky</span>
-          </div>
+        <div class="polozka__telo">
           <h3>Bazén</h3>
           <p>Osvěžení a relaxace v čisté vodě. Ideální místo pro plavání i pohodový odpočinek u vody.</p>
-          <p class="aktivita__meta"><svg class="i" aria-hidden="true"><use href="#i-info-circle"/></svg>Platí provozní řád bazénu</p>
-        </li>
-
-        <li class="aktivita aktivita--velka" id="klubovna">
-          <div class="aktivita__foto foto" data-galerie="Klubovna">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotky klubovny"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/klubovna_hl.photo_-1536x1024.jpg" alt="Klubovna s kulečníkem a krbem" loading="lazy"></button>
-            <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/klubovna_2-1536x1024.jpg" alt="Posezení v klubovně" loading="lazy">
-            <span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>2 fotky</span>
-          </div>
+          <p class="polozka__meta"><svg class="i" aria-hidden="true"><use href="#i-info-circle"/></svg>Platí <a href="https://baumatheroltice.cz/wp-content/uploads/2025/04/Provozni-rad-bazenu-FINAL-2023.docx">provozní řád bazénu</a></p>
+        </div>
+      </li>
+      <li class="aktivita panel panel--krem" id="tenis">
+        <div class="ram" data-galerie="Tenis">
+          <button class="foto-btn" type="button" aria-label="Otevřít fotky: tenis"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/tenis_hl.photo_-1536x1024.jpg" alt="Tenisový kurt v areálu Baumat" loading="lazy"></button>
+          <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/12/tenis-2-1536x1024.jpg" alt="Pohled na tenisový kurt" loading="lazy">
+          <span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>2 fotky</span>
+        </div>
+        <div class="polozka__telo">
+          <h3>Tenis</h3>
+          <p>Kurty pro rekreační i soutěžní hráče. Půjčíme vám i profesionální rakety.</p>
+          <p class="polozka__meta"><svg class="i" aria-hidden="true"><use href="#i-info-circle"/></svg>250&nbsp;Kč za hodinu pro neubytované</p>
+        </div>
+      </li>
+      <li class="aktivita panel panel--krem" id="beach-volejbal">
+        <div class="ram" data-galerie="Beach volejbal">
+          <button class="foto-btn" type="button" aria-label="Otevřít fotky: beach volejbal"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/beach_hl.photo_-1536x1024.jpg" alt="Hřiště na beach volejbal" loading="lazy"></button>
+          <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Beach-1536x1024.jpg" alt="Písečné hřiště v areálu" loading="lazy">
+          <span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>2 fotky</span>
+        </div>
+        <div class="polozka__telo">
+          <h3>Beach volejbal</h3>
+          <p>Perfektní volba pro sportovní odpoledne s přáteli. Míč vám rádi půjčíme.</p>
+        </div>
+      </li>
+      <li class="aktivita panel panel--krem aktivita--velka aktivita--obracene" id="klubovna">
+        <div class="ram" data-galerie="Klubovna">
+          <button class="foto-btn" type="button" aria-label="Otevřít fotky: klubovna"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/klubovna_hl.photo_-1536x1024.jpg" alt="Klubovna s kulečníkem a krbem" loading="lazy"></button>
+          <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/klubovna_2-1536x1024.jpg" alt="Posezení v klubovně" loading="lazy">
+          <span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>2 fotky</span>
+        </div>
+        <div class="polozka__telo">
           <h3>Klubovna</h3>
           <p>Místo pro večerní odpočinek a zábavu, hlavně když venku prší. Krb, gauče a prostorné dřevěné stoly.</p>
-          <ul class="aktivita__seznam">
+          <ul class="parametry">
             <li><svg class="i" aria-hidden="true"><use href="#i-ping-pong"/></svg>Kulečníkový a pingpongový stůl, stolní hry</li>
             <li><svg class="i" aria-hidden="true"><use href="#i-campfire"/></svg>Vlastní krb a pohodlné posezení</li>
           </ul>
-          <p class="aktivita__meta"><svg class="i" aria-hidden="true"><use href="#i-building-store"/></svg>Pronájem 800&nbsp;Kč za den</p>
-        </li>
-
-        <li class="aktivita" id="tenis">
-          <div class="aktivita__foto foto" data-galerie="Tenis">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotky tenisu"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/tenis_hl.photo_-1536x1024.jpg" alt="Tenisový kurt v areálu Baumat" loading="lazy"></button>
-            <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/12/tenis-2-1536x1024.jpg" alt="Pohled na tenisový kurt" loading="lazy">
-            <span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>2 fotky</span>
-          </div>
-          <h3>Tenis</h3>
-          <p>Kurty pro rekreační i soutěžní hráče. Půjčíme vám i profesionální rakety.</p>
-          <p class="aktivita__meta"><svg class="i" aria-hidden="true"><use href="#i-info-circle"/></svg>250&nbsp;Kč za hodinu pro neubytované</p>
-        </li>
-
-        <li class="aktivita" id="beach-volejbal">
-          <div class="aktivita__foto foto" data-galerie="Beach volejbal">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotky beach volejbalu"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/beach_hl.photo_-1536x1024.jpg" alt="Hřiště na beach volejbal" loading="lazy"></button>
-            <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Beach-1536x1024.jpg" alt="Písečné hřiště v areálu" loading="lazy">
-            <span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>2 fotky</span>
-          </div>
-          <h3>Beach volejbal</h3>
-          <p>Perfektní volba pro sportovní odpoledne s přáteli. Míč vám rádi půjčíme.</p>
-        </li>
-
-        <li class="aktivita" id="stolni-tenis">
-          <div class="aktivita__foto foto" data-galerie="Stolní tenis">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotku stolního tenisu"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/ping-pong-1536x1024.jpg" alt="Pingpongový stůl v areálu" loading="lazy"></button>
-            <span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>Zvětšit</span>
-          </div>
-          <h3>Stolní tenis</h3>
-          <p>Zábava pro každého. Zahrajte si přátelské zápasy s rodinou nebo kamarády.</p>
-        </li>
-
-        <li class="aktivita aktivita--velka" id="ohniste">
-          <div class="aktivita__foto foto" data-galerie="Ohniště">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotky ohniště"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Ohniste_1-1536x1024.jpg" alt="Ohniště s posezením na louce" loading="lazy"></button>
-            <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Ohniste_2-1-1536x1024.jpg" alt="Ohniště v areálu" loading="lazy">
-            <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Ohniste_3-1-1536x1024.jpg" alt="Večerní posezení u ohně" loading="lazy">
-            <span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>3 fotky</span>
-          </div>
+          <p class="polozka__meta"><svg class="i" aria-hidden="true"><use href="#i-building-store"/></svg>Pronájem 800&nbsp;Kč za den</p>
+        </div>
+      </li>
+      <li class="aktivita panel panel--krem aktivita--velka" id="ohniste">
+        <div class="ram" data-galerie="Ohniště">
+          <button class="foto-btn" type="button" aria-label="Otevřít fotky: ohniště"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Ohniste_1-1536x1024.jpg" alt="Ohniště s posezením na louce" loading="lazy"></button>
+          <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Ohniste_2-1-1536x1024.jpg" alt="Ohniště v areálu" loading="lazy">
+          <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Ohniste_3-1-1536x1024.jpg" alt="Večerní posezení u ohně" loading="lazy">
+          <span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>3 fotky</span>
+        </div>
+        <div class="polozka__telo">
           <h3>Ohniště</h3>
           <p>Útulné místo pro večerní posezení u ohně. Ideální na opékání špekáčků a povídání pod noční oblohou.</p>
-        </li>
-
-        <li class="aktivita aktivita--velka" id="detske-hriste">
-          <div class="aktivita__foto foto" data-galerie="Dětské hřiště">
-            <button class="foto-btn" type="button" aria-label="Otevřít fotky dětského hřiště"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Detske-hriste-1536x1024.jpg" alt="Dětské hřiště s houpačkou a skluzavkou" loading="lazy"></button>
-            <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Detske-hriste_2-1536x1024.jpg" alt="Prolézačka na dětském hřišti" loading="lazy">
-            <span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>2 fotky</span>
-          </div>
+        </div>
+      </li>
+      <li class="aktivita panel panel--krem" id="detske-hriste">
+        <div class="ram" data-galerie="Dětské hřiště">
+          <button class="foto-btn" type="button" aria-label="Otevřít fotky: dětské hřiště"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Detske-hriste-1536x1024.jpg" alt="Dětské hřiště s houpačkou a skluzavkou" loading="lazy"></button>
+          <img class="skryta-fotka" src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Detske-hriste_2-1536x1024.jpg" alt="Prolézačka na dětském hřišti" loading="lazy">
+          <span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>2 fotky</span>
+        </div>
+        <div class="polozka__telo">
           <h3>Dětské hřiště</h3>
           <p>Bezpečný herní prostor plný zábavy. Houpačka a skluzavka zabaví děti na celé odpoledne.</p>
-        </li>
-      </ul>
-    </div>
+        </div>
+      </li>
+      <li class="aktivita panel panel--krem" id="stolni-tenis">
+        <div class="ram" data-galerie="Stolní tenis">
+          <button class="foto-btn" type="button" aria-label="Otevřít fotky: stolní tenis"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/ping-pong-1536x1024.jpg" alt="Pingpongový stůl v areálu" loading="lazy"></button>
+          <span class="lupa"><svg class="i" aria-hidden="true"><use href="#i-photo"/></svg>Zvětšit</span>
+        </div>
+        <div class="polozka__telo">
+          <h3>Stolní tenis</h3>
+          <p>Zábava pro každého. Zahrajte si přátelské zápasy s rodinou nebo kamarády.</p>
+        </div>
+      </li>
+    </ul>
   </section>
 
 </main>
-
-<!-- ZÁVĚR: tmavý blok, ve kterém končí stránka -->
-<div class="zaver">
-
-  <section class="vyzva-sekce" aria-labelledby="vyzva-nadpis">
-    <div class="wrap vyzva">
-      <h2 id="vyzva-nadpis">Naplánujte si pobyt</h2>
-      <p class="perex">Poradíme s cenou, volným termínem i výběrem ubytování. Ozvěte se telefonicky nebo e-mailem.</p>
-      <div class="vyzva__akce">
-        <a class="btn btn--krem btn--sipka" href="../kontakt/#kalendar">Volné termíny<span class="btn__kolecko"><svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
-        <a class="btn btn--obrys" href="tel:+420601594780"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>601&nbsp;594&nbsp;780</a>
+<footer class="panel panel--mech paticka svetly">
+  <div class="paticka__horni">
+    <h2>Je váš termín volný?</h2>
+    <div>
+      <p>Poradíme s cenou, volným termínem i výběrem ubytování. Ozvěte se telefonicky nebo e-mailem.</p>
+      <div class="akce" style="margin-top: 22px">
+        <a class="btn btn--krem" href="../kontakt/#kalendar"><svg class="i" aria-hidden="true"><use href="#i-calendar-event"/></svg>Volné termíny</a>
+        <a class="btn btn--obrys-sv" href="tel:+420601594780"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>601&nbsp;594&nbsp;780</a>
       </div>
     </div>
-  </section>
-
-<footer class="paticka">
-    <svg class="paticka__motiv" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-znacka"/></svg>
-  <div class="wrap">
-    <div class="paticka__horni">
-      <div class="paticka__znacka">
-        <a class="logo" href="../"><svg class="znacka" aria-hidden="true"><use href="#i-znacka"/></svg><span class="logo__text">Baumat <span>Heroltice</span></span></a>
-        <p>Rekreační areál v údolí řeky Svratky pro pobyty, oslavy, svatby, tábory a firemní akce.</p>
-      </div>
-      <div>
-        <h2>Web</h2>
-        <ul>
-          <li><a href="../ubytovani/">Ubytování</a></li>
-          <li><a href="../aktivity/">Aktivity</a></li>
-          <li><a href="../cenik/">Ceník</a></li>
-          <li><a href="../kontakt/">Kontakt</a></li>
-          <li><a href="../en/" hreflang="en" lang="en">English</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Dokumenty</h2>
-        <ul>
-          <li><a href="https://baumatheroltice.cz/wp-content/uploads/2026/01/Cenik-2026.pdf">Ceník 2026 (PDF)</a></li>
-          <li><a href="https://baumatheroltice.cz/wp-content/uploads/2026/01/Ubytovaci-rad-2026.docx">Ubytovací řád</a></li>
-          <li><a href="https://baumatheroltice.cz/wp-content/uploads/2025/04/Provozni-rad-bazenu-FINAL-2023.docx">Provozní řád bazénu</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Provozovatel</h2>
-        <ul>
-          <li>BAUMAT, s.r.o.</li>
-          <li>IČO 48529753</li>
-          <li>Kabátníkova 105/2<br>602 00 Brno</li>
-        </ul>
-      </div>
+  </div>
+  <div class="paticka__sloupce">
+    <div class="paticka__znacka">
+      <a class="logo" href="../"><svg class="znacka" aria-hidden="true"><use href="#i-znacka"/></svg>Baumat <span>Heroltice</span></a>
+      <p>Rekreační areál v údolí řeky Svratky pro pobyty, oslavy, svatby, tábory a firemní akce.</p>
     </div>
-    <div class="paticka__spodni">
-      <span>© <span data-rok>2026</span> BAUMAT, s.r.o.</span>
-      <a href="https://www.instagram.com/baumat_heroltice/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-brand-instagram"/></svg>Instagram</a>
+    <div>
+      <h2>Web</h2>
+      <ul>
+        <li><a href="../ubytovani/">Ubytování</a></li>
+        <li><a href="../aktivity/">Aktivity</a></li>
+        <li><a href="../cenik/">Ceník</a></li>
+        <li><a href="../kontakt/">Kontakt</a></li>
+        <li><a href="../en/" hreflang="en" lang="en">English</a></li>
+      </ul>
     </div>
+    <div>
+      <h2>Dokumenty</h2>
+      <ul>
+        <li><a href="https://baumatheroltice.cz/wp-content/uploads/2026/01/Cenik-2026.pdf">Ceník 2026 (PDF)</a></li>
+        <li><a href="https://baumatheroltice.cz/wp-content/uploads/2026/01/Ubytovaci-rad-2026.docx">Ubytovací řád</a></li>
+        <li><a href="https://baumatheroltice.cz/wp-content/uploads/2025/04/Provozni-rad-bazenu-FINAL-2023.docx">Provozní řád bazénu</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Provozovatel</h2>
+      <ul>
+        <li>BAUMAT, s.r.o.</li>
+        <li>IČO 48529753</li>
+        <li>Kabátníkova 105/2<br>602 00 Brno</li>
+      </ul>
+    </div>
+  </div>
+  <div class="paticka__spodni">
+    <span>© <span data-rok>2026</span> BAUMAT, s.r.o.</span>
+    <a href="https://www.instagram.com/baumat_heroltice/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-brand-instagram"/></svg>Instagram</a>
   </div>
 </footer>
 </div>

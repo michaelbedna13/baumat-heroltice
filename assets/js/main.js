@@ -1,52 +1,55 @@
 (function () {
+  /* Fotky, které se nenačtou, se skryjí a zůstane jen plocha rámu ---- */
+  document.querySelectorAll(".ram img, .karta img").forEach(function (img) {
+    function skryj() { img.classList.add("nenacteno"); }
+    if (img.complete && img.naturalWidth === 0 && img.getAttribute("src")) skryj();
+    else img.addEventListener("error", skryj);
+  });
+
   /* Mobilní menu ------------------------------------------------ */
-  var hlavicka = document.querySelector(".hlavicka");
-  var burger = document.querySelector(".burger");
+  var tlacitko = document.querySelector(".menu-btn");
   var menu = document.getElementById("menu");
 
   function nastavMenu(otevrit) {
-    if (!burger || !menu) return;
-    burger.setAttribute("aria-expanded", otevrit ? "true" : "false");
-    burger.setAttribute("aria-label", otevrit ? burger.dataset.zavrit : burger.dataset.otevrit);
-    burger.querySelector("use").setAttribute("href", otevrit ? "#i-x" : "#i-menu-2");
+    if (!tlacitko || !menu) return;
+    tlacitko.setAttribute("aria-expanded", otevrit ? "true" : "false");
+    tlacitko.querySelector("span").textContent = otevrit ? tlacitko.dataset.zavrit : tlacitko.dataset.otevrit;
+    tlacitko.querySelector("use").setAttribute("href", otevrit ? "#i-x" : "#i-menu-2");
     menu.classList.toggle("je-otevrene", otevrit);
-    document.body.classList.toggle("menu-otevrene", otevrit);
   }
 
-  if (burger && menu) {
-    burger.addEventListener("click", function () {
-      nastavMenu(burger.getAttribute("aria-expanded") !== "true");
+  if (tlacitko && menu) {
+    tlacitko.addEventListener("click", function () {
+      nastavMenu(tlacitko.getAttribute("aria-expanded") !== "true");
     });
     menu.addEventListener("click", function (e) {
       if (e.target.closest("a")) nastavMenu(false);
     });
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && burger.getAttribute("aria-expanded") === "true") {
+      if (e.key === "Escape" && tlacitko.getAttribute("aria-expanded") === "true") {
         nastavMenu(false);
-        burger.focus();
+        tlacitko.focus();
       }
     });
-    window.matchMedia("(min-width: 961px)").addEventListener("change", function (mq) {
+    window.matchMedia("(min-width: 960px)").addEventListener("change", function (mq) {
       if (mq.matches) nastavMenu(false);
     });
   }
 
-  /* Hlavička se po odscrollování přilepí nahoru ------------------ */
-  if (hlavicka) {
-    var mistoProHlavicku = document.createElement("div");
-    hlavicka.parentNode.insertBefore(mistoProHlavicku, hlavicka);
-    var vyska = 0;
-
+  /* Lišta se po odscrollování přilepí nahoru jako olivová pilulka ---- */
+  var lista = document.querySelector("[data-lista]");
+  if (lista) {
+    var misto = document.createElement("div");
+    lista.parentNode.insertBefore(misto, lista);
     var naScroll = function () {
-      var lepi = hlavicka.classList.contains("hlavicka--lepi");
-      if (!lepi) vyska = hlavicka.offsetHeight;
-      var hranice = mistoProHlavicku.offsetTop + vyska;
-      var maLepit = window.scrollY > hranice + 120;
+      var lepi = lista.classList.contains("lista-obal--lepi");
+      var hranice = misto.getBoundingClientRect().top + window.scrollY + 400;
+      var maLepit = window.scrollY > hranice;
       if (maLepit === lepi) return;
-      hlavicka.classList.toggle("hlavicka--lepi", maLepit);
-      mistoProHlavicku.style.height = maLepit ? vyska + "px" : "";
+      if (maLepit) misto.style.height = lista.offsetHeight + "px";
+      else misto.style.height = "";
+      lista.classList.toggle("lista-obal--lepi", maLepit);
     };
-
     naScroll();
     window.addEventListener("scroll", naScroll, { passive: true });
     window.addEventListener("resize", naScroll);
@@ -55,11 +58,47 @@
   var rok = document.querySelector("[data-rok]");
   if (rok) rok.textContent = new Date().getFullYear();
 
+  /* Poptávka: sestaví e-mail s vyplněnými údaji ------------------ */
+  var CIL = "drahosova@baumat-brno.cz";
+  document.querySelectorAll("[data-poptavka]").forEach(function (form) {
+    var prijezd = form.elements.prijezd;
+    var odjezd = form.elements.odjezd;
+    var dnes = new Date();
+    var dnesKlic = dnes.getFullYear() + "-" + String(dnes.getMonth() + 1).padStart(2, "0") + "-" + String(dnes.getDate()).padStart(2, "0");
+    prijezd.min = dnesKlic;
+    odjezd.min = dnesKlic;
+    prijezd.addEventListener("change", function () {
+      odjezd.min = prijezd.value || dnesKlic;
+      if (odjezd.value && odjezd.value < prijezd.value) odjezd.value = "";
+    });
+
+    function cesky(d) {
+      if (!d) return "";
+      var p = d.split("-");
+      return +p[2] + ". " + +p[1] + ". " + p[0];
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var typ = form.elements.typ.value;
+      var predmet = "Poptávka: " + typ + ", " + cesky(prijezd.value) + " až " + cesky(odjezd.value);
+      var telo =
+        "Dobrý den,\n\nposílám poptávku termínu v areálu Baumat Heroltice.\n\n" +
+        "Typ akce: " + typ + "\n" +
+        "Příjezd: " + cesky(prijezd.value) + "\n" +
+        "Odjezd: " + cesky(odjezd.value) + "\n" +
+        "Počet osob: " + form.elements.osob.value + "\n\n" +
+        "Děkuji\n";
+      window.location.href = "mailto:" + CIL + "?subject=" + encodeURIComponent(predmet) + "&body=" + encodeURIComponent(telo);
+    });
+  });
+
   /* Prohlížeč fotek --------------------------------------------- */
   var galerie = document.querySelectorAll("[data-galerie]");
   if (galerie.length && window.HTMLDialogElement) {
     var dialog = document.createElement("dialog");
     dialog.className = "lightbox";
+    dialog.setAttribute("aria-label", "Prohlížeč fotek");
     dialog.innerHTML =
       '<div class="lightbox__plocha">' +
       '  <div class="lightbox__horni">' +
@@ -93,6 +132,9 @@
       nazevEl.textContent = nazev;
       popisEl.textContent = f.alt;
       pocetEl.textContent = index + 1 + " z " + fotky.length;
+      var vice = fotky.length > 1;
+      dialog.querySelector("[data-lb-zpet]").hidden = !vice;
+      dialog.querySelector("[data-lb-vpred]").hidden = !vice;
     }
 
     function posun(o) {
@@ -102,7 +144,7 @@
 
     galerie.forEach(function (blok) {
       var obrazky = [].map.call(blok.querySelectorAll("img"), function (img) {
-        return { src: img.src, alt: img.alt };
+        return { src: img.currentSrc || img.src, alt: img.alt };
       });
       blok.querySelectorAll(".foto-btn").forEach(function (btn, i) {
         btn.addEventListener("click", function () {
@@ -127,92 +169,6 @@
     });
   }
 
-  /* Karusel ------------------------------------------------------ */
-  document.querySelectorAll("[data-karusel]").forEach(function (karusel) {
-    var stopa = karusel.querySelector(".karusel__stopa");
-    if (!stopa) return;
-    var polozky = [].slice.call(stopa.children);
-    var id = karusel.getAttribute("data-karusel");
-    var okoli = (id && document.getElementById(id)) || karusel.closest("section") || document;
-    var zpet = okoli.querySelector("[data-karusel-zpet]") || document.querySelector("[data-karusel-zpet]");
-    var vpred = okoli.querySelector("[data-karusel-vpred]") || document.querySelector("[data-karusel-vpred]");
-    var ukazatel = karusel.querySelector("[data-karusel-ukazatel]");
-    var tecky = [];
-
-    if (ukazatel) {
-      polozky.forEach(function () {
-        var t = document.createElement("span");
-        t.className = "karusel__tecka";
-        ukazatel.appendChild(t);
-        tecky.push(t);
-      });
-    }
-
-    function krok() {
-      var karta = stopa.firstElementChild;
-      if (!karta) return stopa.clientWidth;
-      var mezera = parseFloat(getComputedStyle(stopa).columnGap) || 0;
-      return karta.getBoundingClientRect().width + mezera;
-    }
-
-    /* Aktivní je karta, která je nejblíž levému okraji stopy */
-    function oznacAktivni() {
-      var levy = stopa.getBoundingClientRect().left;
-      var nejblizsi = 0;
-      var nejmensi = Infinity;
-      polozky.forEach(function (li, i) {
-        var vzdalenost = Math.abs(li.getBoundingClientRect().left - levy);
-        if (vzdalenost < nejmensi) { nejmensi = vzdalenost; nejblizsi = i; }
-      });
-      polozky.forEach(function (li, i) { li.classList.toggle("je-aktivni", i === nejblizsi); });
-      tecky.forEach(function (t, i) { t.classList.toggle("je-aktivni", i === nejblizsi); });
-    }
-
-    function stav() {
-      var lzePosouvat = stopa.scrollWidth - stopa.clientWidth > 4;
-      if (zpet) zpet.parentNode.hidden = !lzePosouvat;
-      if (ukazatel) ukazatel.hidden = !lzePosouvat;
-      var max = stopa.scrollWidth - stopa.clientWidth - 2;
-      if (zpet) zpet.disabled = stopa.scrollLeft <= 2;
-      if (vpred) vpred.disabled = stopa.scrollLeft >= max;
-      oznacAktivni();
-    }
-
-    if (zpet) zpet.addEventListener("click", function () { stopa.scrollBy({ left: -krok(), behavior: "smooth" }); });
-    if (vpred) vpred.addEventListener("click", function () { stopa.scrollBy({ left: krok(), behavior: "smooth" }); });
-    stopa.addEventListener("scroll", stav, { passive: true });
-    window.addEventListener("resize", stav);
-
-    /* Tažení myší */
-    var tahne = false, startX = 0, startScroll = 0, posunuto = 0;
-    stopa.addEventListener("pointerdown", function (e) {
-      if (e.pointerType === "touch") return;
-      tahne = true; posunuto = 0;
-      startX = e.clientX; startScroll = stopa.scrollLeft;
-    });
-    window.addEventListener("pointermove", function (e) {
-      if (!tahne) return;
-      posunuto = e.clientX - startX;
-      if (Math.abs(posunuto) > 4) stopa.classList.add("je-tazeno");
-      stopa.scrollLeft = startScroll - posunuto;
-    });
-    window.addEventListener("pointerup", function () {
-      if (!tahne) return;
-      tahne = false;
-      stopa.classList.remove("je-tazeno");
-      var k = krok();
-      stopa.scrollTo({ left: Math.round(stopa.scrollLeft / k) * k, behavior: "smooth" });
-    });
-
-    stopa.setAttribute("tabindex", "0");
-    stopa.addEventListener("keydown", function (e) {
-      if (e.key === "ArrowRight") { e.preventDefault(); stopa.scrollBy({ left: krok(), behavior: "smooth" }); }
-      if (e.key === "ArrowLeft") { e.preventDefault(); stopa.scrollBy({ left: -krok(), behavior: "smooth" }); }
-    });
-
-    stav();
-  });
-
   /* Kalendář obsazenosti ---------------------------------------- */
   var kalendar = document.querySelector("[data-kalendar]");
   if (kalendar) {
@@ -224,9 +180,9 @@
     var popisek = kalendar.querySelector("[data-kalendar-mesic]");
     var zpet = kalendar.querySelector("[data-kalendar-zpet]");
     var vpred = kalendar.querySelector("[data-kalendar-vpred]");
-    var dnes = new Date();
-    dnes.setHours(0, 0, 0, 0);
-    var zobrazeny = new Date(dnes.getFullYear(), dnes.getMonth(), 1);
+    var den0 = new Date();
+    den0.setHours(0, 0, 0, 0);
+    var zobrazeny = new Date(den0.getFullYear(), den0.getMonth(), 1);
     var obsazenost = {};
 
     function klic(d) {
@@ -260,15 +216,15 @@
         var stav = obsazenost[klic(datum)] || "volno";
         var bunka = document.createElement("div");
         bunka.className = "kalendar__den kalendar__den--" + stav;
-        if (datum < dnes) bunka.classList.add("kalendar__den--minuly");
-        if (datum.getTime() === dnes.getTime()) bunka.classList.add("kalendar__den--dnes");
+        if (datum < den0) bunka.classList.add("kalendar__den--minuly");
+        if (datum.getTime() === den0.getTime()) bunka.classList.add("kalendar__den--dnes");
         bunka.innerHTML = "<span>" + den + "</span>";
         var slovy = datum.toLocaleDateString("cs-CZ", { day: "numeric", month: "long", year: "numeric" });
         bunka.setAttribute("aria-label", slovy + ", " + (STAVY[stav] || "volno"));
         mrizka.appendChild(bunka);
       }
 
-      zpet.disabled = zobrazeny <= new Date(dnes.getFullYear(), dnes.getMonth(), 1);
+      zpet.disabled = zobrazeny <= new Date(den0.getFullYear(), den0.getMonth(), 1);
     }
 
     zpet.addEventListener("click", function () {

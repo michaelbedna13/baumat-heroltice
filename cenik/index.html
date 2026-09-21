@@ -2,14 +2,19 @@
 <html lang="cs">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#55613F">
+  <link rel="icon" href="https://baumatheroltice.cz/wp-content/uploads/2024/11/Favicon-Baumat-300x300.png">
+  <link rel="preload" href="../assets/fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/hanken-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+
   <title>Ceník 2026 | Rekreační areál Baumat Heroltice</title>
   <meta name="description" content="Ceník 2026 rekreačního areálu Baumat Heroltice: ubytování od 180 Kč za lůžko na noc, pronájem celého areálu 40 000 Kč za víkend, pronájem kuchyně, jídelny a klubovny, půjčovné a poplatky.">
   <link rel="canonical" href="https://baumatheroltice.cz/cenik/">
   <link rel="alternate" hreflang="cs" href="https://baumatheroltice.cz/cenik/">
   <link rel="alternate" hreflang="en" href="https://baumatheroltice.cz/en/pricing/">
   <link rel="alternate" hreflang="x-default" href="https://baumatheroltice.cz/cenik/">
-  <meta name="theme-color" content="#2F4A2B">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="cs_CZ">
@@ -18,10 +23,8 @@
   <meta property="og:url" content="https://baumatheroltice.cz/cenik/">
   <meta property="og:image" content="https://baumatheroltice.cz/wp-content/uploads/2024/11/areal-1.jpg">
 
-  <link rel="icon" href="https://baumatheroltice.cz/wp-content/uploads/2024/11/Favicon-Baumat-300x300.png">
-  <link rel="preload" href="../assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
 <symbol id="i-swimming" viewBox="0 0 24 24"><path d="M15 9a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M6 11l4 -2l3.5 3l-1.5 2" /><path d="M3 16.75a2.4 2.4 0 0 0 1 .25a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 1 -.25" /></symbol>
@@ -65,312 +68,239 @@
 
 <a class="skip" href="#obsah">Přeskočit na obsah</a>
 
-<header class="hlavicka">
-  <div class="hlavicka__pill">
-    <a class="logo" href="../" aria-label="Baumat Heroltice, úvodní stránka"><svg class="znacka" aria-hidden="true"><use href="#i-znacka"/></svg><span class="logo__text">Baumat <span>Heroltice</span></span></a>
-    <nav aria-label="Hlavní menu">
-      <div class="menu" id="menu">
-        <ul class="menu__odkazy">
-          <li><a href="../ubytovani/">Ubytování</a></li>
-          <li><a href="../aktivity/">Aktivity</a></li>
-          <li><a href="../cenik/" aria-current="page">Ceník</a></li>
-          <li><a href="../kontakt/">Kontakt</a></li>
-        </ul>
-        <a class="btn btn--krem btn--mobil" href="../kontakt/#kalendar">Volné termíny</a>
+<div class="stranka">
+<header class="panel panel--oliva uvod svetly">
+  <div class="lista-obal" data-lista>
+    <div class="lista">
+      <a class="logo" href="../" aria-label="Baumat Heroltice, úvodní stránka"><svg class="znacka" aria-hidden="true"><use href="#i-znacka"/></svg>Baumat <span>Heroltice</span></a>
+      <nav class="nav" aria-label="Hlavní menu">
+        <a href="../ubytovani/">Ubytování</a>
+        <a href="../aktivity/">Aktivity</a>
+        <a href="../cenik/" aria-current="page">Ceník</a>
+        <a href="../kontakt/">Kontakt</a>
+      </nav>
+      <div class="lista__vpravo">
+        <a class="jazyk" href="../en/" hreflang="en" lang="en"><span aria-hidden="true">EN</span><span class="sr-only">English</span></a>
+        <a class="btn btn--krem" href="../kontakt/#kalendar">Volné termíny</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-otevrit="Menu" data-zavrit="Zavřít"><svg class="i" aria-hidden="true"><use href="#i-menu-2"/></svg><span>Menu</span></button>
       </div>
-    </nav>
-    <div class="hlavicka__akce">
-      <div class="jazyky" role="group" aria-label="Jazyk webu">
-        <a href="../" lang="cs" aria-current="true"><span aria-hidden="true">CZ</span><span class="sr-only">Čeština</span></a>
-        <a href="../en/" lang="en" hreflang="en"><span aria-hidden="true">EN</span><span class="sr-only">English</span></a>
-      </div>
-      <a class="btn btn--les btn--rezervace" href="../kontakt/">Rezervovat</a>
-      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Otevřít menu" data-otevrit="Otevřít menu" data-zavrit="Zavřít menu">
-        <svg class="i" aria-hidden="true"><use href="#i-menu-2"/></svg>
-      </button>
     </div>
+    <nav class="menu" id="menu" aria-label="Menu pro mobil">
+      <a href="../ubytovani/">Ubytování</a>
+      <a href="../aktivity/">Aktivity</a>
+      <a href="../cenik/" aria-current="page">Ceník</a>
+      <a href="../kontakt/">Kontakt</a>
+      <a href="../en/" hreflang="en" lang="en">English</a>
+      <a class="btn btn--krem" href="../kontakt/#kalendar">Volné termíny</a>
+    </nav>
   </div>
+
+  <div class="pravitko"><ol class="drobky"><li><a href="../">Úvod</a></li><li>Ceník</li></ol><span>Platí pro rok 2026</span></div>
+
+  <div class="hero hero--pod">
+    <div class="hero__text">
+      <h1>Ceník 2026</h1>
+      <div>
+        <p class="perex">Ceny ubytování, pronájmu areálu i jednotlivých prostor. Nevíte si rady? Zavolejte, poradíme s výběrem.</p>
+        <div class="akce">
+          <a class="btn btn--krem" href="https://baumatheroltice.cz/wp-content/uploads/2026/01/Cenik-2026.pdf"><svg class="i" aria-hidden="true"><use href="#i-file-text"/></svg>Ceník v PDF</a>
+          <a class="btn btn--obrys-sv" href="tel:+420601594780"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>601&nbsp;594&nbsp;780</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero__foto"><div class="ram"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/areal-2.jpg" alt="Rekreační areál Baumat Heroltice" fetchpriority="high"></div></div>
+  </div>
+  <nav class="kotvy" aria-label="Části ceníku" style="margin-top: clamp(28px, 3.4vw, 44px)">
+    <a href="#ubytovani">Ubytování</a>
+    <a href="#areal">Celý areál</a>
+    <a href="#prostory">Prostory a zařízení</a>
+    <a href="#poplatky">Poplatky a půjčovné</a>
+  </nav>
 </header>
 
+<main class="obsah" id="obsah">
 
-<main id="obsah">
-
-  <!-- SEKCE: hero podstránky -->
-  <section class="hero hero--podstranka na-tmave" aria-labelledby="hero-nadpis">
-    <div class="hero__foto">
-      <img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/areal-2.jpg" alt="Rekreační areál Baumat Heroltice" fetchpriority="high">
-    </div>
-    <div class="hero__prekryv" aria-hidden="true"></div>
-    <div class="hero__obsah">
-      <h1 id="hero-nadpis">Ceník 2026</h1>
-      <div class="hero__radek">
-        <p class="perex">Ceny ubytování, pronájmu areálu i jednotlivých prostor. Nevíte si rady? Zavolejte, poradíme s výběrem.</p>
-        <div class="hero__akce">
-          <a class="btn btn--krem" href="https://baumatheroltice.cz/wp-content/uploads/2026/01/Cenik-2026.pdf"><svg class="i" aria-hidden="true"><use href="#i-file-text"/></svg>Ceník v PDF</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SEKCE: ceník -->
-  <section class="sekce" aria-labelledby="cenik-nadpis">
-    <div class="wrap">
-      <h2 class="sr-only" id="cenik-nadpis">Ceník</h2>
-
-      <div class="cenik-skupina" id="ubytovani">
-        <h3>Ubytování</h3>
+  <section class="panel panel--krem" id="ubytovani" aria-labelledby="ubytovani-nadpis">
+    <div class="cenik-skupina">
+      <div class="cenik-skupina__uvod">
+        <h2 id="ubytovani-nadpis">Ubytování</h2>
         <p class="perex">Ceny platí za lůžko na noc při pobytu od dvou nocí. Za jednu noc je cena vyšší.</p>
-        <ul class="cenik">
-          <li>
-            <div class="cenik-radek">
-              <div>
-                <h4>Apartmán</h4>
-                <p class="cenik-radek__popis">3 samostatné pokoje po dvou lůžkách, vlastní sprcha a toaleta, samostatná kuchyně.</p>
-              </div>
-              <p class="cenik-radek__cena"><strong>290&nbsp;Kč</strong><span>lůžko / noc, 1 noc 380&nbsp;Kč</span></p>
-            </div>
-          </li>
-          <li>
-            <div class="cenik-radek">
-              <div>
-                <h4>Slušovice a buňky</h4>
-                <p class="cenik-radek__popis">4 buňky po třech lůžkách, sociální zařízení hned vedle, veranda s posezením.</p>
-              </div>
-              <p class="cenik-radek__cena"><strong>220&nbsp;Kč</strong><span>lůžko / noc, 1 noc 280&nbsp;Kč</span></p>
-            </div>
-          </li>
-          <li>
-            <div class="cenik-radek">
-              <div>
-                <h4>Chatky klasické</h4>
-                <p class="cenik-radek__popis">Chatky pro 3 až 4 osoby, jednoduché vybavení, bez zásuvek.</p>
-              </div>
-              <p class="cenik-radek__cena"><strong>180&nbsp;Kč</strong><span>lůžko / noc, 1 noc 220&nbsp;Kč</span></p>
-            </div>
-          </li>
-          <li>
-            <div class="cenik-radek">
-              <div>
-                <h4>Chatky u hlavní brány</h4>
-                <p class="cenik-radek__popis">Pokoje se dvěma lůžky, stolem, lampičkou a zásuvkami.</p>
-              </div>
-              <p class="cenik-radek__cena"><strong>180&nbsp;Kč</strong><span>lůžko / noc, 1 noc 220&nbsp;Kč</span></p>
-            </div>
-          </li>
-        </ul>
         <p class="poznamka">K ceně ubytování se připočítávají paušální poplatky a poplatek z pobytu, viz <a href="#poplatky">Poplatky a půjčovné</a>. Podrobné vybavení jednotlivých typů najdete v sekci <a href="../ubytovani/">Ubytování</a>.</p>
       </div>
-
-      <div class="cenik-skupina" id="areal">
-        <h3>Celý areál</h3>
-        <p class="perex">Areál jen pro vaši skupinu, bez dalších hostů. Pro svatby, oslavy i firemní akce.</p>
-        <ul class="cenik">
-          <li>
-            <div class="cenik-radek">
-              <div>
-                <h4>Pronájem celého areálu</h4>
-                <p class="cenik-radek__popis">Naprosté soukromí a volné využití celého zázemí i aktivit pro vaši skupinu.</p>
-              </div>
-              <p class="cenik-radek__cena"><strong>40&nbsp;000&nbsp;Kč</strong><span>za víkend</span></p>
-            </div>
-          </li>
-          <li>
-            <div class="cenik-radek">
-              <div>
-                <h4>Generální úklid</h4>
-                <p class="cenik-radek__popis">Úklid celého areálu, aby byl připravený pro další hosty.</p>
-              </div>
-              <p class="cenik-radek__cena"><strong>8&nbsp;000&nbsp;Kč</strong></p>
-            </div>
-          </li>
-          <li>
-            <div class="cenik-radek">
-              <div>
-                <h4>Úklid hlavní kuchyně a jídelny</h4>
-                <p class="cenik-radek__popis">Vyčištění pracovních ploch, spotřebičů i jídelního prostoru.</p>
-              </div>
-              <p class="cenik-radek__cena"><strong>4&nbsp;000&nbsp;Kč</strong></p>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="cenik-skupina" id="prostory">
-        <h3>Pronájem prostor a zařízení</h3>
-        <p class="perex">Nevaříme, ale kuchyni, jídelnu i klubovnu si můžete pronajmout.</p>
-        <ul class="cenik">
-          <li>
-            <div class="cenik-radek">
-              <div>
-                <h4>Kuchyně</h4>
-                <p class="cenik-radek__popis">Profesionální vybavení pro tábory, svatby, firemní i sportovní akce: konvektomat, profi myčka, plynový sporák, velká elektrická pánev, robot, dvě lednice a dva mrazáky.</p>
-              </div>
-              <p class="cenik-radek__cena"><strong>900&nbsp;Kč</strong><span>za den + energie</span></p>
-            </div>
-          </li>
-          <li>
-            <div class="cenik-radek">
-              <div>
-                <h4>Jídelna</h4>
-                <p class="cenik-radek__popis">Prostor pro pohoštění až 100 hostů.</p>
-              </div>
-              <p class="cenik-radek__cena"><strong>800&nbsp;Kč</strong><span>za den</span></p>
-            </div>
-          </li>
-          <li>
-            <div class="cenik-radek">
-              <div>
-                <h4>Kuchyňka</h4>
-                <p class="cenik-radek__popis">Menší kuchyně se sporákem, lednicí a stolem až pro 15 osob.</p>
-              </div>
-              <p class="cenik-radek__cena"><strong>100 až 300&nbsp;Kč</strong><span>za den</span></p>
-            </div>
-          </li>
-          <li>
-            <div class="cenik-radek">
-              <div>
-                <h4>Klubovna</h4>
-                <p class="cenik-radek__popis">Posezení s krbem, kulečníkem, pingpongovým stolem a stolními hrami.</p>
-              </div>
-              <p class="cenik-radek__cena"><strong>800&nbsp;Kč</strong><span>za den</span></p>
-            </div>
-          </li>
-        </ul>
-        <p class="poznamka">Cena kuchyňky závisí na velikosti skupiny: pokud má skupina více než dvě chatky, první kuchyňka stojí 300&nbsp;Kč za den a další 100&nbsp;Kč za den. Počítá se na každou chatku nebo jinou ubytovací jednotku.</p>
-      </div>
-
-      <div class="cenik-skupina" id="poplatky">
-        <h3>Poplatky a půjčovné</h3>
-        <p class="perex">Paušální poplatky platí každý host, půjčovné jen za to, co si skutečně vypůjčíte.</p>
-        <ul class="cenik">
-          <li>
-            <div class="cenik-radek">
-              <div>
-                <h4>Paušální poplatky</h4>
-                <ul class="cenik-radek__seznam">
-                  <li>Prádelní poplatek: 100&nbsp;Kč za osobu</li>
-                  <li>Návštěvní poplatek: 100&nbsp;Kč za osobu</li>
-                  <li>Energie: 50&nbsp;Kč za osobu a den</li>
-                </ul>
-              </div>
-              <p class="cenik-radek__cena"><strong>od 100&nbsp;Kč</strong></p>
-            </div>
-          </li>
-          <li>
-            <div class="cenik-radek">
-              <div>
-                <h4>Půjčovné</h4>
-                <ul class="cenik-radek__seznam">
-                  <li>Tenisový kurt: 250&nbsp;Kč za hodinu (pouze pro neubytované)</li>
-                  <li>Volejbalové hřiště: 300&nbsp;Kč za hodinu</li>
-                  <li>Kulečník: 100&nbsp;Kč za hodinu</li>
-                  <li>Lodě: 200&nbsp;Kč za hodinu</li>
-                  <li>Výčepní zařízení: 250&nbsp;Kč za den</li>
-                  <li>Gril kulatý přenosný nebo velký čtvercový: 150&nbsp;Kč za den</li>
-                  <li>Chladnička v buňkách: 60&nbsp;Kč za den</li>
-                  <li>Elektrické topidlo: 100&nbsp;Kč za den</li>
-                </ul>
-              </div>
-              <p class="cenik-radek__cena"><strong>od 60&nbsp;Kč</strong></p>
-            </div>
-          </li>
-          <li>
-            <div class="cenik-radek">
-              <div>
-                <h4>Poplatek z pobytu</h4>
-                <p class="cenik-radek__popis">Místní poplatek podle zákona 565/1990 Sb. o místních poplatcích, platí po celý rok.</p>
-              </div>
-              <p class="cenik-radek__cena"><strong>10&nbsp;Kč</strong><span>osoba / den</span></p>
-            </div>
-          </li>
-          <li>
-            <div class="cenik-radek">
-              <div>
-                <h4>Ztráta klíče</h4>
-                <p class="cenik-radek__popis">Sankční poplatek za ztrátu klíče od ubytování.</p>
-              </div>
-              <p class="cenik-radek__cena"><strong>1&nbsp;000&nbsp;Kč</strong></p>
-            </div>
-          </li>
-        </ul>
-        <p class="poznamka">Při pronájmu celého areálu se energie účtují podle skutečné spotřeby (elektřina za kWh, plyn za m³) podle aktuálního ceníku dodavatelů. V ostatních případech platí paušální poplatek 50&nbsp;Kč za osobu a den.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SEKCE: dokumenty -->
-  <section class="pruh" aria-labelledby="dokumenty-nadpis">
-    <div class="wrap">
-      <div class="sekce__hlava">
-        <div class="sekce__uvod">
-          <h2 id="dokumenty-nadpis">Ceník a řády ke stažení</h2>
-          <p class="perex">Kompletní ceník v PDF, ubytovací řád areálu a provozní řád bazénu.</p>
-        </div>
-        <a class="proklik" href="https://baumatheroltice.cz/wp-content/uploads/2026/01/Cenik-2026.pdf">Ceník 2026 v PDF<svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-      </div>
-      <ul class="odkazy">
-        <li><a class="odkaz-radek" href="https://baumatheroltice.cz/wp-content/uploads/2026/01/Ubytovaci-rad-2026.docx"><svg class="i" aria-hidden="true"><use href="#i-file-text"/></svg><div><h3>Ubytovací řád</h3><p>Pravidla pobytu v areálu.</p></div><span class="odkaz-radek__sipka"><svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></li>
-        <li><a class="odkaz-radek" href="https://baumatheroltice.cz/wp-content/uploads/2025/04/Provozni-rad-bazenu-FINAL-2023.docx"><svg class="i" aria-hidden="true"><use href="#i-swimming"/></svg><div><h3>Provozní řád bazénu</h3><p>Pravidla u vody.</p></div><span class="odkaz-radek__sipka"><svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></li>
-        <li><a class="odkaz-radek" href="../ubytovani/"><svg class="i" aria-hidden="true"><use href="#i-bed"/></svg><div><h3>Ubytování</h3><p>Vybavení jednotlivých typů a zázemí areálu.</p></div><span class="odkaz-radek__sipka"><svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></li>
+      <ul class="cenik">
+        <li>
+          <h3>Apartmán</h3>
+          <p class="cenik__popis">3 samostatné pokoje po dvou lůžkách, vlastní sprcha a toaleta, samostatná kuchyně.</p>
+          <p class="cenik__cena">290&nbsp;Kč<small>lůžko / noc, 1 noc 380&nbsp;Kč</small></p>
+        </li>
+        <li>
+          <h3>Slušovice a buňky</h3>
+          <p class="cenik__popis">4 buňky po třech lůžkách, sociální zařízení hned vedle, veranda s posezením.</p>
+          <p class="cenik__cena">220&nbsp;Kč<small>lůžko / noc, 1 noc 280&nbsp;Kč</small></p>
+        </li>
+        <li>
+          <h3>Chatky klasické</h3>
+          <p class="cenik__popis">Chatky pro 3 až 4 osoby, jednoduché vybavení, bez zásuvek.</p>
+          <p class="cenik__cena">180&nbsp;Kč<small>lůžko / noc, 1 noc 220&nbsp;Kč</small></p>
+        </li>
+        <li>
+          <h3>Chatky u hlavní brány</h3>
+          <p class="cenik__popis">Pokoje se dvěma lůžky, stolem, lampičkou a zásuvkami.</p>
+          <p class="cenik__cena">180&nbsp;Kč<small>lůžko / noc, 1 noc 220&nbsp;Kč</small></p>
+        </li>
       </ul>
     </div>
   </section>
 
-</main>
-
-<!-- ZÁVĚR: tmavý blok, ve kterém končí stránka -->
-<div class="zaver">
-
-  <section class="vyzva-sekce" aria-labelledby="vyzva-nadpis">
-    <div class="wrap vyzva">
-      <h2 id="vyzva-nadpis">Naplánujte si pobyt</h2>
-      <p class="perex">Poradíme s cenou, volným termínem i výběrem ubytování. Ozvěte se telefonicky nebo e-mailem.</p>
-      <div class="vyzva__akce">
-        <a class="btn btn--krem btn--sipka" href="../kontakt/#kalendar">Volné termíny<span class="btn__kolecko"><svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
-        <a class="btn btn--obrys" href="tel:+420601594780"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>601&nbsp;594&nbsp;780</a>
+  <section class="panel panel--hlina svetly" id="areal" aria-labelledby="areal-nadpis">
+    <div class="cenik-skupina">
+      <div class="cenik-skupina__uvod">
+        <h2 id="areal-nadpis">Celý areál</h2>
+        <p class="perex">Areál jen pro vaši skupinu, bez dalších hostů. Pro svatby, oslavy i firemní akce.</p>
       </div>
+      <ul class="cenik">
+        <li>
+          <h3>Pronájem celého areálu</h3>
+          <p class="cenik__popis">Naprosté soukromí a volné využití celého zázemí i aktivit pro vaši skupinu.</p>
+          <p class="cenik__cena">40&nbsp;000&nbsp;Kč<small>za víkend</small></p>
+        </li>
+        <li>
+          <h3>Generální úklid</h3>
+          <p class="cenik__popis">Úklid celého areálu, aby byl připravený pro další hosty.</p>
+          <p class="cenik__cena">8&nbsp;000&nbsp;Kč</p>
+        </li>
+        <li>
+          <h3>Úklid hlavní kuchyně a jídelny</h3>
+          <p class="cenik__popis">Vyčištění pracovních ploch, spotřebičů i jídelního prostoru.</p>
+          <p class="cenik__cena">4&nbsp;000&nbsp;Kč</p>
+        </li>
+      </ul>
     </div>
   </section>
 
-<footer class="paticka">
-    <svg class="paticka__motiv" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-znacka"/></svg>
-  <div class="wrap">
-    <div class="paticka__horni">
-      <div class="paticka__znacka">
-        <a class="logo" href="../"><svg class="znacka" aria-hidden="true"><use href="#i-znacka"/></svg><span class="logo__text">Baumat <span>Heroltice</span></span></a>
-        <p>Rekreační areál v údolí řeky Svratky pro pobyty, oslavy, svatby, tábory a firemní akce.</p>
+  <section class="panel panel--krem" id="prostory" aria-labelledby="prostory-nadpis">
+    <div class="cenik-skupina">
+      <div class="cenik-skupina__uvod">
+        <h2 id="prostory-nadpis">Pronájem prostor a zařízení</h2>
+        <p class="perex">Nevaříme, ale kuchyni, jídelnu i klubovnu si můžete pronajmout.</p>
+        <p class="poznamka">Cena kuchyňky závisí na velikosti skupiny: pokud má skupina více než dvě chatky, první kuchyňka stojí 300&nbsp;Kč za den a další 100&nbsp;Kč za den. Počítá se na každou chatku nebo jinou ubytovací jednotku.</p>
       </div>
-      <div>
-        <h2>Web</h2>
-        <ul>
-          <li><a href="../ubytovani/">Ubytování</a></li>
-          <li><a href="../aktivity/">Aktivity</a></li>
-          <li><a href="../cenik/">Ceník</a></li>
-          <li><a href="../kontakt/">Kontakt</a></li>
-          <li><a href="../en/" hreflang="en" lang="en">English</a></li>
-        </ul>
+      <ul class="cenik">
+        <li>
+          <h3>Kuchyně</h3>
+          <p class="cenik__popis">Profesionální vybavení pro tábory, svatby, firemní i sportovní akce: konvektomat, profi myčka, plynový sporák, velká elektrická pánev, robot, dvě lednice a dva mrazáky.</p>
+          <p class="cenik__cena">900&nbsp;Kč<small>za den + energie</small></p>
+        </li>
+        <li>
+          <h3>Jídelna</h3>
+          <p class="cenik__popis">Prostor pro pohoštění až 100 hostů.</p>
+          <p class="cenik__cena">800&nbsp;Kč<small>za den</small></p>
+        </li>
+        <li>
+          <h3>Kuchyňka</h3>
+          <p class="cenik__popis">Menší kuchyně se sporákem, lednicí a stolem až pro 15 osob.</p>
+          <p class="cenik__cena">100 až 300&nbsp;Kč<small>za den</small></p>
+        </li>
+        <li>
+          <h3>Klubovna</h3>
+          <p class="cenik__popis">Posezení s krbem, kulečníkem, pingpongovým stolem a stolními hrami.</p>
+          <p class="cenik__cena">800&nbsp;Kč<small>za den</small></p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="panel panel--krem" id="poplatky" aria-labelledby="poplatky-nadpis">
+    <div class="cenik-skupina">
+      <div class="cenik-skupina__uvod">
+        <h2 id="poplatky-nadpis">Poplatky a půjčovné</h2>
+        <p class="perex">Paušální poplatky platí každý host, půjčovné jen za to, co si skutečně vypůjčíte.</p>
+        <p class="poznamka">Při pronájmu celého areálu se energie účtují podle skutečné spotřeby (elektřina za kWh, plyn za m³) podle aktuálního ceníku dodavatelů. V ostatních případech platí paušální poplatek 50&nbsp;Kč za osobu a den.</p>
       </div>
-      <div>
-        <h2>Dokumenty</h2>
-        <ul>
-          <li><a href="https://baumatheroltice.cz/wp-content/uploads/2026/01/Cenik-2026.pdf">Ceník 2026 (PDF)</a></li>
-          <li><a href="https://baumatheroltice.cz/wp-content/uploads/2026/01/Ubytovaci-rad-2026.docx">Ubytovací řád</a></li>
-          <li><a href="https://baumatheroltice.cz/wp-content/uploads/2025/04/Provozni-rad-bazenu-FINAL-2023.docx">Provozní řád bazénu</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Provozovatel</h2>
-        <ul>
-          <li>BAUMAT, s.r.o.</li>
-          <li>IČO 48529753</li>
-          <li>Kabátníkova 105/2<br>602 00 Brno</li>
-        </ul>
+      <ul class="cenik">
+        <li>
+          <h3>Paušální poplatky</h3>
+          <ul class="cenik__seznam"><li>Prádelní poplatek: 100&nbsp;Kč za osobu</li><li>Návštěvní poplatek: 100&nbsp;Kč za osobu</li><li>Energie: 50&nbsp;Kč za osobu a den</li></ul>
+          <p class="cenik__cena">od 100&nbsp;Kč</p>
+        </li>
+        <li>
+          <h3>Půjčovné</h3>
+          <ul class="cenik__seznam"><li>Tenisový kurt: 250&nbsp;Kč za hodinu (pouze pro neubytované)</li><li>Volejbalové hřiště: 300&nbsp;Kč za hodinu</li><li>Kulečník: 100&nbsp;Kč za hodinu</li><li>Lodě: 200&nbsp;Kč za hodinu</li><li>Výčepní zařízení: 250&nbsp;Kč za den</li><li>Gril kulatý přenosný nebo velký čtvercový: 150&nbsp;Kč za den</li><li>Chladnička v buňkách: 60&nbsp;Kč za den</li><li>Elektrické topidlo: 100&nbsp;Kč za den</li></ul>
+          <p class="cenik__cena">od 60&nbsp;Kč</p>
+        </li>
+        <li>
+          <h3>Poplatek z pobytu</h3>
+          <p class="cenik__popis">Místní poplatek podle zákona 565/1990 Sb. o místních poplatcích, platí po celý rok.</p>
+          <p class="cenik__cena">10&nbsp;Kč<small>osoba / den</small></p>
+        </li>
+        <li>
+          <h3>Ztráta klíče</h3>
+          <p class="cenik__popis">Sankční poplatek za ztrátu klíče od ubytování.</p>
+          <p class="cenik__cena">1&nbsp;000&nbsp;Kč</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="panel panel--oliva svetly" aria-labelledby="dokumenty-nadpis">
+    <div class="hlava">
+      <h2 id="dokumenty-nadpis">Ceník a řády ke stažení</h2>
+      <p>Kompletní ceník v PDF, ubytovací řád areálu a provozní řád bazénu.</p>
+    </div>
+    <ul class="odkazy">
+      <li><a href="https://baumatheroltice.cz/wp-content/uploads/2026/01/Cenik-2026.pdf"><svg class="i" aria-hidden="true"><use href="#i-file-text"/></svg><div><h3>Ceník 2026</h3><p>Kompletní ceník v PDF.</p></div><span class="odkazy__sipka"><svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></li>
+      <li><a href="https://baumatheroltice.cz/wp-content/uploads/2026/01/Ubytovaci-rad-2026.docx"><svg class="i" aria-hidden="true"><use href="#i-key"/></svg><div><h3>Ubytovací řád</h3><p>Pravidla pobytu v areálu.</p></div><span class="odkazy__sipka"><svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></li>
+      <li><a href="https://baumatheroltice.cz/wp-content/uploads/2025/04/Provozni-rad-bazenu-FINAL-2023.docx"><svg class="i" aria-hidden="true"><use href="#i-swimming"/></svg><div><h3>Provozní řád bazénu</h3><p>Pravidla u vody.</p></div><span class="odkazy__sipka"><svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></li>
+    </ul>
+  </section>
+
+</main>
+<footer class="panel panel--mech paticka svetly">
+  <div class="paticka__horni">
+    <h2>Je váš termín volný?</h2>
+    <div>
+      <p>Poradíme s cenou, volným termínem i výběrem ubytování. Ozvěte se telefonicky nebo e-mailem.</p>
+      <div class="akce" style="margin-top: 22px">
+        <a class="btn btn--krem" href="../kontakt/#kalendar"><svg class="i" aria-hidden="true"><use href="#i-calendar-event"/></svg>Volné termíny</a>
+        <a class="btn btn--obrys-sv" href="tel:+420601594780"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>601&nbsp;594&nbsp;780</a>
       </div>
     </div>
-    <div class="paticka__spodni">
-      <span>© <span data-rok>2026</span> BAUMAT, s.r.o.</span>
-      <a href="https://www.instagram.com/baumat_heroltice/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-brand-instagram"/></svg>Instagram</a>
+  </div>
+  <div class="paticka__sloupce">
+    <div class="paticka__znacka">
+      <a class="logo" href="../"><svg class="znacka" aria-hidden="true"><use href="#i-znacka"/></svg>Baumat <span>Heroltice</span></a>
+      <p>Rekreační areál v údolí řeky Svratky pro pobyty, oslavy, svatby, tábory a firemní akce.</p>
     </div>
+    <div>
+      <h2>Web</h2>
+      <ul>
+        <li><a href="../ubytovani/">Ubytování</a></li>
+        <li><a href="../aktivity/">Aktivity</a></li>
+        <li><a href="../cenik/">Ceník</a></li>
+        <li><a href="../kontakt/">Kontakt</a></li>
+        <li><a href="../en/" hreflang="en" lang="en">English</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Dokumenty</h2>
+      <ul>
+        <li><a href="https://baumatheroltice.cz/wp-content/uploads/2026/01/Cenik-2026.pdf">Ceník 2026 (PDF)</a></li>
+        <li><a href="https://baumatheroltice.cz/wp-content/uploads/2026/01/Ubytovaci-rad-2026.docx">Ubytovací řád</a></li>
+        <li><a href="https://baumatheroltice.cz/wp-content/uploads/2025/04/Provozni-rad-bazenu-FINAL-2023.docx">Provozní řád bazénu</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Provozovatel</h2>
+      <ul>
+        <li>BAUMAT, s.r.o.</li>
+        <li>IČO 48529753</li>
+        <li>Kabátníkova 105/2<br>602 00 Brno</li>
+      </ul>
+    </div>
+  </div>
+  <div class="paticka__spodni">
+    <span>© <span data-rok>2026</span> BAUMAT, s.r.o.</span>
+    <a href="https://www.instagram.com/baumat_heroltice/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-brand-instagram"/></svg>Instagram</a>
   </div>
 </footer>
 </div>

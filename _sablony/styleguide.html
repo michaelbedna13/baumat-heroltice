@@ -6,39 +6,34 @@
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
+<header class="hero hero--pod">
 {{hlavicka}}
-  <div class="pravitko"><span>Styleguide</span><span>Jen pro vývoj, na web neodkazovat</span></div>
-  <div class="hero hero--pod">
-    <div class="hero__text">
-      <h1>Design systém</h1>
-      <div>
-        <p class="perex">Barvy, písmo a komponenty webu na jednom místě. Pravidla jsou popsaná v DESIGN.md.</p>
-        <div class="akce"><a class="btn btn--krem" href="#komponenty">Komponenty</a><a class="btn btn--obrys-sv" href="#barvy">Barvy</a></div>
-      </div>
+  <div class="wrap hero__obsah">
+    <div><ol class="drobky"><li><a href="{{ROOT}}">Úvod</a></li><li>Styleguide</li></ol><h1>Design systém</h1></div>
+    <div class="hero__bok">
+      <p class="perex">Barvy, písmo a komponenty webu na jednom místě. Pravidla jsou popsaná v DESIGN.md. Stránka není v navigaci a nemá se indexovat.</p>
     </div>
   </div>
-{{poptavka}}
 </header>
-
 <main class="obsah" id="obsah">
-  <section class="panel panel--krem" id="barvy" aria-labelledby="sg-barvy">
-    <div class="hlava"><h2 id="sg-barvy">Barvy</h2><p>Olivová nese značku, krém a kámen tvoří plochy, hnědá je jen jedna na stránce.</p></div>
+  <section class="wrap" id="barvy" aria-labelledby="sg-barvy">
+    <div class="hlava"><h2 id="sg-barvy">Barvy</h2><p>Tmavý les a olivová nesou značku, papír a bílá tvoří plochy. Šalvěj je jen akcent na tmavé.</p></div>
     <div class="vzorky">
-      <div class="vzorek"><div style="background: var(--oliva)"></div><p>Oliva<br><code>--oliva #55613F</code></p></div>
-      <div class="vzorek"><div style="background: var(--oliva-tmava)"></div><p>Oliva tmavá<br><code>--oliva-tmava #434D31</code></p></div>
-      <div class="vzorek"><div style="background: var(--mech)"></div><p>Mech<br><code>--mech #2B3222</code></p></div>
-      <div class="vzorek"><div style="background: var(--hlina)"></div><p>Hlína<br><code>--hlina #3F3225</code></p></div>
-      <div class="vzorek"><div style="background: var(--krem)"></div><p>Krém<br><code>--krem #F6F2E7</code></p></div>
-      <div class="vzorek"><div style="background: var(--kamen)"></div><p>Kámen<br><code>--kamen #E3E2D7</code></p></div>
-      <div class="vzorek"><div style="background: var(--sedy)"></div><p>Šedá text<br><code>--sedy #676C5B</code></p></div>
-      <div class="vzorek"><div style="background: var(--foto)"></div><p>Pod fotkou<br><code>--foto #C8CBB8</code></p></div>
+      <div class="vzorek"><div style="background: var(--les)"></div><p>Les<br><code>--les #222C1D</code></p></div>
+      <div class="vzorek"><div style="background: var(--les-2)"></div><p>Les hover<br><code>--les-2 #2F3C28</code></p></div>
+      <div class="vzorek"><div style="background: var(--oliva)"></div><p>Oliva<br><code>--oliva #4B5E33</code></p></div>
+      <div class="vzorek"><div style="background: var(--salvej)"></div><p>Šalvěj<br><code>--salvej #B8C29F</code></p></div>
+      <div class="vzorek"><div style="background: var(--papir); box-shadow: inset 0 0 0 1px var(--linka)"></div><p>Papír<br><code>--papir #F4F0E6</code></p></div>
+      <div class="vzorek"><div style="background: var(--bila); box-shadow: inset 0 0 0 1px var(--linka)"></div><p>Bílá<br><code>--bila #FBF9F3</code></p></div>
+      <div class="vzorek"><div style="background: var(--pisek)"></div><p>Písek<br><code>--pisek #E8E2D2</code></p></div>
+      <div class="vzorek"><div style="background: var(--text)"></div><p>Text<br><code>--text #1D2319</code></p></div>
     </div>
   </section>
 
-  <section class="panel panel--krem" aria-labelledby="sg-pismo">
-    <div class="hlava"><h2 id="sg-pismo">Písmo</h2><p>Hanken Grotesk, jedna rodina. Nadpisy tenké (300) a těsné, text 400, důraz 500.</p></div>
+  <section class="wrap" aria-labelledby="sg-pismo">
+    <div class="hlava"><h2 id="sg-pismo">Písmo</h2><p>Hanken Grotesk, jedna rodina. Nadpisy 380 až 400 s těsným prokladem, text 400, důraz 500 až 600.</p></div>
     <div style="display: grid; gap: 28px">
-      <p style="font-size: var(--fs-h1); font-weight: 300; letter-spacing: -0.035em; line-height: .98">Údolí Svratky</p>
+      <p style="font-size: var(--fs-h1); font-weight: 400; letter-spacing: -0.048em; line-height: .94">Údolí Svratky</p>
       <h2>Nadpis sekce H2</h2>
       <h3>Nadpis položky H3</h3>
       <p class="perex">Perex: úvodní odstavec sekce, šedý, maximálně 46 znaků na řádek.</p>
@@ -47,15 +42,17 @@
     </div>
   </section>
 
-  <section class="panel panel--oliva svetly" id="komponenty" aria-labelledby="sg-tlacitka">
+  <section class="pas pas--oliva tmave" id="komponenty" aria-labelledby="sg-tlacitka">
+    <div class="wrap">
     <div class="hlava"><h2 id="sg-tlacitka">Tlačítka a štítky</h2></div>
-    <div class="akce"><a class="btn btn--krem" href="#">Krémové</a><a class="btn btn--obrys-sv" href="#">Obrys na tmavé</a><a class="odkaz" href="#">Textový odkaz</a></div>
+    <div class="akce"><a class="btn btn--sv" href="#">Krémové</a><a class="btn btn--obrys-sv" href="#">Obrys na tmavé</a><a class="odkaz" href="#">Textový odkaz{{i:arrow-right}}</a></div>
     <div class="stitky" style="margin-top: 24px"><span class="stitek">svatby</span><span class="stitek">tábory</span></div>
+      </div>
   </section>
 
-  <section class="panel panel--krem" aria-labelledby="sg-tlacitka2">
+  <section class="wrap" aria-labelledby="sg-tlacitka2">
     <div class="hlava"><h2 id="sg-tlacitka2">Na světlé ploše</h2></div>
-    <div class="akce"><a class="btn btn--oliva" href="#">Olivové</a><a class="btn btn--obrys" href="#">Obrys</a><a class="odkaz" href="#">Textový odkaz</a></div>
+    <div class="akce"><a class="btn btn--les" href="#">Olivové</a><a class="btn btn--obrys" href="#">Obrys</a><a class="odkaz" href="#">Textový odkaz{{i:arrow-right}}</a></div>
     <div class="kotvy" style="margin-top: 24px"><a href="#">Kotva</a><a href="#">Další kotva</a></div>
     <ul class="parametry" style="margin-top: 32px; max-width: 520px">
       <li>{{i:bed}}Parametr s ikonou</li>
@@ -69,7 +66,7 @@
     </ul>
   </section>
 
-  <section class="panel panel--holy" aria-labelledby="sg-dlazdice">
+  <section class="wrap" aria-labelledby="sg-dlazdice">
     <div class="hlava"><h2 id="sg-dlazdice">Dlaždice</h2></div>
     <div class="mozaika">
       <div class="dlazdice">{{i:tent}}<div><h3>Obrysová</h3><p>Na kamenném podkladu.</p></div></div>

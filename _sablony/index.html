@@ -39,34 +39,29 @@
   </script>
 </head>
 <body>
+<header class="hero hero--s-formularem">
+  <div class="hero__foto"><img src="{{foto:hero-areal}}" alt="Rekreační areál Baumat Heroltice v údolí řeky Svratky" fetchpriority="high"></div>
 {{hlavicka}}
-  <div class="pravitko"><span>Heroltice, přímo u řeky Svratky</span><span>25&nbsp;km od Brna</span></div>
-
-  <div class="hero">
-    <div class="hero__text">
-      <h1>Rekreační areál v&nbsp;údolí řeky Svratky</h1>
-      <div>
-        <p class="perex">Chatky, apartmán, bazén a ohniště u řeky Svratky. Místo pro rodinné oslavy, svatby, dětské tábory i firemní akce.</p>
-        <div class="akce">
-          <a class="btn btn--krem" href="{{ROOT}}kontakt/#kalendar">Volné termíny</a>
-          <a class="btn btn--obrys-sv" href="#cely-areal">Celý areál na víkend</a>
-        </div>
+  <div class="wrap hero__obsah">
+    <h1>Rekreační areál v&nbsp;údolí Svratky</h1>
+    <div class="hero__bok">
+      <a class="hodnoceni sklo" href="https://maps.google.com/?cid=10668907743016888590" target="_blank" rel="noopener"><b>4,5</b><span>podle 77 recenzí<br>na Google</span></a>
+      <p class="perex">Chatky, apartmán, bazén a ohniště u řeky Svratky. Místo pro rodinné oslavy, svatby, dětské tábory i firemní akce.</p>
+      <div class="akce">
+        <a class="btn btn--sv" href="{{ROOT}}ubytovani/">Prohlédnout ubytování</a>
+        <a class="btn btn--obrys-sv" href="#cely-areal">Celý areál na víkend</a>
       </div>
     </div>
-    <div class="hero__foto">
-      <div class="ram"><img src="{{foto:hero-areal}}" alt="Rekreační areál Baumat Heroltice v údolí řeky Svratky" fetchpriority="high"></div>
-      <a class="hodnoceni" href="https://maps.google.com/?cid=10668907743016888590" target="_blank" rel="noopener"><b>4,5 z&nbsp;5</b>podle 77 recenzí na Google</a>
-    </div>
   </div>
-{{poptavka}}
 </header>
+{{poptavka}}
 
-<main class="obsah" id="obsah">
+<main class="obsah obsah--pod-formularem" id="obsah">
 
-  <section class="panel panel--krem vodici" aria-labelledby="areal-uvod">
-    <div class="ctvrtiny">
-      <h2 id="areal-uvod">Pro oslavy, svatby, tábory i firmy</h2>
-      <div class="ctvrtiny__text">
+  <section class="wrap" aria-labelledby="uvod-nadpis">
+    <div class="uvodni">
+      <h2 id="uvod-nadpis">Pro oslavy, svatby, tábory i&nbsp;firmy</h2>
+      <div class="uvodni__text">
         <p>Ubytujeme malou skupinu i velkou akci. Jídelna pojme až 100 hostů a o program se postará bazén, hřiště i klubovna.</p>
         <p>Od apartmánu s vlastní koupelnou po jednoduché chatky blíž přírodě. Nevaříme, ale profesionální kuchyni s jídelnou si můžete pronajmout.</p>
       </div>
@@ -79,12 +74,12 @@
     </ul>
   </section>
 
-  <section class="panel panel--holy" aria-labelledby="koho-nadpis">
+  <section class="wrap" aria-labelledby="koho-nadpis">
     <div class="hlava">
       <h2 id="koho-nadpis">Kdo k nám jezdí</h2>
       <div class="hlava__vpravo">
         <p>Každá skupina potřebuje něco jiného. Rádi poradíme, co bude sedět té vaší.</p>
-        <a class="odkaz" href="{{ROOT}}kontakt/">Zeptat se na termín</a>
+        <a class="odkaz" href="{{ROOT}}kontakt/">Zeptat se na termín{{i:arrow-right}}</a>
       </div>
     </div>
     <div class="mozaika">
@@ -97,68 +92,72 @@
     </div>
   </section>
 
-  <section class="panel panel--krem" aria-labelledby="ubytovani-nadpis">
+  <section class="wrap" aria-labelledby="ubytovani-nadpis">
     <div class="hlava">
       <h2 id="ubytovani-nadpis">Kde budete spát</h2>
       <div class="hlava__vpravo">
         <p>Od apartmánu s vlastní koupelnou po jednoduché chatky blíž přírodě.</p>
-        <a class="odkaz" href="{{ROOT}}ubytovani/">Všechno ubytování</a>
+        <a class="odkaz" href="{{ROOT}}ubytovani/">Všechno ubytování{{i:arrow-right}}</a>
       </div>
     </div>
     <div class="karty">
       <a class="karta" href="{{ROOT}}ubytovani/#apartman">
         <img src="{{foto:apartman-karta}}" alt="Apartmán v areálu Baumat" loading="lazy">
-        <span class="karta__kapacita">{{i:users}}6 lůžek</span>
+        <span class="karta__kapacita sklo">{{i:users}}6 lůžek</span>
         <div class="karta__telo"><h3>Apartmán</h3><p>Vlastní koupelna a kuchyňka.</p><span class="karta__cena">lůžko na noc <b>290&nbsp;Kč</b></span></div>
       </a>
       <a class="karta" href="{{ROOT}}ubytovani/#slusovice-bunky">
         <img src="{{foto:slusovice-karta}}" alt="Ubytovací buňky Slušovice s verandou" loading="lazy">
-        <span class="karta__kapacita">{{i:users}}12 lůžek</span>
+        <span class="karta__kapacita sklo">{{i:users}}12 lůžek</span>
         <div class="karta__telo"><h3>Slušovice a buňky</h3><p>Veranda s posezením.</p><span class="karta__cena">lůžko na noc <b>220&nbsp;Kč</b></span></div>
       </a>
       <a class="karta" href="{{ROOT}}ubytovani/#chatky-klasicke">
         <img src="{{foto:chatky-karta}}" alt="Dřevěné chatky v areálu" loading="lazy">
-        <span class="karta__kapacita">{{i:users}}3 až 4 lůžka</span>
+        <span class="karta__kapacita sklo">{{i:users}}3 až 4 lůžka</span>
         <div class="karta__telo"><h3>Chatky klasické</h3><p>Jednoduché vybavení.</p><span class="karta__cena">lůžko na noc <b>180&nbsp;Kč</b></span></div>
       </a>
       <a class="karta" href="{{ROOT}}ubytovani/#chatky-u-hlavni-brany">
         <img src="{{foto:brana-1}}" alt="Chatky u hlavní brány" loading="lazy">
-        <span class="karta__kapacita">{{i:users}}2 lůžka v pokoji</span>
+        <span class="karta__kapacita sklo">{{i:users}}2 lůžka v pokoji</span>
         <div class="karta__telo"><h3>Chatky u hlavní brány</h3><p>Zásuvky a lampička.</p><span class="karta__cena">lůžko na noc <b>180&nbsp;Kč</b></span></div>
       </a>
     </div>
     <div class="pod-kartami">
       <span>Ceny platí při pobytu od dvou nocí.</span>
-      <a class="odkaz" href="{{ROOT}}cenik/">Ceník 2026</a>
+      <a class="odkaz" href="{{ROOT}}cenik/">Ceník 2026{{i:arrow-right}}</a>
     </div>
   </section>
 
-  <section class="split" id="cely-areal" aria-labelledby="areal-nadpis">
-    <div class="panel panel--hlina celek svetly">
-      <div>
-        <h2 id="areal-nadpis">Celý areál jen pro vaši skupinu</h2>
-        <p class="perex" style="margin-top: 20px">Žádní další hosté. Ubytování, hřiště, klubovna i velká kuchyně jsou jen vaše, ať slavíte svatbu, narozeniny, nebo pořádáte firemní akci.</p>
+  <section class="pas pas--les tmave" id="cely-areal" aria-labelledby="areal-nadpis">
+    <div class="wrap celek">
+      <div class="celek__text">
+        <div>
+          <h2 id="areal-nadpis">Celý areál jen pro vaši skupinu</h2>
+          <p class="perex" style="margin-top: 24px">Žádní další hosté. Ubytování, hřiště, klubovna i velká kuchyně jsou jen vaše, ať slavíte svatbu, narozeniny, nebo pořádáte firemní akci.</p>
+        </div>
+        <p class="celek__cena">40&nbsp;000&nbsp;Kč<small>za víkend, celý areál jen pro vás</small></p>
+        <div style="display: grid; gap: 24px">
+          <div class="stitky" aria-label="Vhodné pro"><span class="stitek">svatby</span><span class="stitek">narozeniny</span><span class="stitek">firemní akce</span></div>
+          <p class="poznamka">Nevaříme, ale profesionální kuchyni s jídelnou si můžete pronajmout.</p>
+          <div class="akce">
+            <a class="btn btn--sv" href="{{ROOT}}kontakt/">Zeptat se na termín</a>
+            <a class="btn btn--obrys-sv" href="{{ROOT}}cenik/#areal">Ceník celého areálu</a>
+          </div>
+        </div>
       </div>
-      <p class="celek__cena">40&nbsp;000&nbsp;Kč<small>za víkend, celý areál jen pro vás</small></p>
-      <div class="stitky" aria-label="Vhodné pro"><span class="stitek">svatby</span><span class="stitek">narozeniny</span><span class="stitek">firemní akce</span></div>
-      <p class="poznamka">Nevaříme, ale profesionální kuchyni s jídelnou si můžete pronajmout.</p>
-      <div class="akce">
-        <a class="btn btn--krem" href="{{ROOT}}kontakt/">Zeptat se na termín</a>
-        <a class="btn btn--obrys-sv" href="{{ROOT}}cenik/#areal">Ceník celého areálu</a>
-      </div>
+      <div class="ram"><img src="{{foto:cely-areal}}" alt="Bazén a chatky v rekreačním areálu Baumat" loading="lazy"></div>
     </div>
-    <div class="ram"><img src="{{foto:cely-areal}}" alt="Bazén a chatky v rekreačním areálu Baumat" loading="lazy"></div>
   </section>
 
-  <section class="panel panel--oliva svetly" aria-labelledby="vybaveni-nadpis">
+  <section class="wrap" aria-labelledby="vybaveni-nadpis">
     <div class="hlava">
       <h2 id="vybaveni-nadpis">Co v areálu najdete</h2>
       <div class="hlava__vpravo">
         <p>Přes den voda a sport, večer oheň nebo klubovna s krbem.</p>
-        <a class="odkaz" href="{{ROOT}}aktivity/">Všechny aktivity</a>
+        <a class="odkaz" href="{{ROOT}}aktivity/">Všechny aktivity{{i:arrow-right}}</a>
       </div>
     </div>
-    <ul class="ikony">
+    <ul class="ikony ikony--svetle">
       <li>{{i:swimming}}<h3><a href="{{ROOT}}aktivity/#bazen">Bazén</a></h3><p>Plavání i odpočinek u čisté vody.</p></li>
       <li>{{i:ball-tennis}}<h3><a href="{{ROOT}}aktivity/#tenis">Tenis</a></h3><p>Kurty a půjčení raket.</p></li>
       <li>{{i:ball-volleyball}}<h3><a href="{{ROOT}}aktivity/#beach-volejbal">Beach volejbal</a></h3><p>Míč vám rádi půjčíme.</p></li>
@@ -168,48 +167,52 @@
     </ul>
   </section>
 
-  <section class="panel panel--krem" aria-labelledby="recenze-nadpis">
-    <div class="hlava">
-      <h2 id="recenze-nadpis">Co píší hosté</h2>
-      <div class="hlava__vpravo">
-        <p>Průměrné hodnocení 4,5 z&nbsp;5 podle 77 recenzí na Google.</p>
-        <a class="odkaz" href="https://maps.google.com/?cid=10668907743016888590" target="_blank" rel="noopener">Všechny recenze</a>
+  <section class="pas pas--oliva tmave" aria-labelledby="recenze-nadpis">
+    <div class="wrap">
+      <div class="hlava">
+        <h2 id="recenze-nadpis">Co píší hosté</h2>
+        <div class="hlava__vpravo">
+          <p>Průměrné hodnocení 4,5 z&nbsp;5 podle 77 recenzí na Google.</p>
+          <a class="odkaz" href="https://maps.google.com/?cid=10668907743016888590" target="_blank" rel="noopener">Všechny recenze{{i:arrow-right}}</a>
+        </div>
       </div>
-    </div>
-    <!-- Statické ukázky. Po napojení Google Places API je nahradí živé recenze. -->
-    <div class="recenze" data-google-recenze>
-      <figure>
-        <blockquote><p>Nejlepší místo pro svatbu, kde je uvolněná a přátelská atmosféra. Žádný stres, prostě klid v&nbsp;přírodě.</p></blockquote>
-        <figcaption><strong>Lenka Čížková</strong>Google, červen 2023</figcaption>
-      </figure>
-      <figure>
-        <blockquote><p>Již několik let zde pořádáme rodinné setkání... a super.</p></blockquote>
-        <figcaption><strong>Martina Kruskova</strong>Google, červen 2024</figcaption>
-      </figure>
-      <figure>
-        <blockquote><p>Vynikající místo na sport.</p></blockquote>
-        <figcaption><strong>Jakub Mazuch</strong>Google, srpen 2023</figcaption>
-      </figure>
+      <!-- Statické ukázky. Po napojení Google Places API je nahradí živé recenze. -->
+      <div class="recenze" data-google-recenze>
+        <figure>
+          <blockquote><p>Nejlepší místo pro svatbu, kde je uvolněná a přátelská atmosféra. Žádný stres, prostě klid v&nbsp;přírodě.</p></blockquote>
+          <figcaption><strong>Lenka Čížková</strong>Google, červen 2023</figcaption>
+        </figure>
+        <figure>
+          <blockquote><p>Již několik let zde pořádáme rodinné setkání... a super.</p></blockquote>
+          <figcaption><strong>Martina Kruskova</strong>Google, červen 2024</figcaption>
+        </figure>
+        <figure>
+          <blockquote><p>Vynikající místo na sport.</p></blockquote>
+          <figcaption><strong>Jakub Mazuch</strong>Google, srpen 2023</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
-  <section class="split split--pul" aria-labelledby="kontakt-nadpis">
-    <div class="panel panel--krem">
-      <h2 id="kontakt-nadpis">Naplánujte si pobyt</h2>
-      <p class="perex" style="margin-top: 16px">Poradíme s cenou, volným termínem i výběrem ubytování. Ozvěte se telefonicky nebo e-mailem.</p>
-      <ul class="kontakty" style="margin-top: 28px">
-        <li><a href="tel:+420601594780"><b>+420 601 594 780</b>{{i:phone}}</a></li>
-        <li><a href="tel:+420549123611"><b>+420 549 123 611</b>{{i:phone}}</a></li>
-        <li><a href="mailto:drahosova@baumat-brno.cz"><b>drahosova@baumat-brno.cz</b>{{i:mail}}</a></li>
-      </ul>
-      <!-- ADRESA AREÁLU: doplnit po potvrzení od Baumatu (katalogy uvádějí Heroltice 166 i Heroltice 1). -->
-      <ul class="poloha" style="margin-top: 28px">
-        <li>{{i:map-pin}}<div><strong>Heroltice</strong><span>areál přímo u řeky Svratky</span></div></li>
-        <li>{{i:car}}<div><strong>25&nbsp;km od Brna</strong><span>směrem na Tišnov</span></div></li>
-      </ul>
-    </div>
-    <div class="mapa">
-      <iframe title="Mapa: Rekreační areál Baumat Heroltice" src="https://maps.google.com/maps?q=Rekrea%C4%8Dn%C3%AD%20are%C3%A1l%20BAUMAT&amp;t=m&amp;z=12&amp;output=embed&amp;iwloc=near" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <section class="wrap" aria-labelledby="kontakt-nadpis">
+    <div class="kontakt">
+      <div class="kontakt__text">
+        <h2 id="kontakt-nadpis">Naplánujte si pobyt</h2>
+        <p class="perex">Poradíme s cenou, volným termínem i výběrem ubytování. Ozvěte se telefonicky nebo e-mailem.</p>
+        <ul class="kontakty">
+          <li><a href="tel:+420601594780"><b>+420 601 594 780</b>{{i:phone}}</a></li>
+          <li><a href="tel:+420549123611"><b>+420 549 123 611</b>{{i:phone}}</a></li>
+          <li><a href="mailto:drahosova@baumat-brno.cz"><b>drahosova@baumat-brno.cz</b>{{i:mail}}</a></li>
+        </ul>
+        <!-- ADRESA AREÁLU: doplnit po potvrzení od Baumatu (katalogy uvádějí Heroltice 166 i Heroltice 1). -->
+        <ul class="poloha">
+          <li>{{i:map-pin}}<div><strong>Heroltice</strong><span>areál přímo u řeky Svratky</span></div></li>
+          <li>{{i:car}}<div><strong>25&nbsp;km od Brna</strong><span>směrem na Tišnov</span></div></li>
+        </ul>
+      </div>
+      <div class="mapa">
+        <iframe title="Mapa: Rekreační areál Baumat Heroltice" src="https://maps.google.com/maps?q=Rekrea%C4%8Dn%C3%AD%20are%C3%A1l%20BAUMAT&amp;t=m&amp;z=12&amp;output=embed&amp;iwloc=near" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
     </div>
   </section>
 

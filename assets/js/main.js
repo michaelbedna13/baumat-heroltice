@@ -1,6 +1,6 @@
 (function () {
   /* Fotky, které se nenačtou, se skryjí a zůstane jen plocha rámu ---- */
-  document.querySelectorAll(".ram img, .karta img").forEach(function (img) {
+  document.querySelectorAll(".ram img, .karta img, .hero__foto img").forEach(function (img) {
     function skryj() { img.classList.add("nenacteno"); }
     if (img.complete && img.naturalWidth === 0 && img.getAttribute("src")) skryj();
     else img.addEventListener("error", skryj);

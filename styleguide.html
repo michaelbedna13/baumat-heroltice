@@ -90,23 +90,23 @@
 </header>
 <main class="obsah" id="obsah">
   <section class="wrap" id="barvy" aria-labelledby="sg-barvy">
-    <div class="hlava"><h2 id="sg-barvy">Barvy</h2><p>Tmavý les a olivová nesou značku, papír a bílá tvoří plochy. Šalvěj je jen akcent na tmavé.</p></div>
+    <div class="hlava"><h2 id="sg-barvy">Barvy</h2><p>Bílé pozadí, střídavé světle šedé sekce, jedna zelená pro tlačítka a ikony. Tmavá je jen patička.</p></div>
     <div class="vzorky">
-      <div class="vzorek"><div style="background: var(--les)"></div><p>Les<br><code>--les #222C1D</code></p></div>
-      <div class="vzorek"><div style="background: var(--les-2)"></div><p>Les hover<br><code>--les-2 #2F3C28</code></p></div>
-      <div class="vzorek"><div style="background: var(--oliva)"></div><p>Oliva<br><code>--oliva #4B5E33</code></p></div>
-      <div class="vzorek"><div style="background: var(--salvej)"></div><p>Šalvěj<br><code>--salvej #B8C29F</code></p></div>
-      <div class="vzorek"><div style="background: var(--papir); box-shadow: inset 0 0 0 1px var(--linka)"></div><p>Papír<br><code>--papir #F4F0E6</code></p></div>
-      <div class="vzorek"><div style="background: var(--bila); box-shadow: inset 0 0 0 1px var(--linka)"></div><p>Bílá<br><code>--bila #FBF9F3</code></p></div>
-      <div class="vzorek"><div style="background: var(--pisek)"></div><p>Písek<br><code>--pisek #E8E2D2</code></p></div>
-      <div class="vzorek"><div style="background: var(--text)"></div><p>Text<br><code>--text #1D2319</code></p></div>
+      <div class="vzorek"><div style="background: var(--les)"></div><p>Les (patička)<br><code>--les #1E2A1C</code></p></div>
+      <div class="vzorek"><div style="background: var(--oliva-2)"></div><p>Oliva hover<br><code>--oliva-2 #324A25</code></p></div>
+      <div class="vzorek"><div style="background: var(--oliva)"></div><p>Oliva<br><code>--oliva #3E5A2F</code></p></div>
+      <div class="vzorek"><div style="background: var(--salvej)"></div><p>Šalvěj<br><code>--salvej #C9D3B5</code></p></div>
+      <div class="vzorek"><div style="background: var(--papir); box-shadow: inset 0 0 0 1px var(--linka)"></div><p>Papír<br><code>--papir #FFFFFF</code></p></div>
+      <div class="vzorek"><div style="background: var(--seda); box-shadow: inset 0 0 0 1px var(--linka)"></div><p>Šedá sekce<br><code>--seda #F5F4EF</code></p></div>
+      <div class="vzorek"><div style="background: var(--pisek)"></div><p>Písek<br><code>--pisek #EFEDE6</code></p></div>
+      <div class="vzorek"><div style="background: var(--text)"></div><p>Text<br><code>--text #1F2420</code></p></div>
     </div>
   </section>
 
   <section class="wrap" aria-labelledby="sg-pismo">
-    <div class="hlava"><h2 id="sg-pismo">Písmo</h2><p>Hanken Grotesk, jedna rodina. Nadpisy 380 až 400 s těsným prokladem, text 400, důraz 500 až 600.</p></div>
+    <div class="hlava"><h2 id="sg-pismo">Písmo</h2><p>Hanken Grotesk, jedna rodina. Nadpisy 560, text 400, důraz 600.</p></div>
     <div style="display: grid; gap: 28px">
-      <p style="font-size: var(--fs-h1); font-weight: 400; letter-spacing: -0.048em; line-height: .94">Údolí Svratky</p>
+      <p style="font-size: var(--fs-h1); font-weight: 560; letter-spacing: -0.035em; line-height: 1.02">Údolí Svratky</p>
       <h2>Nadpis sekce H2</h2>
       <h3>Nadpis položky H3</h3>
       <p class="perex">Perex: úvodní odstavec sekce, šedý, maximálně 46 znaků na řádek.</p>
@@ -115,10 +115,10 @@
     </div>
   </section>
 
-  <section class="pas pas--oliva tmave" id="komponenty" aria-labelledby="sg-tlacitka">
+  <section class="pas" id="komponenty" aria-labelledby="sg-tlacitka">
     <div class="wrap">
     <div class="hlava"><h2 id="sg-tlacitka">Tlačítka a štítky</h2></div>
-    <div class="akce"><a class="btn btn--sv" href="#">Krémové</a><a class="btn btn--obrys-sv" href="#">Obrys na tmavé</a><a class="odkaz" href="#">Textový odkaz<svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></div>
+    <div class="akce"><a class="btn btn--les" href="#">Krémové</a><a class="btn btn--obrys" href="#">Obrys na tmavé</a><a class="odkaz" href="#">Textový odkaz<svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></div>
     <div class="stitky" style="margin-top: 24px"><span class="stitek">svatby</span><span class="stitek">tábory</span></div>
       </div>
   </section>
@@ -143,8 +143,8 @@
     <div class="hlava"><h2 id="sg-dlazdice">Dlaždice</h2></div>
     <div class="mozaika">
       <div class="dlazdice"><svg class="i" aria-hidden="true"><use href="#i-tent"/></svg><div><h3>Obrysová</h3><p>Na kamenném podkladu.</p></div></div>
-      <div class="dlazdice dlazdice--plna"><svg class="i" aria-hidden="true"><use href="#i-rings"/></svg><div><h3>Plná</h3><p>Jedna na mozaiku.</p></div></div>
-      <div class="dlazdice dlazdice--foto"><div class="ram"><img src="https://baumatheroltice.cz/wp-content/uploads/2024/11/Ohniste_1-1536x1024.jpg" alt="" loading="lazy"></div></div>
+      <div class="dlazdice"><svg class="i" aria-hidden="true"><use href="#i-rings"/></svg><div><h3>Plná</h3><p>Jedna na mozaiku.</p></div></div>
+      
     </div>
   </section>
 </main>

@@ -9,7 +9,7 @@ Fotky, dokumenty a favicona se zatím načítají ze starého webu (baumatherolt
 3. Obrázky nahraj do `assets/img/`, dokumenty do `assets/docs/`.
 4. V `build.py` přepni `MISTNI_SOUBORY = True` a spusť `python3 build.py`. Když nějaký soubor chybí, build to vypíše a stránky neuloží.
 
-## Obrázky do assets/img/ (43 souborů)
+## Obrázky do assets/img/ (42 souborů)
 
 | Soubor | Kde je na starém webu |
 |---|---|
@@ -27,7 +27,6 @@ Fotky, dokumenty a favicona se zatím načítají ze starého webu (baumatherolt
 | `Chatky_hl-foto-1-1536x1024.jpg` | https://baumatheroltice.cz/wp-content/uploads/2024/11/Chatky_hl-foto-1-1536x1024.jpg |
 | `Detske-hriste-1536x1024.jpg` | https://baumatheroltice.cz/wp-content/uploads/2024/11/Detske-hriste-1536x1024.jpg |
 | `Detske-hriste_2-1536x1024.jpg` | https://baumatheroltice.cz/wp-content/uploads/2024/11/Detske-hriste_2-1536x1024.jpg |
-| `Favicon-Baumat-300x300.png` | https://baumatheroltice.cz/wp-content/uploads/2024/11/Favicon-Baumat-300x300.png |
 | `Hl.socialky_1-1536x1024.jpg` | https://baumatheroltice.cz/wp-content/uploads/2024/11/Hl.socialky_1-1536x1024.jpg |
 | `Hl.socialky_2-1-1536x1024.jpg` | https://baumatheroltice.cz/wp-content/uploads/2024/11/Hl.socialky_2-1-1536x1024.jpg |
 | `Hl.socialky_3-1-1536x1024.jpg` | https://baumatheroltice.cz/wp-content/uploads/2024/11/Hl.socialky_3-1-1536x1024.jpg |
@@ -73,6 +72,7 @@ Fotky, dokumenty a favicona se zatím načítají ze starého webu (baumatherolt
 - Kvalita kolem 80 %, šířka kolem 2000 px, hlavní fotka `areal-1` 2400 px. Jedna fotka ideálně do 300 kB.
 - Když fotky jen stáhneš ze starého webu a nic s nimi neděláš, nech je klidně jako JPG.
 
-**Logo: SVG.** Na webu teď není obrázek loga, ale kreslená značka v `_sablony/ikony.svg` (symbol `i-znacka`) a vedle ní text „Baumat Heroltice". Když dodáš logo jako SVG s barvou `currentColor`, bude samo bílé na fotce a tmavé v přilepené liště. PNG by potřebovalo dvě verze a na ostrých displejích by bylo rozmazané.
-
-**Favicona: SVG a k tomu PNG 180 × 180 px** (pro iPhone, když si web uloží na plochu). Pošli mi logo a favicony připravím.
+**Logo a favicona už jsou hotové** v `assets/img/`:
+- `baumat-logo.svg` barevné logo, `baumat-logo-bez-sro.svg` bez „spol. s r.o."
+- `baumat-logo-jednobarevne.svg` a `baumat-logo-jednobarevne-bez-sro.svg` jednobarevná verze, barvu přebírá z okolního textu (`currentColor`)
+- `favicon.svg` a `apple-touch-icon.png` (180 × 180 px), zapojené v hlavičce všech stránek

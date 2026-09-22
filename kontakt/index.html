@@ -78,7 +78,7 @@
         <a href="../kontakt/" aria-current="page">Kontakt</a>
       </nav>
       <div class="lista__vpravo">
-        <a class="jazyk" href="../en/" hreflang="en" lang="en"><span aria-hidden="true">EN</span><span class="sr-only">English</span></a>
+        <div class="jazyky" role="group" aria-label="Jazyk webu"><span class="jazyky__akt" lang="cs" aria-current="true">CZ</span><a href="../en/" hreflang="en" lang="en" aria-label="English">EN</a></div>
         <a class="btn btn--sv" href="../kontakt/#kalendar">Volné termíny</a>
         <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-otevrit="Menu" data-zavrit="Zavřít"><svg class="i" aria-hidden="true"><use href="#i-menu-2"/></svg><span>Menu</span></button>
       </div>
@@ -88,8 +88,10 @@
       <a href="../aktivity/">Aktivity</a>
       <a href="../cenik/">Ceník</a>
       <a href="../kontakt/" aria-current="page">Kontakt</a>
-      <a href="../en/" hreflang="en" lang="en">English</a>
-      <a class="btn btn--sv" href="../kontakt/#kalendar">Volné termíny</a>
+      <div class="menu__spodek">
+        <a class="btn btn--sv" href="../kontakt/#kalendar">Volné termíny</a>
+        <div class="jazyky" role="group" aria-label="Jazyk webu"><span class="jazyky__akt" lang="cs" aria-current="true">CZ</span><a href="../en/" hreflang="en" lang="en" aria-label="English">EN</a></div>
+      </div>
     </nav>
   </div>
 </div>
@@ -99,28 +101,12 @@
       <ol class="drobky"><li><a href="../">Úvod</a></li><li>Kontakt</li></ol>
       <h1>Ozvěte se nám</h1>
       <p class="perex" style="margin-top: 24px">Poradíme s cenou, volným termínem i výběrem ubytování. Ozvěte se telefonicky nebo e-mailem.</p>
+      <div class="akce" style="margin-top: 26px; justify-content: center">
+        <a class="btn btn--sv" href="tel:+420601594780"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>601&nbsp;594&nbsp;780</a>
+        <a class="btn btn--obrys-sv" href="mailto:drahosova@baumat-brno.cz"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg>Napsat e-mail</a>
+      </div>
     </div>
   </div>
-<div class="wrap poptavka-obal">
-  <form class="poptavka" data-poptavka aria-label="Poptávka termínu">
-    <div class="pole"><label for="pop-prijezd">Příjezd</label><input id="pop-prijezd" name="prijezd" type="date" required></div>
-    <div class="pole"><label for="pop-odjezd">Odjezd</label><input id="pop-odjezd" name="odjezd" type="date" required></div>
-    <div class="pole"><label for="pop-osob">Počet osob</label><input id="pop-osob" name="osob" type="number" min="1" max="150" inputmode="numeric" placeholder="např. 24" required></div>
-    <div class="pole"><label for="pop-typ">Typ akce</label>
-      <select id="pop-typ" name="typ">
-        <option>Pobyt</option>
-        <option>Rodinná oslava</option>
-        <option>Svatba</option>
-        <option>Dětský tábor</option>
-        <option>Firemní akce</option>
-        <option>Celý areál</option>
-      </select>
-    </div>
-    <button class="btn btn--les" type="submit">Poslat poptávku</button>
-  </form>
-  <p class="poptavka__pozn">Otevře se vám e-mail s vyplněnými údaji, stačí ho odeslat.</p>
-</div>
-
 </header>
 
 <main class="obsah" id="obsah">
@@ -180,9 +166,9 @@
       </div>
       <div class="kalendar__bok">
         <ul class="legenda">
-          <li><i style="background: var(--papir)"></i>Volno</li>
-          <li><i style="background: var(--salvej)"></i>Částečně obsazeno</li>
-          <li><i style="background: var(--les)"></i>Obsazeno</li>
+          <li><i class="legenda__volno"></i>Volno</li>
+          <li><i class="legenda__castecne"></i>Částečně obsazeno</li>
+          <li><i class="legenda__obsazeno"></i>Obsazeno</li>
         </ul>
         <p class="poznamka">U některých typů ubytování, třeba u chatek, je k dispozici více jednotek. I když je termín označený jako částečně obsazený, některé chatky mohou být pořád volné. Rádi vám dostupnost ověříme a pomůžeme s výběrem.</p>
         <div class="akce"><a class="btn btn--les" href="tel:+420601594780"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>Ověřit telefonicky</a></div>

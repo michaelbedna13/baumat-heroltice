@@ -58,41 +58,6 @@
   var rok = document.querySelector("[data-rok]");
   if (rok) rok.textContent = new Date().getFullYear();
 
-  /* Poptávka: sestaví e-mail s vyplněnými údaji ------------------ */
-  var CIL = "drahosova@baumat-brno.cz";
-  document.querySelectorAll("[data-poptavka]").forEach(function (form) {
-    var prijezd = form.elements.prijezd;
-    var odjezd = form.elements.odjezd;
-    var dnes = new Date();
-    var dnesKlic = dnes.getFullYear() + "-" + String(dnes.getMonth() + 1).padStart(2, "0") + "-" + String(dnes.getDate()).padStart(2, "0");
-    prijezd.min = dnesKlic;
-    odjezd.min = dnesKlic;
-    prijezd.addEventListener("change", function () {
-      odjezd.min = prijezd.value || dnesKlic;
-      if (odjezd.value && odjezd.value < prijezd.value) odjezd.value = "";
-    });
-
-    function cesky(d) {
-      if (!d) return "";
-      var p = d.split("-");
-      return +p[2] + ". " + +p[1] + ". " + p[0];
-    }
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var typ = form.elements.typ.value;
-      var predmet = "Poptávka: " + typ + ", " + cesky(prijezd.value) + " až " + cesky(odjezd.value);
-      var telo =
-        "Dobrý den,\n\nposílám poptávku termínu v areálu Baumat Heroltice.\n\n" +
-        "Typ akce: " + typ + "\n" +
-        "Příjezd: " + cesky(prijezd.value) + "\n" +
-        "Odjezd: " + cesky(odjezd.value) + "\n" +
-        "Počet osob: " + form.elements.osob.value + "\n\n" +
-        "Děkuji\n";
-      window.location.href = "mailto:" + CIL + "?subject=" + encodeURIComponent(predmet) + "&body=" + encodeURIComponent(telo);
-    });
-  });
-
   /* Prohlížeč fotek --------------------------------------------- */
   var galerie = document.querySelectorAll("[data-galerie]");
   if (galerie.length && window.HTMLDialogElement) {

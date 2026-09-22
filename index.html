@@ -99,7 +99,7 @@
         <a href="kontakt/">Kontakt</a>
       </nav>
       <div class="lista__vpravo">
-        <a class="jazyk" href="en/" hreflang="en" lang="en"><span aria-hidden="true">EN</span><span class="sr-only">English</span></a>
+        <div class="jazyky" role="group" aria-label="Jazyk webu"><span class="jazyky__akt" lang="cs" aria-current="true">CZ</span><a href="en/" hreflang="en" lang="en" aria-label="English">EN</a></div>
         <a class="btn btn--sv" href="kontakt/#kalendar">Volné termíny</a>
         <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-otevrit="Menu" data-zavrit="Zavřít"><svg class="i" aria-hidden="true"><use href="#i-menu-2"/></svg><span>Menu</span></button>
       </div>
@@ -109,8 +109,10 @@
       <a href="aktivity/">Aktivity</a>
       <a href="cenik/">Ceník</a>
       <a href="kontakt/">Kontakt</a>
-      <a href="en/" hreflang="en" lang="en">English</a>
-      <a class="btn btn--sv" href="kontakt/#kalendar">Volné termíny</a>
+      <div class="menu__spodek">
+        <a class="btn btn--sv" href="kontakt/#kalendar">Volné termíny</a>
+        <div class="jazyky" role="group" aria-label="Jazyk webu"><span class="jazyky__akt" lang="cs" aria-current="true">CZ</span><a href="en/" hreflang="en" lang="en" aria-label="English">EN</a></div>
+      </div>
     </nav>
   </div>
 </div>
@@ -120,28 +122,12 @@
     <h1>Rekreační areál v&nbsp;údolí řeky Svratky</h1>
     <div class="hero__bok">
       <p class="perex">Chatky, apartmán, bazén a ohniště u řeky Svratky. Místo pro rodinné oslavy, svatby, dětské tábory i firemní akce.</p>
+      <div class="akce">
+        <a class="btn btn--sv" href="kontakt/#kalendar"><svg class="i" aria-hidden="true"><use href="#i-calendar-event"/></svg>Volné termíny</a>
+        <a class="btn btn--obrys-sv" href="tel:+420601594780"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>601&nbsp;594&nbsp;780</a>
+      </div>
     </div>
   </div>
-<div class="wrap poptavka-obal">
-  <form class="poptavka" data-poptavka aria-label="Poptávka termínu">
-    <div class="pole"><label for="pop-prijezd">Příjezd</label><input id="pop-prijezd" name="prijezd" type="date" required></div>
-    <div class="pole"><label for="pop-odjezd">Odjezd</label><input id="pop-odjezd" name="odjezd" type="date" required></div>
-    <div class="pole"><label for="pop-osob">Počet osob</label><input id="pop-osob" name="osob" type="number" min="1" max="150" inputmode="numeric" placeholder="např. 24" required></div>
-    <div class="pole"><label for="pop-typ">Typ akce</label>
-      <select id="pop-typ" name="typ">
-        <option>Pobyt</option>
-        <option>Rodinná oslava</option>
-        <option>Svatba</option>
-        <option>Dětský tábor</option>
-        <option>Firemní akce</option>
-        <option>Celý areál</option>
-      </select>
-    </div>
-    <button class="btn btn--les" type="submit">Poslat poptávku</button>
-  </form>
-  <p class="poptavka__pozn">Otevře se vám e-mail s vyplněnými údaji, stačí ho odeslat.</p>
-</div>
-
 </header>
 
 <section class="fakta-pruh" aria-label="Areál v číslech">

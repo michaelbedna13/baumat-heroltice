@@ -13,7 +13,7 @@
         <a href="{{ROOT}}kontakt/"{{A:kontakt}}>Kontakt</a>
       </nav>
       <div class="lista__vpravo">
-        <a class="jazyk" href="{{ROOT}}en/" hreflang="en" lang="en"><span aria-hidden="true">EN</span><span class="sr-only">English</span></a>
+        <div class="jazyky" role="group" aria-label="Jazyk webu"><span class="jazyky__akt" lang="cs" aria-current="true">CZ</span><a href="{{ROOT}}en/" hreflang="en" lang="en" aria-label="English">EN</a></div>
         <a class="btn btn--sv" href="{{ROOT}}kontakt/#kalendar">Volné termíny</a>
         <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-otevrit="Menu" data-zavrit="Zavřít">{{i:menu-2}}<span>Menu</span></button>
       </div>
@@ -23,8 +23,10 @@
       <a href="{{ROOT}}aktivity/"{{A:aktivity}}>Aktivity</a>
       <a href="{{ROOT}}cenik/"{{A:cenik}}>Ceník</a>
       <a href="{{ROOT}}kontakt/"{{A:kontakt}}>Kontakt</a>
-      <a href="{{ROOT}}en/" hreflang="en" lang="en">English</a>
-      <a class="btn btn--sv" href="{{ROOT}}kontakt/#kalendar">Volné termíny</a>
+      <div class="menu__spodek">
+        <a class="btn btn--sv" href="{{ROOT}}kontakt/#kalendar">Volné termíny</a>
+        <div class="jazyky" role="group" aria-label="Jazyk webu"><span class="jazyky__akt" lang="cs" aria-current="true">CZ</span><a href="{{ROOT}}en/" hreflang="en" lang="en" aria-label="English">EN</a></div>
+      </div>
     </nav>
   </div>
 </div>

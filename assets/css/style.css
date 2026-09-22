@@ -670,10 +670,10 @@ a.dlazdice:hover { box-shadow: var(--stin); border-color: transparent; }
   .cipy li { font-size: 13px; padding: 6px 12px 6px 10px; }
 }
 @media (max-width: 959px) {
-  .detail__cena { grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 16px; row-gap: 2px; padding: 18px 20px; }
+  .detail__cena { grid-template-columns: auto minmax(0, 1fr); align-items: baseline; column-gap: 8px; row-gap: 0; padding: 18px 20px 20px; }
   .detail__castka { font-size: 30px; grid-column: 1; }
-  .detail__jednotka { grid-column: 1; }
-  .detail__cena .btn { grid-column: 2; grid-row: 1 / span 2; width: auto; padding: 0 20px; }
-  .detail__noc { grid-column: 1 / -1; margin: 10px 0 0; padding-top: 10px; }
-  .detail__cena .odkaz { grid-column: 1 / -1; justify-self: start; margin-top: 8px; }
+  .detail__jednotka { grid-column: 2; }
+  .detail__noc { grid-column: 1 / -1; margin: 12px 0 16px; padding-top: 12px; }
+  .detail__cena .btn { grid-column: 1 / -1; width: 100%; }
+  .detail__cena .odkaz { grid-column: 1 / -1; justify-self: center; margin-top: 12px; }
 }

@@ -686,3 +686,12 @@ a.dlazdice:hover { box-shadow: var(--stin); border-color: transparent; }
   .logo { gap: 10px; font-size: 16px; }
   .logo__znak { height: 32px; }
   }
+
+/* 37. Kotvy v ceníku: jedna řada jako přepínač ---------------------------- */
+.hero .kotvy { display: flex; flex-wrap: nowrap; gap: 2px; padding: 3px; border-radius: 999px; background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .26); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+.hero .kotvy a { flex: 1 1 auto; justify-content: center; min-height: 38px; padding: 0 16px; border: 0; border-radius: 999px; background: none; color: var(--sv); font-size: 14px; white-space: nowrap; -webkit-backdrop-filter: none; backdrop-filter: none; }
+.hero .kotvy a:hover { background: rgba(255, 255, 255, .2); }
+@media (max-width: 560px) {
+  .hero .kotvy { width: 100%; }
+  .hero .kotvy a { padding: 0 6px; font-size: 13px; min-height: 36px; }
+}

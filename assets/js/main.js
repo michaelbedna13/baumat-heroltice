@@ -5,7 +5,7 @@
     ? { prohlizec: "Photo viewer", zavrit: "Close photos", zpet: "Previous photo", vpred: "Next photo", z: " of ",
         mesice: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
         dny: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-        stavy: { obsazeno: "booked", castecne: "partly booked", volno: "available" }, locale: "en-GB" }
+        stavy: { obsazeno: "booked", castecne: "partially booked", volno: "available" }, locale: "en-GB" }
     : { prohlizec: "Prohlížeč fotek", zavrit: "Zavřít fotky", zpet: "Předchozí fotka", vpred: "Další fotka", z: " z ",
         mesice: ["leden", "únor", "březen", "duben", "květen", "červen", "červenec", "srpen", "září", "říjen", "listopad", "prosinec"],
         dny: ["po", "út", "st", "čt", "pá", "so", "ne"],

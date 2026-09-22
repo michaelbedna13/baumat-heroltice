@@ -50,5 +50,6 @@ Anglické stránky jsou v `en/` (`/en/`, `/en/accommodation/`, `/en/activities/`
 - Když změníš text v české šabloně, uprav ho i v anglické. Build to nehlídá.
 - JavaScript (kalendář, prohlížeč fotek) bere jazyk z `<html lang>` a texty má v objektu `T` v `main.js`.
 - Ceník a řády ke stažení jsou jen česky, v EN verzi jsou odkazy označené „in Czech".
+- Názvy ubytování odpovídají původnímu anglickému webu: Apartment, Cottages (buňky Slušovice), Cabins (chatky klasické), Cabins by the Main Gate, Kitchen & Dining Hall, Kitchenettes, Main Sanitary Facilities. Areál se jmenuje Baumat Heroltice Recreation Area.
 - Recenze jsou v EN verzi přeložené a označené „translated from Czech".
 - Měna je CZK s anglickým oddělovačem tisíců (40,000 CZK), hodnocení 4.5.

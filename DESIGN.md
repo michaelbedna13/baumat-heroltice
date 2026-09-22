@@ -61,7 +61,7 @@ Hanken Grotesk, jedna rodina, variabilní řez uložený lokálně (latin a lati
 | `.sklo` | matné sklo na fotce |
 | `.hlava` | hlavička sekce: nadpis vlevo, krátký text a odkaz vpravo |
 | `.lista`, `.menu`, `.drobky` | navigace na fotce v hero |
-| `.logo`, `.logo__znak`, `.logo__misto` | logo Baumat (symbol `i-logo` ve spritu, jednobarevné, bez „spol. s r.o.") a za svislou čárou slovo Heroltice; barvu bere z okolí, na fotce bílé, v přilepené liště tmavé |
+| `.logo`, `.logo__znak`, `.logo__misto` | logo Baumat (symbol `i-logo` ve spritu, jednobarevné, bez „spol. s r.o."); barvu bere z okolí, na fotce bílé, v přilepené liště tmavé |
 | `.hero`, `.hero--pod`, `.hero--s-formularem`, `.hodnoceni` | úvodní blok s fotkou |
 | `.fakta-pruh`, `.predstaveni` | proužek s fakty pod hero, úvodní blok fotka a text |
 | `.vyhody` | čtyři body s ikonou v kruhu |

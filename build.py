@@ -17,7 +17,7 @@ WEB = "https://baumatheroltice.cz/"
 
 # Dokumenty (ceník, řády) zatím odkazují na starý web.
 # Přepni na True, jakmile je nahraješ do assets/docs/ se stejnými názvy (viz FOTKY.md).
-MISTNI_DOKUMENTY = False
+MISTNI_DOKUMENTY = True
 SLOZKA_OBRAZKY = "assets/img"
 SLOZKA_DOKUMENTY = "assets/docs"
 

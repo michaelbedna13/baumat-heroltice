@@ -172,7 +172,6 @@ img.nenacteno { visibility: hidden; }
 .lista { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-size: 17px; font-weight: 620; letter-spacing: -0.02em; white-space: nowrap; }
 .logo span { font-weight: 320; }
-.znacka { width: 32px; height: 32px; flex: none; }
 .nav { display: none; gap: 6px; font-size: 15px; }
 .nav a { text-decoration: none; color: var(--sv-80); padding: 9px 14px; border-radius: 999px; transition: background-color .2s, color .2s; }
 .nav a:hover { color: var(--sv); background: rgba(251, 249, 243, .1); }
@@ -676,4 +675,16 @@ a.dlazdice:hover { box-shadow: var(--stin); border-color: transparent; }
   .detail__noc { grid-column: 1 / -1; margin: 12px 0 16px; padding-top: 12px; }
   .detail__cena .btn { grid-column: 1 / -1; width: 100%; }
   .detail__cena .odkaz { grid-column: 1 / -1; justify-self: center; margin-top: 12px; }
+}
+
+/* 36. Logo Baumat v hlavičce a patičce ------------------------------------ */
+.logo { gap: 12px; font-size: 18px; font-weight: 500; letter-spacing: -0.01em; }
+.logo__znak { display: block; height: 38px; width: auto; aspect-ratio: 3722 / 825; flex: none; fill: currentColor; }
+.logo__misto { padding-left: 12px; border-left: 1px solid currentColor; line-height: 1.1; font-weight: 500 !important; opacity: .92; }
+.lista-obal--lepi .logo__znak { height: 28px; }
+.paticka .logo__znak { height: 40px; }
+@media (max-width: 560px) {
+  .logo { gap: 10px; font-size: 16px; }
+  .logo__znak { height: 28px; }
+  .logo__misto { padding-left: 10px; }
 }

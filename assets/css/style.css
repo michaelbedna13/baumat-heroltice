@@ -679,12 +679,10 @@ a.dlazdice:hover { box-shadow: var(--stin); border-color: transparent; }
 
 /* 36. Logo Baumat v hlavičce a patičce ------------------------------------ */
 .logo { gap: 12px; font-size: 18px; font-weight: 500; letter-spacing: -0.01em; }
-.logo__znak { display: block; height: 38px; width: auto; aspect-ratio: 3722 / 825; flex: none; fill: currentColor; }
-.logo__misto { padding-left: 12px; border-left: 1px solid currentColor; line-height: 1.1; font-weight: 500 !important; opacity: .92; }
+.logo__znak { display: block; height: 40px; width: auto; aspect-ratio: 3722 / 825; flex: none; fill: currentColor; }
 .lista-obal--lepi .logo__znak { height: 28px; }
 .paticka .logo__znak { height: 40px; }
 @media (max-width: 560px) {
   .logo { gap: 10px; font-size: 16px; }
-  .logo__znak { height: 28px; }
-  .logo__misto { padding-left: 10px; }
-}
+  .logo__znak { height: 32px; }
+  }

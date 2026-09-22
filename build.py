@@ -112,8 +112,13 @@ def soubor(cesta_na_starem_webu, root=""):
         return f"{IMG}/{cesta_na_starem_webu}"
     nazev = cesta_na_starem_webu.split("/")[-1]
     slozka = SLOZKA_DOKUMENTY if nazev.lower().endswith((".pdf", ".docx", ".doc")) else SLOZKA_OBRAZKY
+    # Obrázek může být v repu i jako WebP se stejným názvem (Apartman_3.webp místo Apartman_3.jpg).
+    if slozka == SLOZKA_OBRAZKY:
+        webp = nazev.rsplit(".", 1)[0] + ".webp"
+        if (KOREN / slozka / webp).exists():
+            return f"{root}{slozka}/{webp}"
     if not (KOREN / slozka / nazev).exists():
-        CHYBI.add(f"{slozka}/{nazev}")
+        CHYBI.add(f"{slozka}/{nazev}" + (" (nebo .webp)" if slozka == SLOZKA_OBRAZKY else ""))
     return f"{root}{slozka}/{nazev}"
 
 

@@ -67,6 +67,12 @@ Fotky, dokumenty a favicona se zatím načítají ze starého webu (baumatherolt
 
 ## Formát
 
-- Fotky nech jako JPG a favicon jako PNG, tak jak jsou na starém webu.
-- Když budeš mít nové nebo lepší fotky, stačí je uložit pod stejným názvem a přepsat ty staré. Ideálně na šířku kolem 2000 px a do 400 kB. Pro hlavní fotku `areal-1.jpg` klidně 2400 px, je přes celou obrazovku.
-- Kterou fotku web používá kde, je vidět ve slovníku `FOTKY` v `build.py`.
+**Fotky: WebP, nebo JPG.** Build bere obojí. Když v `assets/img/` najde `Apartman_3-1536x1024.webp`, použije ho místo `.jpg`. Název před tečkou musí zůstat stejný.
+
+- WebP je zhruba o třetinu menší než JPG při stejné kvalitě a web se načte rychleji. Doporučuju ho, pokud fotky stejně upravuješ a exportuješ.
+- Kvalita kolem 80 %, šířka kolem 2000 px, hlavní fotka `areal-1` 2400 px. Jedna fotka ideálně do 300 kB.
+- Když fotky jen stáhneš ze starého webu a nic s nimi neděláš, nech je klidně jako JPG.
+
+**Logo: SVG.** Na webu teď není obrázek loga, ale kreslená značka v `_sablony/ikony.svg` (symbol `i-znacka`) a vedle ní text „Baumat Heroltice". Když dodáš logo jako SVG s barvou `currentColor`, bude samo bílé na fotce a tmavé v přilepené liště. PNG by potřebovalo dvě verze a na ostrých displejích by bylo rozmazané.
+
+**Favicona: SVG a k tomu PNG 180 × 180 px** (pro iPhone, když si web uloží na plochu). Pošli mi logo a favicony připravím.

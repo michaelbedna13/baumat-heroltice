@@ -136,10 +136,10 @@ img.nenacteno { visibility: hidden; }
 /* 5. Hero ---------------------------------------------------------------- */
 .hero {
   position: relative; z-index: 50; isolation: isolate; overflow: hidden;
-  min-height: min(90svh, 880px); display: flex; flex-direction: column; color: var(--sv);
+  min-height: min(74svh, 700px); display: flex; flex-direction: column; color: var(--sv);
   background: linear-gradient(160deg, #56693F 0%, #33432A 60%, #1E2A1C 100%);
 }
-.hero--pod { min-height: min(58svh, 540px); }
+.hero--pod { min-height: min(48svh, 440px); }
 .hero__foto { position: absolute; inset: 0; z-index: -2; }
 .hero__foto img { width: 100%; height: 100%; object-fit: cover; }
 .hero::after {
@@ -177,7 +177,7 @@ img.nenacteno { visibility: hidden; }
 .nav a { text-decoration: none; color: var(--sv-80); padding: 9px 14px; border-radius: 999px; transition: background-color .2s, color .2s; }
 .nav a:hover { color: var(--sv); background: rgba(251, 249, 243, .1); }
 .nav a[aria-current="page"] { color: var(--sv); background: rgba(251, 249, 243, .14); }
-.lista__vpravo { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+.lista__vpravo { display: flex; align-items: center; gap: 14px; font-size: 14px; }
 .lista .btn { min-height: 42px; padding: 0 20px; font-size: 14px; }
 .jazyky { display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .28); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
 .jazyky > * { display: grid; place-items: center; min-width: 38px; height: 32px; padding: 0 10px; border-radius: 999px; font-size: 13px; font-weight: 650; letter-spacing: .02em; text-decoration: none; color: var(--sv-80); transition: background-color .2s, color .2s; }
@@ -204,7 +204,7 @@ img.nenacteno { visibility: hidden; }
 .lista-obal--lepi .lista .jazyky { background: var(--seda); border-color: var(--linka); }
 .lista-obal--lepi .lista .jazyky a { color: var(--sedy); }
 .lista-obal--lepi .lista .jazyky a:hover { color: var(--text); background: var(--pisek); }
-.lista-obal--lepi .lista .jazyky__akt { background: var(--oliva); color: var(--sv) !important; }
+.lista-obal--lepi .lista .jazyky__akt { background: var(--bila); color: var(--text) !important; box-shadow: 0 1px 3px rgba(30, 36, 28, .16); }
 .lista-obal--lepi .nav a:hover, .lista-obal--lepi .nav a[aria-current="page"] { color: var(--text); background: var(--seda); }
 .lista-obal--lepi .btn--sv { background: var(--oliva); color: var(--sv); }
 .lista-obal--lepi .menu-btn { color: var(--text); border-color: var(--linka); background: none; }
@@ -235,9 +235,6 @@ img.nenacteno { visibility: hidden; }
 .predstaveni__text { display: grid; gap: 20px; justify-items: start; }
 .predstaveni__text p { color: var(--sedy); max-width: 54ch; }
 @media (min-width: 960px) { .predstaveni { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 72px; } }
-.hodnoceni-radek { display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; }
-.hodnoceni-radek b { display: inline-grid; place-items: center; min-width: 44px; height: 32px; padding: 0 8px; border-radius: 8px; background: var(--oliva); color: var(--sv); font-size: 15px; }
-.hodnoceni-radek span { color: var(--sedy); font-weight: 400; }
 
 /* 9. Výhody (ikony v kruhu) a dlaždice ------------------------------- */
 .vyhody { display: grid; gap: 40px 32px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -270,7 +267,9 @@ a.dlazdice:hover { box-shadow: var(--stin); border-color: transparent; }
 .karta__telo p { font-size: 14px; color: var(--sedy); }
 .karta__cena { margin-top: auto; padding-top: 16px; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 13px; color: var(--sedy); }
 .karta__cena b { font-size: 18px; font-weight: 650; color: var(--text); letter-spacing: -0.01em; }
-.karta__detail { font-size: 14px; font-weight: 600; color: var(--oliva); }
+.karta__detail { display: inline-flex; align-items: center; gap: 4px; font-size: 14px; font-weight: 600; color: var(--oliva); }
+.karta__detail .i { width: 16px; height: 16px; transition: transform .2s; }
+.karta:hover .karta__detail .i { transform: translateX(3px); }
 .pod-kartami { margin-top: 28px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px 24px; font-size: 14px; color: var(--sedy); }
 
 /* 11. Celý areál ----------------------------------------------------- */
@@ -470,7 +469,7 @@ a.dlazdice:hover { box-shadow: var(--stin); border-color: transparent; }
 .paticka__sloupce a:hover { color: var(--sv); text-decoration: underline; text-underline-offset: 4px; }
 .paticka__znacka { grid-column: 1 / -1; display: grid; gap: 14px; align-content: start; }
 .paticka__znacka p { color: var(--sv-60); max-width: 32ch; }
-@media (min-width: 900px) { .paticka__sloupce { grid-template-columns: 1.5fr repeat(3, minmax(0, 1fr)); } .paticka__znacka { grid-column: auto; } }
+@media (min-width: 900px) { .paticka__sloupce { grid-template-columns: 1.4fr repeat(4, minmax(0, 1fr)); } .paticka__znacka { grid-column: auto; } }
 .paticka__spodni { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding-top: 24px; border-top: 1px solid var(--linka-sv); font-size: 13px; color: var(--sv-60); }
 .paticka__spodni a { display: inline-flex; align-items: center; gap: 6px; text-decoration: none; }
 .paticka__spodni a:hover { color: var(--sv); }
@@ -516,3 +515,76 @@ a.dlazdice:hover { box-shadow: var(--stin); border-color: transparent; }
 .legenda__volno { background: #E2F0DA; box-shadow: inset 0 0 0 1px #C7E0BB !important; }
 .legenda__castecne { background: repeating-linear-gradient(135deg, #FCE7B6 0 5px, #F7D993 5px 10px); }
 .legenda__obsazeno { background: #D8453A; }
+
+/* 27. Mobil: výška hero, tlačítka, fakta --------------------------------- */
+.hero .akce { justify-content: center; }
+@media (max-width: 700px) {
+  .hero, .hero--pod { min-height: 0; }
+  .hero__obsah { padding-block: 64px 48px; }
+  .hero--pod .hero__obsah { padding-block: 40px 40px; }
+  .hero__obsah h1 { font-size: clamp(36px, 10vw, 48px); }
+  .hero--pod .hero__obsah h1 { font-size: clamp(32px, 9vw, 42px); }
+}
+@media (max-width: 560px) {
+  .akce { flex-direction: column; align-items: stretch; width: 100%; }
+  .akce .btn { width: 100%; }
+  .hero__bok { width: 100%; }
+  .pod-kartami { flex-direction: column; }
+  .pod-kartami .btn { width: 100%; }
+}
+@media (max-width: 899px) {
+  .fakta-pruh li:nth-child(n + 3) { border-top: 1px solid var(--linka); }
+  .fakta-pruh li:nth-child(2n) { border-left: 1px solid var(--linka); }
+  .fakta-pruh li { padding: 18px 14px; gap: 10px; }
+}
+.paticka__sloupce ul { overflow-wrap: anywhere; }
+
+/* 28. Mobil: karty na posun, kratší bloky ------------------------------ */
+@media (max-width: 639px) {
+  .karty { grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: 80%; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-inline: calc(var(--p) * -1); padding-inline: var(--p); scroll-padding-inline: var(--p); padding-bottom: 6px; }
+  .karty::-webkit-scrollbar { display: none; }
+  .karta { scroll-snap-align: start; }
+  .karta:hover { transform: none; }
+}
+@media (max-width: 959px) {
+  .typ .galerie { order: -1; }
+  .typ--obracene .typ__text { order: 0; }
+  .aktivita--obracene .ram { order: 0; }
+}
+@media (max-width: 759px) {
+  .osoba .ram { max-width: 260px; aspect-ratio: 1 / 1; }
+  .mapa, .mapa iframe { min-height: 300px; }
+  .predstaveni .ram, .celek .ram { aspect-ratio: 3 / 2; }
+}
+
+/* 29. Proužek s fakty na mobilu: ikona nad textem, na střed ------------- */
+.fakta-pruh b { white-space: nowrap; }
+.fakta-pruh span { text-wrap: balance; }
+@media (max-width: 899px) {
+  .fakta-pruh li { flex-direction: column; align-items: center; justify-content: flex-start; gap: 8px; padding: 20px 10px; text-align: center; }
+  .fakta-pruh .i { width: 24px; height: 24px; }
+  .fakta-pruh b { font-size: 16px; }
+  .fakta-pruh span { display: block; margin-top: 2px; }
+}
+
+/* 30. Hodnocení: hvězdičky a souhrn -------------------------------------- */
+.hvezdy { display: inline-flex; gap: 2px; color: #F2A922; }
+.hv { width: 20px; height: 20px; display: block; }
+.hv--prazdna { color: #E3DFD3; }
+.hv-pul { position: relative; display: block; width: 20px; height: 20px; }
+.hv-pul__plna { position: absolute; inset: 0 50% 0 0; overflow: hidden; }
+.hv-pul__plna .hv { width: 20px; }
+.i--hvezda { color: #F2A922 !important; }
+
+.hodnoceni-radek { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font-size: 15px; font-weight: 400; color: var(--sedy); text-decoration: none; }
+.hodnoceni-radek b { color: var(--text); font-weight: 650; }
+.hodnoceni-radek:hover span:last-child { text-decoration: underline; text-underline-offset: 3px; }
+
+.souhrn { display: inline-flex; align-items: center; gap: 16px; margin-top: 4px; padding: 14px 24px 14px 20px; background: var(--bila); border: 1px solid var(--linka); border-radius: 999px; text-decoration: none; color: var(--text); transition: box-shadow .25s, border-color .25s; }
+.souhrn:hover { box-shadow: var(--stin); border-color: transparent; }
+.souhrn__cislo { font-size: 44px; font-weight: 650; letter-spacing: -0.04em; line-height: 1; }
+.souhrn__pravo { display: grid; gap: 6px; justify-items: start; text-align: left; }
+.souhrn .hv, .souhrn .hv-pul { width: 24px; height: 24px; }
+.souhrn .hv-pul__plna .hv { width: 24px; }
+.souhrn__text { font-size: 14px; color: var(--sedy); }
+.souhrn:hover .souhrn__text { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }

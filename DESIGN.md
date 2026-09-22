@@ -19,8 +19,19 @@ Verze 6, čistá. Inspirace: cambriavacationrentals.com. Bílá stránka, jedna 
 
 Pravidla:
 - Bílá stránka, sekce se střídají bílá a světle šedá. Tmavá je jen patička.
-- Zelená je jediná akcentová barva.
+- Zelená je jediná akcentová barva. Výjimkou jsou zlaté hvězdičky u hodnocení a barvy stavů v kalendáři.
 - Karty: bílé, tenký rámeček, rádius 16 px. Stín se objeví až po najetí myší.
+
+## Mobil
+
+- Hero nemá na mobilu pevnou výšku, je jen tak vysoké, kolik zabere obsah. Na desktopu nejvýš 74 % výšky okna (podstránky 48 %).
+- Skupiny tlačítek (`.akce`) jsou pod 560 px přes celou šířku a pod sebou.
+- Karty ubytování se na mobilu posouvají do strany.
+- U typů ubytování a aktivit je na mobilu vždy nejdřív fotka, pak text.
+
+## Hodnocení
+
+Hodnocení z Google je nejsilnější důkaz, proto má vlastní podobu: zlaté hvězdičky #F2A922 (poslední napůl, `.hvezdy`), v sekci recenzí bílá pilulka s velkým číslem 4,5 (`.souhrn`), v úvodním bloku řádek s hvězdičkami (`.hodnoceni-radek`) a v proužku s fakty plná zlatá hvězda. U jednotlivých recenzí hvězdičky nejsou, dokud neznáme jejich skutečné hodnocení. Po napojení Google API se doplní.
 
 ## Kalendář obsazenosti
 
@@ -28,7 +39,7 @@ Klasické barvy stavů, aby se daly přečíst na první pohled: volno světle z
 
 ## Přepínač jazyka
 
-Pilulka CZ / EN (`.jazyky`). Na fotce je sklo s bílou aktivní volbou, v přilepené liště šedá s olivovou aktivní volbou, na mobilu je v menu vedle tlačítka Volné termíny.
+Pilulka CZ / EN (`.jazyky`). Na fotce je sklo s bílou aktivní volbou, v přilepené liště šedá s bílou aktivní volbou (ne zelenou, aby se nebila se zeleným tlačítkem), na mobilu je v menu vedle tlačítka Volné termíny.
 
 ## Písmo
 

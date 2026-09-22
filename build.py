@@ -73,15 +73,27 @@ FOTKY = {
 
 IKONY = SABLONY / "ikony.svg"
 
-# stránka -> (výstupní soubor, hloubka vůči kořeni, aktivní položka menu)
+# stránka -> (výstupní soubor, hloubka vůči kořeni, aktivní položka menu, jazyk, protějšek v druhém jazyce)
+# Šablony anglické verze jsou v _sablony/en/, stejně jako její hlavička a patička.
 STRANKY = {
-    "index": ("index.html", "", ""),
-    "ubytovani": ("ubytovani/index.html", "../", "ubytovani"),
-    "aktivity": ("aktivity/index.html", "../", "aktivity"),
-    "cenik": ("cenik/index.html", "../", "cenik"),
-    "kontakt": ("kontakt/index.html", "../", "kontakt"),
-    "styleguide": ("styleguide.html", "", ""),
+    "index": ("index.html", "", "", "cs", "en/index"),
+    "ubytovani": ("ubytovani/index.html", "../", "ubytovani", "cs", "en/ubytovani"),
+    "aktivity": ("aktivity/index.html", "../", "aktivity", "cs", "en/aktivity"),
+    "cenik": ("cenik/index.html", "../", "cenik", "cs", "en/cenik"),
+    "kontakt": ("kontakt/index.html", "../", "kontakt", "cs", "en/kontakt"),
+    "styleguide": ("styleguide.html", "", "", "cs", None),
+    "en/index": ("en/index.html", "../", "", "en", "index"),
+    "en/ubytovani": ("en/accommodation/index.html", "../../", "ubytovani", "en", "ubytovani"),
+    "en/aktivity": ("en/activities/index.html", "../../", "aktivity", "en", "aktivity"),
+    "en/cenik": ("en/pricing/index.html", "../../", "cenik", "en", "cenik"),
+    "en/kontakt": ("en/contact/index.html", "../../", "kontakt", "en", "kontakt"),
 }
+
+
+def url_stranky(nazev, root):
+    """Relativní odkaz na stránku z pohledu stránky s daným rootem."""
+    vystup = STRANKY[nazev][0]
+    return root + (vystup[: -len("index.html")] if vystup.endswith("index.html") else vystup)
 
 def ikona(nazev):
     return f'<svg class="i" aria-hidden="true"><use href="#i-{nazev}"/></svg>'
@@ -112,12 +124,18 @@ def doplnit(text, root, aktivni):
 
 
 def sestavit(nazev):
-    vystup, root, aktivni = STRANKY[nazev]
+    vystup, root, aktivni, jazyk, protejsek = STRANKY[nazev]
     zdroj = (SABLONY / f"{nazev}.html").read_text(encoding="utf-8")
+    slozka = SABLONY / "en" if jazyk == "en" else SABLONY
     for cast in ("hlava-meta", "hlavicka", "paticka"):
-        zdroj = zdroj.replace(
-            "{{" + cast + "}}", (SABLONY / f"{cast}.html").read_text(encoding="utf-8")
-        )
+        soubor = slozka / f"{cast}.html"
+        if not soubor.exists():
+            soubor = SABLONY / f"{cast}.html"
+        zdroj = zdroj.replace("{{" + cast + "}}", soubor.read_text(encoding="utf-8"))
+    tady = url_stranky(nazev, root)
+    tam = url_stranky(protejsek, root) if protejsek else url_stranky("en/index" if jazyk == "cs" else "index", root)
+    zdroj = zdroj.replace("{{URL_CZ}}", tady if jazyk == "cs" else tam)
+    zdroj = zdroj.replace("{{URL_EN}}", tady if jazyk == "en" else tam)
     hotovo = doplnit(zdroj, root, aktivni)
 
     zbytky = re.findall(r"\{\{[^}]+\}\}", hotovo)

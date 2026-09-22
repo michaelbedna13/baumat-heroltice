@@ -136,10 +136,10 @@ img.nenacteno { visibility: hidden; }
 /* 5. Hero ---------------------------------------------------------------- */
 .hero {
   position: relative; z-index: 50; isolation: isolate; overflow: hidden;
-  min-height: min(74svh, 700px); display: flex; flex-direction: column; color: var(--sv);
+  min-height: min(86svh, 820px); display: flex; flex-direction: column; color: var(--sv);
   background: linear-gradient(160deg, #56693F 0%, #33432A 60%, #1E2A1C 100%);
 }
-.hero--pod { min-height: min(48svh, 440px); }
+.hero--pod { min-height: min(62svh, 580px); }
 .hero__foto { position: absolute; inset: 0; z-index: -2; }
 .hero__foto img { width: 100%; height: 100%; object-fit: cover; }
 .hero::after {
@@ -147,7 +147,7 @@ img.nenacteno { visibility: hidden; }
   background: linear-gradient(180deg, rgba(14, 18, 12, .5) 0%, rgba(14, 18, 12, .28) 30%, rgba(14, 18, 12, .32) 70%, rgba(14, 18, 12, .6) 100%);
 }
 .hero__obsah { margin-block: auto; padding-block: 56px 64px; display: grid; gap: 22px; justify-items: center; text-align: center; }
-.hero__obsah h1 { font-size: clamp(42px, 6vw, 80px); font-weight: 560; line-height: 1.02; letter-spacing: -0.035em; max-width: 15ch; margin-inline: auto; text-shadow: 0 2px 24px rgba(0, 0, 0, .18); }
+.hero__obsah h1 { font-size: clamp(42px, 6vw, 80px); font-weight: 560; line-height: 1.02; letter-spacing: -0.035em; max-width: 18ch; margin-inline: auto; text-shadow: 0 2px 24px rgba(0, 0, 0, .18); }
 .hero--pod .hero__obsah h1 { font-size: clamp(38px, 5vw, 64px); }
 .hero__bok { display: grid; gap: 22px; justify-items: center; }
 .hero__bok .perex { margin-inline: auto; }

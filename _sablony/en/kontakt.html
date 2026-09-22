@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{hlava-meta}}
+  <title>Contact and Availability | Baumat Heroltice Holiday Resort</title>
+  <meta name="description" content="Contact the Baumat Heroltice holiday resort: phone, email, availability calendar and directions to the resort in the Svratka river valley, 25 km from Brno.">
+  <link rel="canonical" href="https://baumatheroltice.cz/en/contact/">
+  <link rel="alternate" hreflang="cs" href="https://baumatheroltice.cz/kontakt/">
+  <link rel="alternate" hreflang="en" href="https://baumatheroltice.cz/en/contact/">
+  <link rel="alternate" hreflang="x-default" href="https://baumatheroltice.cz/kontakt/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="Contact and Availability | Baumat Heroltice">
+  <meta property="og:description" content="Phone, email, availability calendar and directions to the resort by the Svratka river.">
+  <meta property="og:url" content="https://baumatheroltice.cz/en/contact/">
+  <meta property="og:image" content="{{foto:hero-areal}}">
+
+</head>
+<body>
+<header class="hero hero--pod hero--s-formularem">
+  <div class="hero__foto"><img src="{{foto:hero-kontakt}}" alt="Baumat Heroltice holiday resort in the Svratka river valley" fetchpriority="high"></div>
+{{hlavicka}}
+  <div class="wrap hero__obsah">
+    <div>
+      <ol class="drobky"><li><a href="{{ROOT}}en/">Home</a></li><li>Contact</li></ol>
+      <h1>Get in touch</h1>
+      <p class="perex" style="margin-top: 24px">We are happy to help with prices, availability and choosing the right accommodation. Give us a call or send us an email.</p>
+      <div class="akce" style="margin-top: 26px; justify-content: center">
+        <a class="btn btn--sv" href="tel:+420601594780">{{i:phone}}601&nbsp;594&nbsp;780</a>
+        <a class="btn btn--obrys-sv" href="mailto:drahosova@baumat-brno.cz">{{i:mail}}Send an email</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="obsah" id="obsah">
+
+  <section class="wrap" aria-labelledby="poloha-nadpis">
+    <div class="kontakt">
+      <div class="kontakt__text">
+        <h2 id="poloha-nadpis">How to find us</h2>
+        <p class="perex">Bookings and questions about your stay are handled by our office. Get in touch any time and we'll gladly check availability.</p>
+        <ul class="kontakty">
+          <li><a href="tel:+420601594780"><b>+420 601 594 780</b>{{i:phone}}</a></li>
+          <li><a href="tel:+420549123611"><b>+420 549 123 611</b>{{i:phone}}</a></li>
+          <li><a href="mailto:drahosova@baumat-brno.cz"><b>drahosova@baumat-brno.cz</b>{{i:mail}}</a></li>
+        </ul>
+        <!-- ADRESA AREÁLU: doplnit po potvrzení od Baumatu (katalogy uvádějí Heroltice 166 i Heroltice 1). -->
+        <ul class="poloha">
+          <li>{{i:map-pin}}<div><strong>Heroltice</strong><span>the resort is right on the Svratka river</span></div></li>
+          <li>{{i:car}}<div><strong>25&nbsp;km from Brno</strong><span>towards Tišnov</span></div></li>
+        </ul>
+        <p class="firma">The resort is operated by <strong>BAUMAT, s.r.o.</strong><br>Company ID 48529753, VAT ID CZ48529753<br>Kabátníkova 105/2, Ponava, 602 00 Brno</p>
+      </div>
+      <div class="mapa">
+        <iframe title="Map: Baumat Heroltice holiday resort" src="https://maps.google.com/maps?q=Rekrea%C4%8Dn%C3%AD%20are%C3%A1l%20BAUMAT&amp;t=m&amp;z=12&amp;output=embed&amp;iwloc=near" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="pas" aria-labelledby="spravce-nadpis">
+    <div class="wrap osoba">
+      <div class="ram"><img src="{{foto:spravce}}" alt="Josef Kavalec, resort manager" loading="lazy"></div>
+      <div>
+        <p class="osoba__role">Resort manager</p>
+        <h2 id="spravce-nadpis">Josef Kavalec</h2>
+        <p class="perex" style="margin-top: 20px">Questions about the resort, a change of arrival time or tips for trips in the area. Get in touch with him directly on site.</p>
+        <ul class="kontakty" style="margin-top: 28px; max-width: 520px">
+          <li><a href="tel:+420702187583"><b>+420 702 187 583</b>{{i:phone}}</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="kalendar" aria-labelledby="kalendar-nadpis">
+    <div class="hlava">
+      <h2 id="kalendar-nadpis">Resort availability</h2>
+      <p>The calendar shows the occupancy of individual accommodation units and is intended mainly as a guide.</p>
+    </div>
+    <div class="kalendar-blok">
+      <div class="kalendar" data-kalendar="{{ROOT}}assets/data/obsazenost.json">
+        <div class="kalendar__ovladani">
+          <p class="kalendar__mesic" data-kalendar-mesic aria-live="polite">Calendar</p>
+          <div class="kalendar__sipky">
+            <button class="kalendar__sipka" type="button" data-kalendar-zpet aria-label="Previous month"><svg class="i" aria-hidden="true" style="transform:rotate(180deg)"><use href="#i-arrow-right"/></svg></button>
+            <button class="kalendar__sipka" type="button" data-kalendar-vpred aria-label="Next month">{{i:arrow-right}}</button>
+          </div>
+        </div>
+        <div class="kalendar__mrizka" data-kalendar-mrizka></div>
+      </div>
+      <div class="kalendar__bok">
+        <ul class="legenda">
+          <li><i class="legenda__volno"></i>Available</li>
+          <li><i class="legenda__castecne"></i>Partly booked</li>
+          <li><i class="legenda__obsazeno"></i>Booked</li>
+        </ul>
+        <p class="poznamka">Some accommodation types, such as the cabins, have several units. Even when a date is marked as partly booked, some cabins may still be available. We'll gladly check availability for you and help you choose.</p>
+        <div class="akce"><a class="btn btn--les" href="tel:+420601594780">{{i:phone}}Check by phone</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="dal-nadpis">
+    <div class="hlava">
+      <h2 id="dal-nadpis">Before you get in touch</h2>
+      <p>Take a look at the accommodation and prices first, so we're on the same page.</p>
+    </div>
+    <div class="mozaika">
+      <a class="dlazdice" href="{{ROOT}}en/accommodation/">{{i:bed}}<div><h3>Accommodation</h3><p>Apartment, units and cabins including facilities.</p></div></a>
+      <a class="dlazdice" href="{{ROOT}}en/pricing/">{{i:file-text}}<div><h3>Price list 2026</h3><p>Accommodation prices, whole resort rental, spaces and fees.</p></div></a>
+      <a class="dlazdice" href="{{ROOT}}en/activities/">{{i:swimming}}<div><h3>Activities and facilities</h3><p>Pool, tennis, campfire area, children's playground and clubhouse.</p></div></a>
+    </div>
+  </section>
+
+</main>
+{{paticka}}
+</body>
+</html>

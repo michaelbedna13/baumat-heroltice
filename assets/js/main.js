@@ -1,4 +1,16 @@
 (function () {
+  /* Texty podle jazyka stránky (html lang="cs" nebo "en") ------------ */
+  var EN = document.documentElement.lang === "en";
+  var T = EN
+    ? { prohlizec: "Photo viewer", zavrit: "Close photos", zpet: "Previous photo", vpred: "Next photo", z: " of ",
+        mesice: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        dny: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        stavy: { obsazeno: "booked", castecne: "partly booked", volno: "available" }, locale: "en-GB" }
+    : { prohlizec: "Prohlížeč fotek", zavrit: "Zavřít fotky", zpet: "Předchozí fotka", vpred: "Další fotka", z: " z ",
+        mesice: ["leden", "únor", "březen", "duben", "květen", "červen", "červenec", "srpen", "září", "říjen", "listopad", "prosinec"],
+        dny: ["po", "út", "st", "čt", "pá", "so", "ne"],
+        stavy: { obsazeno: "obsazeno", castecne: "částečně obsazeno", volno: "volno" }, locale: "cs-CZ" };
+
   /* Fotky, které se nenačtou, se skryjí a zůstane jen plocha rámu ---- */
   document.querySelectorAll(".ram img, .karta img, .hero__foto img").forEach(function (img) {
     function skryj() { img.classList.add("nenacteno"); }
@@ -63,20 +75,20 @@
   if (galerie.length && window.HTMLDialogElement) {
     var dialog = document.createElement("dialog");
     dialog.className = "lightbox";
-    dialog.setAttribute("aria-label", "Prohlížeč fotek");
+    dialog.setAttribute("aria-label", T.prohlizec);
     dialog.innerHTML =
       '<div class="lightbox__plocha">' +
       '  <div class="lightbox__horni">' +
       "    <span data-lb-nazev></span>" +
-      '    <button class="lightbox__tlacitko" type="button" data-lb-zavrit aria-label="Zavřít fotky">' +
+      '    <button class="lightbox__tlacitko" type="button" data-lb-zavrit aria-label="' + T.zavrit + '">' +
       '      <svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button>' +
       "  </div>" +
       '  <div class="lightbox__obraz"><img alt="" data-lb-obraz></div>' +
       '  <div class="lightbox__spodni">' +
-      '    <button class="lightbox__tlacitko" type="button" data-lb-zpet aria-label="Předchozí fotka">' +
+      '    <button class="lightbox__tlacitko" type="button" data-lb-zpet aria-label="' + T.zpet + '">' +
       '      <svg class="i" aria-hidden="true" style="transform:rotate(180deg)"><use href="#i-arrow-right"/></svg></button>' +
       '    <p class="lightbox__popisek"><span data-lb-popis></span><br><span data-lb-pocet></span></p>' +
-      '    <button class="lightbox__tlacitko" type="button" data-lb-vpred aria-label="Další fotka">' +
+      '    <button class="lightbox__tlacitko" type="button" data-lb-vpred aria-label="' + T.vpred + '">' +
       '      <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>' +
       "  </div>" +
       "</div>";
@@ -96,7 +108,7 @@
       obraz.alt = f.alt;
       nazevEl.textContent = nazev;
       popisEl.textContent = f.alt;
-      pocetEl.textContent = index + 1 + " z " + fotky.length;
+      pocetEl.textContent = index + 1 + T.z + fotky.length;
       var vice = fotky.length > 1;
       dialog.querySelector("[data-lb-zpet]").hidden = !vice;
       dialog.querySelector("[data-lb-vpred]").hidden = !vice;
@@ -137,9 +149,9 @@
   /* Kalendář obsazenosti ---------------------------------------- */
   var kalendar = document.querySelector("[data-kalendar]");
   if (kalendar) {
-    var MESICE = ["leden", "únor", "březen", "duben", "květen", "červen", "červenec", "srpen", "září", "říjen", "listopad", "prosinec"];
-    var DNY = ["po", "út", "st", "čt", "pá", "so", "ne"];
-    var STAVY = { obsazeno: "obsazeno", castecne: "částečně obsazeno", volno: "volno" };
+    var MESICE = T.mesice;
+    var DNY = T.dny;
+    var STAVY = T.stavy;
 
     var mrizka = kalendar.querySelector("[data-kalendar-mrizka]");
     var popisek = kalendar.querySelector("[data-kalendar-mesic]");
@@ -184,8 +196,8 @@
         if (datum < den0) bunka.classList.add("kalendar__den--minuly");
         if (datum.getTime() === den0.getTime()) bunka.classList.add("kalendar__den--dnes");
         bunka.innerHTML = "<span>" + den + "</span>";
-        var slovy = datum.toLocaleDateString("cs-CZ", { day: "numeric", month: "long", year: "numeric" });
-        bunka.setAttribute("aria-label", slovy + ", " + (STAVY[stav] || "volno"));
+        var slovy = datum.toLocaleDateString(T.locale, { day: "numeric", month: "long", year: "numeric" });
+        bunka.setAttribute("aria-label", slovy + ", " + (STAVY[stav] || STAVY.volno));
         mrizka.appendChild(bunka);
       }
 

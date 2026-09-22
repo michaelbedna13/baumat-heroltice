@@ -588,3 +588,60 @@ a.dlazdice:hover { box-shadow: var(--stin); border-color: transparent; }
 .souhrn .hv-pul__plna .hv { width: 24px; }
 .souhrn__text { font-size: 14px; color: var(--sedy); }
 .souhrn:hover .souhrn__text { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
+
+/* 31. Detail typu ubytování (karta s galerií a cenou) -------------------- */
+.detaily { display: grid; gap: clamp(28px, 3.6vw, 48px); }
+.detail { background: var(--bila); border: 1px solid var(--linka); border-radius: var(--r-velky); overflow: hidden; scroll-margin-top: 100px; }
+.detail__galerie.galerie { display: grid; gap: 6px; padding: 6px; grid-template-columns: 1fr 1fr; }
+.detail__galerie.galerie > * { border-radius: 14px; aspect-ratio: 4 / 3; }
+.detail__galerie.galerie > :first-child { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
+@media (min-width: 760px) {
+  .detail__galerie.galerie { grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; height: clamp(300px, 36vw, 460px); }
+  .detail__galerie.galerie > * { aspect-ratio: auto; }
+  .detail__galerie.galerie > :first-child { grid-column: 1; grid-row: 1 / span 2; aspect-ratio: auto; }
+}
+.detail__telo { display: grid; gap: 28px; padding: clamp(22px, 3vw, 40px); }
+@media (min-width: 960px) { .detail__telo { grid-template-columns: minmax(0, 1fr) 300px; gap: 56px; } }
+.detail__hlavni { display: grid; gap: 18px; align-content: start; }
+.detail__hlavni h2 { font-size: clamp(28px, 3vw, 38px); }
+.detail__hlavni .perex { max-width: 60ch; }
+.cipy { display: flex; flex-wrap: wrap; gap: 8px; }
+.cipy li { display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px 7px 11px; border-radius: 999px; background: var(--seda); font-size: 14px; font-weight: 560; }
+.cipy .i { width: 17px; height: 17px; color: var(--oliva); }
+.detail__podnadpis { font-size: 15px; font-weight: 650; margin-top: 6px; }
+@media (min-width: 700px) { .parametry--2 { display: grid; grid-template-columns: 1fr 1fr; column-gap: 32px; } }
+.detail__cena { align-self: start; display: grid; gap: 4px; padding: 24px; border-radius: var(--r); background: var(--seda); }
+@media (min-width: 960px) { .detail__cena { position: sticky; top: 100px; } }
+.detail__castka { font-size: 40px; font-weight: 650; letter-spacing: -0.04em; line-height: 1.05; color: var(--oliva); }
+.detail__jednotka { font-size: 14px; color: var(--sedy); }
+.detail__noc { font-size: 14px; color: var(--sedy); margin: 14px 0 16px; padding-top: 14px; border-top: 1px solid var(--linka); }
+.detail__cena .btn { width: 100%; }
+.detail__cena .odkaz { justify-self: center; margin-top: 10px; }
+
+/* 32. Karty zázemí ----------------------------------------------------- */
+.polozky--karty { gap: 20px; }
+.polozky--karty .polozka { display: flex; flex-direction: column; gap: 0; background: var(--bila); border: 1px solid var(--linka); border-radius: var(--r); overflow: hidden; }
+.polozky--karty .polozka .ram { border-radius: 0; }
+.polozky--karty .polozka__telo { display: flex; flex-direction: column; gap: 12px; padding: 22px 22px 24px; flex: 1; }
+.polozky--karty .polozka__meta { margin-top: auto; padding-top: 12px; }
+@media (min-width: 900px) { .polozky--karty.polozky--3 { gap: 24px; } }
+
+/* 33. Aktivity: jedna hlavní karta a jednotná mřížka ------------------ */
+.aktivity { display: grid; grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 640px) { .aktivity { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 900px) { .aktivity { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; } }
+.aktivita { display: flex; flex-direction: column; background: var(--bila); border: 1px solid var(--linka); border-radius: var(--r); overflow: hidden; scroll-margin-top: 100px; }
+.aktivita > .ram { border-radius: 0; aspect-ratio: 3 / 2; }
+.aktivita .polozka__telo { display: flex; flex-direction: column; gap: 10px; padding: 22px 22px 24px; flex: 1; }
+.aktivita .polozka__telo > p { font-size: 15px; }
+.aktivita .polozka__meta { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--linka); }
+.aktivita .parametry { margin-top: 4px; }
+.aktivita--hlavni { grid-column: 1 / -1; }
+@media (min-width: 900px) {
+  .aktivita--hlavni { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); }
+  .aktivita--hlavni > .ram { aspect-ratio: auto; min-height: 400px; }
+  .aktivita--hlavni .polozka__telo { justify-content: center; padding: 48px; gap: 16px; }
+  .aktivita--hlavni h3 { font-size: clamp(28px, 2.8vw, 38px); font-weight: 560; letter-spacing: -0.03em; }
+  .aktivita--hlavni .polozka__telo > p { font-size: 17px; }
+  .aktivita--hlavni .polozka__meta { margin-top: 12px; }
+}

@@ -54,96 +54,123 @@
     </ul>
   </section>
 
-  <article class="wrap" id="apartman" aria-labelledby="apartman-nadpis">
-    <div class="typ">
-      <div class="typ__text">
-        <h2 id="apartman-nadpis">Apartment</h2>
-        <p class="typ__cena">290&nbsp;CZK<small>per bed per night, 380&nbsp;CZK for a one-night stay</small></p>
-        <p class="perex">The most comfortable accommodation at the resort. Your own bathroom and kitchen, so you have everything you need.</p>
-        <ul class="parametry">
+  <section class="wrap detaily" aria-label="Accommodation types">
+    <article class="detail" id="apartman" aria-labelledby="apartman-nadpis">
+      <div class="detail__galerie galerie" data-galerie="Apartment">
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: apartment exterior"><img src="{{foto:apartman-1}}" alt="Apartment at the Baumat resort" loading="lazy"></button><span class="lupa">{{i:photo}}3 photos</span></figure>
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: room in the apartment"><img src="{{foto:apartman-2}}" alt="Room in the apartment with two beds" loading="lazy"></button></figure>
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: apartment kitchen"><img src="{{foto:apartman-3}}" alt="Kitchen in the apartment" loading="lazy"></button></figure>
+      </div>
+      <div class="detail__telo">
+        <div class="detail__hlavni">
+          <h2 id="apartman-nadpis">Apartment</h2>
+          <ul class="cipy"><li>{{i:users}}6 beds</li><li>{{i:door}}3 rooms</li><li>{{i:bath}}Private bathroom</li><li>{{i:tools-kitchen-2}}Private kitchen</li></ul>
+          <p class="perex">The most comfortable accommodation at the resort. Your own bathroom and kitchen, so you have everything you need.</p>
+          <h3 class="detail__podnadpis">Facilities</h3>
+          <ul class="parametry parametry--2">
           <li>{{i:bed}}3 separate rooms, each with two single beds</li>
           <li>{{i:bath}}Private bathroom with shower and toilet</li>
           <li>{{i:tools-kitchen-2}}Separate kitchen with a fridge, microwave and kettle</li>
           <li>{{i:plug}}Power sockets and reading lamps in every room</li>
           <li>{{i:door}}Wardrobe in every room</li>
         </ul>
-        <div class="akce"><a class="btn btn--les" href="{{ROOT}}en/contact/">Ask about dates</a></div>
+        </div>
+        <aside class="detail__cena">
+          <p class="detail__castka">290&nbsp;CZK</p>
+          <p class="detail__jednotka">per bed per night</p>
+          <p class="detail__noc">380&nbsp;CZK for a one-night stay.</p>
+          <a class="btn btn--les" href="{{ROOT}}en/contact/">Ask about dates</a>
+          <a class="odkaz" href="{{ROOT}}en/contact/#kalendar">Availability{{i:arrow-right}}</a>
+        </aside>
       </div>
-      <div class="galerie" data-galerie="Apartment">
-        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: apartment exterior"><img src="{{foto:apartman-1}}" alt="Apartment at the Baumat resort" loading="lazy"></button><span class="lupa">{{i:photo}}3 photos</span></figure>
-        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: room in the apartment"><img src="{{foto:apartman-2}}" alt="Room in the apartment with two beds" loading="lazy"></button></figure>
-        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: apartment kitchen"><img src="{{foto:apartman-3}}" alt="Kitchen in the apartment" loading="lazy"></button></figure>
+    </article>
+    <article class="detail" id="slusovice-bunky" aria-labelledby="slusovice-bunky-nadpis">
+      <div class="detail__galerie galerie" data-galerie="Cottages">
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: cottages with a veranda"><img src="{{foto:slusovice-1}}" alt="Cottages with a veranda" loading="lazy"></button><span class="lupa">{{i:photo}}3 photos</span></figure>
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: cottage interior"><img src="{{foto:slusovice-2}}" alt="Cottage interior with three beds" loading="lazy"></button></figure>
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: bathroom facilities"><img src="{{foto:slusovice-3}}" alt="Bathroom facilities by the cottages" loading="lazy"></button></figure>
       </div>
-    </div>
-  </article>
-
-  <article class="wrap" id="slusovice-bunky" aria-labelledby="slusovice-bunky-nadpis">
-    <div class="typ typ--obracene">
-      <div class="typ__text">
-        <h2 id="slusovice-bunky-nadpis">Cottages</h2>
-        <p class="typ__cena">220&nbsp;CZK<small>per bed per night, 280&nbsp;CZK for a one-night stay</small></p>
-        <p class="perex">Separate cottages with a veranda for smaller groups. The bathroom facilities are right next door.</p>
-        <ul class="parametry">
+      <div class="detail__telo">
+        <div class="detail__hlavni">
+          <h2 id="slusovice-bunky-nadpis">Cottages</h2>
+          <ul class="cipy"><li>{{i:users}}12 beds</li><li>{{i:door}}4 cottages</li><li>{{i:bath}}Bathroom next door</li><li>{{i:armchair}}Veranda</li></ul>
+          <p class="perex">Separate cottages with a veranda for smaller groups. The bathroom facilities are right next door.</p>
+          <h3 class="detail__podnadpis">Facilities</h3>
+          <ul class="parametry parametry--2">
           <li>{{i:bed}}4 separate cottages, each with three single beds</li>
           <li>{{i:bath}}Shower and toilet right next to the rooms</li>
           <li>{{i:armchair}}Outdoor seating on the verandas</li>
           <li>{{i:plug}}Power sockets, lamps, a desk with a chair and a wardrobe</li>
           <li>{{i:info-circle}}Small fridge for an extra charge</li>
         </ul>
-        <div class="akce"><a class="btn btn--les" href="{{ROOT}}en/contact/">Ask about dates</a></div>
+        </div>
+        <aside class="detail__cena">
+          <p class="detail__castka">220&nbsp;CZK</p>
+          <p class="detail__jednotka">per bed per night</p>
+          <p class="detail__noc">280&nbsp;CZK for a one-night stay.</p>
+          <a class="btn btn--les" href="{{ROOT}}en/contact/">Ask about dates</a>
+          <a class="odkaz" href="{{ROOT}}en/contact/#kalendar">Availability{{i:arrow-right}}</a>
+        </aside>
       </div>
-      <div class="galerie" data-galerie="Cottages">
-        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: cottages with a veranda"><img src="{{foto:slusovice-1}}" alt="Cottages with a veranda" loading="lazy"></button><span class="lupa">{{i:photo}}3 photos</span></figure>
-        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: cottage interior"><img src="{{foto:slusovice-2}}" alt="Cottage interior with three beds" loading="lazy"></button></figure>
-        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: bathroom facilities"><img src="{{foto:slusovice-3}}" alt="Bathroom facilities by the cottages" loading="lazy"></button></figure>
+    </article>
+    <article class="detail" id="chatky-klasicke" aria-labelledby="chatky-klasicke-nadpis">
+      <div class="detail__galerie galerie" data-galerie="Cabins">
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: row of cabins"><img src="{{foto:hero-ubytovani}}" alt="Row of wooden cabins on the meadow" loading="lazy"></button><span class="lupa">{{i:photo}}3 photos</span></figure>
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: cabin exterior"><img src="{{foto:chatky-2}}" alt="Cabin exterior" loading="lazy"></button></figure>
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: cabin interior"><img src="{{foto:chatky-3}}" alt="Cabin interior with beds" loading="lazy"></button></figure>
       </div>
-    </div>
-  </article>
-
-  <article class="wrap" id="chatky-klasicke" aria-labelledby="chatky-klasicke-nadpis">
-    <div class="typ">
-      <div class="typ__text">
-        <h2 id="chatky-klasicke-nadpis">Cabins</h2>
-        <p class="typ__cena">180&nbsp;CZK<small>per bed per night, 220&nbsp;CZK for a one-night stay</small></p>
-        <p class="perex">Simple accommodation close to nature. The most popular choice for camps and large groups.</p>
-        <ul class="parametry">
+      <div class="detail__telo">
+        <div class="detail__hlavni">
+          <h2 id="chatky-klasicke-nadpis">Cabins</h2>
+          <ul class="cipy"><li>{{i:users}}3 to 4 beds</li><li>{{i:door}}24 cabins</li><li>{{i:bath}}Shared facilities</li><li>{{i:info-circle}}No power sockets</li></ul>
+          <p class="perex">Simple accommodation close to nature. The most popular choice for camps and large groups.</p>
+          <h3 class="detail__podnadpis">Facilities</h3>
+          <ul class="parametry parametry--2">
           <li>{{i:bed}}Cabins 1 to 4 have three single beds</li>
           <li>{{i:bed}}Cabins 5 to 24 have two bunk beds, i.e. 4 beds</li>
           <li>{{i:door}}Two clothes lockers, a table and a chair</li>
           <li>{{i:info-circle}}The cabins have no power sockets</li>
           <li>{{i:bath}}Shared bathroom facilities in the main building</li>
         </ul>
-        <div class="akce"><a class="btn btn--les" href="{{ROOT}}en/contact/">Ask about dates</a></div>
+        </div>
+        <aside class="detail__cena">
+          <p class="detail__castka">180&nbsp;CZK</p>
+          <p class="detail__jednotka">per bed per night</p>
+          <p class="detail__noc">220&nbsp;CZK for a one-night stay.</p>
+          <a class="btn btn--les" href="{{ROOT}}en/contact/">Ask about dates</a>
+          <a class="odkaz" href="{{ROOT}}en/contact/#kalendar">Availability{{i:arrow-right}}</a>
+        </aside>
       </div>
-      <div class="galerie" data-galerie="Cabins">
-        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: row of cabins"><img src="{{foto:hero-ubytovani}}" alt="Row of wooden cabins on the meadow" loading="lazy"></button><span class="lupa">{{i:photo}}3 photos</span></figure>
-        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: cabin exterior"><img src="{{foto:chatky-2}}" alt="Cabin exterior" loading="lazy"></button></figure>
-        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: cabin interior"><img src="{{foto:chatky-3}}" alt="Cabin interior with beds" loading="lazy"></button></figure>
+    </article>
+    <article class="detail" id="chatky-u-hlavni-brany" aria-labelledby="chatky-u-hlavni-brany-nadpis">
+      <div class="detail__galerie galerie" data-galerie="Cabins by the Main Gate">
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: cabins by the main gate"><img src="{{foto:brana-1}}" alt="Cabins by the Main Gate of the resort" loading="lazy"></button><span class="lupa">{{i:photo}}3 photos</span></figure>
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: room in the cabin"><img src="{{foto:brana-2}}" alt="Room in a cabin by the main gate" loading="lazy"></button></figure>
+        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: room furnishings"><img src="{{foto:brana-3}}" alt="Room furnishings with a desk and chair" loading="lazy"></button></figure>
       </div>
-    </div>
-  </article>
-
-  <article class="wrap" id="chatky-u-hlavni-brany" aria-labelledby="chatky-u-hlavni-brany-nadpis">
-    <div class="typ typ--obracene">
-      <div class="typ__text">
-        <h2 id="chatky-u-hlavni-brany-nadpis">Cabins by the Main Gate</h2>
-        <p class="typ__cena">180&nbsp;CZK<small>per bed per night, 220&nbsp;CZK for a one-night stay</small></p>
-        <p class="perex">Quiet twin rooms with a desk and power sockets, suitable for working too.</p>
-        <ul class="parametry">
+      <div class="detail__telo">
+        <div class="detail__hlavni">
+          <h2 id="chatky-u-hlavni-brany-nadpis">Cabins by the Main Gate</h2>
+          <ul class="cipy"><li>{{i:users}}2 beds per room</li><li>{{i:plug}}Power sockets</li><li>{{i:armchair}}Desk for working</li><li>{{i:bath}}Shared facilities</li></ul>
+          <p class="perex">Quiet twin rooms with a desk and power sockets, suitable for working too.</p>
+          <h3 class="detail__podnadpis">Facilities</h3>
+          <ul class="parametry parametry--2">
           <li>{{i:bed}}Room with two single beds</li>
           <li>{{i:door}}Wardrobe, desk and chair</li>
           <li>{{i:plug}}Reading lamp and plenty of power sockets</li>
           <li>{{i:bath}}Shared bathroom facilities in the main building</li>
         </ul>
-        <div class="akce"><a class="btn btn--les" href="{{ROOT}}en/contact/">Ask about dates</a></div>
+        </div>
+        <aside class="detail__cena">
+          <p class="detail__castka">180&nbsp;CZK</p>
+          <p class="detail__jednotka">per bed per night</p>
+          <p class="detail__noc">220&nbsp;CZK for a one-night stay.</p>
+          <a class="btn btn--les" href="{{ROOT}}en/contact/">Ask about dates</a>
+          <a class="odkaz" href="{{ROOT}}en/contact/#kalendar">Availability{{i:arrow-right}}</a>
+        </aside>
       </div>
-      <div class="galerie" data-galerie="Cabins by the Main Gate">
-        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: cabins by the main gate"><img src="{{foto:brana-1}}" alt="Cabins by the Main Gate of the resort" loading="lazy"></button><span class="lupa">{{i:photo}}3 photos</span></figure>
-        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: room in the cabin"><img src="{{foto:brana-2}}" alt="Room in a cabin by the main gate" loading="lazy"></button></figure>
-        <figure class="ram"><button class="foto-btn" type="button" aria-label="Open photo: room furnishings"><img src="{{foto:brana-3}}" alt="Room furnishings with a desk and chair" loading="lazy"></button></figure>
-      </div>
-    </div>
-  </article>
+    </article>
+  </section>
 
   <section class="pas" id="zazemi" aria-labelledby="zazemi-nadpis">
     <div class="wrap">
@@ -154,7 +181,7 @@
         <a class="odkaz" href="{{ROOT}}en/pricing/#prostory">Rental prices{{i:arrow-right}}</a>
       </div>
     </div>
-    <ul class="polozky polozky--3">
+    <ul class="polozky polozky--3 polozky--karty">
       <li class="polozka" id="kuchyne-jidelna">
         <div class="ram" data-galerie="Kitchen &amp; Dining Hall">
           <button class="foto-btn" type="button" aria-label="Open photos of the kitchen and dining hall"><img src="{{foto:kuchyne-1}}" alt="Professional kitchen at the Baumat resort" loading="lazy"></button>

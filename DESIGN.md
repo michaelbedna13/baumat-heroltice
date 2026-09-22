@@ -69,8 +69,10 @@ Hanken Grotesk, jedna rodina, variabilní řez uložený lokálně (latin a lati
 | `.celek`, `.celek__cena` | pás s cenou celého areálu |
 | `.ikony`, `.ikony--svetle` | seznam s linkovými ikonami |
 | `.prehled` | tabulka typů ubytování s odkazy na kotvy |
-| `.typ`, `.galerie`, `.parametry` | detail typu ubytování |
-| `.polozky`, `.polozka`, `.aktivity`, `.aktivita--velka` | karty zázemí a aktivit |
+| `.detail`, `.detail__galerie`, `.cipy`, `.detail__cena` | karta typu ubytování: galerie nahoře, vlevo název, štítky s hlavními údaji, popis a vybavení ve dvou sloupcích, vpravo box s cenou a tlačítkem |
+| `.galerie`, `.parametry`, `.parametry--2` | galerie fotek, seznam vybavení s ikonami |
+| `.polozky--karty` | bílé karty zázemí (kuchyně, kuchyňky, sociální zařízení) |
+| `.aktivity`, `.aktivita`, `.aktivita--hlavni` | aktivity: bazén jako široká hlavní karta, ostatní v jednotné mřížce 3 sloupců |
 | `.cenik-skupina`, `.cenik`, `.kotvy` | ceník |
 | `.kontakty`, `.poloha`, `.mapa`, `.osoba` | kontakty |
 | `.odkazy` | odkazové řádky (dokumenty, rozcestník) |

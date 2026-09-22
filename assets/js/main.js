@@ -86,6 +86,17 @@
   var rok = document.querySelector("[data-rok]");
   if (rok) rok.textContent = new Date().getFullYear();
 
+  /* Počet fotek na štítku galerie (počítá i fotky schované pro prohlížeč) */
+  document.querySelectorAll("[data-galerie]").forEach(function (blok) {
+    var stitek = blok.querySelector(".lupa");
+    if (!stitek) return;
+    var n = blok.querySelectorAll("img").length;
+    var text = EN ? (n > 1 ? n + " photos" : "Enlarge")
+                  : (n === 1 ? "Zvětšit" : n < 5 ? n + " fotky" : n + " fotek");
+    var uzel = stitek.lastChild;
+    if (uzel && uzel.nodeType === 3) uzel.textContent = text;
+  });
+
   /* Prohlížeč fotek --------------------------------------------- */
   var galerie = document.querySelectorAll("[data-galerie]");
   if (galerie.length && window.HTMLDialogElement) {

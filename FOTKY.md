@@ -1,86 +1,128 @@
-# Fotky a logo
+# Fotky a dokumenty
 
-Všechny obrázky patří do složky `assets/img/` a **název souboru musí přesně sedět** na první sloupec tabulky, včetně malých písmen a pomlček. Bez diakritiky, bez mezer.
+Všechny fotky patří do složky `assets/img/` jako **WebP** a jmenují se přesně podle sloupce „Nový název“, s koncovkou `.webp`. Celkem jich je 57.
 
-## Formát a velikost
+Pravidla pro názvy: jen malá písmena bez diakritiky, slova oddělená pomlčkou, žádné mezery. Třeba `apartman-1.webp`.
 
-- **Formát:** JPG (fotky) nebo WEBP, pokud ho umíš vyexportovat. WEBP je zhruba o třetinu menší při stejné kvalitě. Pokud použiješ WEBP, přepiš příponu v `build.py` (funkce `foto`).
-- **Šířka:** 1920 px u fotek na šířku, 1400 px u fotek na výšku. Větší nemá smysl, jen zpomalují web.
-- **Kvalita:** JPG kolem 80 %. Cílová velikost souboru do 400 kB, ideálně do 250 kB.
-- **Barevný profil:** sRGB. Fotky z iPhonu bývají v Display P3 a v prohlížeči pak vypadají přesycené.
-- **Bez vodoznaků a bez rámečků.**
+Když ti přiřazení nesedí, klidně prohoď. Na web se dostane ta fotka, která má daný název.
 
-## Jak je nasadit
+## Hlavičky stránek
 
-1. Nahraj fotky do `assets/img/`.
-2. V `build.py` nastav `VLASTNI_FOTKY = True`.
-3. Spusť `python3 build.py`.
+| Nový název | Tvůj soubor | Kde se použije |
+|---|---|---|
+| `hero-uvod.webp` | Hlavní banner_mainpage_result | hlavní fotka úvodní stránky |
+| `hero-ubytovani.webp` | Header photo_result | hlavička stránky Ubytování |
+| `hero-aktivity.webp` | Bazen_1_result | hlavička stránky Aktivity |
+| `hero-cenik.webp` | ceník 1_result | hlavička stránky Ceník |
+| `hero-kontakt.webp` | Kontakt_foto pozadí_result | hlavička stránky Kontakt |
 
-Do té doby se berou fotky ze starého WordPressu, takže web funguje, ale po jeho vypnutí by fotky zmizely.
+## Úvodní stránka
 
-## Seznam fotek
+| Nový název | Tvůj soubor | Kde se použije |
+|---|---|---|
+| `uvod-predstaveni.webp` | uvodni foto_result | blok „Pro oslavy, svatby, tábory i firmy“ |
+| `uvod-cely-areal.webp` | Bazén_mainpage_result | blok „Celý areál jen pro vaši skupinu“ |
+| `spravce.webp` | Josef Kavalec_správce_result | správce (úvod a kontakt) |
 
-Poměr stran je doporučení, ne povinnost. Fotka se vždy ořízne na střed, takže hlavní motiv patří doprostřed.
+## Apartmán
 
-| Soubor | Co má být na fotce | Kde se zobrazí | Doporučený poměr |
-|---|---|---|---|
-| `hero-areal.jpg` | Hlavní fotka úvodní stránky, celkový pohled na areál | homepage hero | 16:9 na šířku |
-| `hero-ubytovani.jpg` | Úvodní fotka stránky Ubytování | ubytovani hero | 16:9 na šířku |
-| `hero-aktivity.jpg` | Úvodní fotka stránky Aktivity | aktivity hero | 16:9 na šířku |
-| `hero-cenik.jpg` | Úvodní fotka stránky Ceník | cenik hero | 16:9 na šířku |
-| `hero-kontakt.jpg` | Úvodní fotka stránky Kontakt | kontakt hero | 16:9 na šířku |
-| `pro-koho.jpg` | Fotka u sekce Pro oslavy, svatby, tábory i firmy | homepage | 3:4 na výšku |
-| `cely-areal.jpg` | Pozadí sekce Celý areál jen pro vaši skupinu | homepage | 16:9 na šířku |
-| `recenze-pozadi.jpg` | Pozadí sekce Co píší hosté | homepage | 16:9 na šířku |
-| `apartman-1.jpg` | Apartmán zvenku, hlavní fotka | ubytovani, homepage | 3:2 na šířku |
-| `apartman-2.jpg` | Pokoj v apartmánu | ubytovani | 3:2 na šířku |
-| `apartman-3.jpg` | Kuchyně v apartmánu | ubytovani | 3:2 na šířku |
-| `apartman-karta.jpg` | Apartmán na výšku do karty na homepage | homepage | 4:5 na výšku |
-| `slusovice-1.jpg` | Buňky Slušovice zvenku | ubytovani, homepage | 3:2 na šířku |
-| `slusovice-2.jpg` | Interiér buňky | ubytovani | 3:2 na šířku |
-| `slusovice-3.jpg` | Sociální zařízení u buněk | ubytovani | 3:2 na šířku |
-| `slusovice-karta.jpg` | Buňky na výšku do karty na homepage | homepage | 4:5 na výšku |
-| `chatky-1.jpg` | Řada chatek na louce | ubytovani | 3:2 na šířku |
-| `chatky-2.jpg` | Chatka zvenku | ubytovani | 3:2 na šířku |
-| `chatky-3.jpg` | Interiér chatky | ubytovani | 3:2 na šířku |
-| `chatky-karta.jpg` | Chatky na výšku do karty na homepage | homepage | 4:5 na výšku |
-| `brana-1.jpg` | Chatky u hlavní brány zvenku | ubytovani, homepage | 3:2 na šířku |
-| `brana-2.jpg` | Pokoj v chatce u hlavní brány | ubytovani | 3:2 na šířku |
-| `brana-3.jpg` | Vybavení pokoje | ubytovani | 3:2 na šířku |
-| `kuchyne-1.jpg` | Profesionální kuchyně | ubytovani | 3:2 na šířku |
-| `kuchyne-2.jpg` | Jídelna se stoly | ubytovani | 3:2 na šířku |
-| `kuchyne-3.jpg` | Vybavení kuchyně | ubytovani | 3:2 na šířku |
-| `kuchynka-1.jpg` | Kuchyňka pro menší skupiny | ubytovani | 3:2 na šířku |
-| `kuchynka-2.jpg` | Posezení v kuchyňce | ubytovani | 3:2 na šířku |
-| `kuchynka-3.jpg` | Vybavení kuchyňky | ubytovani | 3:2 na šířku |
-| `socialky-1.jpg` | Hlavní sociální zařízení zvenku | ubytovani | 3:2 na šířku |
-| `socialky-2.jpg` | Sprchy | ubytovani | 3:2 na šířku |
-| `socialky-3.jpg` | Umyvadla | ubytovani | 3:2 na šířku |
-| `bazen-1.jpg` | Bazén, hlavní fotka | aktivity, homepage | 3:2 na šířku |
-| `bazen-2.jpg` | Posezení u bazénu | aktivity | 3:2 na šířku |
-| `bazen-3.jpg` | Bazén s okolní přírodou | aktivity | 3:2 na šířku |
-| `tenis-1.jpg` | Tenisový kurt | aktivity, homepage | 3:2 na šířku |
-| `tenis-2.jpg` | Tenisový kurt z druhé strany | aktivity | 3:2 na šířku |
-| `beach-1.jpg` | Hřiště na beach volejbal | aktivity, homepage | 3:2 na šířku |
-| `beach-2.jpg` | Písečné hřiště | aktivity | 3:2 na šířku |
-| `stolni-tenis.jpg` | Pingpongový stůl | aktivity | 3:2 na šířku |
-| `ohniste-1.jpg` | Ohniště s posezením | aktivity, homepage | 3:2 na šířku |
-| `ohniste-2.jpg` | Ohniště zblízka | aktivity | 3:2 na šířku |
-| `ohniste-3.jpg` | Večerní posezení u ohně | aktivity | 3:2 na šířku |
-| `hriste-1.jpg` | Dětské hřiště | aktivity, homepage | 3:2 na šířku |
-| `hriste-2.jpg` | Prolézačka | aktivity | 3:2 na šířku |
-| `klubovna-1.jpg` | Klubovna s kulečníkem a krbem | aktivity, homepage | 3:2 na šířku |
-| `klubovna-2.jpg` | Posezení v klubovně | aktivity | 3:2 na šířku |
-| `spravce.jpg` | Portrét správce areálu Josefa Kavalce | kontakt | 1:1 čtverec |
+| Nový název | Tvůj soubor | Kde se použije |
+|---|---|---|
+| `apartman-1.webp` | Apartman_hl foto_result | galerie apartmánu a karta na úvodu |
+| `apartman-2.webp` | Apartman_2_result | galerie apartmánu |
+| `apartman-3.webp` | Apartman_3_result | galerie apartmánu |
+| `apartman-4.webp` | Apartman_4_result | galerie apartmánu |
+| `apartman-5.webp` | Apartman_5_result | galerie apartmánu |
+| `apartman-6.webp` | Apartman_6_result | galerie apartmánu |
 
-## Logo
+## Slušovice a buňky
 
-- **Nejlepší formát: SVG.** Je ostré v každé velikosti a dá se obarvit přes CSS, takže v tmavé patičce bude krémové a v hlavičce tmavé automaticky.
-- Ulož jako `assets/img/logo.svg` (samotná značka, čtvercová, na mřížce 48 × 48) a případně `assets/img/logo-plne.svg` (značka se jménem).
-- Značka nesmí mít pevně zapsanou barvu, ideálně `fill="currentColor"` nebo `stroke="currentColor"`.
-- **Když SVG nemáš:** PNG s průhledným pozadím, značka 512 × 512 px, logo se jménem výška aspoň 240 px. JPG ne, nemá průhlednost.
-- Po nahrání stačí vyměnit symbol `i-znacka` v `_sablony/ikony.svg` nebo v šabloně použít `<img>` místo SVG.
+| Nový název | Tvůj soubor | Kde se použije |
+|---|---|---|
+| `slusovice-1.webp` | Bunky-slusovice_hl foto_result | galerie a karta na úvodu |
+| `slusovice-2.webp` | Bunky-slusovice_2_result | galerie |
+| `slusovice-3.webp` | Bunky-slusovice_3_result | galerie |
+| `slusovice-4.webp` | Bunky-slusovice_4_result | galerie |
+| `slusovice-5.webp` | Slušovice_socialn_result | galerie |
 
-## Favicon
+## Chatky klasické
 
-- `favicon.svg` (32 × 32) a `apple-touch-icon.png` (180 × 180, může mít plné pozadí).
+| Nový název | Tvůj soubor | Kde se použije |
+|---|---|---|
+| `chatky-1.webp` | Chatky_hl foto_result | galerie a karta na úvodu |
+| `chatky-2.webp` | Chatky_2_result | galerie |
+| `chatky-3.webp` | Chatky_3_result | galerie |
+| `chatky-4.webp` | Chatky_4_result | galerie |
+
+## Chatky u hlavní brány
+
+| Nový název | Tvůj soubor | Kde se použije |
+|---|---|---|
+| `brana-1.webp` | chatky u hl brany _hl foto_result | galerie a karta na úvodu |
+| `brana-2.webp` | chatky u hl brany_2_result | galerie |
+| `brana-3.webp` | chatky u hl brany_3_result | galerie |
+| `brana-4.webp` | chatky u hl brany_4_result | galerie |
+
+## Zázemí
+
+| Nový název | Tvůj soubor | Kde se použije |
+|---|---|---|
+| `kuchyne-1.webp` | Kuchyně a jídelna_1_result | kuchyně a jídelna |
+| `kuchyne-2.webp` | Kuchyně a jídelna_2_result | kuchyně a jídelna |
+| `kuchyne-3.webp` | Kuchyně a jídelna_3_result | kuchyně a jídelna |
+| `kuchynka-1.webp` | kuchynka_hl.photo_result | kuchyňky |
+| `kuchynka-2.webp` | kuchynka_2_result | kuchyňky |
+| `kuchynka-3.webp` | kuchynka_3_result | kuchyňky |
+| `socialky-1.webp` | Hl.socialky_1_result | hlavní sociální zařízení |
+| `socialky-2.webp` | Hl.socialky_2_result | hlavní sociální zařízení |
+| `socialky-3.webp` | Hl.socialky_3_result | hlavní sociální zařízení |
+| `socialky-4.webp` | Hl.socialky_4_result | hlavní sociální zařízení |
+| `socialky-5.webp` | Hl.socialky_5_result | hlavní sociální zařízení |
+
+## Aktivity
+
+| Nový název | Tvůj soubor | Kde se použije |
+|---|---|---|
+| `bazen-1.webp` | bazen_hl.photo_result | bazén |
+| `bazen-2.webp` | bazen_2_result | bazén |
+| `bazen-3.webp` | Bazen_3_result | bazén |
+| `bazen-4.webp` | bazen_result | bazén |
+| `tenis-1.webp` | tenis_hl.photo_result | tenis |
+| `tenis-2.webp` | tenis 2_result | tenis |
+| `tenis-3.webp` | Tenis_result | tenis |
+| `beach-1.webp` | beach_hl.photo_result | beach volejbal |
+| `beach-2.webp` | Beach_result | beach volejbal |
+| `stolni-tenis.webp` | ping pong_result | stolní tenis |
+| `ohniste-1.webp` | Ohniště_1_result | ohniště |
+| `ohniste-2.webp` | Ohniště_2_result | ohniště |
+| `ohniste-3.webp` | Ohniště_3_result | ohniště |
+| `hriste-1.webp` | dětské hřiště_hl.photo_result | dětské hřiště |
+| `hriste-2.webp` | Dětské hřiště_2_result | dětské hřiště |
+| `hriste-3.webp` | Dětské hřiště_result | dětské hřiště |
+| `klubovna-1.webp` | klubovna_hl.photo_result | klubovna |
+| `klubovna-2.webp` | klubovna_2_result | klubovna |
+| `klubovna-3.webp` | klubovna_result | klubovna |
+
+## Tyhle nejsou potřeba
+
+Nikde se nepoužijí, ale kteroukoli z nich můžeš použít místo fotky výše, stačí ji pojmenovat podle toho místa:
+
+apartman_na výšku, chatky_na výšku, slušovice_na výšku, areal 1, areal 2, header_kontakt_1 až 4, kontakt, hřiště (modré), Kuchyňky_mainpage, Vybavení a služby_head.
+
+## Až budou fotky nahrané
+
+Spusť `python3 build.py`. Když některá fotka chybí nebo má jinak napsaný název, build ji vypíše a stránky neuloží.
+
+Štítek s počtem fotek u galerií („3 fotky“, „6 fotek“) se počítá sám.
+
+## Dokumenty
+
+Ceník a řády zatím odkazují na starý web. Než ho vypneš, nahraj do `assets/docs/` tyto soubory se stejnými názvy a v `build.py` přepni `MISTNI_DOKUMENTY = True`:
+
+- `Cenik-2026.pdf` (https://baumatheroltice.cz/wp-content/uploads/2026/01/Cenik-2026.pdf)
+- `Ubytovaci-rad-2026.docx` (https://baumatheroltice.cz/wp-content/uploads/2026/01/Ubytovaci-rad-2026.docx)
+- `Provozni-rad-bazenu-FINAL-2023.docx` (https://baumatheroltice.cz/wp-content/uploads/2025/04/Provozni-rad-bazenu-FINAL-2023.docx)
+
+## Logo a favicona
+
+Hotové v `assets/img/`: `baumat-logo*.svg`, `favicon.svg`, `apple-touch-icon.png`.

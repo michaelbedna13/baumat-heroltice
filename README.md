@@ -14,8 +14,8 @@ assets/css/style.css    celý stylopis (mobile-first, tokeny a komponenty)
 DESIGN.md               pravidla designu a seznam komponent
 assets/js/main.js       mobilní menu, přilepená lišta, prohlížeč fotek, kalendář
 assets/data/obsazenost.json   termíny pro kalendář (zatím UKÁZKOVÁ data)
-assets/img/             fotky a logo (viz SOUBORY.md)
-SOUBORY.md                názvy a formáty fotek, návod na logo
+assets/img/             fotky a logo (viz FOTKY.md)
+FOTKY.md                názvy a formáty fotek, návod na logo
 styleguide.html         živé ukázky komponent (noindex)
 assets/fonts/           Hanken Grotesk, variabilní (woff2, latin + latin-ext, licence OFL)
 ```

@@ -67,6 +67,22 @@
     window.addEventListener("resize", naScroll);
   }
 
+  /* Vybavení v kartách ubytování: na desktopu vždy rozbalené, na mobilu sbalené */
+  var vybaveni = document.querySelectorAll(".detail__vybaveni");
+  if (vybaveni.length) {
+    var desktop = window.matchMedia("(min-width: 960px)");
+    var nastavVybaveni = function () {
+      vybaveni.forEach(function (d) { d.open = desktop.matches; });
+    };
+    nastavVybaveni();
+    desktop.addEventListener("change", nastavVybaveni);
+    vybaveni.forEach(function (d) {
+      d.querySelector("summary").addEventListener("click", function (e) {
+        if (desktop.matches) e.preventDefault();
+      });
+    });
+  }
+
   var rok = document.querySelector("[data-rok]");
   if (rok) rok.textContent = new Date().getFullYear();
 

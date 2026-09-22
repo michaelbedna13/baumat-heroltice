@@ -14,10 +14,14 @@ KOREN = pathlib.Path(__file__).parent
 SABLONY = KOREN / "_sablony"
 IMG = "https://baumatheroltice.cz/wp-content/uploads"
 
-# Fotky: přepni na True, jakmile nahraješ obrázky do assets/img/ podle FOTKY.md.
-# Do té doby se použijí fotky ze starého webu.
-VLASTNI_FOTKY = False
-IMG_LOKALNI = "assets/img"
+# Soubory ze starého webu (fotky, dokumenty, favicona).
+# Přepni na True, jakmile je nahraješ do repa podle SOUBORY.md:
+#   obrázky (.jpg, .png)   -> assets/img/
+#   dokumenty (.pdf, .docx) -> assets/docs/
+# Názvy souborů zůstávají stejné jako na starém webu. Do té doby se berou ze starého webu.
+MISTNI_SOUBORY = False
+SLOZKA_OBRAZKY = "assets/img"
+SLOZKA_DOKUMENTY = "assets/docs"
 
 # logický název -> cesta na starém webu (názvy souborů v assets/img/ jsou stejné jako klíč)
 FOTKY = {
@@ -99,19 +103,30 @@ def ikona(nazev):
     return f'<svg class="i" aria-hidden="true"><use href="#i-{nazev}"/></svg>'
 
 
+CHYBI = set()
+
+
+def soubor(cesta_na_starem_webu, root=""):
+    """Vrátí odkaz na soubor ze starého webu: buď tam, nebo na jeho kopii v repu."""
+    if not MISTNI_SOUBORY:
+        return f"{IMG}/{cesta_na_starem_webu}"
+    nazev = cesta_na_starem_webu.split("/")[-1]
+    slozka = SLOZKA_DOKUMENTY if nazev.lower().endswith((".pdf", ".docx", ".doc")) else SLOZKA_OBRAZKY
+    if not (KOREN / slozka / nazev).exists():
+        CHYBI.add(f"{slozka}/{nazev}")
+    return f"{root}{slozka}/{nazev}"
+
+
 def foto(nazev, root=""):
-    """Vrátí cestu k fotce. Dokud nejsou vlastní fotky, bere je ze starého webu."""
     if nazev not in FOTKY:
-        raise SystemExit(f"Neznámá fotka: {nazev}. Doplň ji do FOTKY v build.py a do FOTKY.md.")
-    if VLASTNI_FOTKY:
-        return f"{root}{IMG_LOKALNI}/{nazev}.jpg"
-    return f"{IMG}/{FOTKY[nazev]}"
+        raise SystemExit(f"Neznámá fotka: {nazev}. Doplň ji do FOTKY v build.py.")
+    return soubor(FOTKY[nazev], root)
 
 
 def doplnit(text, root, aktivni):
     text = text.replace("{{SPRITE}}", IKONY.read_text(encoding="utf-8").strip())
     text = text.replace("{{ROOT}}", root)
-    text = text.replace("{{IMG}}", IMG)
+    text = re.sub(r"\{\{IMG\}\}/([^\"\s<]+)", lambda m: soubor(m.group(1), root), text)
     # aktivní položka v menu
     text = re.sub(
         r"\{\{A:([a-z]+)\}\}",
@@ -153,3 +168,8 @@ def sestavit(nazev):
 if __name__ == "__main__":
     for nazev in STRANKY:
         sestavit(nazev)
+    if CHYBI:
+        print("\nPOZOR, v repu chybí tyto soubory (web by na nich měl rozbité obrázky nebo odkazy):")
+        for c in sorted(CHYBI):
+            print("  " + c)
+        raise SystemExit(1)

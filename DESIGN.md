@@ -27,7 +27,7 @@ Pravidla:
 - Hero nemá na mobilu pevnou výšku, je jen tak vysoké, kolik zabere obsah. Na desktopu nejvýš 74 % výšky okna (podstránky 48 %).
 - Skupiny tlačítek (`.akce`) jsou pod 560 px přes celou šířku a pod sebou.
 - Karty ubytování se na mobilu posouvají do strany.
-- U typů ubytování a aktivit je na mobilu vždy nejdřív fotka, pak text.
+- Karta ubytování je na mobilu zkrácená: jen hlavní fotka (ostatní jsou v prohlížeči), menší štítky, vybavení schované pod tlačítkem „Zobrazit vybavení" (`details`, na desktopu vždy rozbalené) a cena s tlačítkem vedle sebe.
 
 ## Hodnocení
 

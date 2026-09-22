@@ -645,3 +645,35 @@ a.dlazdice:hover { box-shadow: var(--stin); border-color: transparent; }
   .aktivita--hlavni .polozka__telo > p { font-size: 17px; }
   .aktivita--hlavni .polozka__meta { margin-top: 12px; }
 }
+
+/* 34. Vybavení v kartě ubytování: na mobilu schované, na desktopu vždy vidět */
+.detail__vybaveni { margin-top: 4px; }
+.detail__vybaveni summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 18px; border-radius: 12px; border: 1px solid var(--linka); background: var(--bila); font-size: 15px; font-weight: 600; cursor: pointer; user-select: none; }
+.detail__vybaveni summary::-webkit-details-marker { display: none; }
+.detail__vybaveni summary:hover { border-color: var(--text); }
+.detail__vybaveni summary .i { width: 18px; height: 18px; color: var(--oliva); transition: transform .25s; }
+.detail__vybaveni[open] summary .i { transform: rotate(180deg); }
+.detail__vybaveni[open] summary { margin-bottom: 8px; }
+.detail__vybaveni .sv-nadpis, .detail__vybaveni .sv-skryt, .detail__vybaveni[open] .sv-zobrazit { display: none; }
+.detail__vybaveni[open] .sv-skryt { display: inline; }
+@media (min-width: 960px) {
+  .detail__vybaveni summary { padding: 0; border: 0; background: none; cursor: default; margin-bottom: 10px; }
+  .detail__vybaveni summary:hover { border: 0; }
+  .detail__vybaveni summary .i, .detail__vybaveni .sv-zobrazit, .detail__vybaveni[open] .sv-skryt { display: none; }
+  .detail__vybaveni .sv-nadpis { display: inline; }
+}
+
+/* 35. Karta ubytování na mobilu: kratší ---------------------------------- */
+@media (max-width: 759px) {
+  .detail__galerie.galerie > :not(:first-child) { display: none; }
+  .detail__galerie.galerie > :first-child { aspect-ratio: 3 / 2; }
+  .cipy li { font-size: 13px; padding: 6px 12px 6px 10px; }
+}
+@media (max-width: 959px) {
+  .detail__cena { grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 16px; row-gap: 2px; padding: 18px 20px; }
+  .detail__castka { font-size: 30px; grid-column: 1; }
+  .detail__jednotka { grid-column: 1; }
+  .detail__cena .btn { grid-column: 2; grid-row: 1 / span 2; width: auto; padding: 0 20px; }
+  .detail__noc { grid-column: 1 / -1; margin: 10px 0 0; padding-top: 10px; }
+  .detail__cena .odkaz { grid-column: 1 / -1; justify-self: start; margin-top: 8px; }
+}

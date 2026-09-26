@@ -72,13 +72,8 @@ Jak zapisovat do kalendáře:
 
 Pozor: pokud v repu delší dobu (60 dní) nic neproběhne, GitHub automatické spouštění vypne a pošle o tom e-mail. Znovu se zapne jedním kliknutím v záložce Actions. Workflow sám jednou denně zapíše datum aktualizace, takže by k tomu nemělo docházet.
 
-## Recenze z Google
+## Recenze
 
-Nastavení je v `assets/data/nastaveni.json` a dá se upravit přímo na GitHubu (ikona tužky), bez buildu.
+Recenze na úvodní stránce jsou vybrané z Google Maps a vložené napevno v `_sablony/index.html` a v anglickém překladu v `_sablony/en/index.html`. Novou recenzi přidáš zkopírováním jednoho bloku `<figure class="recenze__karta">` a úpravou jména, iniciál, roku a textu. Dlouhé recenze (nad 260 znaků) mají tlačítko „Celá recenze“.
 
-1. **Place ID areálu** (`google_place_id`): najdeš ho v nástroji Place ID Finder od Googlu (vyhledat „Place ID Finder“), zadej „Rekreační areál BAUMAT“ a zkopíruj kód začínající `ChIJ`. Už samotné Place ID zapne tlačítko „Napsat recenzi“ a QR kód, které vedou rovnou na formulář recenze.
-2. **Klíč API** (`google_api_klic`) pro živé načítání recenzí a hodnocení:
-   - Google Cloud Console, nový projekt, zapnout **Places API (New)**. Google vyžaduje platební účet, pro web s běžnou návštěvností by se ale měl vejít do bezplatného měsíčního limitu. Aktuální ceník si ověř a nastav si v Quotas denní strop, třeba 200 požadavků.
-   - APIs and Services, Credentials, **Create API key**. Omezení: Application restrictions na Websites s `https://baumatheroltice.cz/*` a `https://www.baumatheroltice.cz/*` (na testování i adresu github.io), API restrictions jen Places API (New).
-   - Klíč je v kódu stránky vidět, to je u klíčů pro prohlížeč normální. Chrání ho právě omezení na doménu a API.
-3. Google vrací nejvýš 5 recenzí (ty nejrelevantnější). Když klíč chybí nebo Google neodpoví, zůstanou na webu statické ukázky a hodnocení 4,5 / 77.
+Tlačítko „Napsat recenzi“ a QR kód vedou na https://g.page/r/CQ6p7-MQkw-UEAE/review. QR je obrázek `assets/img/qr-recenze.svg`, verze pro tisk je `assets/img/qr-recenze-tisk.png` (1480 × 1480 px).

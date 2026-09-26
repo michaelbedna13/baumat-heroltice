@@ -83,79 +83,7 @@
     });
   }
 
-  /* Hodnocení a recenze z Google ------------------------------------ */
-  function hvezdyHTML(hodnota) {
-    var zaokr = Math.round(hodnota * 2) / 2;
-    var html = "";
-    for (var i = 1; i <= 5; i++) {
-      if (zaokr >= i) html += '<svg class="hv" aria-hidden="true"><use href="#i-hvezda"/></svg>';
-      else if (zaokr >= i - 0.5) html += '<span class="hv-pul" aria-hidden="true"><svg class="hv hv--prazdna"><use href="#i-hvezda"/></svg><span class="hv-pul__plna"><svg class="hv"><use href="#i-hvezda"/></svg></span></span>';
-      else html += '<svg class="hv hv--prazdna" aria-hidden="true"><use href="#i-hvezda"/></svg>';
-    }
-    return html;
-  }
-
-  function kartaRecenze(r) {
-    var karta = document.createElement("figure");
-    karta.className = "recenze__karta";
-    var hv = document.createElement("span");
-    hv.className = "hvezdy";
-    hv.setAttribute("role", "img");
-    hv.setAttribute("aria-label", r.rating + (EN ? " out of 5 stars" : " z 5 hvězdiček"));
-    hv.innerHTML = hvezdyHTML(r.rating || 0);
-    var citace = document.createElement("blockquote");
-    var p = document.createElement("p");
-    p.textContent = (r.text && r.text.text) || "";
-    citace.appendChild(p);
-    var popis = document.createElement("figcaption");
-    var autor = r.authorAttribution || {};
-    if (autor.photoUri) {
-      var foto = document.createElement("img");
-      foto.className = "avatar";
-      foto.src = autor.photoUri;
-      foto.alt = "";
-      foto.loading = "lazy";
-      foto.referrerPolicy = "no-referrer";
-      popis.appendChild(foto);
-    }
-    var info = document.createElement("span");
-    var jmeno = document.createElement("strong");
-    if (autor.uri) {
-      var a = document.createElement("a");
-      a.href = autor.uri; a.target = "_blank"; a.rel = "noopener";
-      a.textContent = autor.displayName || "Google";
-      jmeno.appendChild(a);
-    } else jmeno.textContent = autor.displayName || "Google";
-    info.appendChild(jmeno);
-    var kdy = (r.relativePublishTimeDescription || "") + ", Google";
-    if (EN && r.originalText && r.originalText.languageCode && r.originalText.languageCode.indexOf("en") !== 0) kdy += ", translated by Google";
-    info.appendChild(document.createTextNode(kdy));
-    popis.appendChild(info);
-    karta.appendChild(hv);
-    karta.appendChild(citace);
-    if (r.googleMapsUri && p.textContent.length > 260) {
-      var cela = document.createElement("a");
-      cela.className = "recenze__cela";
-      cela.href = r.googleMapsUri; cela.target = "_blank"; cela.rel = "noopener";
-      cela.textContent = EN ? "Read the full review" : "Celá recenze";
-      karta.appendChild(cela);
-    }
-    karta.appendChild(popis);
-    return karta;
-  }
-
-  function nastavHodnoceni(hodnota, pocet) {
-    var loc = EN ? "en-GB" : "cs-CZ";
-    document.querySelectorAll("[data-hodnoceni-cislo]").forEach(function (el) {
-      el.textContent = hodnota.toLocaleString(loc, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-    });
-    document.querySelectorAll("[data-hodnoceni-pocet]").forEach(function (el) { el.textContent = pocet.toLocaleString(loc); });
-    document.querySelectorAll("[data-hodnoceni-hvezdy]").forEach(function (el) {
-      el.innerHTML = hvezdyHTML(hodnota);
-      el.setAttribute("aria-label", hodnota.toLocaleString(loc) + (EN ? " out of 5 stars" : " z 5 hvězdiček"));
-    });
-  }
-
+  /* Kolotoč recenzí ---------------------------------------------- */
   var kolotoc = document.querySelector("[data-kolotoc]");
   if (kolotoc) {
     var pas = kolotoc.querySelector(".kolotoc__pas");
@@ -188,37 +116,16 @@
     kolotoc.addEventListener("mouseleave", function () { pauza = false; });
     if (!klid) setInterval(function () { if (!pauza && !document.hidden && !kolotoc.classList.contains("kolotoc--vejde-se")) posunK(1); }, 7000);
 
-    fetch(kolotoc.dataset.nastaveni)
-      .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (n) {
-        if (!n || !n.google_place_id) return;
-        var napsat = "https://search.google.com/local/writereview?placeid=" + encodeURIComponent(n.google_place_id);
-        document.querySelectorAll("[data-recenze-napsat]").forEach(function (a) { a.href = napsat; });
-        var qrBox = document.querySelector("[data-recenze-qr]");
-        if (qrBox && window.qrcode) {
-          var qr = window.qrcode(0, "M");
-          qr.addData(napsat);
-          qr.make();
-          qrBox.querySelector("[data-recenze-qr-kod]").innerHTML = qr.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
-          qrBox.hidden = false;
-        }
-        if (!n.google_api_klic) return;
-        return fetch("https://places.googleapis.com/v1/places/" + encodeURIComponent(n.google_place_id) + "?languageCode=" + (EN ? "en" : "cs"), {
-          headers: { "X-Goog-Api-Key": n.google_api_klic, "X-Goog-FieldMask": "rating,userRatingCount,reviews" }
-        })
-          .then(function (r) { return r.ok ? r.json() : null; })
-          .then(function (d) {
-            if (!d) return;
-            if (d.rating && d.userRatingCount) nastavHodnoceni(d.rating, d.userRatingCount);
-            if (d.reviews && d.reviews.length) {
-              pas.innerHTML = "";
-              d.reviews.forEach(function (r) { pas.appendChild(kartaRecenze(r)); });
-              pas.scrollLeft = 0;
-              ovladani();
-            }
-          });
-      })
-      .catch(function () { /* bez spojení zůstanou statické recenze */ });
+    kolotoc.querySelectorAll(".recenze__vice").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var karta = btn.closest(".recenze__karta");
+        var otevrit = !karta.classList.contains("recenze__karta--cela");
+        karta.classList.toggle("recenze__karta--cela", otevrit);
+        btn.setAttribute("aria-expanded", otevrit ? "true" : "false");
+        btn.textContent = otevrit ? btn.dataset.mene : btn.dataset.vice;
+        pauza = true;
+      });
+    });
   }
 
   var rok = document.querySelector("[data-rok]");

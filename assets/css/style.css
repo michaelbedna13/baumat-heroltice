@@ -723,11 +723,14 @@ a.dlazdice:hover { box-shadow: var(--stin); border-color: transparent; }
 .napsat__text p { color: var(--sedy); max-width: 52ch; }
 .napsat__text .akce { margin-top: 8px; align-items: center; }
 .napsat__qr { display: none; }
+.recenze__vice { align-self: flex-start; margin-top: -6px; padding: 0; border: 0; background: none; font-size: 14px; font-weight: 600; color: var(--oliva); cursor: pointer; }
+.recenze__vice:hover { text-decoration: underline; text-underline-offset: 3px; }
+.recenze__karta--cela blockquote p { -webkit-line-clamp: unset; display: block; }
 @media (min-width: 900px) {
   .napsat { grid-template-columns: minmax(0, 1fr) auto; gap: 48px; }
-  .napsat__qr:not([hidden]) { display: grid; gap: 10px; justify-items: center; }
+  .napsat__qr { display: grid; gap: 10px; justify-items: center; }
   .napsat__kod { width: 148px; height: 148px; padding: 10px; background: #fff; border: 1px solid var(--linka); border-radius: 14px; }
-  .napsat__kod svg { display: block; width: 100%; height: 100%; }
+  
   .napsat__qr figcaption { font-size: 13px; color: var(--sedy); }
 }
 .kalendar__aktualizace { font-size: 13px; }

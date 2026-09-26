@@ -731,3 +731,9 @@ a.dlazdice:hover { box-shadow: var(--stin); border-color: transparent; }
   .napsat__qr figcaption { font-size: 13px; color: var(--sedy); }
 }
 .kalendar__aktualizace { font-size: 13px; }
+
+/* 39. Zvýrazněné upozornění (Nevaříme…) --------------------------------- */
+.upozorneni { display: flex; align-items: flex-start; gap: 14px; padding: 18px 22px; border-radius: var(--r); background: var(--oliva-sv); color: var(--text); font-size: clamp(17px, 1.4vw, 19px); line-height: 1.45; max-width: 560px; }
+.upozorneni .i { width: 26px; height: 26px; margin-top: 1px; color: var(--oliva); flex: none; }
+.upozorneni strong { font-weight: 650; color: var(--oliva-2); }
+.pas .upozorneni { background: var(--bila); border: 1px solid var(--linka); }

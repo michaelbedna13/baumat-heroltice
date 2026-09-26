@@ -1,0 +1,32 @@
+name: Kalendář obsazenosti
+
+# Jednou za hodinu stáhne Google Kalendář správce a aktualizuje assets/data/obsazenost.json.
+# Ručně jde spustit v záložce Actions tlačítkem "Run workflow".
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  aktualizace:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Stáhnout kalendář
+        env:
+          KALENDAR_ICAL_URL: ${{ secrets.KALENDAR_ICAL_URL }}
+        run: python3 scripts/kalendar.py
+      - name: Uložit změny
+        run: |
+          if git diff --quiet assets/data/obsazenost.json; then
+            echo "Beze změny."
+          else
+            git config user.name "kalendar-bot"
+            git config user.email "kalendar-bot@users.noreply.github.com"
+            git add assets/data/obsazenost.json
+            git commit -m "Aktualizace obsazenosti"
+            git push
+          fi

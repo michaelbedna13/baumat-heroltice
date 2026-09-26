@@ -53,3 +53,32 @@ Anglické stránky jsou v `en/` (`/en/`, `/en/accommodation/`, `/en/activities/`
 - Názvy ubytování odpovídají původnímu anglickému webu: Apartment, Cottages (buňky Slušovice), Cabins (chatky klasické), Cabins by the Main Gate, Kitchen & Dining Hall, Kitchenettes, Main Sanitary Facilities. Areál se jmenuje Baumat Heroltice Recreation Area.
 - Recenze jsou v EN verzi přeložené a označené „translated from Czech".
 - Měna je CZK s anglickým oddělovačem tisíců (40,000 CZK), hodnocení 4.5.
+
+
+## Kalendář obsazenosti z Google Kalendáře
+
+Kalendář na stránce Kontakt čte `assets/data/obsazenost.json`. Ten jednou za hodinu přepisuje GitHub Actions (`.github/workflows/kalendar.yml` spouští `scripts/kalendar.py`) podle Google Kalendáře správce. Na web se ukládají jen data a stav dne, žádné názvy událostí ani jména hostů.
+
+Nastavení (jednou):
+1. V Google Kalendáři správce: Nastavení, vybrat kalendář s rezervacemi, sekce „Integrace kalendáře“, zkopírovat **Tajnou adresu ve formátu iCal**.
+2. V repu na GitHubu: Settings, Secrets and variables, Actions, **New repository secret**. Název `KALENDAR_ICAL_URL`, hodnota zkopírovaná adresa. Víc kalendářů jde zadat oddělených čárkou.
+3. Záložka **Actions**: povolit workflow, pokud se ptá, otevřít „Kalendář obsazenosti“ a dát **Run workflow**. Za minutu by měl být v repu nový `obsazenost.json`.
+
+Jak zapisovat do kalendáře:
+- Pronájem celého areálu: název události obsahuje „celý areál“ (nebo „obsazeno“). Dny se zobrazí červeně jako obsazené.
+- Jakákoli jiná rezervace: dny se zobrazí žlutě jako částečně obsazené.
+- Počítají se noci: pobyt od 3. do 5. obsadí 3. a 4., odjezdový den zůstane volný.
+- Zrušené události se ignorují.
+
+Pozor: pokud v repu delší dobu (60 dní) nic neproběhne, GitHub automatické spouštění vypne a pošle o tom e-mail. Znovu se zapne jedním kliknutím v záložce Actions. Workflow sám jednou denně zapíše datum aktualizace, takže by k tomu nemělo docházet.
+
+## Recenze z Google
+
+Nastavení je v `assets/data/nastaveni.json` a dá se upravit přímo na GitHubu (ikona tužky), bez buildu.
+
+1. **Place ID areálu** (`google_place_id`): najdeš ho v nástroji Place ID Finder od Googlu (vyhledat „Place ID Finder“), zadej „Rekreační areál BAUMAT“ a zkopíruj kód začínající `ChIJ`. Už samotné Place ID zapne tlačítko „Napsat recenzi“ a QR kód, které vedou rovnou na formulář recenze.
+2. **Klíč API** (`google_api_klic`) pro živé načítání recenzí a hodnocení:
+   - Google Cloud Console, nový projekt, zapnout **Places API (New)**. Google vyžaduje platební účet, pro web s běžnou návštěvností by se ale měl vejít do bezplatného měsíčního limitu. Aktuální ceník si ověř a nastav si v Quotas denní strop, třeba 200 požadavků.
+   - APIs and Services, Credentials, **Create API key**. Omezení: Application restrictions na Websites s `https://baumatheroltice.cz/*` a `https://www.baumatheroltice.cz/*` (na testování i adresu github.io), API restrictions jen Places API (New).
+   - Klíč je v kódu stránky vidět, to je u klíčů pro prohlížeč normální. Chrání ho právě omezení na doménu a API.
+3. Google vrací nejvýš 5 recenzí (ty nejrelevantnější). Když klíč chybí nebo Google neodpoví, zůstanou na webu statické ukázky a hodnocení 4,5 / 77.

@@ -695,3 +695,39 @@ a.dlazdice:hover { box-shadow: var(--stin); border-color: transparent; }
   .hero .kotvy { width: 100%; }
   .hero .kotvy a { padding: 0 6px; font-size: 13px; min-height: 36px; }
 }
+
+/* 38. Kolotoč recenzí a výzva k napsání recenze -------------------------- */
+.kolotoc { position: relative; }
+.kolotoc__pas.recenze { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 86%; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 2px 2px 6px; }
+.kolotoc__pas::-webkit-scrollbar { display: none; }
+@media (min-width: 700px) { .kolotoc__pas.recenze { grid-auto-columns: calc((100% - 16px) / 2); } }
+@media (min-width: 1000px) { .kolotoc__pas.recenze { grid-auto-columns: calc((100% - 48px) / 3); gap: 24px; } }
+.recenze__karta { scroll-snap-align: start; display: flex; flex-direction: column; gap: 16px; padding: 28px; background: var(--bila); border: 1px solid var(--linka); border-radius: var(--r); }
+.recenze__karta blockquote { flex: 1; }
+.recenze__karta blockquote p { display: -webkit-box; -webkit-line-clamp: 7; -webkit-box-orient: vertical; overflow: hidden; }
+.recenze__karta .hvezdy .hv, .recenze__karta .hvezdy .hv-pul, .recenze__karta .hvezdy .hv-pul__plna .hv { width: 18px; height: 18px; }
+.recenze__karta img.avatar { object-fit: cover; }
+.recenze__karta figcaption a { text-decoration: none; }
+.recenze__karta figcaption a:hover { text-decoration: underline; }
+.recenze__cela { font-size: 14px; font-weight: 600; color: var(--oliva); text-decoration: none; margin-top: -6px; }
+.recenze__cela:hover { text-decoration: underline; text-underline-offset: 3px; }
+.kolotoc__ovladani { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+.kolotoc--vejde-se .kolotoc__ovladani { display: none; }
+.kolotoc__sipka { width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--linka); background: var(--bila); display: grid; place-items: center; cursor: pointer; transition: background-color .2s, color .2s, border-color .2s; }
+.kolotoc__sipka:hover { background: var(--oliva); border-color: var(--oliva); color: var(--sv); }
+.recenze__zdroj { margin-top: 14px; text-align: center; font-size: 12px; color: var(--sedy); }
+
+.napsat { margin-top: clamp(40px, 5vw, 64px); display: grid; gap: 24px; align-items: center; padding: clamp(24px, 3vw, 40px); background: var(--bila); border: 1px solid var(--linka); border-radius: var(--r-velky); }
+.napsat__text { display: grid; gap: 12px; justify-items: start; }
+.napsat__text h3 { font-size: clamp(22px, 2.2vw, 28px); }
+.napsat__text p { color: var(--sedy); max-width: 52ch; }
+.napsat__text .akce { margin-top: 8px; align-items: center; }
+.napsat__qr { display: none; }
+@media (min-width: 900px) {
+  .napsat { grid-template-columns: minmax(0, 1fr) auto; gap: 48px; }
+  .napsat__qr:not([hidden]) { display: grid; gap: 10px; justify-items: center; }
+  .napsat__kod { width: 148px; height: 148px; padding: 10px; background: #fff; border: 1px solid var(--linka); border-radius: 14px; }
+  .napsat__kod svg { display: block; width: 100%; height: 100%; }
+  .napsat__qr figcaption { font-size: 13px; color: var(--sedy); }
+}
+.kalendar__aktualizace { font-size: 13px; }

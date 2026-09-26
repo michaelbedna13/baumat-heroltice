@@ -89,32 +89,96 @@
     var pas = kolotoc.querySelector(".kolotoc__pas");
     var zpetK = kolotoc.querySelector("[data-kolotoc-zpet]");
     var vpredK = kolotoc.querySelector("[data-kolotoc-vpred]");
+    var puvodni = [].slice.call(pas.children);
+    var pocet = puvodni.length;
+
+    // Nekonečná smyčka: kopie všech karet před i za originály. Když se dojede do kopií,
+    // posun se nepozorovaně vrátí o jednu celou sadu zpět.
+    var kopie = function (el) {
+      var k = el.cloneNode(true);
+      k.setAttribute("aria-hidden", "true");
+      k.setAttribute("inert", "");
+      k.classList.add("recenze__karta--kopie");
+      return k;
+    };
+    if (pocet > 1) {
+      puvodni.slice().reverse().forEach(function (el) { pas.insertBefore(kopie(el), pas.firstChild); });
+      puvodni.forEach(function (el) { pas.appendChild(kopie(el)); });
+    }
+    var odsazeni = function () { return parseFloat(getComputedStyle(pas).paddingLeft) || 0; };
+    var zacatekSady = function () { return puvodni[0].offsetLeft - odsazeni(); };
+    var sirkaSady = function () { return pocet > 1 ? pas.children[pocet * 2].offsetLeft - puvodni[0].offsetLeft : 0; };
     var krok = function () {
-      var karta = pas.querySelector(".recenze__karta");
       var mezera = parseFloat(getComputedStyle(pas).columnGap) || 0;
-      return karta ? karta.getBoundingClientRect().width + mezera : pas.clientWidth;
+      return puvodni[0].getBoundingClientRect().width + mezera;
     };
-    var posunK = function (smer) {
-      var naKonci = pas.scrollLeft + pas.clientWidth >= pas.scrollWidth - 4;
-      var naZacatku = pas.scrollLeft <= 4;
-      if (smer > 0 && naKonci) pas.scrollTo({ left: 0, behavior: "smooth" });
-      else if (smer < 0 && naZacatku) pas.scrollTo({ left: pas.scrollWidth, behavior: "smooth" });
-      else pas.scrollBy({ left: smer * krok(), behavior: "smooth" });
+    var skok = function (x) {
+      pas.classList.add("kolotoc__pas--bez-snapu");
+      pas.scrollLeft = x;
+      requestAnimationFrame(function () { pas.classList.remove("kolotoc__pas--bez-snapu"); });
     };
-    var ovladani = function () {
-      kolotoc.classList.toggle("kolotoc--vejde-se", pas.scrollWidth <= pas.clientWidth + 4);
+    var hlidatKonce = function () {
+      if (pocet < 2 || tah) return;
+      var z = zacatekSady(), w = sirkaSady();
+      if (pas.scrollLeft < z - w / 2) skok(pas.scrollLeft + w);
+      else if (pas.scrollLeft > z + w * 1.5) skok(pas.scrollLeft - w);
     };
+    var casovac;
+    pas.addEventListener("scroll", function () {
+      clearTimeout(casovac);
+      casovac = setTimeout(hlidatKonce, 140);
+    }, { passive: true });
+    var naZacatek = function () { skok(zacatekSady()); };
+    naZacatek();
+    window.addEventListener("resize", naZacatek);
+
+    var posunK = function (smer) { pas.scrollBy({ left: smer * krok(), behavior: "smooth" }); };
     zpetK.addEventListener("click", function () { posunK(-1); });
     vpredK.addEventListener("click", function () { posunK(1); });
-    window.addEventListener("resize", ovladani);
-    ovladani();
+
+    // tahání myší (prst a touchpad posouvají nativně)
+    var tah = null;
+    var blokovatKlik = false;
+    pas.addEventListener("pointerdown", function (e) {
+      if (e.pointerType !== "mouse" || e.button !== 0) return;
+      tah = { x: e.clientX, start: pas.scrollLeft, pohyb: false, id: e.pointerId };
+    });
+    pas.addEventListener("pointermove", function (e) {
+      if (!tah) return;
+      var dx = e.clientX - tah.x;
+      if (!tah.pohyb && Math.abs(dx) > 5) {
+        tah.pohyb = true;
+        pas.classList.add("kolotoc__pas--tah");
+        pas.setPointerCapture(tah.id);
+      }
+      if (tah.pohyb) pas.scrollLeft = tah.start - dx;
+    });
+    var konecTahu = function () {
+      if (!tah) return;
+      var pohyb = tah.pohyb;
+      tah = null;
+      if (!pohyb) return;
+      blokovatKlik = true;
+      var k = krok(), z = pas.children[0].offsetLeft - odsazeni();
+      var cil = z + Math.round((pas.scrollLeft - z) / k) * k;
+      pas.classList.remove("kolotoc__pas--tah");
+      pas.classList.add("kolotoc__pas--bez-snapu");
+      pas.scrollTo({ left: cil, behavior: "smooth" });
+      setTimeout(function () { pas.classList.remove("kolotoc__pas--bez-snapu"); hlidatKonce(); }, 450);
+    };
+    pas.addEventListener("pointerup", konecTahu);
+    pas.addEventListener("pointercancel", konecTahu);
+    pas.addEventListener("click", function (e) {
+      if (blokovatKlik) { e.preventDefault(); e.stopPropagation(); blokovatKlik = false; }
+    }, true);
+    pas.addEventListener("dragstart", function (e) { e.preventDefault(); });
 
     // pomalé automatické posouvání, zastaví se pod myší, při fokusu a po dotyku
     var klid = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var pauza = false;
     ["mouseenter", "focusin", "touchstart"].forEach(function (ev) { kolotoc.addEventListener(ev, function () { pauza = true; }, { passive: true }); });
     kolotoc.addEventListener("mouseleave", function () { pauza = false; });
-    if (!klid) setInterval(function () { if (!pauza && !document.hidden && !kolotoc.classList.contains("kolotoc--vejde-se")) posunK(1); }, 7000);
+    if (!klid && pocet > 1) setInterval(function () { if (!pauza && !document.hidden) posunK(1); }, 7000);
 
     kolotoc.querySelectorAll(".recenze__vice").forEach(function (btn) {
       btn.addEventListener("click", function () {

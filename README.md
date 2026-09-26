@@ -65,9 +65,9 @@ Nastavení (jednou):
 3. Záložka **Actions**: povolit workflow, pokud se ptá, otevřít „Kalendář obsazenosti“ a dát **Run workflow**. Za minutu by měl být v repu nový `obsazenost.json`.
 
 Jak zapisovat do kalendáře:
-- Pronájem celého areálu: název události obsahuje „celý areál“ (nebo „obsazeno“). Dny se zobrazí červeně jako obsazené.
-- Jakákoli jiná rezervace: dny se zobrazí žlutě jako částečně obsazené.
-- Počítají se noci: pobyt od 3. do 5. obsadí 3. a 4., odjezdový den zůstane volný.
+- Plně obsazený termín: název události obsahuje „plná kapacita“ (nebo „celý areál“, „obsazeno“). Dny se zobrazí červeně.
+- Jakákoli jiná rezervace, třeba „poloviční kapacita“: dny se zobrazí žlutě jako částečně obsazené.
+- Celodenní událost obsadí přesně ty dny, přes které je v kalendáři natažená. Minulé dny web zobrazuje šedě.
 - Zrušené události se ignorují.
 
 Pozor: pokud v repu delší dobu (60 dní) nic neproběhne, GitHub automatické spouštění vypne a pošle o tom e-mail. Znovu se zapne jedním kliknutím v záložce Actions. Workflow sám jednou denně zapíše datum aktualizace, takže by k tomu nemělo docházet.

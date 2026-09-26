@@ -740,3 +740,9 @@ a.dlazdice:hover { box-shadow: var(--stin); border-color: transparent; }
 .upozorneni .i { width: 26px; height: 26px; margin-top: 1px; color: var(--oliva); flex: none; }
 .upozorneni strong { font-weight: 650; color: var(--oliva-2); }
 .pas .upozorneni { background: var(--bila); border: 1px solid var(--linka); }
+
+/* 40. Kolotoč: tahání myší a nekonečná smyčka ---------------------------- */
+.kolotoc__pas { position: relative; cursor: grab; }
+.kolotoc__pas--tah { cursor: grabbing; scroll-snap-type: none !important; user-select: none; }
+.kolotoc__pas--bez-snapu { scroll-snap-type: none !important; }
+.kolotoc__pas--tah * { pointer-events: none; }

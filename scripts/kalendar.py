@@ -6,9 +6,11 @@ Na web se dostanou jen data a stav (obsazeno / castecne). Názvy událostí,
 jména hostů ani poznámky se nikam neukládají.
 
 Pravidla (dají se upravit níže):
-- Událost, jejíž název obsahuje některé slovo z CELY_AREAL, označí dny jako "obsazeno".
-- Jakákoli jiná událost označí dny jako "castecne" (část ubytování je obsazená).
-- Den se počítá jako noc: pobyt od 3. do 5. obsadí 3. a 4. (odjezdový den zůstane volný).
+- Událost, jejíž název obsahuje "plná kapacita" (nebo "celý areál", "obsazeno"), označí dny jako "obsazeno".
+- Jakákoli jiná událost, třeba "poloviční kapacita", označí dny jako "castecne".
+- Celodenní událost obsadí přesně ty dny, přes které je v kalendáři natažená.
+- U události s časem se počítají noci: od 3. 14:00 do 5. 10:00 obsadí 3. a 4.
+- Diakritika a velikost písmen nevadí.
 
 Spouští se automaticky přes GitHub Actions (.github/workflows/kalendar.yml).
 Adresa kalendáře je v tajném nastavení repa: KALENDAR_ICAL_URL.
@@ -22,7 +24,7 @@ import sys
 import unicodedata
 import urllib.request
 
-CELY_AREAL = ["cely areal", "obsazeno", "cely objekt"]
+CELY_AREAL = ["plna kapacita", "cely areal", "obsazeno", "cely objekt"]
 DNY_ZPET = 7
 DNY_DOPREDU = 550
 VYSTUP = pathlib.Path(__file__).resolve().parent.parent / "assets" / "data" / "obsazenost.json"

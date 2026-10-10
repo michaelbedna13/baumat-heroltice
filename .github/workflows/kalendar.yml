@@ -1,10 +1,11 @@
 name: Kalendář obsazenosti
 
-# Jednou za hodinu stáhne Google Kalendář správce a aktualizuje assets/data/obsazenost.json.
-# Ručně jde spustit v záložce Actions tlačítkem "Run workflow".
+# Každých 15 minut stáhne Google Kalendář správce a aktualizuje assets/data/obsazenost.json.
+# Plánovač GitHubu časy nedodržuje přesně, v praxi to bývá o desítky minut později.
+# Ručně jde spustit hned v záložce Actions tlačítkem "Run workflow".
 on:
   schedule:
-    - cron: "17 * * * *"
+    - cron: "*/15 * * * *"
   workflow_dispatch:
 
 permissions:

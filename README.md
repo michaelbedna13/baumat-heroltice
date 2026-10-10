@@ -57,12 +57,14 @@ Anglické stránky jsou v `en/` (`/en/`, `/en/accommodation/`, `/en/activities/`
 
 ## Kalendář obsazenosti z Google Kalendáře
 
-Kalendář na stránce Kontakt čte `assets/data/obsazenost.json`. Ten jednou za hodinu přepisuje GitHub Actions (`.github/workflows/kalendar.yml` spouští `scripts/kalendar.py`) podle Google Kalendáře správce. Na web se ukládají data, stav dne a **název události** — ten se vypíše pod mřížkou u zobrazeného měsíce.
+Kalendář na stránce Kontakt čte `assets/data/obsazenost.json`. Ten každých 15 minut přepisuje GitHub Actions (`.github/workflows/kalendar.yml` spouští `scripts/kalendar.py`) podle Google Kalendáře správce. Na web se ukládají data, stav dne a **název události** — ten se vypíše pod mřížkou u zobrazeného měsíce.
 
 Nastavení (jednou):
 1. V Google Kalendáři správce: Nastavení, vybrat kalendář s rezervacemi, sekce „Integrace kalendáře“, zkopírovat **Tajnou adresu ve formátu iCal**.
 2. V repu na GitHubu: Settings, Secrets and variables, Actions, **New repository secret**. Název `KALENDAR_ICAL_URL`, hodnota zkopírovaná adresa. Víc kalendářů jde zadat oddělených čárkou.
 3. Záložka **Actions**: povolit workflow, pokud se ptá, otevřít „Kalendář obsazenosti“ a dát **Run workflow**. Za minutu by měl být v repu nový `obsazenost.json`.
+
+Plánovač GitHubu časy nedodržuje přesně, běh může přijít i o desítky minut později. Když potřebuješ změnu na webu hned, spusť workflow ručně přes **Run workflow**.
 
 Jak zapisovat do kalendáře:
 - Plně obsazený termín: název události obsahuje „plná kapacita“ (nebo „celý areál“, „obsazeno“). Dny se zobrazí červeně.

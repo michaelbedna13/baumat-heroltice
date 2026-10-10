@@ -69,7 +69,7 @@ Jak zapisovat do kalendáře:
 - Jakákoli jiná rezervace, třeba „poloviční kapacita“: dny se zobrazí žlutě jako částečně obsazené.
 - Celodenní událost obsadí přesně ty dny, přes které je v kalendáři natažená. Minulé dny web zobrazuje šedě.
 - Zrušené události se ignorují.
-- **Název události je veřejný.** Pod kalendářem se vypíše tak, jak je napsaný („Svatba“, „Firemní školení“). Co má zůstat jen v kalendáři (jména hostů, telefon, poznámka), napiš za dvě lomítka: `Svatba // Novákovi, 777 123 456` zveřejní jen „Svatba“. Popis události (pole Popis v Google Kalendáři) se nezveřejňuje nikdy.
+- **Název události je veřejný.** Pod kalendářem se vypíše tak, jak je napsaný („Svatba“, „Firemní školení“). Údaj o kapacitě na konci se odřízne, takže z „Oslava narozenin - plná kapacita“ je na webu „Oslava narozenin“; barvu dne to neovlivní. Co má zůstat jen v kalendáři (jména hostů, telefon, poznámka), napiš za dvě lomítka: `Svatba // Novákovi, 777 123 456` zveřejní jen „Svatba“. Popis události (pole Popis v Google Kalendáři) se nezveřejňuje nikdy.
 - Událost bez názvu obarví dny v kalendáři, ale do výpisu akcí se nedostane. Delší názvy než 90 znaků se zkrátí.
 - Názvy se nepřekládají, v anglické verzi webu se zobrazí stejně jako v kalendáři.
 

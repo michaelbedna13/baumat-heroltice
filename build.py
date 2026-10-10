@@ -7,6 +7,7 @@ takže GitHub Pages funguje bez jakéhokoli buildu. Skript je jen pomůcka, aby 
 hlavička a patička nemusely upravovat na každé stránce zvlášť.
 """
 
+import hashlib
 import re
 import pathlib
 
@@ -112,6 +113,22 @@ def doplnit(text, root, aktivni):
     return text
 
 
+def otisk(cesta):
+    """Krátký otisk obsahu souboru, aby prohlížeč po úpravě načetl nový styl či skript."""
+    soubor = KOREN / cesta
+    if not soubor.exists():
+        return ""
+    return hashlib.sha1(soubor.read_bytes()).hexdigest()[:8]
+
+
+def oznacit_verzi(html):
+    for cesta in ("assets/css/style.css", "assets/js/main.js"):
+        znacka = otisk(cesta)
+        if znacka:
+            html = html.replace(cesta + '"', f"{cesta}?v={znacka}\"")
+    return html
+
+
 def sestavit(nazev):
     vystup, root, aktivni, jazyk, protejsek = STRANKY[nazev]
     zdroj = (SABLONY / f"{nazev}.html").read_text(encoding="utf-8")
@@ -126,6 +143,7 @@ def sestavit(nazev):
     zdroj = zdroj.replace("{{URL_CZ}}", tady if jazyk == "cs" else tam)
     zdroj = zdroj.replace("{{URL_EN}}", tady if jazyk == "en" else tam)
     hotovo = doplnit(zdroj, root, aktivni)
+    hotovo = oznacit_verzi(hotovo)
 
     zbytky = re.findall(r"\{\{[^}]+\}\}", hotovo)
     if zbytky:

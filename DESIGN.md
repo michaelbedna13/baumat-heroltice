@@ -78,7 +78,7 @@ Hanken Grotesk, jedna rodina, variabilní řez uložený lokálně (latin a lati
 | `.kontakty`, `.poloha`, `.mapa`, `.osoba` | kontakty |
 | `.odkazy` | odkazové řádky (dokumenty, rozcestník) |
 | `.kalendar-blok`, `.legenda` | kalendář obsazenosti |
-| `.lightbox` | prohlížeč fotek (vytváří ho main.js) |
+| `.lightbox` | prohlížeč fotek: vytváří ho main.js, fotka má strop 1120 px a 100 % volné výšky, na mobilu se listuje přejetím prstu |
 
 Živé ukázky jsou ve `styleguide.html`.
 

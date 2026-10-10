@@ -216,45 +216,87 @@
     dialog.setAttribute("aria-label", T.prohlizec);
     dialog.innerHTML =
       '<div class="lightbox__plocha">' +
-      '  <div class="lightbox__horni">' +
-      "    <span data-lb-nazev></span>" +
-      '    <button class="lightbox__tlacitko" type="button" data-lb-zavrit aria-label="' + T.zavrit + '">' +
+      '  <div class="lightbox__lista">' +
+      '    <p class="lightbox__nazev" data-lb-nazev></p>' +
+      '    <button class="lightbox__btn" type="button" data-lb-zavrit aria-label="' + T.zavrit + '">' +
       '      <svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button>' +
       "  </div>" +
-      '  <div class="lightbox__obraz"><img alt="" data-lb-obraz></div>' +
-      '  <div class="lightbox__spodni">' +
-      '    <button class="lightbox__tlacitko" type="button" data-lb-zpet aria-label="' + T.zpet + '">' +
+      '  <div class="lightbox__obraz" data-lb-plocha><img alt="" data-lb-obraz draggable="false"></div>' +
+      '  <div class="lightbox__spodek">' +
+      '    <button class="lightbox__btn lightbox__btn--zpet" type="button" data-lb-zpet aria-label="' + T.zpet + '">' +
       '      <svg class="i" aria-hidden="true" style="transform:rotate(180deg)"><use href="#i-arrow-right"/></svg></button>' +
-      '    <p class="lightbox__popisek"><span data-lb-popis></span><br><span data-lb-pocet></span></p>' +
-      '    <button class="lightbox__tlacitko" type="button" data-lb-vpred aria-label="' + T.vpred + '">' +
+      '    <p class="lightbox__popisek"><span data-lb-popis></span><span class="lightbox__pocet" data-lb-pocet></span></p>' +
+      '    <button class="lightbox__btn lightbox__btn--vpred" type="button" data-lb-vpred aria-label="' + T.vpred + '">' +
       '      <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>' +
       "  </div>" +
       "</div>";
     document.body.appendChild(dialog);
 
     var obraz = dialog.querySelector("[data-lb-obraz]");
+    var plochaObrazu = dialog.querySelector("[data-lb-plocha]");
     var nazevEl = dialog.querySelector("[data-lb-nazev]");
     var popisEl = dialog.querySelector("[data-lb-popis]");
     var pocetEl = dialog.querySelector("[data-lb-pocet]");
+    var tlZpet = dialog.querySelector("[data-lb-zpet]");
+    var tlVpred = dialog.querySelector("[data-lb-vpred]");
     var fotky = [];
     var index = 0;
     var nazev = "";
+    var spoustec = null;
+
+    /* Fotka se překlopí až po načtení, ať nebliká prázdné místo. */
+    function ukazFotku() {
+      requestAnimationFrame(function () { plochaObrazu.classList.remove("lightbox__obraz--nacita"); });
+    }
+    obraz.addEventListener("load", ukazFotku);
+    obraz.addEventListener("error", ukazFotku);
+
+    function prednacti() {
+      if (fotky.length < 2) return;
+      [index + 1, index - 1].forEach(function (i) {
+        var f = fotky[(i + fotky.length) % fotky.length];
+        if (f) { var dopredu = new Image(); dopredu.src = f.src; }
+      });
+    }
 
     function vykresli() {
       var f = fotky[index];
+      plochaObrazu.classList.add("lightbox__obraz--nacita");
       obraz.src = f.src;
-      obraz.alt = f.alt;
+      obraz.alt = f.alt || "";
       nazevEl.textContent = nazev;
-      popisEl.textContent = f.alt;
-      pocetEl.textContent = index + 1 + T.z + fotky.length;
-      var vice = fotky.length > 1;
-      dialog.querySelector("[data-lb-zpet]").hidden = !vice;
-      dialog.querySelector("[data-lb-vpred]").hidden = !vice;
+      popisEl.textContent = f.alt || "";
+      pocetEl.textContent = fotky.length > 1 ? index + 1 + T.z + fotky.length : "";
+      tlZpet.hidden = tlVpred.hidden = fotky.length < 2;
+      if (obraz.complete) ukazFotku();
+      prednacti();
     }
 
     function posun(o) {
       index = (index + o + fotky.length) % fotky.length;
       vykresli();
+    }
+
+    function otevri(seznam, i, titulek, btn) {
+      fotky = seznam;
+      index = i;
+      nazev = titulek;
+      spoustec = btn;
+      vykresli();
+      dialog.showModal();
+      document.documentElement.classList.add("bez-rolovani");
+      requestAnimationFrame(function () { dialog.classList.add("lightbox--otevreno"); });
+    }
+
+    /* Zavření se nejdřív vyfaduje, teprve pak se dialog opravdu zavře. */
+    function zavri() {
+      if (!dialog.open || !dialog.classList.contains("lightbox--otevreno")) return;
+      dialog.classList.remove("lightbox--otevreno");
+      setTimeout(function () {
+        dialog.close();
+        document.documentElement.classList.remove("bez-rolovani");
+        if (spoustec) spoustec.focus();
+      }, 180);
     }
 
     galerie.forEach(function (blok) {
@@ -263,24 +305,62 @@
       });
       blok.querySelectorAll(".foto-btn").forEach(function (btn, i) {
         btn.addEventListener("click", function () {
-          fotky = obrazky;
-          index = i;
-          nazev = blok.dataset.galerie || "";
-          vykresli();
-          dialog.showModal();
+          otevri(obrazky, i, blok.dataset.galerie || "", btn);
         });
       });
     });
 
-    dialog.querySelector("[data-lb-zavrit]").addEventListener("click", function () { dialog.close(); });
-    dialog.querySelector("[data-lb-zpet]").addEventListener("click", function () { posun(-1); });
-    dialog.querySelector("[data-lb-vpred]").addEventListener("click", function () { posun(1); });
+    dialog.querySelector("[data-lb-zavrit]").addEventListener("click", zavri);
+    tlZpet.addEventListener("click", function () { posun(-1); });
+    tlVpred.addEventListener("click", function () { posun(1); });
     dialog.addEventListener("keydown", function (e) {
       if (e.key === "ArrowRight") { e.preventDefault(); posun(1); }
       if (e.key === "ArrowLeft") { e.preventDefault(); posun(-1); }
     });
+    dialog.addEventListener("cancel", function (e) { e.preventDefault(); zavri(); });
+
+    /* Přejetí prstem mezi fotkami, na myši táhnutím. */
+    var tahOd = 0, tahX = 0, tahCas = 0, tahne = false, zachyceno = false;
+
+    plochaObrazu.addEventListener("pointerdown", function (e) {
+      if (e.button !== 0 || fotky.length < 2) return;
+      tahne = true;
+      tahOd = e.clientX;
+      tahX = 0;
+      tahCas = Date.now();
+    });
+
+    plochaObrazu.addEventListener("pointermove", function (e) {
+      if (!tahne) return;
+      tahX = e.clientX - tahOd;
+      // Chytáme ukazatel až při skutečném tažení, jinak by se obyčejný klik přesměroval z fotky.
+      if (!zachyceno && Math.abs(tahX) > 8) {
+        zachyceno = true;
+        plochaObrazu.classList.add("lightbox__obraz--tah");
+        if (plochaObrazu.setPointerCapture) plochaObrazu.setPointerCapture(e.pointerId);
+      }
+      if (!zachyceno) return;
+      obraz.style.transform = "translateX(" + tahX + "px)";
+      obraz.style.opacity = String(Math.max(0.4, 1 - Math.abs(tahX) / 520));
+    });
+
+    function konecTahu() {
+      if (!tahne) return;
+      tahne = false;
+      zachyceno = false;
+      plochaObrazu.classList.remove("lightbox__obraz--tah");
+      obraz.style.transform = "";
+      obraz.style.opacity = "";
+      var rychlost = Math.abs(tahX) / Math.max(1, Date.now() - tahCas);
+      if (Math.abs(tahX) > 45 || rychlost > 0.35) posun(tahX < 0 ? 1 : -1);
+    }
+    plochaObrazu.addEventListener("pointerup", konecTahu);
+    plochaObrazu.addEventListener("pointercancel", konecTahu);
+
+    /* Klik mimo fotku a mimo tlačítka zavírá, táhnutí ne. */
     dialog.addEventListener("click", function (e) {
-      if (e.target === dialog || e.target.classList.contains("lightbox__obraz")) dialog.close();
+      if (Math.abs(tahX) > 6) { tahX = 0; return; }
+      if (e.target !== obraz && !e.target.closest("button")) zavri();
     });
   }
 

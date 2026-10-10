@@ -34,6 +34,7 @@
   --sv-80: rgba(255, 255, 255, .85);
   --sv-60: rgba(255, 255, 255, .64);
   --stin: 0 1px 2px rgba(30, 36, 28, .04), 0 12px 32px -14px rgba(30, 36, 28, .18);
+  --plynule: cubic-bezier(.23, 1, .32, 1);   /* animace rozhraní */
 
   --pismo: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
 
@@ -455,16 +456,57 @@ a.dlazdice:hover { box-shadow: var(--stin); border-color: transparent; }
 }
 
 /* 22. Prohlížeč fotek ------------------------------------------------ */
-.lightbox { width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: rgba(16, 22, 12, .95); color: var(--sv); }
-.lightbox::backdrop { background: rgba(16, 22, 12, .6); }
-.lightbox__plocha { height: 100%; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 12px; padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom)); }
-.lightbox__horni, .lightbox__spodni { display: flex; align-items: center; justify-content: space-between; gap: 16px; max-width: 1200px; width: 100%; margin-inline: auto; }
-.lightbox__horni span { font-size: 20px; font-weight: 380; letter-spacing: -0.02em; }
-.lightbox__obraz { display: grid; place-items: center; min-height: 0; }
-.lightbox__obraz img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: var(--r); }
-.lightbox__popisek { text-align: center; font-size: 14px; color: var(--sv-80); }
-.lightbox__tlacitko { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--linka-sv); background: none; color: var(--sv); display: grid; place-items: center; cursor: pointer; }
-.lightbox__tlacitko:hover { background: var(--sv); color: var(--text); }
+.lightbox { width: 100%; max-width: none; height: 100%; max-height: none; margin: 0; padding: 0; border: 0; color: var(--sv); background: rgba(16, 22, 12, .86); overscroll-behavior: contain; opacity: 0; transition: opacity 180ms var(--plynule); }
+@supports (backdrop-filter: blur(12px)) { .lightbox { background: rgba(16, 22, 12, .74); backdrop-filter: blur(14px); } }
+.lightbox::backdrop { background: rgba(16, 22, 12, .74); }
+.lightbox--otevreno { opacity: 1; }
+
+.lightbox__plocha { position: relative; height: 100%; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 14px;
+  padding: max(14px, env(safe-area-inset-top)) 14px max(16px, env(safe-area-inset-bottom));
+  opacity: 0; transform: scale(.97); transition: opacity 180ms var(--plynule), transform 240ms var(--plynule); }
+.lightbox--otevreno .lightbox__plocha { opacity: 1; transform: none; }
+
+.lightbox__lista { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; }
+.lightbox__nazev { font-size: 15px; font-weight: 500; color: var(--sv-80); padding-left: 6px; }
+
+/* Fotka má vlastní strop, ať se na velkém monitoru neroztáhne přes celou plochu. */
+/* Fotka je v ploše absolutně, aby se její strop počítal z volného místa, ne z vlastní velikosti. */
+.lightbox__obraz { position: relative; min-height: 0; touch-action: pan-y; }
+.lightbox__obraz img { position: absolute; inset: 0; margin: auto; max-width: min(1120px, 100%); max-height: 100%; width: auto; height: auto; object-fit: contain;
+  border-radius: 14px; box-shadow: 0 30px 70px -30px rgba(0, 0, 0, .75);
+  transition: opacity 160ms var(--plynule), transform 220ms var(--plynule); }
+.lightbox__obraz--nacita img { opacity: 0; }
+.lightbox__obraz--tah img { transition: none; cursor: grabbing; }
+
+.lightbox__spodek { display: grid; grid-template-columns: 46px minmax(0, 1fr) 46px; align-items: center; gap: 12px; min-height: 46px; }
+.lightbox__popisek { grid-column: 2; text-align: center; font-size: 14px; line-height: 1.45; color: var(--sv-80); }
+.lightbox__pocet { display: block; margin-top: 2px; font-size: 13px; color: var(--sv-60); font-variant-numeric: tabular-nums; }
+
+.lightbox__btn { width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--linka-sv); background: rgba(255, 255, 255, .1);
+  color: var(--sv); display: grid; place-items: center; cursor: pointer;
+  transition: background 160ms ease, color 160ms ease, transform 140ms var(--plynule); }
+.lightbox__btn:active { transform: scale(.94); }
+.lightbox__btn[hidden] { display: none; }
+@media (hover: hover) and (pointer: fine) { .lightbox__btn:hover { background: var(--sv); color: var(--text); } }
+
+/* Na větších obrazovkách jdou šipky k bokům fotky, popisek zůstane na středu. */
+@media (min-width: 860px) {
+  .lightbox__plocha { gap: 18px; padding: 20px clamp(20px, 6vw, 80px) 24px; }
+  .lightbox__spodek { grid-template-columns: minmax(0, 1fr); }
+  .lightbox__popisek { grid-column: 1; }
+  .lightbox__btn--zpet, .lightbox__btn--vpred { position: absolute; top: 50%; width: 54px; height: 54px; transform: translateY(-50%); }
+  .lightbox__btn--zpet { left: clamp(10px, 1.8vw, 28px); }
+  .lightbox__btn--vpred { right: clamp(10px, 1.8vw, 28px); }
+  .lightbox__btn--zpet:active, .lightbox__btn--vpred:active { transform: translateY(-50%) scale(.94); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox, .lightbox__plocha, .lightbox__obraz img, .lightbox__btn { transition-duration: 1ms !important; }
+  .lightbox__plocha { transform: none !important; }
+}
+
+/* Stránka pod otevřeným prohlížečem se neroluje (kvůli iOS). */
+.bez-rolovani, .bez-rolovani body { overflow: hidden; }
 
 /* 23. Patička -------------------------------------------------------- */
 .paticka { margin-bottom: var(--ram); padding-block: clamp(72px, 9vw, 128px) 28px; }

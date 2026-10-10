@@ -96,5 +96,115 @@
     "2027-09-17": "obsazeno",
     "2027-09-18": "obsazeno",
     "2027-09-19": "obsazeno"
-  }
+  },
+  "akce": [
+    {
+      "od": "2026-10-24",
+      "do": "2026-10-24",
+      "nazev": "Konec sezóny - 2026",
+      "stav": "castecne"
+    },
+    {
+      "od": "2027-05-14",
+      "do": "2027-05-16",
+      "nazev": "Oslava narozenin - plná kapacita",
+      "stav": "obsazeno"
+    },
+    {
+      "od": "2027-05-21",
+      "do": "2027-05-23",
+      "nazev": "Firemní akce - plná kapacita",
+      "stav": "obsazeno"
+    },
+    {
+      "od": "2027-05-28",
+      "do": "2027-05-30",
+      "nazev": "Rodinná akce - poloviční kapacita",
+      "stav": "castecne"
+    },
+    {
+      "od": "2027-06-07",
+      "do": "2027-06-11",
+      "nazev": "Škola CoLibri - plná kapacita",
+      "stav": "obsazeno"
+    },
+    {
+      "od": "2027-06-11",
+      "do": "2027-06-13",
+      "nazev": "Rodinná akce - poloviční kapacita",
+      "stav": "castecne"
+    },
+    {
+      "od": "2027-06-11",
+      "do": "2027-06-13",
+      "nazev": "Volejbalisti - poloviční kapacita",
+      "stav": "castecne"
+    },
+    {
+      "od": "2027-06-24",
+      "do": "2027-06-27",
+      "nazev": "Rodinná akce - poloviční kapacita",
+      "stav": "castecne"
+    },
+    {
+      "od": "2027-06-25",
+      "do": "2027-06-26",
+      "nazev": "Mikrop Čebín - poloviční kapacita",
+      "stav": "castecne"
+    },
+    {
+      "od": "2027-07-02",
+      "do": "2027-07-17",
+      "nazev": "Tábory Brno - plná kapacita",
+      "stav": "obsazeno"
+    },
+    {
+      "od": "2027-07-18",
+      "do": "2027-08-11",
+      "nazev": "CK BAVI - plná kapacita",
+      "stav": "obsazeno"
+    },
+    {
+      "od": "2027-08-12",
+      "do": "2027-08-21",
+      "nazev": "Středisko volného času Lužánky - plná kapacita",
+      "stav": "obsazeno"
+    },
+    {
+      "od": "2027-08-22",
+      "do": "2027-08-28",
+      "nazev": "Aktivní záloha armáda - plná kapacita",
+      "stav": "obsazeno"
+    },
+    {
+      "od": "2027-09-03",
+      "do": "2027-09-05",
+      "nazev": "Škola CoLibri - plná kapacita",
+      "stav": "obsazeno"
+    },
+    {
+      "od": "2027-09-06",
+      "do": "2027-09-10",
+      "nazev": "Škola v přírodě - plná kapacita",
+      "stav": "obsazeno"
+    },
+    {
+      "od": "2027-09-10",
+      "do": "2027-09-12",
+      "nazev": "Volejbalisti - poloviční kapacita",
+      "stav": "castecne"
+    },
+    {
+      "od": "2027-09-13",
+      "do": "2027-09-15",
+      "nazev": "Škola v přírodě - plná kapacita",
+      "stav": "obsazeno"
+    },
+    {
+      "od": "2027-09-17",
+      "do": "2027-09-19",
+      "nazev": "Oslava narozenin - celý areál",
+      "stav": "obsazeno"
+    }
+  ]
 }

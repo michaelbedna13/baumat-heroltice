@@ -14,7 +14,7 @@ Pravidla (dají se upravit níže):
 - Celodenní událost obsadí přesně ty dny, přes které je v kalendáři natažená.
 - U události s časem se počítají noci: od 3. 14:00 do 5. 10:00 obsadí 3. a 4.
 - Diakritika a velikost písmen nevadí.
-- Název události se vypíše pod kalendářem u příslušného měsíce.
+- Název události se vypíše pod kalendářem u příslušného měsíce, bez údaje o kapacitě na konci.
 
 Spouští se automaticky přes GitHub Actions (.github/workflows/kalendar.yml).
 Adresa kalendáře je v tajném nastavení repa: KALENDAR_ICAL_URL.
@@ -73,8 +73,19 @@ def rozbal_text(hodnota):
 
 
 def nazev_pro_web(summary):
-    """Veřejný popisek akce. Co je v názvu za //, zůstane jen v kalendáři."""
+    """Veřejný popisek akce. Co je v názvu za //, zůstane jen v kalendáři.
+
+    Z konce názvu se odřízne údaj o kapacitě ("Svatba - plná kapacita"), protože
+    totéž už na webu říká barva dne a legenda pod kalendářem.
+    """
     text = " ".join(rozbal_text(summary).split(SOUKROME)[0].split())
+    for oddelovac in (" - ", " – ", " — ", " | ", ", "):
+        cast = text.rsplit(oddelovac, 1)
+        if len(cast) == 2 and cast[0].strip():
+            konec = bez_diakritiky(cast[1])
+            if "kapacit" in konec or any(slovo in konec for slovo in CELY_AREAL):
+                text = cast[0].strip()
+                break
     if len(text) > MAX_NAZEV:
         text = text[: MAX_NAZEV - 1].rstrip(" ,;-") + "…"
     return text

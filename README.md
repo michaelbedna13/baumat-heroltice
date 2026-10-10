@@ -57,7 +57,7 @@ Anglické stránky jsou v `en/` (`/en/`, `/en/accommodation/`, `/en/activities/`
 
 ## Kalendář obsazenosti z Google Kalendáře
 
-Kalendář na stránce Kontakt čte `assets/data/obsazenost.json`. Ten jednou za hodinu přepisuje GitHub Actions (`.github/workflows/kalendar.yml` spouští `scripts/kalendar.py`) podle Google Kalendáře správce. Na web se ukládají jen data a stav dne, žádné názvy událostí ani jména hostů.
+Kalendář na stránce Kontakt čte `assets/data/obsazenost.json`. Ten jednou za hodinu přepisuje GitHub Actions (`.github/workflows/kalendar.yml` spouští `scripts/kalendar.py`) podle Google Kalendáře správce. Na web se ukládají data, stav dne a **název události** — ten se vypíše pod mřížkou u zobrazeného měsíce.
 
 Nastavení (jednou):
 1. V Google Kalendáři správce: Nastavení, vybrat kalendář s rezervacemi, sekce „Integrace kalendáře“, zkopírovat **Tajnou adresu ve formátu iCal**.
@@ -69,6 +69,9 @@ Jak zapisovat do kalendáře:
 - Jakákoli jiná rezervace, třeba „poloviční kapacita“: dny se zobrazí žlutě jako částečně obsazené.
 - Celodenní událost obsadí přesně ty dny, přes které je v kalendáři natažená. Minulé dny web zobrazuje šedě.
 - Zrušené události se ignorují.
+- **Název události je veřejný.** Pod kalendářem se vypíše tak, jak je napsaný („Svatba“, „Firemní školení“). Co má zůstat jen v kalendáři (jména hostů, telefon, poznámka), napiš za dvě lomítka: `Svatba // Novákovi, 777 123 456` zveřejní jen „Svatba“. Popis události (pole Popis v Google Kalendáři) se nezveřejňuje nikdy.
+- Událost bez názvu obarví dny v kalendáři, ale do výpisu akcí se nedostane. Delší názvy než 90 znaků se zkrátí.
+- Názvy se nepřekládají, v anglické verzi webu se zobrazí stejně jako v kalendáři.
 
 Pozor: pokud v repu delší dobu (60 dní) nic neproběhne, GitHub automatické spouštění vypne a pošle o tom e-mail. Znovu se zapne jedním kliknutím v záložce Actions. Workflow sám jednou denně zapíše datum aktualizace, takže by k tomu nemělo docházet.
 

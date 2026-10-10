@@ -5,11 +5,13 @@
     ? { prohlizec: "Photo viewer", zavrit: "Close photos", zpet: "Previous photo", vpred: "Next photo", z: " of ",
         mesice: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
         dny: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-        stavy: { obsazeno: "booked", castecne: "partially booked", volno: "available" }, locale: "en-GB" }
+        stavy: { obsazeno: "booked", castecne: "partially booked", volno: "available" },
+        akceNadpis: "What's on this month", locale: "en-GB", mesicCislo: "short" }
     : { prohlizec: "Prohlížeč fotek", zavrit: "Zavřít fotky", zpet: "Předchozí fotka", vpred: "Další fotka", z: " z ",
         mesice: ["leden", "únor", "březen", "duben", "květen", "červen", "červenec", "srpen", "září", "říjen", "listopad", "prosinec"],
         dny: ["po", "út", "st", "čt", "pá", "so", "ne"],
-        stavy: { obsazeno: "obsazeno", castecne: "částečně obsazeno", volno: "volno" }, locale: "cs-CZ" };
+        stavy: { obsazeno: "obsazeno", castecne: "částečně obsazeno", volno: "volno" },
+        akceNadpis: "Akce v tomto měsíci", locale: "cs-CZ", mesicCislo: "numeric" };
 
   /* Fotky, které se nenačtou, se skryjí a zůstane jen plocha rámu ---- */
   document.querySelectorAll(".ram img, .karta img, .hero__foto img").forEach(function (img) {
@@ -297,9 +299,76 @@
     den0.setHours(0, 0, 0, 0);
     var zobrazeny = new Date(den0.getFullYear(), den0.getMonth(), 1);
     var obsazenost = {};
+    var akce = [];
+    var nazvyDne = {};
+    var seznamAkci = kalendar.querySelector("[data-kalendar-akce]");
 
     function klic(d) {
       return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+    }
+
+    function zKlice(s) {
+      var c = s.split("-");
+      return new Date(+c[0], +c[1] - 1, +c[2]);
+    }
+
+    /* Názvy akcí ke každému dni, kvůli popisku u čtverečku. */
+    function pripravNazvy() {
+      nazvyDne = {};
+      akce.forEach(function (a) {
+        var den = zKlice(a.od), posledni = zKlice(a.do);
+        while (den <= posledni) {
+          var k = klic(den);
+          (nazvyDne[k] = nazvyDne[k] || []).push(a.nazev);
+          den = new Date(den.getFullYear(), den.getMonth(), den.getDate() + 1);
+        }
+      });
+    }
+
+    function rozsah(odDne, doDne) {
+      var dlouze = { day: "numeric", month: T.mesicCislo, year: "numeric" };
+      if (odDne.getTime() === doDne.getTime()) return odDne.toLocaleDateString(T.locale, dlouze);
+      return odDne.toLocaleDateString(T.locale, { day: "numeric", month: T.mesicCislo }) +
+        " – " + doDne.toLocaleDateString(T.locale, dlouze);
+    }
+
+    /* Výpis akcí pod mřížkou, jen pro zobrazený měsíc. */
+    function vykresliAkce() {
+      if (!seznamAkci) return;
+      var prvni = new Date(zobrazeny.getFullYear(), zobrazeny.getMonth(), 1);
+      var posledni = new Date(zobrazeny.getFullYear(), zobrazeny.getMonth() + 1, 0);
+      var vybrane = akce.filter(function (a) {
+        return zKlice(a.od) <= posledni && zKlice(a.do) >= prvni;
+      });
+
+      seznamAkci.innerHTML = "";
+      seznamAkci.hidden = vybrane.length === 0;
+      if (!vybrane.length) return;
+
+      var nadpis = document.createElement("h3");
+      nadpis.className = "kalendar__akce-nadpis";
+      nadpis.textContent = T.akceNadpis;
+      seznamAkci.appendChild(nadpis);
+
+      var seznam = document.createElement("ul");
+      seznam.className = "kalendar__akce-seznam";
+      vybrane.forEach(function (a) {
+        var radek = document.createElement("li");
+        var znacka = document.createElement("i");
+        znacka.className = "legenda__" + (a.stav === "obsazeno" ? "obsazeno" : "castecne");
+        znacka.setAttribute("aria-hidden", "true");
+        var kdy = document.createElement("span");
+        kdy.className = "kalendar__akce-datum";
+        kdy.textContent = rozsah(zKlice(a.od), zKlice(a.do));
+        var co = document.createElement("span");
+        co.className = "kalendar__akce-nazev";
+        co.textContent = a.nazev;
+        radek.appendChild(znacka);
+        radek.appendChild(kdy);
+        radek.appendChild(co);
+        seznam.appendChild(radek);
+      });
+      seznamAkci.appendChild(seznam);
     }
 
     function vykresliMesic() {
@@ -333,11 +402,18 @@
         if (datum.getTime() === den0.getTime()) bunka.classList.add("kalendar__den--dnes");
         bunka.innerHTML = "<span>" + den + "</span>";
         var slovy = datum.toLocaleDateString(T.locale, { day: "numeric", month: "long", year: "numeric" });
-        bunka.setAttribute("aria-label", slovy + ", " + (STAVY[stav] || STAVY.volno));
+        var popis = slovy + ", " + (STAVY[stav] || STAVY.volno);
+        var nazvy = nazvyDne[klic(datum)];
+        if (nazvy && nazvy.length) {
+          popis += ": " + nazvy.join(", ");
+          bunka.title = nazvy.join(", ");
+        }
+        bunka.setAttribute("aria-label", popis);
         mrizka.appendChild(bunka);
       }
 
       zpet.disabled = zobrazeny <= new Date(den0.getFullYear(), den0.getMonth(), 1);
+      vykresliAkce();
     }
 
     zpet.addEventListener("click", function () {
@@ -351,13 +427,15 @@
 
     vykresliMesic();
 
-    // Obsazenost se čte z assets/data/obsazenost.json.
-    // Ten je zatím ruční; po napojení Google Calendar API ho bude generovat export.
+    // Obsazenost i názvy akcí se čtou z assets/data/obsazenost.json,
+    // který jednou za hodinu generuje scripts/kalendar.py z Google Kalendáře.
     fetch(kalendar.dataset.kalendar)
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) {
         if (!data || !data.terminy) return;
         obsazenost = data.terminy;
+        akce = Array.isArray(data.akce) ? data.akce : [];
+        pripravNazvy();
         var aktual = document.querySelector("[data-kalendar-aktualizace]");
         if (aktual && data.aktualizovano) {
           var d = new Date(data.aktualizovano + "T12:00:00");

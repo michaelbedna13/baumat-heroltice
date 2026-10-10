@@ -442,6 +442,17 @@ a.dlazdice:hover { box-shadow: var(--stin); border-color: transparent; }
 .legenda li { display: flex; align-items: center; gap: 12px; }
 .legenda i { width: 24px; height: 24px; border-radius: 7px; flex: none; }
 .kalendar__bok { display: grid; gap: 24px; align-content: start; }
+.kalendar__akce { margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--linka); }
+.kalendar__akce-nadpis { font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--sedy); margin-bottom: 14px; }
+.kalendar__akce-seznam { display: grid; gap: 10px; font-size: 15px; }
+.kalendar__akce-seznam li { display: grid; grid-template-columns: 14px auto minmax(0, 1fr); align-items: center; gap: 10px; }
+.kalendar__akce-seznam i { width: 14px; height: 14px; border-radius: 5px; }
+.kalendar__akce-datum { color: var(--sedy); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.kalendar__akce-nazev { font-weight: 500; }
+@media (max-width: 520px) {
+  .kalendar__akce-seznam li { grid-template-columns: 14px minmax(0, 1fr); row-gap: 2px; }
+  .kalendar__akce-nazev { grid-column: 2; }
+}
 
 /* 22. Prohlížeč fotek ------------------------------------------------ */
 .lightbox { width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: rgba(16, 22, 12, .95); color: var(--sv); }

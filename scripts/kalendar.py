@@ -2,8 +2,11 @@
 """Stáhne Google Kalendář správce (tajná adresa ve formátu iCal) a vytvoří
 assets/data/obsazenost.json pro kalendář na webu.
 
-Na web se dostanou jen data a stav (obsazeno / castecne). Názvy událostí,
-jména hostů ani poznámky se nikam neukládají.
+Na web se dostanou data, stav dne (obsazeno / castecne) a názvy událostí,
+aby u termínů bylo vidět, o jakou akci jde. POZOR: název události je veřejný.
+Co má zůstat jen v kalendáři (jména hostů, telefon, poznámka), napiš v názvu
+za dvě lomítka: "Svatba // Novákovi, 777 123 456" zveřejní jen "Svatba".
+Popis události (DESCRIPTION) se nezveřejňuje nikdy.
 
 Pravidla (dají se upravit níže):
 - Událost, jejíž název obsahuje "plná kapacita" (nebo "celý areál", "obsazeno"), označí dny jako "obsazeno".
@@ -11,6 +14,7 @@ Pravidla (dají se upravit níže):
 - Celodenní událost obsadí přesně ty dny, přes které je v kalendáři natažená.
 - U události s časem se počítají noci: od 3. 14:00 do 5. 10:00 obsadí 3. a 4.
 - Diakritika a velikost písmen nevadí.
+- Název události se vypíše pod kalendářem u příslušného měsíce.
 
 Spouští se automaticky přes GitHub Actions (.github/workflows/kalendar.yml).
 Adresa kalendáře je v tajném nastavení repa: KALENDAR_ICAL_URL.
@@ -25,6 +29,8 @@ import unicodedata
 import urllib.request
 
 CELY_AREAL = ["plna kapacita", "cely areal", "obsazeno", "cely objekt"]
+SOUKROME = "//"   # co je v názvu za tímto, se nezveřejní
+MAX_NAZEV = 90    # delší název se zkrátí
 DNY_ZPET = 7
 DNY_DOPREDU = 550
 VYSTUP = pathlib.Path(__file__).resolve().parent.parent / "assets" / "data" / "obsazenost.json"
@@ -49,6 +55,29 @@ def radky(ics):
         else:
             vysledek.append(radek)
     return vysledek
+
+
+def rozbal_text(hodnota):
+    """Odstraní escapování podle RFC 5545: \\n, \\, , \\; , \\\\."""
+    vysledek = []
+    i = 0
+    while i < len(hodnota):
+        if hodnota[i] == "\\" and i + 1 < len(hodnota):
+            dalsi = hodnota[i + 1]
+            vysledek.append("\n" if dalsi in "nN" else dalsi)
+            i += 2
+        else:
+            vysledek.append(hodnota[i])
+            i += 1
+    return "".join(vysledek)
+
+
+def nazev_pro_web(summary):
+    """Veřejný popisek akce. Co je v názvu za //, zůstane jen v kalendáři."""
+    text = " ".join(rozbal_text(summary).split(SOUKROME)[0].split())
+    if len(text) > MAX_NAZEV:
+        text = text[: MAX_NAZEV - 1].rstrip(" ,;-") + "…"
+    return text
 
 
 def datum(hodnota):
@@ -79,6 +108,7 @@ def main():
     dnes = dt.date.today()
     od, do = dnes - dt.timedelta(days=DNY_ZPET), dnes + dt.timedelta(days=DNY_DOPREDU)
     terminy = {}
+    akce = {}
 
     for adresa in adresy:
         for u in udalosti(stahnout(adresa)):
@@ -92,16 +122,31 @@ def main():
                 konec = zacatek + dt.timedelta(days=1)
             nazev = bez_diakritiky(u.get("SUMMARY", ""))
             stav = "obsazeno" if any(slovo in nazev for slovo in CELY_AREAL) else "castecne"
-            den = max(zacatek, od)
-            while den < min(konec, do):
+            prvni, posledni = max(zacatek, od), min(konec, do) - dt.timedelta(days=1)
+            if prvni > posledni:
+                continue
+            den = prvni
+            while den <= posledni:
                 klic = den.isoformat()
                 if terminy.get(klic) != "obsazeno":
                     terminy[klic] = stav
                 den += dt.timedelta(days=1)
+            popisek = nazev_pro_web(u.get("SUMMARY", ""))
+            if popisek:
+                # Stejná akce ve dvou kalendářích se vypíše jen jednou.
+                akce[(prvni.isoformat(), posledni.isoformat(), popisek)] = stav
 
-    data = {"aktualizovano": dnes.isoformat(), "terminy": dict(sorted(terminy.items()))}
+    seznam = [
+        {"od": o, "do": d, "nazev": n, "stav": akce[(o, d, n)]}
+        for o, d, n in sorted(akce)
+    ]
+    data = {
+        "aktualizovano": dnes.isoformat(),
+        "terminy": dict(sorted(terminy.items())),
+        "akce": seznam,
+    }
     VYSTUP.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Uloženo {len(terminy)} dní do {VYSTUP}")
+    print(f"Uloženo {len(terminy)} dní a {len(seznam)} akcí do {VYSTUP}")
 
 
 if __name__ == "__main__":

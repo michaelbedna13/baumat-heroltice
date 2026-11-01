@@ -1,7 +1,6 @@
 {
-  "aktualizovano": "2026-10-31",
+  "aktualizovano": "2026-11-01",
   "terminy": {
-    "2026-10-24": "castecne",
     "2027-05-14": "obsazeno",
     "2027-05-15": "obsazeno",
     "2027-05-16": "obsazeno",
@@ -98,12 +97,6 @@
     "2027-09-19": "obsazeno"
   },
   "akce": [
-    {
-      "od": "2026-10-24",
-      "do": "2026-10-24",
-      "nazev": "Konec sezóny - 2026",
-      "stav": "castecne"
-    },
     {
       "od": "2027-05-14",
       "do": "2027-05-16",

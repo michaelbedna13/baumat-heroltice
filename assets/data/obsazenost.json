@@ -18,8 +18,8 @@
     "2027-06-12": "castecne",
     "2027-06-13": "castecne",
     "2027-06-24": "castecne",
-    "2027-06-25": "castecne",
-    "2027-06-26": "castecne",
+    "2027-06-25": "obsazeno",
+    "2027-06-26": "obsazeno",
     "2027-06-27": "castecne",
     "2027-07-02": "obsazeno",
     "2027-07-03": "obsazeno",
@@ -143,7 +143,7 @@
       "od": "2027-06-25",
       "do": "2027-06-26",
       "nazev": "Mikrop Čebín",
-      "stav": "castecne"
+      "stav": "obsazeno"
     },
     {
       "od": "2027-07-02",
